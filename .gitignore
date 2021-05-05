@@ -1,0 +1,8 @@
+@*
+releases/*
+keys/*
+*.biprivatekey
+texHeaders.bin
+*.pbo
+*.cache
+*.ps1
