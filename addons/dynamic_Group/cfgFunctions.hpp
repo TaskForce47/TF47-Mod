@@ -1,5 +1,4 @@
 class CfgFunctions {
-
     class TF47_dynGrps {
         class Menu {
             file = "\z\TF47\addons\dynamic_Group\function";
