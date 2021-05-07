@@ -7,3 +7,4 @@ texHeaders.bin
 *.cache
 *.ps1
 tools/*
+*.bat
