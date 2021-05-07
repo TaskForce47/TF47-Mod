@@ -5,8 +5,8 @@ if (isMultiplayer && GVAR(Enabled)) then {
 
 } else {
     if (GVAR(Enabled)) then {
-    	//Inform players HC is not running
-    	systemChat "Headless Client System(ZHC) not Available in Singleplayer";
+    //Inform players HC is not running
+    systemChat "Headless Client System(ZHC) not Available in Singleplayer";
     };
 
 };
