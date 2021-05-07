@@ -683,5 +683,5 @@ class CfgAmmo
         caliber = 1;
         whistleOnFire = 0;
         minDamageForCamShakeHit = 0.55;
-    }
-}
+    };
+};
