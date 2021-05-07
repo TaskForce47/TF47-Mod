@@ -21,12 +21,12 @@ class CfgAmmo
         maneuvrability = 30;
         airFriction = 0.17;
         sideAirFriction = 0.23;
-        trackOversteer = 1.5;
-        trackLead = 0.9;
+        trackOversteer = 1.2;
+        trackLead = 0.7;
         initTime = 0;
         timeToLive = 18;
         thrustTime = 4;
-        thrust = 225;
+        thrust = 200;
         maxSpeed = 700;
         simulationStep = 0.002;
         airLock = 2;
