@@ -7,11 +7,11 @@
 // #define ENABLE_PERFORMANCE_COUNTERS
 
 #ifdef DEBUG_ENABLED_OFFLOAD
-    #define DEBUG_MODE_FULL
+	#define DEBUG_MODE_FULL
 #endif
 
 #ifdef DEBUG_SETTINGS_OFFLOAD
-    #define DEBUG_SETTINGS DEBUG_SETTINGS_OFFLOAD
+	#define DEBUG_SETTINGS DEBUG_SETTINGS_OFFLOAD
 #endif
 
 #include "\t\zhc\addons\main\script_macros.hpp"
