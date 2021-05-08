@@ -5,7 +5,7 @@ class CfgPatches {
         units[] = {};
         weapons[] = {};
         requiredVersion = REQUIRED_VERSION;
-        requiredAddons[] = {"VN"};
+        requiredAddons[] = {"weapons_v_f_vietnam_c","sounds_f_vietnam_c"};
         author = "TF47 Dragon";
         VERSION_CONFIG;
     };
