@@ -12,7 +12,7 @@ include = [
 ]
 
 key_name = "{{prefix}}-{{version}}"
-authority = "{{version}}"
+authority = "{{prefix}}-{{version}}-{{git \"id 8\"}}"
 
 releasebuild = []
 
