@@ -2,6 +2,9 @@ name = "taskforce47_client_mod"
 modname = "taskforce47_client_mod"
 prefix = "TF47"
 author = "TF47 Development Team"
+mainprefix = "z"
+sig_version = 3
+
 files = [
 	"mod.cpp",
 	"meta.cpp",
@@ -17,3 +20,6 @@ authority = "{{prefix}}-{{version}}-{{git \"id 8\"}}"
 releasebuild = []
 
 show_output = true
+
+[header_exts]
+version= "{{git \"id 8\"}}"
