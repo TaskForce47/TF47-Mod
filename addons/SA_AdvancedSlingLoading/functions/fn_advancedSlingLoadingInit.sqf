@@ -23,7 +23,7 @@ ASL_Advanced_Sling_Loading_Install = {
 	if (!isNil "ASL_ROPE_INIT") exitWith {};		// Prevent advanced sling loading from installing twice
 	ASL_ROPE_INIT = true;
 
-	diag_log "Advanced Sling Loading Loading...";
+diag_log "Advanced Sling Loading Loading...";
 	
 	ASL_Rope_Get_Lift_Capability = {
 		params [["_vehicle", objNull]];
