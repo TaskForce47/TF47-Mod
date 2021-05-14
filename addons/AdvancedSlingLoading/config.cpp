@@ -1,7 +1,7 @@
 class CfgPatches {
-   class AdvancedSlingLoading {
+   class SA_AdvancedSlingLoading {
       units[]            = {
-         "AdvancedSlingLoading"
+         "SA_AdvancedSlingLoading"
       };
       requiredVersion      = 1;
       requiredAddons[]   = {
@@ -31,7 +31,7 @@ class CfgNetworkMessages {
 class CfgFunctions {
    class SA {
       class AdvancedSlingLoading {
-         file = "\AdvancedSlingLoading\functions";
+         file = "\SA_AdvancedSlingLoading\functions";
          class advancedSlingLoadingInit {
             preInit = 1;
          };
@@ -40,11 +40,11 @@ class CfgFunctions {
 };
 class Extended_PreInit_EventHandlers {
    class SA {
-      init = "call compile preprocessFileLineNumbers '\AdvancedSlingLoading\scripts\XEH_preInit.sqf'"; // CBA_a3 integration
+      init = "call compile preprocessFileLineNumbers '\SA_AdvancedSlingLoading\scripts\XEH_preInit.sqf'"; // CBA_a3 integration
    };
 };
 class Extended_PostInit_EventHandlers {
    class SA {
-      init = "call compile preprocessFileLineNumbers '\AdvancedSlingLoading\scripts\XEH_postInit.sqf'"; // CBA key binding integration
+      init = "call compile preprocessFileLineNumbers '\SA_AdvancedSlingLoading\scripts\XEH_postInit.sqf'"; // CBA key binding integration
    };
 };
