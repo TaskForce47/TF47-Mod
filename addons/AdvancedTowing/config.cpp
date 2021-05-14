@@ -1,8 +1,8 @@
 class CfgPatches
 {
-   class SA_AdvancedTowing
+   class AdvancedTowing
    {
-      units[] = {"SA_AdvancedTowing"};
+      units[] = {"AdvancedTowing"};
       requiredVersion = 1.0;
       requiredAddons[] = {"A3_Modules_F"};
    };
@@ -31,7 +31,7 @@ class CfgFunctions
    {
       class AdvancedTowing
       {
-         file = "\SA_AdvancedTowing\functions";
+         file = "\AdvancedTowing\functions";
          class advancedTowingInit{postInit=1};
       };
    };
