@@ -10,6 +10,7 @@ class CfgPatches
 
 class CfgNetworkMessages
 {
+   
    class AdvancedRappellingRemoteExecClient
    {
       module = "AdvancedRappelling";
@@ -21,6 +22,7 @@ class CfgNetworkMessages
       module = "AdvancedRappelling";
       parameters[] = {"ARRAY","STRING","BOOL"};
    };
+   
 };
 
 class CfgFunctions 
