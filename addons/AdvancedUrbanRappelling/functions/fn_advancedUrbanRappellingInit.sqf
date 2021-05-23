@@ -382,7 +382,7 @@ AUR_Rappel = {
    [[_anchor],"AUR_Hide_Object_Global"] call AUR_RemoteExecServer;
 
    // Create rappel device (attached to player)
-   _rappelDevice = createVehicle ["B_static_AA_F", _player, [], 0, "CAN_COLLIDE"];
+   _rappelDevice = createVehicle ["Land_BagFence_01_end_green_F", _player, [], 0, "CAN_COLLIDE"];
    hideObject _rappelDevice;
    _rappelDevice setPosWorld _playerStartPosition;
    _rappelDevice allowDamage false;
@@ -793,7 +793,7 @@ AUR_Hint = {
 
 AUR_Hide_Object_Global = {
    params ["_obj"];
-   if( _obj isKindOf "Land_Can_V2_F" || _obj isKindOf "B_static_AA_F" ) then {
+   if( _obj isKindOf "Land_Can_V2_F" || _obj isKindOf "B_static_AA_F" || _obj isKindOf "Land_BagFence_01_end_green_F") then {
       hideObjectGlobal _obj;
    };
 };
