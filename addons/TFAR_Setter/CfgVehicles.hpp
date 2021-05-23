@@ -13,7 +13,7 @@ class CfgVehicles {
     class Man;
     class CAManBase: Man {
         class ACE_SelfActions {
-         class ACE_Equipment {
+         class TF47_Menu {
             class ADDON_EXCEPT{
                exceptions[] = {
                   "isNotInside",
