@@ -32,7 +32,7 @@ LOGF_2("Loading %1 Settings: %2",_type,_radioData);
 if(count _radioData == 0) exitWith {
     LOG_ERRORF_1("Cannot load empty radioData for %1", _type);
     if(_showResult) then {
-	    [format["Failed to load %1 settings, try setting them first", _type], QUOTE(ICON_PATH(interact_root))] call ace_common_fnc_displayTextPicture;
+       [format["Failed to load %1 settings, try setting them first", _type], QUOTE(ICON_PATH(interact_root))] call ace_common_fnc_displayTextPicture;
     };
     1
 };
@@ -46,6 +46,6 @@ if(!(_result isEqualTo _radioData)) exitWith {
 };
 
 if(_showResult) then {
-	[format["Loaded %1 Settings", _type], QUOTE(ICON_PATH(interact_root))] call ace_common_fnc_displayTextPicture;
+   [format["Loaded %1 Settings", _type], QUOTE(ICON_PATH(interact_root))] call ace_common_fnc_displayTextPicture;
 };
 0
