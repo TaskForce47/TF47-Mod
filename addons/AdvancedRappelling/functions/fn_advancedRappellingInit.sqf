@@ -851,11 +851,11 @@ AR_Hide_Object_Global = {
 AR_Add_Player_Actions = {
    params ["_player"];
    
-   _player addAction ["Rappel Self", { 
+   _player addAction [localize "STR_TF47_Rappel_Rappel_Self", { 
       [player, vehicle player] call AR_Rappel_From_Heli_Action;
    }, nil, 0, false, true, "", "[player, vehicle player] call AR_Rappel_From_Heli_Action_Check"];
    
-   _player addAction ["Rappel AI Units", { 
+   _player addAction [localize "STR_TF47_Rappel_Rappel_AI", { 
       {
          if(!isPlayer _x) then {
             sleep 1;
@@ -864,7 +864,7 @@ AR_Add_Player_Actions = {
       } forEach (units player);
    }, nil, 0, false, true, "", "[player] call AR_Rappel_AI_Units_From_Heli_Action_Check"];
    
-   _player addAction ["Detach Rappel Device", { 
+   _player addAction [localize "STR_TF47_Rappel_Detach_Rappel_Device", { 
       [player] call AR_Rappel_Detach_Action;
    }, nil, 0, false, true, "", "[player] call AR_Rappel_Detach_Action_Check"];
    

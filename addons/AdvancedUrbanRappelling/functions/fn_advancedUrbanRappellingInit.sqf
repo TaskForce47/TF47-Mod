@@ -804,15 +804,15 @@ AUR_Add_Player_Actions = {
       [player, vehicle player] call AUR_Rappel_Action;
    }, nil, 0, false, true, "", "[player] call AUR_Rappel_Action_Check"];
 
-   _player addAction ["Rappel AI Units", { 
+   _player addAction [localize "STR_TF47_Urban_Rappel_Rappel_AI", { 
       [player] call AUR_Rappel_AI_Units_Action;
    }, nil, 0, false, true, "", "[player] call AUR_Rappel_AI_Units_Action_Check"];
 
-   _player addAction ["Climb To Top", { 
+   _player addAction [localize "STR_TF47_Urban_Rappel_Climb_Top", { 
       [player] call AUR_Rappel_Climb_To_Top_Action;
    }, nil, 0, false, true, "", "[player] call AUR_Rappel_Climb_To_Top_Action_Check"];
    
-   _player addAction ["Detach Rappel Device", { 
+   _player addAction [localize "STR_TF47_Urban_Rappel_Detach_Rappel_Device", { 
       [player] call AUR_Rappel_Detach_Action;
    }, nil, 0, false, true, "", "[player] call AUR_Rappel_Detach_Action_Check"];
    

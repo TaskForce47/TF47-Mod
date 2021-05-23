@@ -13,9 +13,5 @@
             <English>Rappel AI Units</English>
 			<German>KI abseilen lassen</German>
         </Key>
-        <Key ID="STR_TF47_Rappel_Climb_Top">
-            <English>Detach Rappel Device</English>
-			<German>Abseilgerät lösen</German>
-        </Key>
     </Package>
 </Project>
