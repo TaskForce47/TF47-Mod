@@ -10,3 +10,5 @@
             VERSION_CONFIG;
         };
     };
+#include "CfgEventHandlers.hpp"
+#include "CfgModuleCategories.hpp"
