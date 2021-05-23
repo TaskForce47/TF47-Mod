@@ -16,6 +16,7 @@ class CfgVehicles {
          class TF47_Menu {
             class ADDON_EXCEPT{
                exceptions[] = {
+                  "isNotInside",
                   "isNotSwimming",
                   "isNotSitting",
                   "notOnMap"
