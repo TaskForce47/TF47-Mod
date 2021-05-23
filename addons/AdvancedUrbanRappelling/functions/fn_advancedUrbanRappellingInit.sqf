@@ -800,8 +800,7 @@ AUR_Hide_Object_Global = {
 
 AUR_Add_Player_Actions = {
    params ["_player"];
-   
-   _player addAction ["Rappel Self", { 
+   _player addAction [localize "STR_TF47_Urban_Rappel_Rappel_Self", { 
       [player, vehicle player] call AUR_Rappel_Action;
    }, nil, 0, false, true, "", "[player] call AUR_Rappel_Action_Check"];
 
