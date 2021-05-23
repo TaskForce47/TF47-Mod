@@ -367,7 +367,7 @@ AR_Client_Rappel_From_Heli = {
       [[_anchor],"AR_Hide_Object_Global"] call AR_RemoteExecServer;
       _anchor attachTo [_heli,_rappelPoint];
       
-      _rappelDevice = "Land_BagFence_01_end_green_F" createVehicle position _player;
+      _rappelDevice = "B_Static_Designator_01_F" createVehicle position _player;
       _rappelDevice setPosWorld _playerStartPosition;
       _rappelDevice allowDamage false;
       hideObject _rappelDevice;
@@ -843,7 +843,7 @@ AR_Hint = {
 
 AR_Hide_Object_Global = {
    params ["_obj"];
-   if( _obj isKindOf "Land_Can_V2_F" || _obj isKindOf "B_static_AA_F" || _obj isKindOf "Land_BagFence_01_end_green_F") then {
+   if( _obj isKindOf "Land_Can_V2_F" || _obj isKindOf "B_static_AA_F" || _obj isKindOf "B_Static_Designator_01_F") then {
       hideObjectGlobal _obj;
    };
 };
