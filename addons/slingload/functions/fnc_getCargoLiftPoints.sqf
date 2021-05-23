@@ -9,8 +9,8 @@
  * Return Value:
  * 0: Success <BOOLEAN>
  *
- * Exslrle:
- * [_cargo] call slr_slingload_fnc_getCargoLiftPoints
+ * ExTF47le:
+ * [_cargo] call TF47_slingload_fnc_getCargoLiftPoints
  */
 
 params ["_cargo"];

@@ -9,7 +9,7 @@ Author: Ampersand
 * Return Value:
 * Exit position vehicle model space <ARRAY>
 
-* Exslrle:
+* ExTF47le:
 * [cursorObject, ACE_Player] call FUNC(rigCargo)Manual
 */
 
@@ -21,7 +21,7 @@ if (damage _cargo == 1) then {
     if !(isNull _wreckDummy) then {
         _cargo = _wreckDummy;
     } else {
-        private _helper = createVehicle ["slr_slingload_wreckDummy", [0,0,0], [], 0, "CAN_COLLIDE"];
+        private _helper = createVehicle ["TF47_slingload_wreckDummy", [0,0,0], [], 0, "CAN_COLLIDE"];
         _helper allowDamage false;
         _helper disableCollisionWith _cargo;
         _helper setDir getDir _cargo;
@@ -35,17 +35,17 @@ if (damage _cargo == 1) then {
     };
 };
 
-[_unit, "blockThrow", "slr_slingload_rigCargoManual", true] call ace_common_fnc_statusEffect_set;
+[_unit, "blockThrow", "TF47_slingload_rigCargoManual", true] call ace_common_fnc_statusEffect_set;
 
 //Show mouse buttons:
 [localize LSTRING(AddLiftPoint), localize "STR_ACE_Common_Cancel", localize "STR_ACE_Tripod_Done"] call ace_interaction_fnc_showMouseHint;
-_unit setVariable ["slr_slingload_addLiftPointEH", [_unit, "DefaultAction", {true}, {GVAR(pfeh_action) = RIG_ADD}] call ace_common_fnc_AddActionEventHandler];
+_unit setVariable ["TF47_slingload_addLiftPointEH", [_unit, "DefaultAction", {true}, {GVAR(pfeh_action) = RIG_ADD}] call ace_common_fnc_AddActionEventHandler];
 
 GVAR(pfeh_running) = true;
 GVAR(pfeh_action) = RIG_WAITING;
 GVAR(rigCargoHelpers) = [];
 
-private _hook = "slr_slingload_hook" createVehicleLocal [0,0,0];
+private _hook = "TF47_slingload_hook" createVehicleLocal [0,0,0];
 
 // rig lift points
 [{
@@ -58,7 +58,7 @@ private _hook = "slr_slingload_hook" createVehicleLocal [0,0,0];
 
     if (GVAR(pfeh_action) < RIG_CANCEL) then {
         if (GVAR(pfeh_action) == RIG_ADD) then {
-            private _hookShow = "slr_slingload_hook" createVehicleLocal [0,0,0];
+            private _hookShow = "TF47_slingload_hook" createVehicleLocal [0,0,0];
             _hookShow setPosASL getPosASL _hook;
             _hookShow setDir (_hook getDir _cargo) - 90;
             GVAR(rigCargoHelpers) pushBack _hookShow;
@@ -82,18 +82,18 @@ private _hook = "slr_slingload_hook" createVehicleLocal [0,0,0];
         [_pfID] call CBA_fnc_removePerFrameHandler;
         GVAR(pfeh_running) = false;
 
-        [_unit, "blockThrow", "slr_slingload_rigCargoManual", false] call ace_common_fnc_statusEffect_set;
+        [_unit, "blockThrow", "TF47_slingload_rigCargoManual", false] call ace_common_fnc_statusEffect_set;
         [] call ace_interaction_fnc_hideMouseHint;
-        [_unit, "DefaultAction", (_unit getVariable ["slr_slingload_addLiftPointEH", -1])] call ace_common_fnc_removeActionEventHandler;
-        _unit setVariable ["slr_slingload_addLiftPointEH", -1];
+        [_unit, "DefaultAction", (_unit getVariable ["TF47_slingload_addLiftPointEH", -1])] call ace_common_fnc_removeActionEventHandler;
+        _unit setVariable ["TF47_slingload_addLiftPointEH", -1];
 
         deleteVehicle _hook;
         //if (GVAR(pfeh_action) == RIG_CANCEL) then {};
         if (GVAR(pfeh_action) > RIG_CANCEL && {count GVAR(rigCargoHelpers) > 0}) then {
             private _liftPoints = GVAR(rigCargoHelpers) apply {(_cargo worldToModelVisual ASLToAGL getPosASL _x) vectorAdd [0,0,0.2]; };
             [_cargo, _unit, _liftPoints] call FUNC(rigCargo);
-            _liftPoints = _liftPoints + (_cargo getVariable ["slr_slingload_liftPoints", []]);
-            _cargo setVariable ["slr_slingload_liftPoints", _liftPoints, true];
+            _liftPoints = _liftPoints + (_cargo getVariable ["TF47_slingload_liftPoints", []]);
+            _cargo setVariable ["TF47_slingload_liftPoints", _liftPoints, true];
         };
         {deleteVehicle _x} forEach GVAR(rigCargoHelpers);
         GVAR(rigCargoHelpers) = [];

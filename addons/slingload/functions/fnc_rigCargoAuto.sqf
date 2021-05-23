@@ -10,9 +10,9 @@
  * Return Value:
  * 0: Success <BOOLEAN>
  *
- * Exslrle:
+ * ExTF47le:
  * [_cargo, _unit] call FUNC(rigCargo)Auto
- * [cursorObject, player] call compile preprocessFileLineNumbers '\z\slr\addons\slingload\functions\fnc_rigCargoAuto.sqf'
+ * [cursorObject, player] call compile preprocessFileLineNumbers '\z\TF47\addons\slingload\functions\fnc_rigCargoAuto.sqf'
  */
 
 params ["_cargo", "_unit"];

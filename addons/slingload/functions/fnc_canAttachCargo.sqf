@@ -10,14 +10,14 @@
  * Return Value:
  * 0: Success <BOOLEAN>
  *
- * Exslrle:
- * [_hook, _unit] call slr_slingload_fnc_canAttachCargo
+ * ExTF47le:
+ * [_hook, _unit] call TF47_slingload_fnc_canAttachCargo
  */
-//slr_slingload_fnc_canAttachCargo={
+//TF47_slingload_fnc_canAttachCargo={
 params ["_heli", "_player"];
 
-if (typeOf _heli isEqualTo "slr_slingload_apexFitting") exitWith { false };
+if (typeOf _heli isEqualTo "TF47_slingload_apexFitting") exitWith { false };
 
-!isNull (_player getVariable ["slr_slingload_heldFitting", objNull])
+!isNull (_player getVariable ["TF47_slingload_heldFitting", objNull])
 && {getNumber (configFile >> "CfgVehicles" >> typeOf _heli >> "slingLoadMaxCargoMass") > 0}
 

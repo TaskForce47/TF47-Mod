@@ -10,17 +10,17 @@
  * Return Value:
  * 0: Success <BOOLEAN>
  *
- * Exslrle:
- * [_cargo, _unit] call slr_slingload_fnc_removeRigging
+ * ExTF47le:
+ * [_cargo, _unit] call TF47_slingload_fnc_removeRigging
  */
 
 params ["_cargo", "_player"];
 
-private _ropes = _cargo getVariable ["slr_slingload_ropes4Cargo", []];
+private _ropes = _cargo getVariable ["TF47_slingload_ropes4Cargo", []];
 
 private _apexFitting = ropeAttachedTo _cargo;
 _ropes apply {ropeDestroy _x};
-if (_apexFitting isKindOf "slr_slingload_apexFitting") then {
+if (_apexFitting isKindOf "TF47_slingload_apexFitting") then {
     deleteVehicle _apexFitting;
 };
 private _wreckDummy = _cargo getVariable [QGVAR(wreckDummy), objNull];
@@ -31,7 +31,7 @@ if !(isNull _wreckDummy) then {
     _cargo setVariable [QGVAR(wreckDummy), objNull, true];
 };
 
-_cargo setVariable ["slr_slingload_liftPoints", [], true];
-_cargo setVariable ["slr_slingload_ropes4Cargo", [], true];
+_cargo setVariable ["TF47_slingload_liftPoints", [], true];
+_cargo setVariable ["TF47_slingload_ropes4Cargo", [], true];
 
 true

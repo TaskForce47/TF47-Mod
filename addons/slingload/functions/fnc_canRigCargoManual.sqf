@@ -9,12 +9,12 @@ Moves player out of vehicle at get-in memory point closest to where they are loo
 * Return Value:
 * Exit position (vehicle model space) <ARRAY>
 
-* Exslrle:
+* ExTF47le:
 * [] call dtv_fnc_dismount
 * [] execVM "fnc_dismount.sqf"
 */
 
 params ["_cargo", "_player"];
 
-!(_cargo getVariable ["slr_slingload_isRiggedCargo", false])
+!(_cargo getVariable ["TF47_slingload_isRiggedCargo", false])
 

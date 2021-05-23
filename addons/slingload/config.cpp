@@ -4,8 +4,8 @@ class CfgPatches {
     class ADDON {
         name = COMPONENT_NAME;
         units[] = {
-            "slr_slingload_apexFitting",
-            "slr_slingload_wreckDummy"
+            "TF47_slingload_apexFitting",
+            "TF47_slingload_wreckDummy"
         };
         weapons[] = {};
         requiredVersion = REQUIRED_VERSION;
