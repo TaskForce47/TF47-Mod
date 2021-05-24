@@ -1,3 +1,5 @@
+// COMPONENT should be defined in the script_component.hpp and included BEFORE this hpp
+
 #define MAINPREFIX z
 #define PREFIX TF47
 
