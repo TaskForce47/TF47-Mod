@@ -37,7 +37,9 @@ if(count _radioData == 0) exitWith {
     1
 };
 
+//For TFAR BETA
 //[_targetLR select 0, _targetLR select 1, _radioData] call TFAR_fnc_setLrSettings;
+
 [_targetLR, _radioData] call TFAR_fnc_setLrSettings;
 
 //test if was set correctly
