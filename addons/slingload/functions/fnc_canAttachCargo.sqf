@@ -16,13 +16,10 @@
  * [_hook, _unit, "TF47_slingload_cargoHookMain"] call TF47_slingload_fnc_canAttachCargo
  */
 //TF47_slingload_fnc_canAttachCargo={
-params ["_heli", "_player",["_cargoHookName", ""]]];
+params ["_heli", "_player",["_cargoHookName", "TF47_slingload_cargoHookMain"]];
 
-diag_log format ["_statement [%1, %2, %3]", _heli, _player, _cargoHookName];
 systemchat format["_statement [%1, %2, %3]", _heli, _player, _cargoHookName];
 
-//braucht eine Abfrage für die restlichen Lasthaken, -> mehr Parameter
-if(isNull _cargoHookName) then {_cargoHookName = "TF47_slingload_cargoHookMain"};
 private _count = _heli getVariable [_cargoHookName + "_count", 0];
 if (_count >= 3) exitwith {false};
 
