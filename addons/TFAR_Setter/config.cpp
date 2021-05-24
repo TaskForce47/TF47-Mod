@@ -5,7 +5,7 @@ class CfgPatches {
       name = ADDON_NAME;
       author = "Chatter and M3ales";
       url = "https://github.com/RTO-Chatter/CHTR_TFAR_QoL";
-      requiredAddons[] = {};
+      requiredAddons[] = {"ace_interact_menu", "task_force_radio", "cba_settings"};
       units[] = {};
       weapons[] = {};
    };
