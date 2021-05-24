@@ -10,6 +10,10 @@ private _position = "slingload0";
 _action = ["TF47_slingload_attachCargo", _displayName, _icon, _statement, _condition, {}, [], _position, 3.5] call ace_interact_menu_fnc_createAction;
 ["Helicopter", 0, [], _action, true] call ace_interact_menu_fnc_addActionToClass;
 
+//rework to CFG 
+//redo the positions
+//add CDLC Helicopter
+
 // Huron
 _statement = {[_target, _player, [0,-0.115218 + 1.9812,-2.7]] call TF47_slingload_fnc_attachCargo};
 _cargoHookName = "TF47_slingload_cargoHookForward";
