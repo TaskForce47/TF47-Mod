@@ -3,19 +3,19 @@
     <Package name="Advandced_Urban_Rappeling">
         <Key ID="STR_TF47_Urban_Rappel_Rappel_Self">
             <English>Rappel Self</English>
-			<German>Abseilen</German>
+            <German>Abseilen</German>
         </Key>
         <Key ID="STR_TF47_Urban_Rappel_Detach_Rappel_Device">
             <English>Detach Rappel Device</English>
-			<German>Abseilgerät lösen</German>
+            <German>Abseilgerät lösen</German>
         </Key>        
         <Key ID="STR_TF47_Urban_Rappel_Rappel_AI">
             <English>Rappel AI Units</English>
-			<German>KI abseilen lassen</German>
+            <German>KI abseilen lassen</German>
         </Key>
         <Key ID="STR_TF47_Urban_Rappel_Climb_Top">
             <English>Detach Rappel Device</English>
-			<German>Abseilgerät lösen</German>
+            <German>Abseilgerät lösen</German>
         </Key>
     </Package>
 </Project>
