@@ -15,7 +15,6 @@ class CfgFunctions {
    class ADDON {
         class TFARLRSettings {
             tag = QUOTE(ADDON);
-            requiredAddons[] = {};
             file = FUNCTION_PATH;
          class loadLRSettings {};
          class saveLRSettings {};
