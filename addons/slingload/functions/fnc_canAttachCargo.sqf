@@ -10,7 +10,7 @@
  * Return Value:
  * 0: Success <BOOLEAN>
  *
- * ExTF47le:
+ * Example:
  * [_hook, _unit] call TF47_slingload_fnc_canAttachCargo
  */
 //TF47_slingload_fnc_canAttachCargo={

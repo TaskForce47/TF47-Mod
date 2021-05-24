@@ -10,7 +10,7 @@
  * Return Value:
  * 0: Success <BOOLEAN>
  *
- * ExTF47le:
+ * example:
  * [_cargo, _unit] call FUNC(rigCargo)Auto
  * [cursorObject, player] call compile preprocessFileLineNumbers '\z\TF47\addons\slingload\functions\fnc_rigCargoAuto.sqf'
  */

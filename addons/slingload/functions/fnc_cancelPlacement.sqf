@@ -10,7 +10,7 @@
  * Return Value:
  * None
  *
- * ExTF47le:
+ * example:
  * [unit, 1] call ace_explosives_fnc_cancelPlacement
  *
  * Public: No

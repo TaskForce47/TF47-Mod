@@ -10,7 +10,7 @@
  * Return Value:
  * 0: Success <BOOLEAN>
  *
- * ExTF47le:
+ * example:
  * [_af, _unit] call TF47_slingload_fnc_pickUpFitting
  */
 

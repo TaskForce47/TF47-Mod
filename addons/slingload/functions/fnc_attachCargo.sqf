@@ -11,7 +11,7 @@
  * Return Value:
  * 0: Success <BOOLEAN>
  *
- * ExTF47le:
+ * example:
  * [_heli, _unit] call TF47_slingload_fnc_attachCargo
  * [cursorObject, player, (cursorObject selectionPosition "slingload0") vectorAdd [0,-3,0]] call TF47_slingload_fnc_attachCargo
  */

@@ -9,7 +9,7 @@
  * Return Value:
  * Handled <BOOL>
  *
- * ExTF47le:
+ * example:
  * [1.2] call TF47_slingload_fnc_HandleScrollWheel;
  *
  * Public: No
