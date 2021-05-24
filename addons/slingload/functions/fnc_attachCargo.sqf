@@ -1,6 +1,7 @@
 #include "script_component.hpp"
 /*
  * Author: Ampersand
+ * Edit: [TF47]Rampage
  * Attach the lift points connected to the held fitting to the specified hook on the helicopter
  *
  * Arguments:
@@ -77,6 +78,18 @@ private _ropes4Hook = _heli getVariable [_cargoHookName, []];
 
 _heli setVariable [_cargoHookName, _ropes4Hook - [objNull], true];
 _cargo setVariable ["TF47_slingload_ropes4Cargo", _ropes4Cargo - [objNull], true];
+
+//count the slingloads
+private _count = _heli getVariable [_cargoHookName + "_count", 0];
+if (_count == 0) then
+{
+    //erstelle die Variable und setze es für eine Last
+	_heli setVariable [_cargoHookName + "_count",1,true]; 
+} else {
+    //addiere eine Last
+    _heli setVariable [_cargoHookName + "_count",_count + 1,true]; 
+};
+
 
 ["TF47_slingload_localise", [_heli]] call CBA_fnc_serverEvent;
 
