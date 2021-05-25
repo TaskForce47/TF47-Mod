@@ -34,10 +34,10 @@ private _removeTimeLeft = _removeTime; // * _actualProgress;
 // Create progress bar
 private _fnc_onFinish = {
     (_this select 0) params ["_unit", "_wedge"];
-	
-	//unlock the door
-	(_wedge getVariable "AMP_Door_Wedge_Info") params ["_house", "_door"];
-	_house setVariable ["bis_disabled_" + _door, 0, true];
+        
+        //unlock the door
+        (_wedge getVariable "AMP_Door_Wedge_Info") params ["_house", "_door"];
+        _house setVariable ["bis_disabled_" + _door, 0, true];
     // Remove wedge
     deleteVehicle _wedge;
 
