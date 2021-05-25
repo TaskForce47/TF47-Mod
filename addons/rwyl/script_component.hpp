@@ -14,4 +14,5 @@
     #define DEBUG_SETTINGS DEBUG_SETTINGS_MAIN
 #endif
 
-#include "\z\rwyl\addons\main\script_macros.hpp"
+#include "\z\TF47\addons\main\script_macros.hpp"
+#include "script_macros.hpp"
