@@ -10,7 +10,7 @@
  * Return Value:
  * 0: Success <BOOLEAN>
  *
- * ExTF47le:
+ * example:
  * [_heli, _unit] call TF47_slingload_fnc_canReleaseCargo
  * [vehicle player, player] call TF47_slingload_fnc_canReleaseCargo
  */

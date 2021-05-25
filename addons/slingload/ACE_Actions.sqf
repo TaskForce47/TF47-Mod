@@ -5,17 +5,24 @@ private _displayName = localize LSTRING(AttachCargo);
 private _icon = "\a3\ui_f\data\igui\cfg\vehicletoggles\slingloadropeiconon2_ca.paa";
 private _statement = TF47_slingload_fnc_attachCargo;
 private _condition = TF47_slingload_fnc_canAttachCargo;
+private _cargoHookName = "TF47_slingload_cargoHookMain";
 private _position = "slingload0";
 _action = ["TF47_slingload_attachCargo", _displayName, _icon, _statement, _condition, {}, [], _position, 3.5] call ace_interact_menu_fnc_createAction;
 ["Helicopter", 0, [], _action, true] call ace_interact_menu_fnc_addActionToClass;
 
+//rework to CFG 
+//redo the positions
+//add CDLC Helicopter
+
 // Huron
 _statement = {[_target, _player, [0,-0.115218 + 1.9812,-2.7]] call TF47_slingload_fnc_attachCargo};
+_cargoHookName = "TF47_slingload_cargoHookForward";
 _position = [0,-0.115218 + 1.9812,-2.7];
-private _actionForward = ["TF47_slingload_attachCargoForward", _displayName, _icon, _statement, _condition, {}, [], _position, 3.5] call ace_interact_menu_fnc_createAction;
+private _actionForward = ["TF47_slingload_attachCargoForward", _displayName, _icon, _statement, _condition, {}, _cargoHookName, _position, 3.5] call ace_interact_menu_fnc_createAction;
 _statement = {[_target, _player, [0,-0.115218 - 1.9812,-2.7]] call TF47_slingload_fnc_attachCargo};
+_cargoHookName = "TF47_slingload_cargoHookAft";
 _position = [0,-0.115218 - 1.9812,-2.7];
-private _actionAft = ["TF47_slingload_attachCargoAft", _displayName, _icon, _statement, _condition, {}, [], _position, 3.5] call ace_interact_menu_fnc_createAction;
+private _actionAft = ["TF47_slingload_attachCargoAft", _displayName, _icon, _statement, _condition, {}, _cargoHookName, _position, 3.5] call ace_interact_menu_fnc_createAction;
 ["Heli_Transport_03_base_F", 0, [], _actionForward, true] call ace_interact_menu_fnc_addActionToClass;
 ["Heli_Transport_03_unarmed_base_F", 0, [], _actionForward, true] call ace_interact_menu_fnc_addActionToClass;
 ["Heli_Transport_03_base_F", 0, [], _actionAft, true] call ace_interact_menu_fnc_addActionToClass;

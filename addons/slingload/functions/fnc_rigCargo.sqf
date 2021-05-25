@@ -12,7 +12,7 @@
  * Return Value:
  * 0: Success <BOOLEAN>
  *
- * ExTF47le:
+ * example:
  * [_cargo, _unit] call TF47_slingload_fnc_rigCargo
  * [cursorObject, player] call TF47_slingload_fnc_rigCargo
  */

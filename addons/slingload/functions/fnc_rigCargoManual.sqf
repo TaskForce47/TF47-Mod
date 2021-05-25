@@ -9,7 +9,7 @@ Author: Ampersand
 * Return Value:
 * Exit position vehicle model space <ARRAY>
 
-* ExTF47le:
+* example:
 * [cursorObject, ACE_Player] call FUNC(rigCargo)Manual
 */
 

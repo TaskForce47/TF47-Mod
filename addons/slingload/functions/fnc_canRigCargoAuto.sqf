@@ -10,7 +10,7 @@
  * Return Value:
  * 0: Success <BOOLEAN>
  *
- * ExTF47le:
+ * example:
  * [_cargo, _unit] call TF47_slingload_fnc_canRigCargoAuto
  * [(curatorSelected # 0 # 0), player] call TF47_slingload_fnc_canRigCargoAuto
  */
