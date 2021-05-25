@@ -2,7 +2,7 @@
 /*
  * Author: Ampersand
  * Edit: [TF47]Rampage
- * Attach the lift points connected to the held fitting to the specified hook on the helicopter
+ * Attach the lift points connected to the held fitting to the specified hook on the helicopter, counts the slingloads up
  *
  * Arguments:
  * 0: Heli <OBJECT>
@@ -83,10 +83,8 @@ _cargo setVariable ["TF47_slingload_ropes4Cargo", _ropes4Cargo - [objNull], true
 private _count = _heli getVariable [_cargoHookName + "_count", 0];
 if (_count == 0) then
 {
-    //erstelle die Variable und setze es für eine Last
-	_heli setVariable [_cargoHookName + "_count",1,true]; 
+    _heli setVariable [_cargoHookName + "_count",1,true]; 
 } else {
-    //addiere eine Last
     _heli setVariable [_cargoHookName + "_count",_count + 1,true]; 
 };
 
