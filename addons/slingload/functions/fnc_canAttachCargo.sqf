@@ -19,7 +19,6 @@
 params ["_heli", "_player",["_cargoHookName", "TF47_slingload_cargoHookMain"]];
 
 if( _cargoHookName isEqualTo [])then{_cargoHookName = "TF47_slingload_cargoHookMain";};
-systemchat format["_statement [%1, %2, %3]", _heli, _player, _cargoHookName];
 
 private _count = _heli getVariable [Format["%1%2",_cargoHookName,"_count"],0];
 if (_count >= 3) exitwith {false};
