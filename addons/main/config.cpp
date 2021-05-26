@@ -11,7 +11,7 @@ class CfgPatches {
         VERSION_CONFIG;
     };
 };
-	
+        
 class CfgFunctions 
 {
     class TF47
@@ -19,8 +19,8 @@ class CfgFunctions
         class ClearBrush //just my test
         {
             file = "z\TF47\addons\main\functions";
-         	class clearBrush{};
-		    class canClearBrush{};
+                 class clearBrush{};
+                    class canClearBrush{};
         };
     };
 };
@@ -30,15 +30,15 @@ class CfgVehicles {
     class CAManBase: Man {
         class ACE_SelfActions {
             class ACE_Equipment {
-				class ClearBrush {
-					displayName = "Clear Brush";
-					condition = "[_player] call TF47_fnc_canClearBrush";
-					//wait a frame to handle "Do When releasing action menu key" option
-					statement = "[{[] call TF47_fnc_clearBrush},[]] call CBA_fnc_execNextFrame";
-					exceptions[] = {};
-					showDisabled = 0;
-					//icon = QPATHTOF(UI\icon_sandbag_ca.paa);
-				};
+                class ClearBrush {
+                    displayName = "Clear Brush";
+                    condition = "[_player] call TF47_fnc_canClearBrush";
+                    //wait a frame to handle "Do When releasing action menu key" option
+                    statement = "[{[] call TF47_fnc_clearBrush},[]] call CBA_fnc_execNextFrame";
+                    exceptions[] = {};
+                    showDisabled = 0;
+                    //icon = QPATHTOF(UI\icon_sandbag_ca.paa);
+                };
             };
         };
     };
