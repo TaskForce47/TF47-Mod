@@ -9,7 +9,7 @@
 * -
 *
 * Example:
-* [] call ClearBrush_fnc_clearBrush
+* [] call TF47_fnc_clearBrush
 */
 
 private _position0 = AGLToASL positionCameraToWorld [0, 0, 0]; 
