@@ -1,14 +1,14 @@
 class CfgFactionClasses {
     class NO_CATEGORY;
-    class RWYL: NO_CATEGORY {
-        displayName = "RWYL";
+    class TF47: NO_CATEGORY {
+        displayName = "TF47";
         priority = 2;
         side = 7;
     };
 };
 
 class CfgVehicleClasses {
-    class RWYL_Vehicles {
-        displayName = "RWYL Vehicles";
+    class TF47_Vehicles {
+        displayName = "TF47 Vehicles";
     };
 };

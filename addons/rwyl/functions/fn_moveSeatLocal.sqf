@@ -12,8 +12,8 @@ Move unit into vehicle seat near center of view
 * -
 
 * Exrwylle:
-* [player, vehicle player, "proxy:\a3\data_f\proxies\passenger_low01\cargo.001"] call rwyl_main_fnc_moveSeatLocal
-* [player, cursorObject, ""] call rwyl_main_fnc_moveSeatLocal
+* [player, vehicle player, "proxy:\a3\data_f\proxies\passenger_low01\cargo.001"] call TF47_rwyl_fnc_moveSeatLocal
+* [player, cursorObject, ""] call TF47_rwyl_fnc_moveSeatLocal
 */
 
 #define TAKEN_SEAT_TIMEOUT 0.5

@@ -16,7 +16,7 @@ class CfgFunctions
 {
     class TF47
     {
-        class ClearBrush //just my test
+        class ClearBrush
         {
             file = "z\TF47\addons\main\functions";
             class clearBrush{};

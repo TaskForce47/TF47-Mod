@@ -9,22 +9,22 @@ Move unit into vehicle seat near center of view
 * -
 
 * Exrwylle:
-* [player] call rwyl_main_fnc_moveSeat
+* [player] call TF47_rwyl_fnc_moveSeat
 */
 
 params ["_unit"];
 
-if (isNull rwyl_main_vehicle) exitWith {}; // no vehicle
+if (isNull TF47_rwyl_vehicle) exitWith {}; // no vehicle
 
-if (rwyl_main_isSeatTaken || {rwyl_main_isSeatLocked}) then {
-    rwyl_main_proxy = ""; // Move into other empty seat
+if (TF47_rwyl_isSeatTaken || {TF47_rwyl_isSeatLocked}) then {
+    TF47_rwyl_proxy = ""; // Move into other empty seat
 } else {
-    if (isNil "rwyl_main_proxy") then {
-        private _sn = selectionNames rwyl_main_vehicle select {
+    if (isNil "TF47_rwyl_proxy") then {
+        private _sn = selectionNames TF47_rwyl_vehicle select {
             private _proxy = toLower _x;
             private _proxyIndex = _proxy select [(_proxy find ".") + 1];
             // has non-zero selection position
-            !((rwyl_main_vehicle selectionPosition _proxy) isEqualTo [0,0,0]) && {
+            !((TF47_rwyl_vehicle selectionPosition _proxy) isEqualTo [0,0,0]) && {
             // ends with a number after a period
             ((parseNumber _proxyIndex > 0) || {_proxyIndex isEqualTo "0"}) && {
             // contains seat role
@@ -35,10 +35,10 @@ if (rwyl_main_isSeatTaken || {rwyl_main_isSeatLocked}) then {
         //"no cargo proxies found in selectionNames"
         if (_sn isEqualTo []) exitWith {false};
 
-        private _sp = _sn apply {rwyl_main_vehicle selectionPosition _x};
+        private _sp = _sn apply {TF47_rwyl_vehicle selectionPosition _x};
 
         private _screenPosArray = _sp apply {
-            private _w2s = worldToScreen (rwyl_main_vehicle modelToWorld _x);
+            private _w2s = worldToScreen (TF47_rwyl_vehicle modelToWorld _x);
             if (_w2s isEqualTo []) then {
                 1000
             } else {
@@ -46,7 +46,7 @@ if (rwyl_main_isSeatTaken || {rwyl_main_isSeatLocked}) then {
             };
         };
 
-        rwyl_main_proxy = _sn # (_screenPosArray findIf {_x == selectMin _screenPosArray});
+        TF47_rwyl_proxy = _sn # (_screenPosArray findIf {_x == selectMin _screenPosArray});
     };
 };
 
@@ -72,16 +72,16 @@ if (isClass (configFile >> "CfgPatches" >> "ace_main")) then {
 };
 
 // If same vehicle and selected seat is taken/locked then do nothing
-if (rwyl_main_proxy == "" && {rwyl_main_vehicle == vehicle _unit}) exitWith {
-    rwyl_main_vehicle = objNull;
-    rwyl_main_proxy = nil;
+if (TF47_rwyl_proxy == "" && {TF47_rwyl_vehicle == vehicle _unit}) exitWith {
+    TF47_rwyl_vehicle = objNull;
+    TF47_rwyl_proxy = nil;
 
     false
 };
 
-["rwyl_main_moveSeatLocal", [_unit, rwyl_main_vehicle, rwyl_main_proxy], _unit] call CBA_fnc_targetEvent;
+["TF47_rwyl_moveSeatLocal", [_unit, TF47_rwyl_vehicle, TF47_rwyl_proxy], _unit] call CBA_fnc_targetEvent;
 
-rwyl_main_vehicle = objNull;
-rwyl_main_proxy = nil;
+TF47_rwyl_vehicle = objNull;
+TF47_rwyl_proxy = nil;
 
 true

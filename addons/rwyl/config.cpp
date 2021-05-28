@@ -2,15 +2,28 @@
 
 class CfgPatches {
     class ADDON {
-        name = COMPONENT_NAME;
+        name = "Ride Where You Look";
         units[] = {};
         weapons[] = {};
-        requiredVersion = REQUIRED_VERSION;
+        requiredVersion = 0.0.1;
         requiredAddons[] = {"cba_common"};
         author = "Ampersand";
         authors[] = {"Ampersand"};
         authorUrl = "https://github.com/ampersand38/rwyl";
-        VERSION_CONFIG;
+    };
+};
+
+class CfgFunctions 
+{
+    class TF47
+    {
+        class COMPONENT
+        {
+            file = "z\TF47\addons\rwyl\functions";
+            class findSeat{};
+            class moveSeat{};
+            class moveSeatLocal{};
+        };
     };
 };
 
