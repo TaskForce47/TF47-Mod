@@ -17,7 +17,7 @@ class CfgVehicles {
         _generalMacro = QGVAR(wreckDummy);
         displayName = CSTRING(WreckDummy);
         icon = "iconObject_1x1";
-        model = QPATHTOF(data\wreckDummy.p3d);
+        model = "\z\TF47\addons\slingload\data\wreckDummy.p3d";
         cost = 0;
 
     };
