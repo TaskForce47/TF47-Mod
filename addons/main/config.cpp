@@ -19,8 +19,8 @@ class CfgFunctions
         class ClearBrush //just my test
         {
             file = "z\TF47\addons\main\functions";
-                 class clearBrush{};
-                    class canClearBrush{};
+            class clearBrush{};
+            class canClearBrush{};
         };
     };
 };
