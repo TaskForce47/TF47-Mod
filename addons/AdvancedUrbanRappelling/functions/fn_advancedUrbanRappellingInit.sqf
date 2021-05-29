@@ -349,6 +349,7 @@ AUR_Climb_Up_Action = {
 AUR_Climb_Up_Action_Check = {
         params ["_player"];
         if(_player getVariable ["AUR_Is_Rappelling",false]) exitWith {false};
+        if !("TF47_AUR_Grappling_Hook" in (_player call ace_common_fnc_uniqueItems)) exitWith {false};  //only with Grappling Gear u can climb
         _rappelPoint = [_player] call AUR_Get_Anchor_Point_Player_Looking_At;
         if(count _rappelPoint == 0) exitWith {false;};
         _angle = [_player, _rappelPoint select 0, 20] call AUR_Get_Trajectory_Angle;
@@ -900,23 +901,23 @@ AUR_Hide_Object_Global = {
 AUR_Add_Player_Actions = {
         params ["_player"];
         
-        _player addAction ["Rappel Self", { 
+        _player addAction [localize "STR_TF47_Urban_Rappel_Rappel_Self", { 
                 [player, vehicle player] call AUR_Rappel_Action;
         }, nil, 0, false, true, "", "[player] call AUR_Rappel_Action_Check"];
 
-        _player addAction ["Rappel AI Units", { 
+        _player addAction [localize "STR_TF47_Urban_Rappel_Rappel_AI", { 
                 [player] call AUR_Rappel_AI_Units_Action;
         }, nil, 0, false, true, "", "[player] call AUR_Rappel_AI_Units_Action_Check"];
 
-        _player addAction ["Climb To Top", { 
+        _player addAction [localize "STR_TF47_Urban_Rappel_Climb_Top", { 
                 [player] call AUR_Rappel_Climb_To_Top_Action;
         }, nil, 0, false, true, "", "[player] call AUR_Rappel_Climb_To_Top_Action_Check"];
         
-        _player addAction ["Detach Rappel Device", { 
+        _player addAction [localize "STR_TF47_Urban_Rappel_Detach_Rappel_Device", { 
                 [player] call AUR_Rappel_Detach_Action;
         }, nil, 0, false, true, "", "[player] call AUR_Rappel_Detach_Action_Check"];
 
-        _player addAction ["Climb Up", { 
+        _player addAction [localize "STR_TF47_Urban_Rappel_Climb", { 
                 [player] call AUR_Climb_Up_Action;
         }, nil, 0, false, true, "", "[player] call AUR_Climb_Up_Action_Check"];
 

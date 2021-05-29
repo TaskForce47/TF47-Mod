@@ -65,3 +65,4 @@ class CfgSounds
    };
 };
 #include "cfgAnimations.hpp"
+#include "cfgWeapons.hpp"

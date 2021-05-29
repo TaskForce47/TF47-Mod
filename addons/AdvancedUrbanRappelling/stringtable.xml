@@ -14,8 +14,16 @@
             <German>KI abseilen lassen</German>
         </Key>
         <Key ID="STR_TF47_Urban_Rappel_Climb_Top">
-            <English>Detach Rappel Device</English>
-            <German>Abseilgerät lösen</German>
+            <English>Climb to Top</English>
+            <German>Über Kante klettern</German>
+        </Key>
+		<Key ID="STR_TF47_Urban_Rappel_Grappling_Hook">
+            <English>Grappling Hook</English>
+            <German>Wurfanker</German>
+        </Key>
+		<Key ID="STR_TF47_Urban_Rappel_Climb">
+            <English>Throw Grappling Hook</English>
+            <German>Wurfanker werfen</German>
         </Key>
     </Package>
 </Project>
