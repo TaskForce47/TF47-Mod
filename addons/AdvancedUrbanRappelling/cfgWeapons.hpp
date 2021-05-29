@@ -2,8 +2,8 @@ class CfgWeapons
 {
         class CBA_MiscItem;
         class CBA_MiscItem_ItemInfo;
-    class ToolKit;
-    class ace_csw_kordCarryTripod;
+        class ToolKit;
+        class ace_csw_kordCarryTripod;
         class AUR_rope30: CBA_MiscItem {
                 scope = 2;
                 GVAR(ropeLength) = 30;
@@ -94,7 +94,7 @@ class CfgWeapons
             class AUR_AscenderDevice: ace_csw_kordCarryTripod {
                 scope = 2;
                 picture = "z\TF47\addons\AdvancedUrbanRappelling\assets\tcx-rescue-f";
-        model = "\A3\Weapons_F\Items\Toolkit";
+                model = "\A3\Weapons_F\Items\Toolkit";
                 displayName = "TCX Force";
                 descriptionShort = "The TCX Force is specifically developed to be used for any land based or urban operations, for fast heavy lifting operations. Maximum ascent speed: 60m/min, max load: 250kg (its the future baby)"; //http://www.actsafe.se/product/tcx-assault has two version, a 250kg/24m/min and a 150kg/60m/min this is the best of both worlds.
         class WeaponSlotsInfo {
