@@ -1,5 +1,5 @@
 /*
-* Author: TF47itz
+* Author: Tirpitz
 * 
 * Short: picks up rappel point and picks up rope into players hand ready to be re dedeployed, or packed up.
 *

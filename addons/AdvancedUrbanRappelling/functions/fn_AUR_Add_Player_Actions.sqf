@@ -1,5 +1,5 @@
 /*
-*   Author: Patch & TF47itz
+*   Author: Patch & Tirpitz
 *   Sets up player actions.
 *   params: _player: the unit to add actions to.
 */

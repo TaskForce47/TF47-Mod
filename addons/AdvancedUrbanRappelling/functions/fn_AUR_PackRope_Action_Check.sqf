@@ -1,5 +1,5 @@
 /*
-*   Author: TF47itz
+*   Author: Tirpitz
 *   Checks whether player is holding rope and near to the anchor point (master object)
 *   
 */

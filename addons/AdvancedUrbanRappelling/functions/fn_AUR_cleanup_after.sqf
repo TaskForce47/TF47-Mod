@@ -1,5 +1,5 @@
 /*
-* Author TF47itz
+* Author Tirpitz
 * Cleans up after a rappel detach (either by detach rappel device action or climb to top)
 *   params: _player, the unit to disconnect from the system.
 */

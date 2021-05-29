@@ -1,5 +1,5 @@
 /*
-*   Author: TF47itz
+*   Author: Tirpitz
 *   Packs up rope and places item on ground if rope items present
 
 */
