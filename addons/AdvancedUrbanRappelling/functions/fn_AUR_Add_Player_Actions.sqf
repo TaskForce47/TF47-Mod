@@ -6,7 +6,9 @@
 
 params ["_player"];
         
-// player addAction ["Rappel Self", {[player, vehicle player] call TF47_fnc_AUR_Rappel_Action;}, nil, 0, false, true, "", "[player] call TF47_fnc_AUR_Rappel_Action_Check"];
+player addAction ["Rappel Self", {
+        [player] call TF47_fnc_AUR_Rappel_Action;
+}, nil, 0, false, true, "", "[player] call TF47_fnc_AUR_Rappel_Action_Check"];
 
 // player addAction ["Rappel AI Units", { 
         // [player] call TF47_fnc_AUR_Rappel_AI_Units_Action;

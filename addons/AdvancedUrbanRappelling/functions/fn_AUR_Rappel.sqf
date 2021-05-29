@@ -1,5 +1,5 @@
 /*
-*   Author: TF47itz
+*   Author: Tirpitz
 *
 * Parameters: 
 *               player (object), 
@@ -17,22 +17,27 @@
 *
 */
 #include "TF47_AUR_MACROS.h"
-params ["_player",["_playerStartingOnGround",false]];
-//params ["_player","_playerPreRappelPosition","_rappelPoint","_rappelDirection","_rope",["_playerStartingOnGround",false]];
+//params ["_player",["_playerStartingOnGround",false]];
+params ["_player","_playerPreRappelPosition","_rappelPoint","_rappelDirection","_rope",["_playerStartingOnGround",false]];
 _playerPreRappelPosition = getPosASL _player;
 _rappelDirection = eyeDirection _player;
 // _anchor = AUR_GET_ENDPOINT_LEADER(_player);
-// systemChat format ["Function: Rappel, Params: %1", _this];
-//hint format ["Player: %1 \nPre_rappel_position: %2, \nRappelPoint: %3 \n RappelDirection: %4,\n RopeLength: %5.", str _player,str  _playerPreRappelPosition,str _rappelPoint, str _rappelDirection,str  _rope];
  AUR_SET_RAPPELLING_STATUS(_player, true) ;
 _playerStartPosition = getPosASL _player;
 _dummyAnchor = "";
-_rappelPoint = (getPosWorld AUR_GET_ENDPOINT_LEADER(_player));
+//_rappelPoint = (getPosWorld AUR_GET_ENDPOINT_LEADER(_player));
+_rappelPoint = _player getVariable ["AUR_Rappelling_Last_Rappel_Point",[]];
+private _rappelPoint = player getvariable "aur_rappelling_last_rappel_point";
+private _rappelPos = _rappelPoint Select 0;
 AUR_GET_ENDPOINT_LEADER(_player) hideObject true;
-_ropeLength  = AUR_GET_LENGTH_AVAILABLE(_player);
+_ropeLength  = 80;
+
+systemChat format ["Function: Rappel, Params: %1", _this];
+//hint format ["Player: %1 \nPre_rappel_position: %2, \nRappelPoint: %3 \n RappelDirection: %4,\n RopeLength: %5.", str _player,str _playerPreRappelPosition,str _rappelPoint, str _rappelDirection,str _rope];
+//systemchat format["Du darfst hochklettern. Dein RappelPoint: %1", _rappelpoint];
 
 // Create anchor for rope (at rappel point)
-_anchor = createVehicle ["Land_Can_V2_F", _rappelPoint, [], 0, "CAN_COLLIDE"];
+_anchor = createVehicle ["Land_Can_V2_F", _rappelPos, [], 0, "CAN_COLLIDE"];
 // hideObject _anchor;
 _anchor enableSimulation false;
 _anchor allowDamage false;
