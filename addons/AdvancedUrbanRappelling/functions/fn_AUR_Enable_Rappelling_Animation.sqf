@@ -1,6 +1,5 @@
-#include "TF47_AUR_MACROS.h"
 params ["_player",["_globalExec",false]];
-        
+
 if(local _player && _globalExec) exitWith {};
 
 if(local _player && !_globalExec) then {
@@ -86,7 +85,7 @@ if(!local _player) then {
         [_player] spawn {
                 params ["_player"];
                 private ["_currentState"];
-                while {AUR_GET_RAPPELLING_STATUS(_player)} do {
+                while {_player getVariable ["AUR_Is_Rappelling",false]} do {
                         _currentState = toLower animationState _player;
                         _newState = toLower (_player getVariable ["AUR_Animation_Move",""]);
                         if!(call TF47_fnc_AUR_Has_Addon_Animations_Installed) then {
@@ -104,7 +103,7 @@ if(!local _player) then {
         };
 };
 
-waitUntil {if (AUR_GET_RAPPELLING_STATUS(_player)) exitWith {false;};true;};
+waitUntil {!(_player getVariable ["AUR_Is_Rappelling",false])};
 
 if(_animationEventHandler != -1) then {
         _player removeEventHandler ["AnimChanged", _animationEventHandler];

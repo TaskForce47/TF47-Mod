@@ -1,5 +1,3 @@
-        
-    #include "TF47_AUR_MACROS.h"
-    params ["_player"];
-        if!(AUR_GET_RAPPELLING_STATUS(_player )) exitWith {false;};
-        true;
+params ["_player"];
+if!(_player getVariable ["AUR_Is_Rappelling",false]) exitWith {false;};
+true;

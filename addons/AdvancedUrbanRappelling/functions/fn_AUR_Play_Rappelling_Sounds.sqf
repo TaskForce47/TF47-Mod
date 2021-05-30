@@ -1,8 +1,8 @@
 params ["_player","_rappelDevice","_rappelAncor"];
         if(!hasInterface || !(call TF47_fnc_AUR_Has_Addon_Sounds_Installed) ) exitWith {};
         if(player distance _player < 15) then {
-                [_player, "TF47_fnc_AUR_Rappel_Start"] call TF47_fnc_AUR_Play_3D_Sound;
-                [_rappelDevice, "TF47_fnc_AUR_Rappel_Loop"] call TF47_fnc_AUR_Play_3D_Sound;
+                [_player, "AUR_Rappel_Start"] call TF47_fnc_AUR_Play_3D_Sound;
+                [_rappelDevice, "AUR_Rappel_Loop"] call TF47_fnc_AUR_Play_3D_Sound;
         };
         _this spawn {
                 params ["_player","_rappelDevice","_rappelAncor"];
@@ -11,9 +11,9 @@ params ["_player","_rappelDevice","_rappelAncor"];
                 while {_player getVariable ["AUR_Is_Rappelling",false]} do {
                         _distanceFromAnchor = _rappelDevice distance _rappelAncor;
                         if(_distanceFromAnchor > _lastDistanceFromAnchor + 0.1 && player distance _player < 15) then {
-                                [_player, "TF47_fnc_AUR_Rappel_Loop"] call TF47_fnc_AUR_Play_3D_Sound;
+                                [_player, "AUR_Rappel_Loop"] call TF47_fnc_AUR_Play_3D_Sound;
                                 sleep 0.2;
-                                [_rappelDevice, "TF47_fnc_AUR_Rappel_Loop"] call TF47_fnc_AUR_Play_3D_Sound;
+                                [_rappelDevice, "AUR_Rappel_Loop"] call TF47_fnc_AUR_Play_3D_Sound;
                         };
                         sleep 0.9;
                         _lastDistanceFromAnchor = _distanceFromAnchor;
@@ -25,6 +25,6 @@ params ["_player","_rappelDevice","_rappelAncor"];
                         sleep 0.1;
                 };
                 if(player distance _player < 15) then {
-                        [_player, "TF47_fnc_AUR_Rappel_End"] call TF47_fnc_AUR_Play_3D_Sound;
+                        [_player, "AUR_Rappel_End"] call TF47_fnc_AUR_Play_3D_Sound;
                 };
         };

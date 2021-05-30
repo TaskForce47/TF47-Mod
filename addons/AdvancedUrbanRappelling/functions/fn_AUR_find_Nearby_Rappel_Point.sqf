@@ -1,4 +1,17 @@
-/*LEGACY
+/*
+        Description:
+        Finds the nearest rappel point within 1.5m of the specified player.
+        
+        Parameter(s):
+        _this select 0: OBJECT - The rappelling unit
+        _this select 1: POSITION ASL - Position of unit
+        _this select 2: STRING - Search type - "FAST_EXISTS_CHECK" or "POSITION". If FAST_EXISTS_CHECK, this function
+                does a quicker search for rappel points and return 1 if a possible rappel point is found, otherwise 0.
+                If POSITION, the function will return the rappel position and direction in an array, or empty array if
+                no position is found.
+                
+        Returns: 
+        Number or Array (see above)
 */
 
         params ["_player","_playerPositionASL",["_searchType","FAST_EXISTS_CHECK"]];
