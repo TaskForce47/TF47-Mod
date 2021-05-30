@@ -1,7 +1,7 @@
 #include "script_component.hpp"
 /*
  * Author: Ampersand
- * Edit: [TF47]Rampage
+ * Edit: TF RampageRampage
  * check if unit is able to adjust the length of the rope for the hook and less than 3 Loads are connected
  *
  * Arguments:
