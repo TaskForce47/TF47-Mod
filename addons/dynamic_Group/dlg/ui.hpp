@@ -2,13 +2,9 @@ class RscDisplayDynamicGroups
 {
     scriptName="RscDisplayDynamicGroups";
     scriptPath="TF47_dynGrp";
-<<<<<<< HEAD
+
     onLoad="[""onLoad"",_this,""RscDisplayDynamicGroups"",'TF47_dynGrp'] call (uinamespace getvariable 'BIS_fnc_initDisplay')";
     onUnload="[""onUnload"",_this,""RscDisplayDynamicGroups"",'TF47_dynGrp'] call (uinamespace getvariable 'BIS_fnc_initDisplay')";
-=======
-    onLoad="[""onLoad"",_this,""RscDisplayDynamicGroups"",'TF47_dynGrp'] call         (uinamespace getvariable 'BIS_fnc_initDisplay')";
-    onUnload="[""onUnload"",_this,""RscDisplayDynamicGroups"",'TF47_dynGrp'] call         (uinamespace getvariable 'BIS_fnc_initDisplay')";
->>>>>>> master
 
     class controls
     {
