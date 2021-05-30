@@ -12,7 +12,22 @@ class CfgPatches {
         VERSION_CONFIG;
     };
 };
-
+class CfgFunctions 
+{
+    class GRAD
+    {
+        class Screenshot_Mode
+        {
+            file = "z\TF47\addons\screenshot_mode\functions";
+            class toggleACENametags{};
+            class toggleAll{};
+            class toggleDuiHud{};
+            class toggleSTHud{};
+            class toggleTFAR{};
+            class toggleVanillaHUD{};
+        };
+    };
+};
 class Extended_PostInit_EventHandlers {
     class ADDON {
         clientInit = QUOTE(call COMPILE_FILE(XEH_clientInit));
