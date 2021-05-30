@@ -1,7 +1,7 @@
 #include "script_component.hpp"
 /*
  * Author: Ampersand
- * Edit: TF RampageRampage
+ * Edit: TF47 Rampage
  * release hooked cargo on a hook / all hooks and resets the slingload counter
  *
  * Arguments:

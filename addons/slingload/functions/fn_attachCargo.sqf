@@ -1,7 +1,7 @@
 #include "script_component.hpp"
 /*
  * Author: Ampersand
- * Edit: TF RampageRampage
+ * Edit: TF47 Rampage
  * Attach the lift points connected to the held fitting to the specified hook on the helicopter, counts the slingloads up
  *
  * Arguments:
