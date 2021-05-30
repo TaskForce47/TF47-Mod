@@ -6,12 +6,12 @@
             <German>TF47 - Außenlast</German>
         </Key>
     </Package>
-	<Package name="GRAD Screenshot Mode">
+        <Package name="GRAD Screenshot Mode">
         <Key ID="STR_TF47_Screenshot_Mode">
             <English>GRAD Screenshot Mode</English>
             <German>GRAD Screenshot Modus</German>
         </Key>
-		<Key ID="STR_TF47_Screenshot_Mode_Toggle">
+                <Key ID="STR_TF47_Screenshot_Mode_Toggle">
             <English>Toggle Screenshot Mode</English>
             <German>Screenshot Modus umschalten</German>
         </Key>

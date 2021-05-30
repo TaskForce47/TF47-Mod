@@ -21,7 +21,7 @@
             <English>Grappling Hook</English>
             <German>Wurfanker</German>
         </Key>
-		<Key ID="STR_TF47_Urban_Rappel_Climb">
+                <Key ID="STR_TF47_Urban_Rappel_Climb">
             <English>Throw Grappling Hook</English>
             <German>Wurfanker werfen</German>
         </Key>
