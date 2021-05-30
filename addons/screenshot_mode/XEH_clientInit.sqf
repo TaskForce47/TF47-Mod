@@ -6,9 +6,9 @@ if(!hasInterface) exitWith {};
 GVAR(active) = false;
 
 [
-    'Gruppe Adler',
+    localize "STR_TF47_Screenshot_Mode",
     QGVAR(toggle),
-    'Toggle Screenshot Mode',
+    localize "STR_TF47_Screenshot_Mode_Toggle",
     {
         GVAR(active) = !GVAR(active);
         [!GVAR(active)] call FUNC(toggleAll);
