@@ -2,8 +2,8 @@ class RscDisplayDynamicGroups
 {
     scriptName="RscDisplayDynamicGroups";
     scriptPath="TF47_dynGrp";
-    onLoad="[""onLoad"",_this,""RscDisplayDynamicGroups"",'TF47_dynGrp'] call 	(uinamespace getvariable 'BIS_fnc_initDisplay')";
-    onUnload="[""onUnload"",_this,""RscDisplayDynamicGroups"",'TF47_dynGrp'] call 	(uinamespace getvariable 'BIS_fnc_initDisplay')";
+    onLoad="[""onLoad"",_this,""RscDisplayDynamicGroups"",'TF47_dynGrp'] call (uinamespace getvariable 'BIS_fnc_initDisplay')";
+    onUnload="[""onUnload"",_this,""RscDisplayDynamicGroups"",'TF47_dynGrp'] call (uinamespace getvariable 'BIS_fnc_initDisplay')";
 
     class controls
     {
@@ -128,7 +128,7 @@ class RscDisplayDynamicGroups
             y="18.4 *   ( ( ((safezoneW / safezoneH) min 1.2) / 1.2) / 25) + (safezoneY + (safezoneH - ( ((safezoneW / safezoneH) min 1.2) / 1.2))/2)";
             w="9.3 *    ( ((safezoneW / safezoneH) min 1.2) / 40)";
             h="2 *      ( ( ((safezoneW / safezoneH) min 1.2) / 1.2) / 25)";
-//			action = "createDialog  'Rsctf47_DynGrp_setGrp';";
+//action = "createDialog  'Rsctf47_DynGrp_setGrp';";
         };
         class TF47_SetInsiBtn: RscButton
         {
