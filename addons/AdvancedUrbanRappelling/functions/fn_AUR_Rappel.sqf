@@ -14,6 +14,11 @@
 *                       _dummyAnchor: object rope from rappelling anchor to the useable anchor is attached (static_aa)   
 *TODO: track all ropes ensure ropes are destroyed correctly.
 *TODO: Check endpoint and anchor offsets and locations.
+* maybe use some 
+
+addMissionEventHandler ["Draw3D", {
+	drawIcon3D ["targetIcon.paa", [1,1,1,1], ASLToAGL getPosASL cursorTarget, 1, 1, 45, "Target", 1, 0.05, "TahomaB"];
+}];
 *
 */
 
@@ -27,8 +32,8 @@ _playerStartPosition = _playerPreRappelPosition;
 
 //////////////////////////////////
 //Debug
-systemChat format ["Function: Rappel, Params: %1", _this];
-hint format ["Player: %1 \nPre_rappel_position: %2, \nRappelPoint: %3 \n RappelDirection: %4,\n RopeLength: %5.", str _player,str _playerPreRappelPosition,str _rappelPoint, str _rappelDirection, str _ropeLength];
+//systemChat format ["Function: Rappel, Params: %1", _this];
+//hint format ["Player: %1 \nPre_rappel_position: %2, \nRappelPoint: %3 \n RappelDirection: %4,\n RopeLength: %5.", str _player,str _playerPreRappelPosition,str _rappelPoint, str _rappelDirection, str _ropeLength];
 //////////////////////////////////
 
 
@@ -49,7 +54,7 @@ AUR_SET_ENDPOINT_TOP(_player, _anchor);
 
 
 if(!_playerStartingOnGround) then {
-        systemChat "Du kletterst nicht! Sondern seilst dich ab!";
+        //systemChat "Du kletterst nicht! Sondern seilst dich ab!";
         // Start player rappelling 2m out from the rappel point
         _playerStartPosition = _rappelPoint vectorAdd (_rappelDirection vectorMultiply 2);
         //_playerStartPosition = (_playerStartPosition vectorAdd (_rappelDirection vectorMultiply 2)) vectorAdd [0,0,2] ; //ist evtl besser

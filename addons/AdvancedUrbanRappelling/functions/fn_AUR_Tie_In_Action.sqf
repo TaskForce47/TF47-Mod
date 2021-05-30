@@ -4,7 +4,7 @@
 params ["_player"];
 
 // systemChat format ["Function File: %1","fn_AUR_tie_in_Action.sqf"];
-systemChat format ["Function: Tie In, Params: %1",_this];
+//systemChat format ["Function: Tie In, Params: %1",_this];
 
 _cans  = GetPosATL _player nearObjects ["Land_Can_V2_F", 2];
 //systemChat format ["Number of ropes found: %1",count _cans];
@@ -27,8 +27,9 @@ deleteVehicle AUR_GET_ENDPOINT_TOP(_player);
 //systemChat str ((ropeEndPosition _rope) select 0);
 
 _anchor = AUR_GET_ENDPOINT_LEADER(_player);
-systemChat format ["Anchor: %1", _anchor];
-systemChat format ["Rope Length: %1", _length];
+//systemChat format ["Anchor: %1", _anchor];
+//systemChat format ["Anchor: %1", getPosASL _anchor];
+//systemChat format ["Rope Length: %1", _length];
 _dist = _player distance _anchor;
 
 _topRopeStartLength = _dist;
@@ -53,15 +54,10 @@ _bottomRopeStartLength = _length - (_dist +1);
 //systemChat  format ["Top Rope: %1", _ropeTop];
 //systemChat  format ["Bottom Rope: %1", _ropeBottom];
 
-//alte params wieder hinkriegen
-_rappelDirection = eyeDirection _player;
-_playerPreRappelPosition = getPosASL _player;
-
-_rappelPoint = [_player,getPosASL _player,"POSITION"] call TF47_fnc_AUR_Find_Nearby_Rappel_Point; //muss der Anker werden eigentlich
-
+_rappelDirection = [getPosASL _master, getPosASL _anchor] call BIS_fnc_vectorFromXToY;  //close enough
 
 _onGround = False;
 
 if (AUR_GET_TIE_IN_POINT_STATUS(_can) == 2) then {_onGround = True};
 //should be using the Length u selected, not the maximum u have on yourself
-[_player, getPosASL _player, _rappelPoint select 0, _rappelPoint select 1, _length] spawn TF47_fnc_AUR_Rappel;
+[_player, getPosASL _player, getPosASL _anchor, _rappelDirection, _length, _onGround] spawn TF47_fnc_AUR_Rappel;

@@ -19,7 +19,7 @@ if (_searchType != "Fast") then {  //check for all ropes and setting variables
     _player setVariable  ["TF47_AUR_Rope_length", _length]; //maximum Length
     _player setVariable  ["TF47_AUR_Rope_classname", _availableRope];  //classname of available ropes
     
-    systemChat format ["Function: Has Rope Long, Params: %1",_this];//debug
+    //systemChat format ["Function: Has Rope Long, Params: %1",_this];//debug
     !(_length isEqualTo 0)
 } else {  //Quick check for Ropes
    ((_ropeClassNames findIf {_x in _uniqueItems}) != -1)

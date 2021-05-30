@@ -39,19 +39,19 @@ class CfgSounds
         class AUR_Rappel_Loop
         {
                 name = "AUR_Rappel_Loop";
-                sound[] = {"sounds\AUR_Rappel_Loop.ogg", db+5, 1};
+                sound[] = {"\z\TF47\addons\AdvancedUrbanRappelling\sounds\AUR_Rappel_Loop.ogg", db+5, 1};
                 titles[] = {0,""};
         };
         class AUR_Rappel_Start
         {
                 name = "AUR_Rappel_Start";
-                sound[] = {"sounds\AUR_Rappel_Start.ogg", db+10, 1};
+                sound[] = {"\z\TF47\addons\AdvancedUrbanRappelling\sounds\AUR_Rappel_Start.ogg", db+10, 1};
                 titles[] = {0,""};
         };
         class AUR_Rappel_End
         {
                 name = "AUR_Rappel_End";
-                sound[] = {"sounds\AUR_Rappel_End.ogg", db+10, 1};
+                sound[] = {"\z\TF47\addons\AdvancedUrbanRappelling\sounds\AUR_Rappel_End.ogg", db+10, 1};
                 titles[] = {0,""};
         };
         class GVAR(Rope) {
