@@ -8,11 +8,11 @@
 //Rewrite to ACE Actions
 
 params ["_player"];
-        
+/* Legacy        
 player addAction [localize "STR_TF47_Urban_Rappel_Rappel_Self", { 
         [player] call TF47_fnc_AUR_Rappel_Action;
 }, nil, 0, false, true, "", "[player] call TF47_fnc_AUR_Rappel_Action_Check"];
-
+*/
 /* Currently not working
 player addAction [localize "STR_TF47_Urban_Rappel_Rappel_AI", { 
         [player] call TF47_fnc_AUR_Rappel_AI_Units_Action;

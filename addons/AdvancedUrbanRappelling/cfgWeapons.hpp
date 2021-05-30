@@ -13,7 +13,7 @@ class CfgWeapons
                 //model = "\z\ace\addons\apl\ace_entrchtool.p3d";
                 picture = "\z\TF47\addons\AdvancedUrbanRappelling\assets\grappling_hook.paa";
                 class ItemInfo: CBA_MiscItem_ItemInfo {
-                        mass = 50;
+                        mass = 10;
                 };
         };
         class AUR_rope30: CBA_MiscItem {
@@ -110,7 +110,7 @@ class CfgWeapons
                 displayName = "TCX Force";
                 descriptionShort = "The TCX Force is specifically developed to be used for any land based or urban operations, for fast heavy lifting operations."; //http://www.actsafe.se/product/tcx-assault has two version, a 250kg/24m/min and a 150kg/60m/min this is the best of both worlds.
                 class ItemInfo: CBA_MiscItem_ItemInfo {
-                        mass = 280;
+                        mass = 60;
                 };
         };
 

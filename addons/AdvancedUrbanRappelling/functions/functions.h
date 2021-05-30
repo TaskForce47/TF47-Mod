@@ -16,6 +16,7 @@ class AUR
         class AUR_Get_Anchor_Point_Player_Looking_At{};
         class AUR_get_player_height_above_ground{};
         class AUR_Get_Trajectory_Angle{};
+        class AUR_Has_Rope_check{};
         class AUR_Has_Addon_Animations_Installed{postInit=1;};
         class AUR_Has_Addon_Sounds_Installed{postInit=1;};
         class AUR_Hide_Object_Global{};
@@ -48,6 +49,5 @@ class AUR
         class AUR_RemoteExec{};
         class AUR_Tie_In_Action_Check{};
         class AUR_Tie_In_Action{};
-
 };
 };

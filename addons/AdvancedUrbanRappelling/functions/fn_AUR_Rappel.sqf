@@ -22,21 +22,17 @@
 //params ["_player",["_playerStartingOnGround",false]];
 params ["_player","_playerPreRappelPosition","_rappelPoint","_rappelDirection","_ropeLength",["_playerStartingOnGround",false]];
 
-///////////////////////////////////
 _playerStartPosition = _playerPreRappelPosition;
-//_rappelDirection = eyeDirection _player;
-_playerStartPosition = getPosASL _player;
 
 
 //////////////////////////////////
 //Debug
 systemChat format ["Function: Rappel, Params: %1", _this];
-//hint format ["Player: %1 \nPre_rappel_position: %2, \nRappelPoint: %3 \n RappelDirection: %4,\n RopeLength: %5.", str _player,str _playerPreRappelPosition,str _rappelPoint, str _rappelDirection,str _rope];
-//systemchat format["Du darfst hochklettern. Dein RappelPoint: %1", _rappelpoint];
+hint format ["Player: %1 \nPre_rappel_position: %2, \nRappelPoint: %3 \n RappelDirection: %4,\n RopeLength: %5.", str _player,str _playerPreRappelPosition,str _rappelPoint, str _rappelDirection, str _ropeLength];
+//////////////////////////////////
+
 
 _player setVariable ["AUR_Is_Rappelling",true,true];
-
-_playerStartPosition = getPosASL _player;
 
 // Create anchor for rope (at rappel point)
 _anchor = createVehicle ["Land_Can_V2_F", _player, [], 0, "CAN_COLLIDE"];
@@ -53,6 +49,7 @@ AUR_SET_ENDPOINT_TOP(_player, _anchor);
 
 
 if(!_playerStartingOnGround) then {
+        systemChat "Du kletterst nicht! Sondern seilst dich ab!";
         // Start player rappelling 2m out from the rappel point
         _playerStartPosition = _rappelPoint vectorAdd (_rappelDirection vectorMultiply 2);
         //_playerStartPosition = (_playerStartPosition vectorAdd (_rappelDirection vectorMultiply 2)) vectorAdd [0,0,2] ; //ist evtl besser
@@ -88,7 +85,7 @@ _anchor setPosWorld _rappelPoint;
 
 _player setVariable ["AUR_Rappel_Rope_Top",_ropeTop];
 _player setVariable ["AUR_Rappel_Rope_Bottom",_ropeBottom];
-_player setVariable ["AUR_Rappel_Rope_Length",_ropeLength];
+//_player setVariable ["AUR_Rappel_Rope_Length",_ropeLength];//done by has_rope_check
 _ropeTop setVariable ["TF47_AUR_isRappelRope",True, True];
 
 _animationsHandle = [_player] spawn TF47_fnc_AUR_Enable_Rappelling_Animation;
@@ -101,6 +98,8 @@ _velocityVec = [0,0,0];
 _lastTime = diag_tickTime;
 _lastPosition = AGLtoASL (_rappelDevice modelToWorldVisual [0,0,0]);
 
+
+//Setup Keys for Rappeling
 _decendRopeKeyDownHandler = -1;
 _ropeKeyUpHandler = -1;
 if(_player == player) then {        
@@ -173,6 +172,8 @@ _walkingOnWallForce = [0,0,0];
 
 _lastAiJumpTime = diag_tickTime;
 
+
+//While Rappeling
 while {true} do {
         //hint "rappelling...";
 

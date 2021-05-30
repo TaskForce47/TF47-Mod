@@ -29,6 +29,7 @@ AUR_SET_MASTER(_rope, _master);
 AUR_SET_ROPE_LEADER(_master,_rope);
 AUR_SET_ROPE_LENGTH(_player, _ropeLength);
 
+[_player,"Prepare_Rope"] call TF47_fnc_AUR_Has_Rope_Check; //Set the Variables
 // hideObject anchor;
 // anchor enableSimulation false;
 // anchor allowDamage false;
