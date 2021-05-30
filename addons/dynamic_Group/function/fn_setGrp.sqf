@@ -1,16 +1,16 @@
 /*
-	
-	author: -SONIC-
-	
-	description:
-		Apply Frequenz on Btn click.
-	parameter:
-		nothing
-	return
-		nothing
-	example
-		na
-		
+        
+        author: -SONIC-
+        
+        description:
+                Apply Frequenz on Btn click.
+        parameter:
+                nothing
+        return
+                nothing
+        example
+                na
+                
 */
 
 disableSerialization; 

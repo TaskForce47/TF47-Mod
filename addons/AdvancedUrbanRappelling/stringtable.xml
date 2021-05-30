@@ -25,5 +25,25 @@
             <English>Throw Grappling Hook</English>
             <German>Wurfanker werfen</German>
         </Key>
+        <Key ID="STR_TF47_Urban_Rappel_Place_Rappel_Anchor">
+            <English>Place Rappel Anchor</English>
+            <German>Abseilanker platzieren</German>
+        </Key>
+        <Key ID="STR_TF47_Urban_Rappel_Tie_In">
+            <English>Tie in</English>
+            <German>Seil Einbinden</German>
+        </Key>
+        <Key ID="STR_TF47_Urban_Rappel_Place Rappel Point">
+            <English>Place Rappel Point</English>
+            <German>Abseilpunkt platzieren</German>
+        </Key>
+        <Key ID="STR_TF47_Urban_Rappel_Pick_Rappel_Point">
+            <English>Pick Up Rappel Point</English>
+            <German>Abseilpunkt aufnehmen</German>
+        </Key>
+        <Key ID="STR_TF47_Urban_Rappel_Pack_Rope">
+            <English>Pack Up Rope</English>
+            <German>Seil einpacken</German>
+        </Key>
     </Package>
 </Project>

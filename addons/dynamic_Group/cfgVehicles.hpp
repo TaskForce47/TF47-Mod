@@ -7,7 +7,7 @@ class CfgVehicles{
                 displayName = "TF47 Menu";
                 condition = QUOTE(true);
                 exceptions[] = {"isNotSwimming", "isNotInside", "notOnMap", "isNotSitting"};
-                statement = "";
+                statement = "[] call TF47_dynGrps_fnc_openGrpmgmt";
                 showDisabled = 1;
                 icon = QUOTE(\z\TF47\addons\main\data\tf47.paa);
                 

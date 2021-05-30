@@ -1211,7 +1211,11 @@ switch (_mode) do
 
         if (!isNull _to && {!isNull _from} && {_to != _from}) then
         {
+<<<<<<< HEAD
 //["LocalShowNotification", ["DynamicGroups_InviteReceived", [name _from], _to]] call GROUPS;
+=======
+//                        ["LocalShowNotification", ["DynamicGroups_InviteReceived", [name _from], _to]] call GROUPS;
+>>>>>>> master
         };
 
         // Log
