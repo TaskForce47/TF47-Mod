@@ -1,4 +1,4 @@
-#define COMPONENT rhs_compa
+#define COMPONENT rhs_compat
 #include "\z\TF47\addons\main\script_mod.hpp"
 
 #define DEBUG_MODE_FULL
