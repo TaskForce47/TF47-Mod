@@ -10,7 +10,7 @@
  * Can deploy <BOOL>
  *
  * Example:
- * [DoorWedgeObj, ACE_player] call bcdw_wedge_fnc_canRemoveDoorWedge
+ * [DoorWedgeObj, ACE_player] call TF47_wedge_fnc_canRemoveDoorWedge
  *
  * Public: No
  */

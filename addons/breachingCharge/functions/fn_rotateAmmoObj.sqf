@@ -10,7 +10,7 @@
  * NONE
  *
  * Example:
- * _mainCharge call bcdw_main_fnc_rotateAmmoObj;
+ * _breachingChargeCharge call TF47_breachingCharge_fnc_rotateAmmoObj;
  *
  */
 
@@ -18,7 +18,7 @@ if !(local _this) exitWith {}; //systemChat "Not local!"};
 
 0 = [(getPosATL _this)] spawn {
     params ["_p"];
-    //systemChat "bcdw_main_fnc_rotateAmmoObj";
+    //systemChat "TF47_breachingCharge_fnc_rotateAmmoObj";
     if (isDedicated) exitWith {}; //systemChat "Server!"};
 
     //createVehicle ["Sign_Sphere25cm_F", _p, [], 0, "CAN_COLLIDE"];    //testing

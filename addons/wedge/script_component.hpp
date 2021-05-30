@@ -1,5 +1,5 @@
 #define COMPONENT wedge
-#include "\z\bcdw\addons\wedge\script_mod.hpp"
+#include "\z\TF47\addons\main\script_mod.hpp"
 
 // #define DEBUG_MODE_FULL
 // #define DISABLE_COMPILE_CACHE
@@ -14,4 +14,4 @@
     #define DEBUG_SETTINGS DEBUG_SETTINGS_wedge
 #endif
 
-#include "\z\bcdw\addons\wedge\script_macros.hpp"
+#include "\z\TF47\addons\wedge\script_macros.hpp"

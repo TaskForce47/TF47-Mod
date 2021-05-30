@@ -1,7 +1,7 @@
 /*
  * Author: Ampers
  * Checks the obstacle and destroys it or opens the door
- * Called by bcdw_main_fnc_plantBreachingCharge
+ * Called by TF47_breachingCharge_fnc_plantBreachingCharge
  *
  * Arguments:
  * 0: Breaching Charge <OBJECT>
@@ -11,7 +11,7 @@
  * NONE
  *
  * Example:
- * [player, cursorObject] call bcdw_main_fnc_breachObstacle;
+ * [player, cursorObject] call TF47_breachingCharge_fnc_breachObstacle;
  */
 
 params ["_c", "_t"];

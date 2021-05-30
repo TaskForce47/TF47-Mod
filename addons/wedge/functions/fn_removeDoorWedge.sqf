@@ -10,7 +10,7 @@
  * None
  *
  * Example:
- * [DoorWedgeObj, ACE_player] call bcdw_wedge_fnc_removeDoorWedge
+ * [DoorWedgeObj, ACE_player] call TF47_wedge_fnc_removeDoorWedge
  *
  * Public: No
  */

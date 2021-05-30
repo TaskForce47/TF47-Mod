@@ -11,7 +11,7 @@
  * NONE
  *
  * Example:
- * _mainCharge call bcdw_main_fnc_plantBreachingCharge;
+ * _breachingChargeCharge call TF47_breachingCharge_fnc_plantBreachingCharge;
  *
  */
 
@@ -33,10 +33,10 @@
     _bc attachTo [_wl,[0,0,0.00]];
     _bc setVectorDirAndUp [vectorDir _wl,[0,-1,0]];
 
-    _wl setVariable ["bcdw_bc_target", _t];
+    _wl setVariable ["TF47_bc_target", _t];
     _wl addEventHandler ["Explosion",{
         params ["_c"];
-        [_c, _c getVariable ["bcdw_bc_target", objNull]] call bcdw_main_fnc_breachObstacle;
+        [_c, _c getVariable ["TF47_bc_target", objNull]] call TF47_breachingCharge_fnc_breachObstacle;
 
         //clean up
         _c removeAllEventHandlers "Explosion";

@@ -5,10 +5,10 @@ class CfgVehicles {
             class ACE_Equipment {
                 class AMP_DeployDoorWedge {
                     displayName = "Deploy Door Wedge";
-                    condition = "[_player] call bcdw_wedge_fnc_canDeployDoorWedge";
+                    condition = "[_player] call TF47_wedge_fnc_canDeployDoorWedge";
                     //wait a frame to handle "Do When releasing action menu key" option
-                    //statement = "[{_this call bcdw_wedge_fnc_deployDoorWedge}, [_this select 0]] call CBA_fnc_execNextFrame";
-                                        statement = "[_player] call bcdw_wedge_fnc_deployDoorWedge";
+                    //statement = "[{_this call TF47_wedge_fnc_deployDoorWedge}, [_this select 0]] call CBA_fnc_execNextFrame";
+                                        statement = "[_player] call TF47_wedge_fnc_deployDoorWedge";
                     exceptions[] = {};
                     showDisabled = 0;
                     icon = "\a3\modules_f\data\EditTerrainObject\textureDoor_locked_ca.paa";
@@ -17,7 +17,7 @@ class CfgVehicles {
         };
     };
 
-        class Land_WheelChock_01_F;
+    class Land_WheelChock_01_F;
     class AMP_Door_Wedge_Place: Land_WheelChock_01_F {
         removalDuration = 15;
         author = "Ampersand";
@@ -48,9 +48,9 @@ class CfgVehicles {
                                         displayName = "Remove Door Wedge";
                                         distance = 2;
                                         condition = "true";
-                                        //condition = "[_target, _player] call bcdw_wedge_fnc_canRemoveDoorWedge";
-                                        statement = "[_target, _player] call bcdw_wedge_fnc_removeDoorWedge;";
-                    //statement = "[{_this call bcdw_wedge_fnc_removeDoorWedge}, [_target, _player]] call CBA_fnc_execNextFrame";
+                                        //condition = "[_target, _player] call TF47_wedge_fnc_canRemoveDoorWedge";
+                                        statement = "[_target, _player] call TF47_wedge_fnc_removeDoorWedge;";
+                    //statement = "[{_this call TF47_wedge_fnc_removeDoorWedge}, [_target, _player]] call CBA_fnc_execNextFrame";
                     exceptions[] = {};
                     showDisabled = 0;
                     icon = "\a3\ui_f\data\IGUI\Cfg\Actions\repair_ca.paa";

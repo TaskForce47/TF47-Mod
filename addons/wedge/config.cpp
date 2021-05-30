@@ -1,10 +1,10 @@
 #include "script_component.hpp"
 
 class CfgPatches {
-    class AMP_Breaching_Charge {
+    class AMP_Door_Wedge {
         name = COMPONENT_NAME;
-        units[] = {"AMP_Breaching_Charge","AMP_Breaching_Charge_Place","AMP_Door_Wedge_Place"};
-        weapons[] = {"AMP_Breaching_Charge_Muzzle"};
+        units[] = {"AMP_Door_Wedge_Place"};
+        weapons[] = {"AMP_Door_Wedge"};
         requiredVersion = REQUIRED_VERSION;
         requiredAddons[] = {
             "A3_Weapons_F_Explosives",
@@ -18,10 +18,23 @@ class CfgPatches {
     };
 };
 
+class CfgFunctions 
+{
+    class TF47
+    {
+        class COMPONENT
+        {
+            file = "z\TF47\addons\wedge\functions";
+            class canDeployDoorWedge{};
+            class canRemoveDoorWedge{};
+            class deployDoorWedge{};
+            class removeDoorWedge{};
+        };
+    };
+};
+
 #include "CfgEventHandlers.hpp"
 #include "CfgModuleCategories.hpp"
 
-#include "CfgAmmo.hpp"
-#include "CfgMagazines.hpp"
 #include "CfgVehicles.hpp"
 #include "CfgWeapons.hpp"

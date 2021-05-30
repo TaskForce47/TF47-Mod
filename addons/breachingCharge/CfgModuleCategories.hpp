@@ -1,14 +1,14 @@
 class CfgFactionClasses {
     class NO_CATEGORY;
-    class BCDW: NO_CATEGORY {
-        displayName = "BCDW";
+    class TF47: NO_CATEGORY {
+        displayName = "TF47";
         priority = 2;
         side = 7;
     };
 };
 
 class CfgVehicleClasses {
-    class BCDW_Vehicles {
-        displayName = "BCDW Vehicles";
+    class TF47_Vehicles {
+        displayName = "TF47 Vehicles";
     };
 };

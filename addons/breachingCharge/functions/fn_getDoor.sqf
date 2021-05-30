@@ -12,7 +12,7 @@
  * 1: Door Name <STRING>
  *
  * Example:
- * [player, target] call bcdw_main_fnc_getDoor
+ * [player, target] call TF47_breachingCharge_fnc_getDoor
  *
  */
 
