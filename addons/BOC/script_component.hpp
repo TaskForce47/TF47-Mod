@@ -1,17 +1,15 @@
-#define COMPONENT main
-#include "\x\bocr\addons\main\script_mod.hpp"
+#define COMPONENT boc
+#include "\z\TF47\addons\main\script_mod.hpp"
 
-// #define DEBUG_MODE_FULL
+#define DEBUG_MODE_FULL
 // #define DISABLE_COMPILE_CACHE
-// #define CBA_DEBUG_SYNCHRONOUS
-// #define ENABLE_PERFORMANCE_COUNTERS
 
-#ifdef DEBUG_ENABLED_MAIN
+#ifdef DEBUG_ENABLED_DATABASE
     #define DEBUG_MODE_FULL
 #endif
-
-#ifdef DEBUG_SETTINGS_MAIN
-    #define DEBUG_SETTINGS DEBUG_SETTINGS_MAIN
+    #ifdef DEBUG_SETTINGS_DATABASE
+    #define DEBUG_SETTINGS DEBUG_SETTINGS_DATABASE
 #endif
 
-#include "\x\bocr\addons\main\script_macros.hpp"
+#include "\z\TF47\addons\main\script_macros.hpp"
+
