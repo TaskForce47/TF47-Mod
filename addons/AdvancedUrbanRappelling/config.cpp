@@ -65,9 +65,7 @@ class CfgSounds
                 titles[] = {};
     };
 };
-<<<<<<< HEAD
+
 #include "cfgAnimations.hpp"
 #include "cfgWeapons.hpp"
-=======
-#include "cfgAnimations.hpp"
->>>>>>> master
+

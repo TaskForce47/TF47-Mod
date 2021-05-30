@@ -133,11 +133,6 @@ class RscDisplayDynamicGroups
             y="18.4 *   ( ( ((safezoneW / safezoneH) min 1.2) / 1.2) / 25) + (safezoneY + (safezoneH - ( ((safezoneW / safezoneH) min 1.2) / 1.2))/2)";
             w="9.3 *    ( ((safezoneW / safezoneH) min 1.2) / 40)";
             h="2 *      ( ( ((safezoneW / safezoneH) min 1.2) / 1.2) / 25)";
-<<<<<<< HEAD
-//action = "createDialog  'Rsctf47_DynGrp_setGrp';";
-=======
-//                        action = "createDialog  'Rsctf47_DynGrp_setGrp';";
->>>>>>> master
         };
         class TF47_SetInsiBtn: RscButton
         {

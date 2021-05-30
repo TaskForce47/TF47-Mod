@@ -27,11 +27,9 @@ _roles = [
 ];
 
 {
-<<<<<<< HEAD
-//if (getNumber(configfile >> "CfgMarkers" >> _x >> "side") isEqualto 1) exitwith {};
-=======
+
 //        if (getNumber(configfile >> "CfgMarkers" >> _x >> "side") isEqualto 1) exitwith {};
->>>>>>> master
+
     
     _name = getText (configfile >> "CfgMarkers" >> _x >> "Name");
     _icon = getText (configfile >> "CfgMarkers" >> _x >> "icon");
