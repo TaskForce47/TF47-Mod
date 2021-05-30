@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Project name="BOCR">
-<<<<<<< HEAD
-<Package name="Main">
-=======
-        <Package name="Main">
+    <Package name="Main">
         <Key ID="STR_BOCR_Main_Disable">
             <Original>Disable BackpackOnChest</Original>
             <English>Disable BackpackOnChest</English>
@@ -107,5 +104,5 @@
             <Spanish>Intercambiar mochilas</Spanish>
             <Turkish>Sırt çantalarını değiştirin (Bölge)</Turkish>
         </Key>
-</Package>
+    </Package>
 </Project>
