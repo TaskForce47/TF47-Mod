@@ -18,7 +18,7 @@ class CfgFunctions
     class TF47
     {
         tag = "TF47";
-        class COMPONENT
+        class A3AdditionalMeasurement
         {
             file = "z\TF47\addons\a3am\functions";
             class altInfo{};

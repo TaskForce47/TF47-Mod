@@ -1,6 +1,6 @@
 class TF47 {
         tag = "TF47";
-class AUR
+class AdvancedUrbanRappeling
 {
         file = "z\TF47\addons\AdvancedUrbanRappelling\functions";
         class AUR_Add_Player_Actions{postInit=1;};

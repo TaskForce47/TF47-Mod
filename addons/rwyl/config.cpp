@@ -17,7 +17,7 @@ class CfgFunctions
 {
     class TF47
     {
-        class COMPONENT
+        class RideWhereYouLook
         {
             file = "z\TF47\addons\rwyl\functions";
             class findSeat{};

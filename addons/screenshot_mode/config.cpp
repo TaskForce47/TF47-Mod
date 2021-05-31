@@ -14,7 +14,7 @@ class CfgPatches {
 };
 class CfgFunctions 
 {
-    class GRAD
+    class TF47
     {
         class Screenshot_Mode
         {

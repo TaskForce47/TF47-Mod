@@ -13,7 +13,7 @@ class CfgPatches {
 };
 
 class CfgFunctions {
-    class ADDON {
+    class TF47 {
         class VehicleMedical {
             tag = QUOTE(ADDON);
             requiredAddons[] = {"ace_interact_menu",  "ace_medical"};

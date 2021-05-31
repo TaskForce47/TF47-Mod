@@ -18,7 +18,7 @@ class CfgFunctions
 {
     class TF47
     {
-        class COMPONENT
+        class DismountWhereYouLook
         {
             file = "z\TF47\addons\dwyl\functions";
             class exit{};

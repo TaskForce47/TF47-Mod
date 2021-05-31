@@ -22,7 +22,7 @@ class CfgFunctions
 {
     class TF47
     {
-        class COMPONENT
+        class DoorWedge
         {
             file = "z\TF47\addons\wedge\functions";
             class canDeployDoorWedge{};

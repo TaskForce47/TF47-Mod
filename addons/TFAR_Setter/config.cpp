@@ -12,9 +12,9 @@ class CfgPatches {
 };
 
 class CfgFunctions {
-   class ADDON {
-        class TFARLRSettings {
-            tag = QUOTE(ADDON);
+   class TF47 {
+        class TFAR_Setter {
+            tag = "TF47";
             file = FUNCTION_PATH;
          class loadLRSettings {};
          class saveLRSettings {};
