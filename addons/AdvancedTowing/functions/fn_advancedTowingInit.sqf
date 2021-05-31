@@ -432,11 +432,11 @@ TF47_Drop_Tow_Ropes = {
     params ["_vehicle","_player"];
     systemChat "Dropping Ropes!";
     if(local _vehicle) then {
-        systemChat "ist lokal";
+        //systemChat  format["ist lokal! %1", _vehicle];
         private ["_helper"];
         _helper = (_player getVariable ["TF47_Tow_Ropes_Pick_Up_Helper", objNull]);
         if(!isNull _helper) then {
-            systemChat "Hat einen Helfer!";
+            //systemChat format["Hat einen Helfer! %1", _helper];
             {
                 _helper ropeDetach _x;
             } forEach (_vehicle getVariable ["TF47_Tow_Ropes",[]]);
