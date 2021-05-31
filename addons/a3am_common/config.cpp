@@ -3,30 +3,15 @@
 
 class CfgPatches {
     class ADDON {
-        name = "A3 Additional Measurements";
+        name = COMPONENT_NAME;
         units[] = {};
         weapons[] = {};
-        requiredVersion = 0.0.1;
-        requiredAddons[] = {};
+        requiredVersion = REQUIRED_VERSION;
+        requiredAddons[] = {"a3am_main"};
         author = "SynixeBrett";
         authors[] = {"SynixeBrett"};
-    };
-};
-
-class CfgFunctions 
-{
-    class TF47
-    {
-        class COMPONENT
-        {
-            file = "z\TF47\addons\a3am\functions";
-            class altInfo{};
-            class altUnits{};
-            class onAltLoad{};
-            class onSpeedLoad{};
-            class speedInfo{};
-            class speedUnits{};
-        };
+        url = ECSTRING(main,URL);
+        VERSION_CONFIG;
     };
 };
 

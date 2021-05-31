@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Project name="TF47">
-    <Package name="A3AM">
+<Project name="A3AM">
+    <Package name="Common">
         <Key ID="STR_A3AM_common_Speed_DisplayName">
             <English>Speed</English>
             <German>Geschwindigkeit</German>
