@@ -1,8 +1,8 @@
 class CfgPatches
 {
-   class SA_AdvancedTowing
+   class TF47_AdvancedTowing
    {
-      units[] = {"SA_AdvancedTowing"};
+      units[] = {"TF47_AdvancedTowing"};
       requiredVersion = 1.0;
       requiredAddons[] = {"A3_Modules_F"};
    };
@@ -27,11 +27,11 @@ class CfgNetworkMessages
 
 class CfgFunctions 
 {
-   class SA
+   class TF47
    {
       class AdvancedTowing
       {
-         file = "\SA_AdvancedTowing\functions";
+         file = "z\TF47\addons\AdvancedTowing\functions";
          class advancedTowingInit{postInit=1};
       };
    };

@@ -11,16 +11,9 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 */
 
 
-/*
+// TF47_TOW_SUPPORTED_VEHICLES_OVERRIDE = [];
 
-    additional notice: minor adjustments to original script were made by nomisum for Gruppe Adler 2021
-    functions are renamed to CSA (Custom SA) to avoid conflicts/confusion
-
-*/
-
-// CSA_TOW_SUPPORTED_VEHICLES_OVERRIDE = [];
-
-#define CSA_Find_Surface_ASL_Under_Position(_object,_positionAGL,_returnSurfaceASL,_canFloat) \
+#define TF47_Find_Surface_ASL_Under_Position(_object,_positionAGL,_returnSurfaceASL,_canFloat) \
 _objectASL = AGLToASL (_object modelToWorldVisual (getCenterOfMass _object)); \
 _surfaceIntersectStartASL = [_positionAGL select 0, _positionAGL select 1, (_objectASL select 2) + 1]; \
 _surfaceIntersectEndASL = [_positionAGL select 0, _positionAGL select 1, (_objectASL select 2) - 5]; \
@@ -45,29 +38,29 @@ if(_canFloat && (_returnSurfaceASL select 2) < 0) then { \
     _returnSurfaceASL set [2,0]; \
 }; \
 
-#define CSA_Find_Surface_ASL_Under_Model(_object,_modelOffset,_returnSurfaceASL,_canFloat) \
-CSA_Find_Surface_ASL_Under_Position(_object, (_object modelToWorldVisual _modelOffset), _returnSurfaceASL,_canFloat);
+#define TF47_Find_Surface_ASL_Under_Model(_object,_modelOffset,_returnSurfaceASL,_canFloat) \
+TF47_Find_Surface_ASL_Under_Position(_object, (_object modelToWorldVisual _modelOffset), _returnSurfaceASL,_canFloat);
             
-#define CSA_Find_Surface_AGL_Under_Model(_object,_modelOffset,_returnSurfaceAGL,_canFloat) \
-CSA_Find_Surface_ASL_Under_Model(_object,_modelOffset,_returnSurfaceAGL,_canFloat); \
+#define TF47_Find_Surface_AGL_Under_Model(_object,_modelOffset,_returnSurfaceAGL,_canFloat) \
+TF47_Find_Surface_ASL_Under_Model(_object,_modelOffset,_returnSurfaceAGL,_canFloat); \
 _returnSurfaceAGL = ASLtoAGL _returnSurfaceAGL;
 
-#define CSA_Get_Cargo(_vehicle,_cargo) \
+#define TF47_Get_Cargo(_vehicle,_cargo) \
 if( count (ropeAttachedObjects _vehicle) == 0 ) then { \
     _cargo = objNull; \
 } else { \
-    _cargo = ((ropeAttachedObjects _vehicle) select 0) getVariable ["CSA_Cargo",objNull]; \
+    _cargo = ((ropeAttachedObjects _vehicle) select 0) getVariable ["TF47_Cargo",objNull]; \
 };
         
-CSA_Advanced_Towing_Install = {
+TF47_Advanced_Towing_Install = {
 
 // Prevent advanced towing from installing twice
-if(!isNil "CSA_TOW_INIT") exitWith {};
-CSA_TOW_INIT = true;
+if(!isNil "TF47_TOW_INIT") exitWith {};
+TF47_TOW_INIT = true;
 
 diag_log "Custom Advanced Towing Loading...";
 
-CSA_Simulate_Towing_Speed = {
+TF47_Simulate_Towing_Speed = {
     
     params ["_vehicle"];
     
@@ -75,7 +68,7 @@ CSA_Simulate_Towing_Speed = {
     
     _maxVehicleSpeed = getNumber (configFile >> "CfgVehicles" >> typeOf _vehicle >> "maxSpeed");
     _vehicleMass = 1000 max (getMass _vehicle);
-    _maxTowedCargo = missionNamespace getVariable ["CSA_MAX_TOWED_CARGO",2];
+    _maxTowedCargo = missionNamespace getVariable ["TF47_MAX_TOWED_CARGO",2];
     _runSimulation = true;
     
     private ["_currentVehicle","_totalCargoMass","_totalCargoCount","_findNextCargo","_towRopes","_ropeLength"];
@@ -92,9 +85,9 @@ CSA_Simulate_Towing_Speed = {
         _findNextCargo = true;
         while {_findNextCargo} do {
             _findNextCargo = false;
-            CSA_Get_Cargo(_currentVehicle,_currentCargo);
+            TF47_Get_Cargo(_currentVehicle,_currentCargo);
             if(!isNull _currentCargo) then {
-                _towRopes = _currentVehicle getVariable ["CSA_Tow_Ropes",[]];
+                _towRopes = _currentVehicle getVariable ["TF47_Tow_Ropes",[]];
                 if(count _towRopes > 0) then {
                     _ropeLength = ropeLength (_towRopes select 0);
                     _ends = ropeEndPosition (_towRopes select 0);
@@ -117,10 +110,10 @@ CSA_Simulate_Towing_Speed = {
             _newMaxSpeed = 0;
         };
         
-        _currentMaxSpeed = _vehicle getVariable ["CSA_Max_Tow_Speed",_maxVehicleSpeed];
+        _currentMaxSpeed = _vehicle getVariable ["TF47_Max_Tow_Speed",_maxVehicleSpeed];
         
         if(_currentMaxSpeed != _newMaxSpeed) then {
-            _vehicle setVariable ["CSA_Max_Tow_Speed",_newMaxSpeed];
+            _vehicle setVariable ["TF47_Max_Tow_Speed",_newMaxSpeed];
         };
         
         sleep 0.1;
@@ -128,7 +121,7 @@ CSA_Simulate_Towing_Speed = {
     };
 };
 
-CSA_Simulate_Towing = {
+TF47_Simulate_Towing = {
 
     params ["_vehicle","_vehicleHitchModelPos","_cargo","_cargoHitchModelPos","_ropeLength"];
 
@@ -142,7 +135,7 @@ CSA_Simulate_Towing = {
     _cargoCanFloat = if( getNumber (configFile >> "CfgVehicles" >> typeOf _cargo >> "canFloat") == 1 ) then { true } else { false };
     
     private ["_cargoCenterOfMassAGL","_cargoModelCenterGroundPosition"];
-    CSA_Find_Surface_AGL_Under_Model(_cargo,getCenterOfMass _cargo,_cargoCenterOfMassAGL,_cargoCanFloat);
+    TF47_Find_Surface_AGL_Under_Model(_cargo,getCenterOfMass _cargo,_cargoCenterOfMassAGL,_cargoCanFloat);
     _cargoModelCenterGroundPosition = _cargo worldToModelVisual _cargoCenterOfMassAGL;
     _cargoModelCenterGroundPosition set [0,0];
     _cargoModelCenterGroundPosition set [1,0];
@@ -150,7 +143,7 @@ CSA_Simulate_Towing = {
     
     // Calculate cargo model corner points
     private ["_cargoCornerPoints"];
-    _cargoCornerPoints = [_cargo] call CSA_Get_Corner_Points;
+    _cargoCornerPoints = [_cargo] call TF47_Get_Corner_Points;
     _corner1 = _cargoCornerPoints select 0;
     _corner2 = _cargoCornerPoints select 1;
     _corner3 = _cargoCornerPoints select 2;
@@ -159,7 +152,7 @@ CSA_Simulate_Towing = {
     
     // Try to set cargo owner if the towing client doesn't own the cargo
     if(local _vehicle && !local _cargo) then {
-        [[_cargo, clientOwner],"CSA_Set_Owner"] call CSA_RemoteExecServer;
+        [[_cargo, clientOwner],"TF47_Set_Owner"] call TF47_RemoteExecServer;
     };
     
     _vehicleHitchModelPos set [2,0];
@@ -169,7 +162,7 @@ CSA_Simulate_Towing = {
     _lastCargoVectorDir = vectorDir _cargo;
     _lastMovedCargoPosition = getPos _cargo;
     
-    _cargoHitchPoints = [_cargo] call CSA_Get_Hitch_Points;
+    _cargoHitchPoints = [_cargo] call TF47_Get_Hitch_Points;
     _cargoLength = (_cargoHitchPoints select 0) distance (_cargoHitchPoints select 1);
     
     _vehicleMass = 1 max (getMass _vehicle);
@@ -183,7 +176,7 @@ CSA_Simulate_Towing = {
     _doExit = false;
     
     // Start vehicle speed simulation
-    [_vehicle] spawn CSA_Simulate_Towing_Speed;
+    [_vehicle] spawn TF47_Simulate_Towing_Speed;
     
     while {!_doExit} do {
 
@@ -208,32 +201,32 @@ CSA_Simulate_Towing = {
             _lastCargoVectorDir = _newCargoDir;
             _newCargoPosition = _newCargoHitchPosition vectorAdd (_newCargoDir vectorMultiply -(vectorMagnitude (_cargoHitchModelPos)));
             
-            CSA_Find_Surface_ASL_Under_Position(_cargo,_newCargoPosition,_newCargoPosition,_cargoCanFloat);
+            TF47_Find_Surface_ASL_Under_Position(_cargo,_newCargoPosition,_newCargoPosition,_cargoCanFloat);
             
             // Calculate surface normal (up) (more realistic than surfaceNormal function)
-            CSA_Find_Surface_ASL_Under_Model(_cargo,_corner1,_cargoCorner1ASL,_cargoCanFloat);
-            CSA_Find_Surface_ASL_Under_Model(_cargo,_corner2,_cargoCorner2ASL,_cargoCanFloat);
-            CSA_Find_Surface_ASL_Under_Model(_cargo,_corner3,_cargoCorner3ASL,_cargoCanFloat);
-            CSA_Find_Surface_ASL_Under_Model(_cargo,_corner4,_cargoCorner4ASL,_cargoCanFloat);
+            TF47_Find_Surface_ASL_Under_Model(_cargo,_corner1,_cargoCorner1ASL,_cargoCanFloat);
+            TF47_Find_Surface_ASL_Under_Model(_cargo,_corner2,_cargoCorner2ASL,_cargoCanFloat);
+            TF47_Find_Surface_ASL_Under_Model(_cargo,_corner3,_cargoCorner3ASL,_cargoCanFloat);
+            TF47_Find_Surface_ASL_Under_Model(_cargo,_corner4,_cargoCorner4ASL,_cargoCanFloat);
             _surfaceNormal1 = (_cargoCorner1ASL vectorFromTo _cargoCorner3ASL) vectorCrossProduct (_cargoCorner1ASL vectorFromTo _cargoCorner2ASL);
             _surfaceNormal2 = (_cargoCorner4ASL vectorFromTo _cargoCorner2ASL) vectorCrossProduct (_cargoCorner4ASL vectorFromTo _cargoCorner3ASL);
             _surfaceNormal = _surfaceNormal1 vectorAdd _surfaceNormal2;
             
-            if(missionNamespace getVariable ["CSA_TOW_DEBUG_ENABLED", false]) then {
-                if(isNil "Csa_tow_debug_arrow_1") then {
-                    Csa_tow_debug_arrow_1 = "Sign_Arrow_F" createVehicleLocal [0,0,0];
-                    Csa_tow_debug_arrow_2 = "Sign_Arrow_F" createVehicleLocal [0,0,0];
-                    Csa_tow_debug_arrow_3 = "Sign_Arrow_F" createVehicleLocal [0,0,0];
-                    Csa_tow_debug_arrow_4 = "Sign_Arrow_F" createVehicleLocal [0,0,0];
+            if(missionNamespace getVariable ["TF47_TOW_DEBUG_ENABLED", false]) then {
+                if(isNil "TF47_tow_debug_arrow_1") then {
+                    TF47_tow_debug_arrow_1 = "Sign_Arrow_F" createVehicleLocal [0,0,0];
+                    TF47_tow_debug_arrow_2 = "Sign_Arrow_F" createVehicleLocal [0,0,0];
+                    TF47_tow_debug_arrow_3 = "Sign_Arrow_F" createVehicleLocal [0,0,0];
+                    TF47_tow_debug_arrow_4 = "Sign_Arrow_F" createVehicleLocal [0,0,0];
                 };
-                Csa_tow_debug_arrow_1 setPosASL _cargoCorner1ASL;
-                Csa_tow_debug_arrow_1 setVectorUp _surfaceNormal;
-                Csa_tow_debug_arrow_2 setPosASL _cargoCorner2ASL;
-                Csa_tow_debug_arrow_2 setVectorUp _surfaceNormal;
-                Csa_tow_debug_arrow_3 setPosASL _cargoCorner3ASL;
-                Csa_tow_debug_arrow_3 setVectorUp _surfaceNormal;
-                Csa_tow_debug_arrow_4 setPosASL _cargoCorner4ASL;
-                Csa_tow_debug_arrow_4 setVectorUp _surfaceNormal;
+                TF47_tow_debug_arrow_1 setPosASL _cargoCorner1ASL;
+                TF47_tow_debug_arrow_1 setVectorUp _surfaceNormal;
+                TF47_tow_debug_arrow_2 setPosASL _cargoCorner2ASL;
+                TF47_tow_debug_arrow_2 setVectorUp _surfaceNormal;
+                TF47_tow_debug_arrow_3 setPosASL _cargoCorner3ASL;
+                TF47_tow_debug_arrow_3 setVectorUp _surfaceNormal;
+                TF47_tow_debug_arrow_4 setPosASL _cargoCorner4ASL;
+                TF47_tow_debug_arrow_4 setVectorUp _surfaceNormal;
             };
             
             // Calculate adjusted surface height based on surface normal (prevents vehicle from clipping into ground)
@@ -254,7 +247,7 @@ CSA_Simulate_Towing = {
             _maxDistanceToCargo = _vehicleHitchPosition distance _newCargoHitchPosition;
             _lastMovedCargoPosition = _cargoPosition;
 
-            _massAdjustedMaxSpeed = _vehicle getVariable ["CSA_Max_Tow_Speed",_maxVehicleSpeed];     
+            _massAdjustedMaxSpeed = _vehicle getVariable ["TF47_Max_Tow_Speed",_maxVehicleSpeed];     
             if(speed _vehicle > (_massAdjustedMaxSpeed)+0.1) then {
                 _vehicle setVelocity ((vectorNormalized (velocity _vehicle)) vectorMultiply (_massAdjustedMaxSpeed/3.6));
             };
@@ -270,12 +263,12 @@ CSA_Simulate_Towing = {
         
         // If vehicle isn't local to the client, switch client running towing simulation
         if(!local _vehicle) then {
-            [_this,"CSA_Simulate_Towing",_vehicle] call CSA_RemoteExec;
+            [_this,"TF47_Simulate_Towing",_vehicle] call TF47_RemoteExec;
             _doExit = true;
         };
         
         // If the vehicle isn't towing anything, stop the towing simulation
-        CSA_Get_Cargo(_vehicle,_currentCargo);
+        TF47_Get_Cargo(_vehicle,_currentCargo);
         if(isNull _currentCargo) then {
             _doExit = true;
         };
@@ -285,7 +278,7 @@ CSA_Simulate_Towing = {
     };
 };
 
-CSA_Get_Corner_Points = {
+TF47_Get_Corner_Points = {
     params ["_vehicle"];
     private ["_centerOfMass","_bbr","_p1","_p2","_rearCorner","_rearCorner2","_frontCorner","_frontCorner2"];
     private ["_maxWidth","_widthOffset","_maxLength","_lengthOffset","_widthFactor","_lengthFactor"];
@@ -314,27 +307,27 @@ CSA_Get_Corner_Points = {
     _frontCorner = [(_centerOfMass select 0) + _widthOffset, (_centerOfMass select 1) + _lengthOffset, _centerOfMass select 2];
     _frontCorner2 = [(_centerOfMass select 0) - _widthOffset, (_centerOfMass select 1) + _lengthOffset, _centerOfMass select 2];
     
-    if(missionNamespace getVariable ["CSA_TOW_DEBUG_ENABLED", false]) then {
-        if(isNil "Csa_tow_debug_arrow_1") then {
-            Csa_tow_debug_arrow_1 = "Sign_Arrow_F" createVehicleLocal [0,0,0];
-            Csa_tow_debug_arrow_2 = "Sign_Arrow_F" createVehicleLocal [0,0,0];
-            Csa_tow_debug_arrow_3 = "Sign_Arrow_F" createVehicleLocal [0,0,0];
-            Csa_tow_debug_arrow_4 = "Sign_Arrow_F" createVehicleLocal [0,0,0];
+    if(missionNamespace getVariable ["TF47_TOW_DEBUG_ENABLED", false]) then {
+        if(isNil "TF47_tow_debug_arrow_1") then {
+            TF47_tow_debug_arrow_1 = "Sign_Arrow_F" createVehicleLocal [0,0,0];
+            TF47_tow_debug_arrow_2 = "Sign_Arrow_F" createVehicleLocal [0,0,0];
+            TF47_tow_debug_arrow_3 = "Sign_Arrow_F" createVehicleLocal [0,0,0];
+            TF47_tow_debug_arrow_4 = "Sign_Arrow_F" createVehicleLocal [0,0,0];
         };
-        Csa_tow_debug_arrow_1 setPosASL  AGLtoASL (_vehicle modelToWorldVisual _rearCorner);
-        Csa_tow_debug_arrow_2 setPosASL  AGLtoASL (_vehicle modelToWorldVisual _rearCorner2);
-        Csa_tow_debug_arrow_3 setPosASL  AGLtoASL (_vehicle modelToWorldVisual _frontCorner);
-        Csa_tow_debug_arrow_4 setPosASL  AGLtoASL (_vehicle modelToWorldVisual _frontCorner2);
+        TF47_tow_debug_arrow_1 setPosASL  AGLtoASL (_vehicle modelToWorldVisual _rearCorner);
+        TF47_tow_debug_arrow_2 setPosASL  AGLtoASL (_vehicle modelToWorldVisual _rearCorner2);
+        TF47_tow_debug_arrow_3 setPosASL  AGLtoASL (_vehicle modelToWorldVisual _frontCorner);
+        TF47_tow_debug_arrow_4 setPosASL  AGLtoASL (_vehicle modelToWorldVisual _frontCorner2);
     };
             
     [_rearCorner,_rearCorner2,_frontCorner,_frontCorner2];
 };
 
-CSA_Get_Hitch_Points = {
+TF47_Get_Hitch_Points = {
     params ["_vehicle"];
     private ["_cornerPoints","_rearCorner","_rearCorner2","_frontCorner","_frontCorner2","_rearHitchPoint"];
     private ["_frontHitchPoint","_sideLeftPoint","_sideRightPoint"];
-    _cornerPoints = [_vehicle] call CSA_Get_Corner_Points;
+    _cornerPoints = [_vehicle] call TF47_Get_Corner_Points;
     _rearCorner = _cornerPoints select 0;
     _rearCorner2 = _cornerPoints select 1;
     _frontCorner = _cornerPoints select 2;
@@ -346,18 +339,18 @@ CSA_Get_Hitch_Points = {
     [_frontHitchPoint,_rearHitchPoint];
 };
 
-CSA_Attach_Tow_Ropes = {
+TF47_Attach_Tow_Ropes = {
     params ["_cargo","_player"];
-    _vehicle = _player getVariable ["CSA_Tow_Ropes_Vehicle", objNull];
+    _vehicle = _player getVariable ["TF47_Tow_Ropes_Vehicle", objNull];
     if(!isNull _vehicle) then {
         if(local _vehicle) then {
             private ["_towRopes","_vehicleHitch","_cargoHitch","_objDistance","_ropeLength"];
-            _towRopes = _vehicle getVariable ["CSA_Tow_Ropes",[]];
+            _towRopes = _vehicle getVariable ["TF47_Tow_Ropes",[]];
             if(count _towRopes == 1) then {
             
                 /*
                 private ["_cargoHitchPoints","_distanceToFrontHitch","_distanceToRearHitch","_isRearCargoHitch"];
-                _cargoHitchPoints = [_cargo] call CSA_Get_Hitch_Points;
+                _cargoHitchPoints = [_cargo] call TF47_Get_Hitch_Points;
                 _distanceToFrontHitch = player distance (_cargo modelToWorld (_cargoHitchPoints select 0));
                 _distanceToRearHitch = player distance (_cargo modelToWorld (_cargoHitchPoints select 1));
                 if( _distanceToFrontHitch < _distanceToRearHitch ) then {
@@ -369,48 +362,48 @@ CSA_Attach_Tow_Ropes = {
                 };
                 */
                 
-                _cargoHitch = ([_cargo] call CSA_Get_Hitch_Points) select 0;
+                _cargoHitch = ([_cargo] call TF47_Get_Hitch_Points) select 0;
                 
-                _vehicleHitch = ([_vehicle] call CSA_Get_Hitch_Points) select 1;
+                _vehicleHitch = ([_vehicle] call TF47_Get_Hitch_Points) select 1;
                 _ropeLength = (ropeLength (_towRopes select 0));
                 _objDistance = ((_vehicle modelToWorld _vehicleHitch) distance (_cargo modelToWorld _cargoHitch));
                 if( _objDistance > _ropeLength ) then {
-                    [["The tow ropes are too short. Move vehicle closer.", false],"CSA_Hint",_player] call CSA_RemoteExec;
+                    [["The tow ropes are too short. Move vehicle closer.", false],"TF47_Hint",_player] call TF47_RemoteExec;
                 } else {        
-                    [_vehicle,_player] call CSA_Drop_Tow_Ropes;
+                    [_vehicle,_player] call TF47_Drop_Tow_Ropes;
                     _helper = "Land_Can_V2_F" createVehicle position _cargo;
                     _helper attachTo [_cargo, _cargoHitch];
-                    _helper setVariable ["CSA_Cargo",_cargo,true];
+                    _helper setVariable ["TF47_Cargo",_cargo,true];
                     hideObject _helper;
-                    [[_helper],"CSA_Hide_Object_Global"] call CSA_RemoteExecServer;
+                    [[_helper],"TF47_Hide_Object_Global"] call TF47_RemoteExecServer;
                     [_helper, [0,0,0], [0,0,-1]] ropeAttachTo (_towRopes select 0);
-                    [_vehicle,_vehicleHitch,_cargo,_cargoHitch,_ropeLength] spawn CSA_Simulate_Towing;
+                    [_vehicle,_vehicleHitch,_cargo,_cargoHitch,_ropeLength] spawn TF47_Simulate_Towing;
                 };
             };
         } else {
-            [_this,"CSA_Attach_Tow_Ropes",_vehicle,true] call CSA_RemoteExec;
+            [_this,"TF47_Attach_Tow_Ropes",_vehicle,true] call TF47_RemoteExec;
         };
     };
 };
 
-CSA_Take_Tow_Ropes = {
+TF47_Take_Tow_Ropes = {
     params ["_vehicle","_player"];
     if(local _vehicle) then {
         diag_log format ["Take Tow Ropes Called %1", _this];
         private ["_existingTowRopes","_hitchPoint","_rope"];
-        _existingTowRopes = _vehicle getVariable ["CSA_Tow_Ropes",[]];
+        _existingTowRopes = _vehicle getVariable ["TF47_Tow_Ropes",[]];
         if(count _existingTowRopes == 0) then {
-            _hitchPoint = [_vehicle] call CSA_Get_Hitch_Points select 1;
+            _hitchPoint = [_vehicle] call TF47_Get_Hitch_Points select 1;
             _rope = ropeCreate [_vehicle, _hitchPoint, 10];
-            _vehicle setVariable ["CSA_Tow_Ropes",[_rope],true];
-            _this call CSA_Pickup_Tow_Ropes;
+            _vehicle setVariable ["TF47_Tow_Ropes",[_rope],true];
+            _this call TF47_Pickup_Tow_Ropes;
         };
     } else {
-        [_this,"CSA_Take_Tow_Ropes",_vehicle,true] call CSA_RemoteExec;
+        [_this,"TF47_Take_Tow_Ropes",_vehicle,true] call TF47_RemoteExec;
     };
 };
 
-CSA_Pickup_Tow_Ropes = {
+TF47_Pickup_Tow_Ropes = {
     params ["_vehicle","_player"];
     if(local _vehicle) then {
         private ["_attachedObj","_helper"];
@@ -418,191 +411,195 @@ CSA_Pickup_Tow_Ropes = {
             _attachedObj = _x;
             {
                 _attachedObj ropeDetach _x;
-            } forEach (_vehicle getVariable ["CSA_Tow_Ropes",[]]);
+            } forEach (_vehicle getVariable ["TF47_Tow_Ropes",[]]);
             deleteVehicle _attachedObj;
         } forEach ropeAttachedObjects _vehicle;
         _helper = "Land_Can_V2_F" createVehicle position _player;
         {
             [_helper, [0, 0, 0], [0,0,-1]] ropeAttachTo _x;
             _helper attachTo [_player, [-0.1, 0.1, 0.15], "Pelvis"];
-        } forEach (_vehicle getVariable ["CSA_Tow_Ropes",[]]);
+        } forEach (_vehicle getVariable ["TF47_Tow_Ropes",[]]);
         hideObject _helper;
-        [[_helper],"CSA_Hide_Object_Global"] call CSA_RemoteExecServer;
-        _player setVariable ["CSA_Tow_Ropes_Vehicle", _vehicle,true];
-        _player setVariable ["CSA_Tow_Ropes_Pick_Up_Helper", _helper,true];
+        [[_helper],"TF47_Hide_Object_Global"] call TF47_RemoteExecServer;
+        _player setVariable ["TF47_Tow_Ropes_Vehicle", _vehicle,true];
+        _player setVariable ["TF47_Tow_Ropes_Pick_Up_Helper", _helper,true];
     } else {
-        [_this,"CSA_Pickup_Tow_Ropes",_vehicle,true] call CSA_RemoteExec;
+        [_this,"TF47_Pickup_Tow_Ropes",_vehicle,true] call TF47_RemoteExec;
     };
 };
 
-CSA_Drop_Tow_Ropes = {
+TF47_Drop_Tow_Ropes = {
     params ["_vehicle","_player"];
+    systemChat "Dropping Ropes!";
     if(local _vehicle) then {
+        systemChat "ist lokal";
         private ["_helper"];
-        _helper = (_player getVariable ["CSA_Tow_Ropes_Pick_Up_Helper", objNull]);
+        _helper = (_player getVariable ["TF47_Tow_Ropes_Pick_Up_Helper", objNull]);
         if(!isNull _helper) then {
+            systemChat "Hat einen Helfer!";
             {
                 _helper ropeDetach _x;
-            } forEach (_vehicle getVariable ["CSA_Tow_Ropes",[]]);
+            } forEach (_vehicle getVariable ["TF47_Tow_Ropes",[]]);
             detach _helper;
             deleteVehicle _helper;
         };
-        _player setVariable ["CSA_Tow_Ropes_Vehicle", nil,true];
-        _player setVariable ["CSA_Tow_Ropes_Pick_Up_Helper", nil,true];
+        _player setVariable ["TF47_Tow_Ropes_Vehicle", nil,true];
+        _player setVariable ["TF47_Tow_Ropes_Pick_Up_Helper", nil,true];
     } else {
-        [_this,"CSA_Drop_Tow_Ropes",_vehicle,true] call CSA_RemoteExec;
+        systemChat "nicht lokal!";
+        [_this,"TF47_Drop_Tow_Ropes",_vehicle,true] call TF47_RemoteExec;
     };
 };
 
-CSA_Put_Away_Tow_Ropes = {
+TF47_Put_Away_Tow_Ropes = {
     params ["_vehicle","_player"];
     if(local _vehicle) then {
         private ["_existingTowRopes","_hitchPoint","_rope"];
-        _existingTowRopes = _vehicle getVariable ["CSA_Tow_Ropes",[]];
+        _existingTowRopes = _vehicle getVariable ["TF47_Tow_Ropes",[]];
         if(count _existingTowRopes > 0) then {
-            _this call CSA_Pickup_Tow_Ropes;
-            _this call CSA_Drop_Tow_Ropes;
+            _this call TF47_Pickup_Tow_Ropes;
+            _this call TF47_Drop_Tow_Ropes;
             {
                 ropeDestroy _x;
             } forEach _existingTowRopes;
-            _vehicle setVariable ["CSA_Tow_Ropes",nil,true];
+            _vehicle setVariable ["TF47_Tow_Ropes",nil,true];
         };
     } else {
-        [_this,"CSA_Put_Away_Tow_Ropes",_vehicle,true] call CSA_RemoteExec;
+        [_this,"TF47_Put_Away_Tow_Ropes",_vehicle,true] call TF47_RemoteExec;
     };
 };
 
-CSA_Attach_Tow_Ropes_Action = {
+TF47_Attach_Tow_Ropes_Action = {
     private ["_vehicle","_cargo","_canBeTowed"];
     _cargo = cursorTarget;
-    _vehicle = player getVariable ["CSA_Tow_Ropes_Vehicle", objNull];
-    if([_vehicle,_cargo] call CSA_Can_Attach_Tow_Ropes) then {
+    _vehicle = player getVariable ["TF47_Tow_Ropes_Vehicle", objNull];
+    if([_vehicle,_cargo] call TF47_Can_Attach_Tow_Ropes) then {
         
         _canBeTowed = true;
         
-        if!(missionNamespace getVariable ["CSA_TOW_LOCKED_VEHICLES_ENABLED",false]) then {
+        if!(missionNamespace getVariable ["TF47_TOW_LOCKED_VEHICLES_ENABLED",false]) then {
             if( locked _cargo > 1 ) then {
-                ["Cannot attach tow ropes to locked vehicle",false] call CSA_Hint;
+                ["Cannot attach tow ropes to locked vehicle",false] call TF47_Hint;
                 _canBeTowed = false;
             };
         };
         
-        if!(missionNamespace getVariable ["CSA_TOW_IN_EXILE_SAFEZONE_ENABLED",false]) then {
+        if!(missionNamespace getVariable ["TF47_TOW_IN_EXILE_SAFEZONE_ENABLED",false]) then {
             if(!isNil "ExilePlayerInSafezone") then {
                 if( ExilePlayerInSafezone ) then {
-                    ["Cannot attach tow ropes in safe zone",false] call CSA_Hint;
+                    ["Cannot attach tow ropes in safe zone",false] call TF47_Hint;
                     _canBeTowed = false;
                 };
             };
         };
     
         if(_canBeTowed) then {
-            [_cargo,player] call CSA_Attach_Tow_Ropes;
+            [_cargo,player] call TF47_Attach_Tow_Ropes;
         };
         
     };
 };
 
-CSA_Attach_Tow_Ropes_Action_Check = {
+TF47_Attach_Tow_Ropes_Action_Check = {
     params ["_cargo"];
     private ["_vehicle"];
-    _vehicle = player getVariable ["CSA_Tow_Ropes_Vehicle", objNull];
+    _vehicle = player getVariable ["TF47_Tow_Ropes_Vehicle", objNull];
     _cargo = cursorTarget;
-    [_vehicle,_cargo] call CSA_Can_Attach_Tow_Ropes;
+    [_vehicle,_cargo] call TF47_Can_Attach_Tow_Ropes;
 };
 
-CSA_Can_Attach_Tow_Ropes = {
+TF47_Can_Attach_Tow_Ropes = {
     params ["_vehicle","_cargo"];
     if(!isNull _vehicle && !isNull _cargo) then {
-        [_vehicle,_cargo] call CSA_Is_Supported_Cargo && vehicle player == player && player distance _cargo < 10 && _vehicle != _cargo;
+        [_vehicle,_cargo] call TF47_Is_Supported_Cargo && vehicle player == player && player distance _cargo < 10 && _vehicle != _cargo;
     } else {
         false;
     };
 };
 
-CSA_Take_Tow_Ropes_Action = {
+TF47_Take_Tow_Ropes_Action = {
     params ["_vehicle"];
     private ["_canTakeTowRopes"];
-    if([_vehicle] call CSA_Can_Take_Tow_Ropes) then {
+    if([_vehicle] call TF47_Can_Take_Tow_Ropes) then {
     
         _canTakeTowRopes = true;
         
-        if!(missionNamespace getVariable ["CSA_TOW_LOCKED_VEHICLES_ENABLED",false]) then {
+        if!(missionNamespace getVariable ["TF47_TOW_LOCKED_VEHICLES_ENABLED",false]) then {
             if( locked _vehicle > 1 ) then {
-                ["Cannot take tow ropes from locked vehicle",false] call CSA_Hint;
+                ["Cannot take tow ropes from locked vehicle",false] call TF47_Hint;
                 _canTakeTowRopes = false;
             };
         };
         
-        if!(missionNamespace getVariable ["CSA_TOW_IN_EXILE_SAFEZONE_ENABLED",false]) then {
+        if!(missionNamespace getVariable ["TF47_TOW_IN_EXILE_SAFEZONE_ENABLED",false]) then {
             if(!isNil "ExilePlayerInSafezone") then {
                 if( ExilePlayerInSafezone ) then {
-                    ["Cannot take tow ropes in safe zone",false] call CSA_Hint;
+                    ["Cannot take tow ropes in safe zone",false] call TF47_Hint;
                     _canTakeTowRopes = false;
                 };
             };
         };
     
         if(_canTakeTowRopes) then {
-            [_vehicle,player] call CSA_Take_Tow_Ropes;
+            [_vehicle,player] call TF47_Take_Tow_Ropes;
         };
     
     };
 };
 
 
-CSA_Can_Take_Tow_Ropes = {
+TF47_Can_Take_Tow_Ropes = {
     params ["_vehicle"];
-    if([_vehicle] call CSA_Is_Supported_Vehicle) then {
+    if([_vehicle] call TF47_Is_Supported_Vehicle) then {
         private ["_existingVehicle","_existingTowRopes"];
-        _existingTowRopes = _vehicle getVariable ["CSA_Tow_Ropes",[]];
-        _existingVehicle = player getVariable ["CSA_Tow_Ropes_Vehicle", objNull];
+        _existingTowRopes = _vehicle getVariable ["TF47_Tow_Ropes",[]];
+        _existingVehicle = player getVariable ["TF47_Tow_Ropes_Vehicle", objNull];
         vehicle player == player && player distance _vehicle < 10 && (count _existingTowRopes) == 0 && isNull _existingVehicle;
     } else {
         false;
     };
 };
 
-CSA_Put_Away_Tow_Ropes_Action = {
+TF47_Put_Away_Tow_Ropes_Action = {
     params ["_vehicle"];
     private ["_canPutAwayTowRopes"];
-    if([_vehicle] call CSA_Can_Put_Away_Tow_Ropes) then {
+    if([_vehicle] call TF47_Can_Put_Away_Tow_Ropes) then {
     
         _canPutAwayTowRopes = true;
         
-        if!(missionNamespace getVariable ["CSA_TOW_LOCKED_VEHICLES_ENABLED",false]) then {
+        if!(missionNamespace getVariable ["TF47_TOW_LOCKED_VEHICLES_ENABLED",false]) then {
             if( locked _vehicle > 1 ) then {
-                ["Cannot put away tow ropes in locked vehicle",false] call CSA_Hint;
+                ["Cannot put away tow ropes in locked vehicle",false] call TF47_Hint;
                 _canPutAwayTowRopes = false;
             };
         };
         
-        if!(missionNamespace getVariable ["CSA_TOW_IN_EXILE_SAFEZONE_ENABLED",false]) then {
+        if!(missionNamespace getVariable ["TF47_TOW_IN_EXILE_SAFEZONE_ENABLED",false]) then {
             if(!isNil "ExilePlayerInSafezone") then {
                 if( ExilePlayerInSafezone ) then {
-                    ["Cannot put away tow ropes in safe zone",false] call CSA_Hint;
+                    ["Cannot put away tow ropes in safe zone",false] call TF47_Hint;
                     _canPutAwayTowRopes = false;
                 };
             };
         };
     
         if(_canPutAwayTowRopes) then {
-            [_vehicle,player] call CSA_Put_Away_Tow_Ropes;
+            [_vehicle,player] call TF47_Put_Away_Tow_Ropes;
         };
         
     };
 };
 
-CSA_Put_Away_Tow_Ropes_Action_Check = {
+TF47_Put_Away_Tow_Ropes_Action_Check = {
     params ["_vehicle"];
-    [_vehicle] call CSA_Can_Put_Away_Tow_Ropes;
+    [_vehicle] call TF47_Can_Put_Away_Tow_Ropes;
 };
 
-CSA_Can_Put_Away_Tow_Ropes = {
+TF47_Can_Put_Away_Tow_Ropes = {
     params ["_vehicle"];
     private ["_existingTowRopes"];
-    if([_vehicle] call CSA_Is_Supported_Vehicle) then {
-        _existingTowRopes = _vehicle getVariable ["CSA_Tow_Ropes",[]];
+    if([_vehicle] call TF47_Is_Supported_Vehicle) then {
+        _existingTowRopes = _vehicle getVariable ["TF47_Tow_Ropes",[]];
         vehicle player == player && player distance _vehicle < 10 && (count _existingTowRopes) > 0;
     } else {
         false;
@@ -610,68 +607,69 @@ CSA_Can_Put_Away_Tow_Ropes = {
 };
 
 
-CSA_Drop_Tow_Ropes_Action = {
+TF47_Drop_Tow_Ropes_Action = {
     private ["_vehicle"];
     _vehicle = player getVariable ["SA_Tow_Ropes_Vehicle", objNull];
-    if([] call CSA_Can_Drop_Tow_Ropes) then {
-        [_vehicle, player] call CSA_Drop_Tow_Ropes;
+    if([] call TF47_Can_Drop_Tow_Ropes) then {
+        [_vehicle, player] call TF47_Drop_Tow_Ropes;
     };
 };
 
-CSA_Drop_Tow_Ropes_Action_Check = {
-    [] call CSA_Can_Drop_Tow_Ropes;
+TF47_Drop_Tow_Ropes_Action_Check = {
+    [] call TF47_Can_Drop_Tow_Ropes;
 };
 
-CSA_Can_Drop_Tow_Ropes = {
-    !isNull (player getVariable ["CSA_Tow_Ropes_Vehicle", objNull]) && vehicle player == player;
+TF47_Can_Drop_Tow_Ropes = {
+    systemChat "Kann ich Droppen?";
+    !isNull (player getVariable ["TF47_Tow_Ropes_Vehicle", objNull]) && vehicle player == player;
 };
 
 
 
-CSA_Pickup_Tow_Ropes_Action = {
+TF47_Pickup_Tow_Ropes_Action = {
     private ["_nearbyTowVehicles","_canPickupTowRopes","_vehicle"];
-    _nearbyTowVehicles = missionNamespace getVariable ["CSA_Nearby_Tow_Vehicles",[]];
-    if([] call CSA_Can_Pickup_Tow_Ropes) then {
+    _nearbyTowVehicles = missionNamespace getVariable ["TF47_Nearby_Tow_Vehicles",[]];
+    if([] call TF47_Can_Pickup_Tow_Ropes) then {
     
         _vehicle = _nearbyTowVehicles select 0;
         _canPickupTowRopes = true;
         
-        if!(missionNamespace getVariable ["CSA_TOW_LOCKED_VEHICLES_ENABLED",false]) then {
+        if!(missionNamespace getVariable ["TF47_TOW_LOCKED_VEHICLES_ENABLED",false]) then {
             if( locked _vehicle > 1 ) then {
-                ["Cannot pick up tow ropes from locked vehicle",false] call CSA_Hint;
+                ["Cannot pick up tow ropes from locked vehicle",false] call TF47_Hint;
                 _canPickupTowRopes = false;
             };
         };
         
-        if!(missionNamespace getVariable ["CSA_TOW_IN_EXILE_SAFEZONE_ENABLED",false]) then {
+        if!(missionNamespace getVariable ["TF47_TOW_IN_EXILE_SAFEZONE_ENABLED",false]) then {
             if(!isNil "ExilePlayerInSafezone") then {
                 if( ExilePlayerInSafezone ) then {
-                    ["Cannot pick up tow ropes in safe zone",false] call CSA_Hint;
+                    ["Cannot pick up tow ropes in safe zone",false] call TF47_Hint;
                     _canPickupTowRopes = false;
                 };
             };
         };
     
         if(_canPickupTowRopes) then {
-            [_nearbyTowVehicles select 0, player] call CSA_Pickup_Tow_Ropes;
+            [_nearbyTowVehicles select 0, player] call TF47_Pickup_Tow_Ropes;
         };
     
     };
 };
 
-CSA_Pickup_Tow_Ropes_Action_Check = {
-    [] call CSA_Can_Pickup_Tow_Ropes;
+TF47_Pickup_Tow_Ropes_Action_Check = {
+    [] call TF47_Can_Pickup_Tow_Ropes;
 };
 
-CSA_Can_Pickup_Tow_Ropes = {
-    isNull (player getVariable ["CSA_Tow_Ropes_Vehicle", objNull]) && count (missionNamespace getVariable ["CSA_Nearby_Tow_Vehicles",[]]) > 0 && vehicle player == player;
+TF47_Can_Pickup_Tow_Ropes = {
+    isNull (player getVariable ["TF47_Tow_Ropes_Vehicle", objNull]) && count (missionNamespace getVariable ["TF47_Nearby_Tow_Vehicles",[]]) > 0 && vehicle player == player;
 };
 
-CSA_TOW_SUPPORTED_VEHICLES = [
+TF47_TOW_SUPPORTED_VEHICLES = [
     "Tank", "Car", "Ship"
 ];
 
-CSA_Is_Supported_Vehicle = {
+TF47_Is_Supported_Vehicle = {
     params ["_vehicle","_isSupported"];
     _isSupported = false;
     if(not isNull _vehicle) then {
@@ -679,12 +677,12 @@ CSA_Is_Supported_Vehicle = {
             if(_vehicle isKindOf _x) then {
                 _isSupported = true;
             };
-        } forEach (missionNamespace getVariable ["CSA_TOW_SUPPORTED_VEHICLES_OVERRIDE",CSA_TOW_SUPPORTED_VEHICLES]);
+        } forEach (missionNamespace getVariable ["TF47_TOW_SUPPORTED_VEHICLES_OVERRIDE",TF47_TOW_SUPPORTED_VEHICLES]);
     };
     _isSupported;
 };
 
-CSA_TOW_RULES = [
+TF47_TOW_RULES = [
     ["Tank","CAN_TOW","Tank"],
     ["Tank","CAN_TOW","Car"],
     ["Tank","CAN_TOW","Ship"],
@@ -696,7 +694,7 @@ CSA_TOW_RULES = [
     ["Ship","CAN_TOW","Ship"]
 ];
 
-CSA_Is_Supported_Cargo = {
+TF47_Is_Supported_Cargo = {
     params ["_vehicle","_cargo"];
     private ["_canTow"];
     _canTow = false;
@@ -711,12 +709,12 @@ CSA_Is_Supported_Cargo = {
                     };
                 };
             };
-        } forEach (missionNamespace getVariable ["CSA_TOW_RULES_OVERRIDE",CSA_TOW_RULES]);
+        } forEach (missionNamespace getVariable ["TF47_TOW_RULES_OVERRIDE",TF47_TOW_RULES]);
     };
     _canTow;
 };
 
-CSA_Hint = {
+TF47_Hint = {
     params ["_msg",["_isSuccess",true]];
     if(!isNil "ExileClient_gui_notification_event_addNotification") then {
         if(_isSuccess) then {
@@ -729,14 +727,14 @@ CSA_Hint = {
     };
 };
 
-CSA_Hide_Object_Global = {
+TF47_Hide_Object_Global = {
     params ["_obj"];
     if( _obj isKindOf "Land_Can_V2_F" ) then {
         hideObjectGlobal _obj;
     };
 };
 
-CSA_Set_Owner = {
+TF47_Set_Owner = {
     params ["_obj","_client"];
     _obj setOwner _client;
 };
@@ -752,9 +750,9 @@ CSA_Set_Owner = {
         "Deploy Tow Ropes",
         "\a3\3den\Data\CfgWaypoints\hook_ca.paa",
         {
-            [_target] call CSA_Take_Tow_Ropes_Action;
+            [_target] call TF47_Take_Tow_Ropes_Action;
         }, {
-            [_target] call CSA_Can_Take_Tow_Ropes
+            [_target] call TF47_Can_Take_Tow_Ropes
         },{},nil,"",3,[false,false,false,false,false]
     ] call ace_interact_menu_fnc_createAction;
 
@@ -766,9 +764,9 @@ CSA_Set_Owner = {
         "Attach Tow Ropes",
         "\a3\3den\Data\CfgWaypoints\hook_ca.paa",
         {
-            [_target] call CSA_Attach_Tow_Ropes_Action;
+            [_target] call TF47_Attach_Tow_Ropes_Action;
         }, {
-            [_target] call CSA_Attach_Tow_Ropes_Action_Check
+            [_target] call TF47_Attach_Tow_Ropes_Action_Check
         },{},nil,"",3,[false,false,false,false,false]
     ] call ace_interact_menu_fnc_createAction;
 
@@ -780,9 +778,9 @@ CSA_Set_Owner = {
         "Put Away Tow Ropes",
         "\a3\3den\Data\CfgWaypoints\unhook_ca.paa",
         {
-            [_target] call CSA_Attach_Tow_Ropes_Action;
+            [_target] call TF47_Attach_Tow_Ropes_Action;
         }, {
-            [_target] call CSA_Attach_Tow_Ropes_Action_Check
+            [_target] call TF47_Attach_Tow_Ropes_Action_Check
         },{},nil,"",3,[false,false,false,false,false]
     ] call ace_interact_menu_fnc_createAction;
 
@@ -790,38 +788,38 @@ CSA_Set_Owner = {
 
 }, true, [], true] call CBA_fnc_addClassEventHandler;
 
-// add self interact actions
+// add self interact actions DOESNT WORK RETARD!
 private _dropTowRopes  = [
     "dropRopes",
     "Drop Ropes",
     "\A3\ui_f\data\igui\cfg\actions\ico_OFF_ca.paa",
     {
-        call CSA_Drop_Tow_Ropes_Action;
+        call TF47_Drop_Tow_Ropes_Action;
     }, {
-          call CSA_Can_Drop_Tow_Ropes
+          call TF47_Can_Drop_Tow_Ropes
     },{},nil,"",3,[false,false,false,false,false]
 ] call ace_interact_menu_fnc_createAction;
 
 [player, 1, ["ACE_SelfActions"], _dropTowRopes ] call ace_interact_menu_fnc_addActionToObject;
 
-CSA_Add_Player_Tow_Actions = {
+TF47_Add_Player_Tow_Actions = {
 
     player addAction ["Pickup Tow Ropes", { 
-        [] call CSA_Pickup_Tow_Ropes_Action;
-    }, nil, 0, false, true, "", "call CSA_Pickup_Tow_Ropes_Action_Check"];
+        [] call TF47_Pickup_Tow_Ropes_Action;
+    }, nil, 0, false, true, "", "call TF47_Pickup_Tow_Ropes_Action_Check"];
 
     player addEventHandler ["Respawn", {
-        player setVariable ["CSA_Tow_Actions_Loaded",false];
+        player setVariable ["TF47_Tow_Actions_Loaded",false];
     }];
     
 };
 
-CSA_Find_Nearby_Tow_Vehicles = {
+TF47_Find_Nearby_Tow_Vehicles = {
     private ["_nearVehicles","_nearVehiclesWithTowRopes","_vehicle","_ends","_end1","_end2"];
     _nearVehicles = [];
     {
         _nearVehicles append  (position player nearObjects [_x, 30]);
-    } forEach (missionNamespace getVariable ["CSA_TOW_SUPPORTED_VEHICLES_OVERRIDE",CSA_TOW_SUPPORTED_VEHICLES]);
+    } forEach (missionNamespace getVariable ["TF47_TOW_SUPPORTED_VEHICLES_OVERRIDE",TF47_TOW_SUPPORTED_VEHICLES]);
     _nearVehiclesWithTowRopes = [];
     {
         _vehicle = _x;
@@ -834,7 +832,7 @@ CSA_Find_Nearby_Tow_Vehicles = {
                     _nearVehiclesWithTowRopes pushBack _vehicle;
                 }
             };
-        } forEach (_vehicle getVariable ["CSA_Tow_Ropes",[]]);
+        } forEach (_vehicle getVariable ["TF47_Tow_Ropes",[]]);
     } forEach _nearVehicles;
     _nearVehiclesWithTowRopes;
 };
@@ -843,18 +841,18 @@ if(!isDedicated) then {
     [] spawn {
         while {true} do {
             if(!isNull player && isPlayer player) then {
-                if!( player getVariable ["CSA_Tow_Actions_Loaded",false] ) then {
-                    [] call CSA_Add_Player_Tow_Actions;
-                    player setVariable ["CSA_Tow_Actions_Loaded",true];
+                if!( player getVariable ["TF47_Tow_Actions_Loaded",false] ) then {
+                    [] call TF47_Add_Player_Tow_Actions;
+                    player setVariable ["TF47_Tow_Actions_Loaded",true];
                 };
             };
-            missionNamespace setVariable ["CSA_Nearby_Tow_Vehicles", (call CSA_Find_Nearby_Tow_Vehicles)];
+            missionNamespace setVariable ["TF47_Nearby_Tow_Vehicles", (call TF47_Find_Nearby_Tow_Vehicles)];
             sleep 2;
         };
     };
 };
 
-CSA_RemoteExec = {
+TF47_RemoteExec = {
     params ["_params","_functionName","_target",["_isCall",false]];
     if(!isNil "ExileClient_system_network_send") then {
         ["AdvancedTowingRemoteExecClient",[_params,_functionName,_target,_isCall]] call ExileClient_system_network_send;
@@ -867,7 +865,7 @@ CSA_RemoteExec = {
     };
 };
 
-CSA_RemoteExecServer = {
+TF47_RemoteExecServer = {
     params ["_params","_functionName",["_isCall",false]];
     if(!isNil "ExileClient_system_network_send") then {
         ["AdvancedTowingRemoteExecServer",[_params,_functionName,_isCall]] call ExileClient_system_network_send;
@@ -884,12 +882,12 @@ if(isServer) then {
     
     // Adds support for exile network calls (Only used when running exile) //
     
-    CSA_SUPPORTED_REMOTEEXECSERVER_FUNCTIONS = ["CSA_Set_Owner","CSA_Hide_Object_Global"];
+    TF47_SUPPORTED_REMOTEEXECSERVER_FUNCTIONS = ["TF47_Set_Owner","TF47_Hide_Object_Global"];
     
     ExileServer_AdvancedTowing_network_AdvancedTowingRemoteExecServer = {
         params ["_sessionId", "_messageParameters",["_isCall",false]];
         _messageParameters params ["_params","_functionName"];
-        if(_functionName in CSA_SUPPORTED_REMOTEEXECSERVER_FUNCTIONS) then {
+        if(_functionName in TF47_SUPPORTED_REMOTEEXECSERVER_FUNCTIONS) then {
             if(_isCall) then {
                 _params call (missionNamespace getVariable [_functionName,{}]);
             } else {
@@ -898,12 +896,12 @@ if(isServer) then {
         };
     };
     
-    CSA_SUPPORTED_REMOTEEXECCLIENT_FUNCTIONS = ["CSA_Simulate_Towing","CSA_Attach_Tow_Ropes","CSA_Take_Tow_Ropes","CSA_Put_Away_Tow_Ropes","CSA_Pickup_Tow_Ropes","CSA_Drop_Tow_Ropes","CSA_Hint"];
+    TF47_SUPPORTED_REMOTEEXECCLIENT_FUNCTIONS = ["TF47_Simulate_Towing","TF47_Attach_Tow_Ropes","TF47_Take_Tow_Ropes","TF47_Put_Away_Tow_Ropes","TF47_Pickup_Tow_Ropes","TF47_Drop_Tow_Ropes","TF47_Hint"];
     
     ExileServer_AdvancedTowing_network_AdvancedTowingRemoteExecClient = {
         params ["_sessionId", "_messageParameters"];
         _messageParameters params ["_params","_functionName","_target",["_isCall",false]];
-        if(_functionName in CSA_SUPPORTED_REMOTEEXECCLIENT_FUNCTIONS) then {
+        if(_functionName in TF47_SUPPORTED_REMOTEEXECCLIENT_FUNCTIONS) then {
             if(_isCall) then {
                 _params remoteExecCall [_functionName, _target];
             } else {
@@ -914,8 +912,8 @@ if(isServer) then {
 
     // Install Advanced Towing on all clients (plus JIP) //
     
-    publicVariable "CSA_Advanced_Towing_Install";
-    remoteExecCall ["CSA_Advanced_Towing_Install", -2,true];
+    publicVariable "TF47_Advanced_Towing_Install";
+    remoteExecCall ["TF47_Advanced_Towing_Install", -2,true];
     
 };
 
@@ -924,5 +922,5 @@ diag_log "Advanced Towing Loaded";
 };
 
 if(isServer) then {
-    [] call CSA_Advanced_Towing_Install;
+    [] call TF47_Advanced_Towing_Install;
 };
