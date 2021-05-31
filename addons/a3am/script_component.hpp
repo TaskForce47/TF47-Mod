@@ -1,5 +1,5 @@
-#define COMPONENT common
-#include "\z\a3am\addons\main\script_mod.hpp"
+#define COMPONENT A3AM
+#include "\z\TF47\addons\main\script_mod.hpp"
 
 // #define DEBUG_MODE_FULL
 // #define DISABLE_COMPILE_CACHE
@@ -38,4 +38,4 @@
 #define MODE_ATL 0
 #define MODE_ASL 1
 
-#include "\z\a3am\addons\main\script_macros.hpp"
+#include "\z\TF47\addons\main\script_macros.hpp"
