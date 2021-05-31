@@ -15,7 +15,7 @@ Return mirrored and filtered positions of get in memory points
     ]
 
 * Example:
-* [vehicle player] call dwyl_main_fnc_getExits
+* [vehicle player] call TF47_dwyl_fnc_getExits
 */
 
 params ["_vehicle"];

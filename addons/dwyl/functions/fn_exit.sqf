@@ -10,7 +10,7 @@ Player exits vehicle at the chosen memory point.
 * None
 
 * Example:
-* [] call dwyl_main_fnc_exit
+* [] call TF47_dwyl_fnc_exit
 */
 
 if dwyl_exit_pfh_running then {dwyl_exit_pfh_running = false};
@@ -18,8 +18,8 @@ private _vehicle = vehicle player;
 if (_vehicle == player) exitWith {};
 
 if (isNil "dwyl_exit_position") then {
-    private _sp = [_vehicle] call dwyl_main_fnc_getExits;
-    private _indexClosest = [_vehicle, _sp] call dwyl_main_fnc_findLookedAt;
+    private _sp = [_vehicle] call TF47_dwyl_fnc_getExits;
+    private _indexClosest = [_vehicle, _sp] call TF47_dwyl_fnc_findLookedAt;
     dwyl_exit_position = _sp select _indexClosest;
 };
 

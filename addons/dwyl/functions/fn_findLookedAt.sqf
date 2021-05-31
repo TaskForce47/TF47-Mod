@@ -16,7 +16,7 @@ Return which of the vehicle's selection positions is being looked at by the came
 * 0: Result Index <NUMBER>
 
 * Example:
-* [_vehicle, _sp] call dwyl_main_fnc_findLookedAt
+* [_vehicle, _sp] call TF47_dwyl_fnc_findLookedAt
 */
 
 params ["_vehicle", "_sp"];

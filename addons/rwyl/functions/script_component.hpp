@@ -1,1 +1,1 @@
-#include "..\script_component.hpp"
+#include "\z\TF47\addons\rwyl\script_component.hpp"

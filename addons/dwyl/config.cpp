@@ -2,15 +2,30 @@
 
 class CfgPatches {
     class ADDON {
-        name = COMPONENT_NAME;
+        name = "Dismount Where You Look";
         units[] = {};
         weapons[] = {};
-        requiredVersion = REQUIRED_VERSION;
+        requiredVersion = 0.0.1;
         requiredAddons[] = {"cba_common"};
         author = "Ampersand";
         authors[] = {"Ampersand"};
         authorUrl = "https://github.com/ampersand38/dwyl";
         VERSION_CONFIG;
+    };
+};
+
+class CfgFunctions 
+{
+    class TF47
+    {
+        class COMPONENT
+        {
+            file = "z\TF47\addons\dwyl\functions";
+            class exit{};
+            class findLookedAt{};
+            class getExits{};
+            class showExits{};
+        };
     };
 };
 

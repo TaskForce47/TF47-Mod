@@ -10,7 +10,7 @@ PFH to show which exit the player is looking at
 * None
 
 * Example:
-* [] call dwyl_main_fnc_showExits
+* [] call TF47_dwyl_fnc_showExits
 */
 
 if !(isNull curatorCamera) exitWith {};
@@ -18,16 +18,16 @@ if !(isNull curatorCamera) exitWith {};
 private _vehicle = vehicle player;
 if (_vehicle == player) exitWith {};
 
-private _sp = [_vehicle] call dwyl_main_fnc_getExits;
+private _sp = [_vehicle] call TF47_dwyl_fnc_getExits;
 
 dwyl_exit_position = nil;
 
-dwyl_main_colour = ["IGUI", "TEXT_RGB"] call BIS_fnc_displayColorGet;
-dwyl_main_colour_faded = [
-    dwyl_main_colour select 0,
-    dwyl_main_colour select 1,
-    dwyl_main_colour select 2,
-    (dwyl_main_colour select 3) / 2
+TF47_dwyl_colour = ["IGUI", "TEXT_RGB"] call BIS_fnc_displayColorGet;
+TF47_dwyl_colour_faded = [
+    TF47_dwyl_colour select 0,
+    TF47_dwyl_colour select 1,
+    TF47_dwyl_colour select 2,
+    (TF47_dwyl_colour select 3) / 2
 ];
 
 dwyl_exit_pfh_running = true;
@@ -44,12 +44,12 @@ dwyl_exit_position = nil;
         [_pfID] call CBA_fnc_removePerFrameHandler;
     };
 
-    private _indexClosest = [_vehicle, _sp] call dwyl_main_fnc_findLookedAt;
+    private _indexClosest = [_vehicle, _sp] call TF47_dwyl_fnc_findLookedAt;
     dwyl_exit_position = _sp select _indexClosest;
 
     {
         private _isSelected = _forEachIndex == _indexClosest;
-        private _colour = [dwyl_main_colour_faded, dwyl_main_colour] select _isSelected;
+        private _colour = [TF47_dwyl_colour_faded, TF47_dwyl_colour] select _isSelected;
         private _size = [ICON_SIZE_NOTSELECTED, ICON_SIZE_SELECTED] select _isSelected;
         drawIcon3D ["a3\ui_f\data\IGUI\Cfg\Actions\getout_ca.paa", _colour, _vehicle modelToWorldVisual _x, _size, _size, 0, ""];
     } forEach _sp;

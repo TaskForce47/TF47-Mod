@@ -1,7 +1,7 @@
 class CfgFactionClasses {
     class NO_CATEGORY;
     class DWYL: NO_CATEGORY {
-        displayName = "DWYL";
+        displayName = "TF47";
         priority = 2;
         side = 7;
     };
@@ -9,6 +9,6 @@ class CfgFactionClasses {
 
 class CfgVehicleClasses {
     class DWYL_Vehicles {
-        displayName = "DWYL Vehicles";
+        displayName = "TF47 Vehicles";
     };
 };
