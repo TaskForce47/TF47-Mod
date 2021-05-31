@@ -17,7 +17,7 @@
 * maybe use some 
 
 addMissionEventHandler ["Draw3D", {
-	drawIcon3D ["targetIcon.paa", [1,1,1,1], ASLToAGL getPosASL cursorTarget, 1, 1, 45, "Target", 1, 0.05, "TahomaB"];
+drawIcon3D ["targetIcon.paa", [1,1,1,1], ASLToAGL getPosASL cursorTarget, 1, 1, 45, "Target", 1, 0.05, "TahomaB"];
 }];
 *
 */
@@ -27,8 +27,7 @@ addMissionEventHandler ["Draw3D", {
 //params ["_player",["_playerStartingOnGround",false]];
 params ["_player","_playerPreRappelPosition","_rappelPoint","_rappelDirection","_ropeLength",["_playerStartingOnGround",false]];
 
-_playerStartPosition = _playerPreRappelPosition;
-
+_playerStartPosition = getPosASL _player;
 
 //////////////////////////////////
 //Debug

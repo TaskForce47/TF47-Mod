@@ -11,6 +11,7 @@ _anchor allowDamage false;
 
 // _anchor addAction ["Attach Rope", {[player, (_this select 0),80] spawn TF47_fnc_AUR_Prepare_Rope;}, nil, 6, true, false, "", "true", 2, false,"","[player] call TF47_fnc_AUR_Prepare_Rope_Check"];
 
+//rework needed
 //put in AddAction File, make ACE Actions, translate!!
 _anchor addAction   ["Attach 30m Rope", {[player, (_this select 0),30] spawn TF47_fnc_AUR_Prepare_Rope;}, nil, 6, true, false, "","[player, 30] call TF47_fnc_AUR_Prepare_Rope_Check", 2, false,"",""];
 _anchor addAction   ["Attach 40m Rope", {[player, (_this select 0),40] spawn TF47_fnc_AUR_Prepare_Rope;}, nil, 6, true, false, "","[player, 40] call TF47_fnc_AUR_Prepare_Rope_Check", 2, false,"",""];

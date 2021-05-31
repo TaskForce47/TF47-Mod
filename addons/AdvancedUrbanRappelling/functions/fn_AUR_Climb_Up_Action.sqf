@@ -42,7 +42,7 @@ if(count _rappelPoint > 0) then {
         deleteVehicle _playerHoldingAnchor;
         deleteVehicle _grap;                
         //dont swing like tarzan but connect the player to the rope
-        [_player, getPosASL _player, _rappelPoint select 0, _rappelPoint select 1,_maxAvailableLength, true] spawn TF47_fnc_AUR_Rappel;
+        [_player, getPosASL _grap, _rappelPoint select 0, _rappelPoint select 1,_maxAvailableLength, true] spawn TF47_fnc_AUR_Rappel;
 } else {
         [["Couldn't attach rope. Move closer to edge!", false],"TF47_fnc_AUR_Hint",_player] call TF47_fnc_AUR_RemoteExec;
 };
