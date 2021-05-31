@@ -1,9 +1,9 @@
 #define REDIRECT_PATH QPATHTOF(functions\fnc_legacyRedirect.sqf)
 
 class CfgFunctions {
-    class zade_boc {
-        tag = "zade_boc";
-        class zade_boc {
+    class TF47 {
+        tag = "TF47";
+        class BackpackOnChest {
             class actionOnBack{file=REDIRECT_PATH;};
             class actionOnChest{file=REDIRECT_PATH;};
             class actionSwap{file=REDIRECT_PATH;};
