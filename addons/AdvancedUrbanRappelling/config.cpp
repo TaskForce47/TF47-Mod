@@ -33,6 +33,7 @@ class CfgFunctions
 
 };
 #include "cfgWeapons.hpp"
+#include "cfgAnimations.hpp"
 
 class CfgSounds
 {
