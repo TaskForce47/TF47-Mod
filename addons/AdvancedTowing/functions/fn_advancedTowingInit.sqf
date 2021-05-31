@@ -430,7 +430,7 @@ TF47_Pickup_Tow_Ropes = {
 
 TF47_Drop_Tow_Ropes = {
     params ["_vehicle","_player"];
-    systemChat "Dropping Ropes!";
+    //systemChat "Dropping Ropes!";
     if(local _vehicle) then {
         //systemChat  format["ist lokal! %1", _vehicle];
         private ["_helper"];
@@ -446,7 +446,7 @@ TF47_Drop_Tow_Ropes = {
         _player setVariable ["TF47_Tow_Ropes_Vehicle", nil,true];
         _player setVariable ["TF47_Tow_Ropes_Pick_Up_Helper", nil,true];
     } else {
-        systemChat "nicht lokal!";
+        //systemChat "nicht lokal!";
         [_this,"TF47_Drop_Tow_Ropes",_vehicle,true] call TF47_RemoteExec;
     };
 };
@@ -620,7 +620,7 @@ TF47_Drop_Tow_Ropes_Action_Check = {
 };
 
 TF47_Can_Drop_Tow_Ropes = {
-    systemChat "Kann ich Droppen?";
+    //systemChat "Kann ich Droppen?";
     !isNull (player getVariable ["TF47_Tow_Ropes_Vehicle", objNull]) && vehicle player == player;
 };
 
