@@ -24,11 +24,11 @@ class CfgNetworkMessages
 
 class CfgFunctions 
 {
-   class SA
+   class TF47
    {
       class AdvancedRappelling
       {
-         file = "\AR_AdvancedRappelling\functions";
+         file = "z\TF47\addons\AdvancedRappelling\functions";
          class advancedRappellingInit{postInit=1};
       };
    };
