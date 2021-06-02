@@ -23,7 +23,15 @@ if (_intersections isEqualTo []) exitWith {};
 
 if (_intersectObj isEqualTo objNull && {_parentObject isEqualTo objNull}) then {
 	//terrain, spawn grass cutter
-	createVehicle ["Land_ClutterCutter_small_F", ASLtoAGL _intersectPosASL, [], 0, "CAN_COLLIDE"];
+	_cutter = createVehicle ["Land_ClutterCutter_small_F", ASLtoAGL _intersectPosASL, [], 0, "CAN_COLLIDE"];
+    [
+        {
+            params ["_cutter"];
+            deleteVehicle _cutter;
+        }, 
+        [_cutter], 300
+    ] call CBA_fnc_waitAndExecute;
+    
 } else {
 	//not terrain
 	if !((nearestTerrainObjects [ _intersectObj , ["Bush"], 0]) isEqualTo [] ) then {

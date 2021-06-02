@@ -7,7 +7,7 @@
         version = 2.0.0;
         versionStr = 2.0.0;
         versionAr[] = {2, 0, 0};
-        author = "Ampersand";
+        author = "TF47 Desty";
     };
 };
 
@@ -22,9 +22,9 @@ class CfgVehicles {
             class ACE_Equipment {
 				class ClearBrush {
 					displayName = "Clear Brush";
-					condition = "[_player] call ClearBrush_fnc_canClearBrush";
+					condition = "[_player] call ClearBrush_fn_canClearBrush";
 					//wait a frame to handle "Do When releasing action menu key" option
-					statement = "[{[] call ClearBrush_fnc_clearBrush},[]] call CBA_fnc_execNextFrame";
+					statement = "[{[] call ClearBrush_fn_clearBrush},[]] call CBA_fnc_execNextFrame";
 					exceptions[] = {};
 					showDisabled = 0;
 					//icon = QPATHTOF(UI\icon_sandbag_ca.paa);

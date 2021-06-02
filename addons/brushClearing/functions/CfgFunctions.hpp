@@ -1,6 +1,6 @@
-class ClearBrush {
-    class ClearBrush {
-        file = "\ClearBrush\functions";
+class brushClearing {
+    class brushClearing {
+        file = "\brushClearing\functions";
 		class clearBrush;
 		class canClearBrush;
     };
