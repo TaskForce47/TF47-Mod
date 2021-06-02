@@ -7,14 +7,14 @@ class CfgVehicles{
                 displayName = "TF47 Menu";
                 condition = QUOTE(true);
                 exceptions[] = {"isNotSwimming", "isNotInside", "notOnMap", "isNotSitting"};
-                statement = "";
+                statement = "[] call TF47_fnc_openGrpmgmt";
                 showDisabled = 1;
                 icon = QUOTE(\z\TF47\addons\main\data\tf47.paa);
                 
                  class TF47_Groupmanager{
                     displayName = "Group Manager";
                     condition = "!isNil {player getVariable 'BIS_dg_ini'}";
-                    statement = "[] call TF47_dynGrps_fnc_openGrpmgmt";
+                    statement = "[] call TF47_fnc_openGrpmgmt";
                     exceptions[] = {"isNotSwimming", "isNotInside", "isNotSitting", "isNotOnLadder", "isNotRefueling"};
                     showDisabled = 0;
                 };

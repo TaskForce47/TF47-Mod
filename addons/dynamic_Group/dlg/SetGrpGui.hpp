@@ -2,7 +2,7 @@ class Rsctf47_DynGrp_setGrp
 {
     idd = 135624;
     movingEnable = false;
-    onLoad = "uiNamespace setVariable ['tf47_dyngrp_setgrp_dialog_var',(_this select 0)]; [] spawn TF47_dynGrps_fnc_initsetGrp;"; 
+    onLoad = "uiNamespace setVariable ['tf47_dyngrp_setgrp_dialog_var',(_this select 0)]; [] spawn TF47_fnc_initsetGrp;"; 
     onUnLoad = "uiNamespace setVariable ['tf47_dyngrp_setgrp_dialog_var',nil]"; 
     class ControlsBackground
     {
@@ -81,7 +81,7 @@ class Rsctf47_DynGrp_setGrp
             y = 0.6364 * safezoneH + safezoneY;
             w = 0.122513 * safezoneW;
             h = 0.044 * safezoneH;
-            action = "[] call TF47_dynGrps_fnc_applysetGrp;";
+            action = "[] call TF47_fnc_applysetGrp;";
         };
         class ButtonCancel: RscButton
         {

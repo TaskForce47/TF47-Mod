@@ -95,7 +95,7 @@ class RscDisplayDynamicGroups
                     y="1.9 * ((((safezoneW / safezoneH) min 1.2) / 1.2) / 25)";
                     w="7 * (((safezoneW / safezoneH) min 1.2) / 40)";
                     h="5.1 * ((((safezoneW / safezoneH) min 1.2) / 1.2) / 25)";
-                    action = "call TF47_dynGrps_fnc_selInsi;";
+                    action = "call TF47_fnc_selInsi;";
                 };
                 
                 class CheckboxPrivate: RscCheckBox
@@ -139,7 +139,7 @@ class RscDisplayDynamicGroups
             y = 0.676 * safezoneH + safezoneY;
             w = 0.115088 * safezoneW;
             h = 0.044 * safezoneH;
-            action = "call TF47_dynGrps_fnc_selInsi;";
+            action = "call TF47_fnc_selInsi;";
         };
     };
 };

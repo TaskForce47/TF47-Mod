@@ -94,7 +94,7 @@ if(GVAR(staticGroupList))then{
             (_x getVariable ["BIS_dg_rol","b_unknown"]),
             (format ["Color%1", side _x]),
             (format ["%1 | %2 | Freq: %3", (groupid _x), (getText (configfile >> "CfgMarkers" >> _markerType >> "Name")), (_x getVariable ["BIS_dg_frq",""]) ])
-        ] call tf47_dyngrps_fnc_createTrackingIconLocal;
+        ] call TF47_fnc_createTrackingIconLocal;
 
         GVAR(staticTracker) pushBack _mkr;
         _id = _id +1;
@@ -115,7 +115,7 @@ if(GVAR(staticGroupList))then{
                 _sizeMarker,
                 "ColorBlack",
                 ""
-            ] call tf47_dyngrps_fnc_createTrackingIconLocal;
+            ] call TF47_fnc_createTrackingIconLocal;
             
             GVAR(staticTracker) pushBack _mkr_size;
             _id = _id +1;
@@ -135,7 +135,7 @@ if(GVAR(staticGroupList))then{
             (_x getVariable ["BIS_dg_rol","b_unknown"]),
             (format ["Color%1", side _x]),
             (format ["%1 | %2 | Freq: %3", (groupid _x), (getText (configfile >> "CfgMarkers" >> _markerType >> "Name")), (_x getVariable ["BIS_dg_frq",""]) ])
-        ] call tf47_dyngrps_fnc_createTrackingIconLocal;
+        ] call TF47_fnc_createTrackingIconLocal;
         GVAR(staticTracker) pushBack _mkr;
         _id = _id +1;
         _idx = _idx +1;
@@ -152,7 +152,7 @@ if(GVAR(staticGroupList))then{
             (_x getVariable ["BIS_dg_rol","b_unknown"]),
             (format ["Color%1", side _x]),
             (format ["%1 | %2 | Freq: %3", (groupid _x), (getText (configfile >> "CfgMarkers" >> _markerType >> "Name")), (_x getVariable ["BIS_dg_frq",""]) ])
-        ] call tf47_dyngrps_fnc_createTrackingIconLocal;
+        ] call TF47_fnc_createTrackingIconLocal;
         GVAR(staticTracker) pushBack _mkr;
         _id = _id +1;
         _idx = _idx +1;
@@ -172,7 +172,7 @@ if(GVAR(dynamicGroupTracker))then{
             (_x getVariable ["BIS_dg_rol","b_unknown"]),
             (format ["Color%1", side _x]),
             (groupid _x)
-        ] call tf47_dyngrps_fnc_createTrackingIconLocal;
+        ] call TF47_fnc_createTrackingIconLocal;
         GVAR(dynTracker) pushBack _mkr;
 
         if(GVAR(indicateGroupsize))then{
@@ -191,7 +191,7 @@ if(GVAR(dynamicGroupTracker))then{
                 _sizeMarker,
                 "ColorBlack",
                 ""
-            ] call tf47_dyngrps_fnc_createTrackingIconLocal;
+            ] call TF47_fnc_createTrackingIconLocal;
             GVAR(dynTracker) pushBack _mkr_size;
         
         };
@@ -208,7 +208,7 @@ if(GVAR(dynamicGroupTracker))then{
             (_x getVariable ["BIS_dg_rol","b_unknown"]),
             (format ["Color%1", side _x]),
             (groupid _x)
-        ] call tf47_dyngrps_fnc_createTrackingIconLocal;
+        ] call TF47_fnc_createTrackingIconLocal;
         GVAR(dynTracker) pushBack _mkr;
 
     }forEach _supportGrps;
@@ -223,7 +223,7 @@ if(GVAR(dynamicGroupTracker))then{
             (_x getVariable ["BIS_dg_rol","b_unknown"]),
             (format ["Color%1", side _x]),
             (groupid _x)
-        ] call tf47_dyngrps_fnc_createTrackingIconLocal;
+        ] call TF47_fnc_createTrackingIconLocal;
         GVAR(dynTracker) pushBack _mkr;
 
     }forEach _attackGrps;

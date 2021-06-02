@@ -14,7 +14,7 @@
 
         [{
              if(GVAR(EnableMapTracker))then{
-                 [] call TF47_dynGrps_fnc_updateGroupTracking;
+                 [] call TF47_fnc_updateGroupTracking;
              }else{
                 [_this select 1] call CBA_fnc_removePerFrameHandler;
              };
