@@ -29,7 +29,8 @@ if (_intersectObj isEqualTo objNull && {_parentObject isEqualTo objNull}) then {
             params ["_cutter"];
             deleteVehicle _cutter;
         }, 
-        [_cutter], 300
+        [_cutter],
+        300
     ] call CBA_fnc_waitAndExecute;
     
 } else {
