@@ -1,5 +1,5 @@
 ﻿class CfgPatches {
-    class tft_ace {
+    class TF47 {
         units[] = {};
         weapons[] = {};
         requiredVersion = 0.6;
