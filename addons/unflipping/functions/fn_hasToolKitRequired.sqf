@@ -1,5 +1,5 @@
 /*
-    TF47fnc_hasToolKitRequired
+    TF47_fnc_hasToolKitRequired
 
     File: fn_hasToolKitRequired.sqf
     Date: 2019-03-18

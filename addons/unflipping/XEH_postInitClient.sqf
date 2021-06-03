@@ -2,7 +2,7 @@
 
 ["TF47unflip_start_client", {
     diag_log text "[TF47_Unflipping] Starting action";
-    _this call TF47fnc_unflipAction;
+    _this call TF47_fnc_unflipAction;
 }] call CBA_fnc_addEventHandler;
 
 // Force player to wait for unflipping time
@@ -14,7 +14,7 @@
     [{
         // TODO animation
         [
-            localize "STR_TF47doing",
+            localize "STR_TF47_doing",
             // time
             _this#2,
             // condition
@@ -42,7 +42,7 @@
                     // if user is in unflippingUnits --> enter wait mode again
                     // if not --> server has completed unflipping and reset the array
                     if (PLAYER in (_vehicle getVariable ["TF47_unflippingUnits", []])) then {
-                        [_vehicle] call TF47fnc_unflipAction;
+                        [_vehicle] call TF47_fnc_unflipAction;
                     };
                 };
             },
@@ -58,14 +58,14 @@
 // Add ACE3 or Vanilla actions to vehicles
 if (isClass(configFile >> "CfgPatches" >> "ace_main")) then {
 
-    private _unflipAction = ["TF47unflip", localize "STR_TF47act", "\a3\3den\data\attributes\loiterdirection\cw_ca.paa",
+    private _unflipAction = ["TF47unflip", localize "STR_TF47_act", "\a3\3den\data\attributes\loiterdirection\cw_ca.paa",
         {
-            _target call TF47fnc_unflipAction;
+            _target call TF47_fnc_unflipAction;
         },
         {
             [_player, _target, []] call ACE_common_fnc_canInteractWith
             && {!(_target isKindOf "Boxloader_Pallet_base")}
-            && {[_player, _target] call TF47fnc_canUnflipLocal}
+            && {[_player, _target] call TF47_fnc_canUnflipLocal}
         }
     ] call ACE_interact_menu_fnc_createAction;
     ["LandVehicle", 0, ["ACE_MainActions"], _unflipAction, true] call ACE_interact_menu_fnc_addActionToClass;
@@ -74,7 +74,7 @@ if (isClass(configFile >> "CfgPatches" >> "ace_main")) then {
     [
         "LandVehicle",
         "Init",
-        {(_this#0) call TF47fnc_addUnflipActionLocal},
+        {(_this#0) call TF47_fnc_addUnflipActionLocal},
         true,
         ["Boxloader_Pallet_base"],
         true

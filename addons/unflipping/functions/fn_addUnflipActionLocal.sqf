@@ -24,7 +24,7 @@ private _action = [
     {
         [{
             params ["_target"];
-            _target call TF47fnc_unflipAction;
+            _target call TF47_fnc_unflipAction;
         }, _this] call CBA_fnc_directCall;
     },
     [],
@@ -33,7 +33,7 @@ private _action = [
     true,
     "",
     "
-    [_this, _target] call TF47fnc_canUnflipLocal
+    [_this, _target] call TF47_fnc_canUnflipLocal
     ", // _target, _this, _originalTarget
     8
 ];
@@ -42,7 +42,7 @@ private _actionId = _object addAction _action;
 
 _object setUserActionText [
     _actionId ,
-    localize "STR_TF47act",
+    localize "STR_TF47_act",
     "<img size='2' image='\a3\3den\data\attributes\loiterdirection\cw_ca.paa'/>"
 ];
 

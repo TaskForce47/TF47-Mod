@@ -1,5 +1,5 @@
 /*
-    TF47fnc_isRepairVehicle
+    TF47_fnc_isRepairVehicle
 
     File: fn_isRepairVehicle.sqf
     Date: 2019-06-18

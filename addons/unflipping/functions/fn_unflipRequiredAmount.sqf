@@ -1,5 +1,5 @@
 /*
-    TF47fnc_unflipRequiredAmount
+    TF47_fnc_unflipRequiredAmount
 
     File: fn_unflipRequiredAmount.sqf
     Date: 2019-03-14

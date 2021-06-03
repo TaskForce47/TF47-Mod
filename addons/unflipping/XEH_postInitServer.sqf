@@ -11,7 +11,7 @@
     _unflippingUnits pushBackUnique _player;
     _vehicle setVariable ["TF47_unflippingUnits", _unflippingUnits, true];
 
-    private _requiredUnits = _vehicle call TF47fnc_unflipRequiredAmount;
+    private _requiredUnits = _vehicle call TF47_fnc_unflipRequiredAmount;
     // Enough people, exit and unflip vehicle
     if (_requiredUnits <= count _unflippingUnits) exitWith {
         diag_log text format ["[TF47_Unflipping] Vehicle '%1', enough people to unflip (%2)", _vehicle, _requiredUnits];
@@ -32,7 +32,7 @@
             // onTimeout (success)
             {
                 params ["_vehicle"];
-                private _unflipAttempted = _vehicle call TF47fnc_unflipVehicle;
+                private _unflipAttempted = _vehicle call TF47_fnc_unflipVehicle;
 
                 // check if unflip was successful
                 if (_unflipAttempted) then {

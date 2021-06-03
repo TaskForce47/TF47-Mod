@@ -1,5 +1,5 @@
 /*
-    TF47fnc_debug
+    TF47_fnc_debug
 
     File: fn_debug.sqf
     Date: 2019-04-01
