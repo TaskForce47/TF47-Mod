@@ -11,9 +11,9 @@ class CfgPatches {
     };
 };
 
-class CfgFunctions {
-    #include "functions\CfgFunctions.hpp"
-};
+
+#include "CfgFunctions.hpp"
+
 
 class CfgVehicles {
     class Man;

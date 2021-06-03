@@ -8,11 +8,11 @@ class CfgPatches
         requiredAddons[] = {
             "cba_main"
         };
-        author = "veteran29";
-        url = "https://github.com/veteran29";
+        author = "Desty";
     };
 };
 
-#include "CfgEventHandlers.hpp"
-#include "CfgFunctions.hpp"
 #include "CfgSettings.hpp"
+#include "CfgFunctions.hpp"
+#include "CfgEventHandlers.hpp"
+
