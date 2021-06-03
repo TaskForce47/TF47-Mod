@@ -1,5 +1,5 @@
 class CfgPatches {
-    class TF47 {
+    class brushClearing {
         units[] = {};
         weapons[] = {};
         requiredVersion = 0.6;
