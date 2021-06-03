@@ -1,6 +1,6 @@
 class brushClearing {
     class brushClearing {
-        file = "\brushClearing\functions";
+        file = "z\TF47\addons\brushClearing\functions";
         class clearBrush;
         class canClearBrush;
     };

@@ -20,7 +20,7 @@ class RscDisplayMain: RscStandardDisplay
         {
             text = "JOIN [TF47] MilSim Public #1"; // Text displayed on the square button, converted to upper-case
             textIsQuote = 0; // 1 to add quotation marks around the text
-            picture = "\server_spotlight\button.paa"; // Square picture, ideally 512x512  --- RAY MACH SCHNELLER
+            picture = "z\TF47\addons\server_spotlight\button.paa"; // Square picture, ideally 512x512  --- RAY MACH SCHNELLER
             //video = "\a3\Ui_f\Video\spotlight_1_Apex.ogv"; // Video played on mouse hover --- RAY MACH SCHNELLER
             //action = "0 = [_this, 'your.domain.name', '2302', 'yourpasshere'] execVM '\server_spotlight\joinServer.sqf';";
             action = "0 = [_this, '195.201.81.83', '2302', ''] execVM '\server_spotlight\joinServer.sqf';";
