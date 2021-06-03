@@ -1,5 +1,5 @@
 /*
-    TF47_unflipping_fnc_unflipRequiredAmount
+    TF47fnc_unflipRequiredAmount
 
     File: fn_unflipRequiredAmount.sqf
     Date: 2019-03-14
@@ -19,5 +19,5 @@ params [
     ["_vehicle", objNull, [objNull]]
 ];
 
-// Every "TF47_unflipping_unit_mass_limit" needs one man, max "TF47_unflipping_unit_man_limit", min one
-ceil ((getMass _vehicle / TF47_unflipping_unit_mass_limit) min TF47_unflipping_unit_man_limit) max 1
+// Every "TF47unit_mass_limit" needs one man, max "TF47unit_man_limit", min one
+ceil ((getMass _vehicle / TF47unit_mass_limit) min TF47unit_man_limit) max 1

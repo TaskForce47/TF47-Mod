@@ -1,5 +1,5 @@
 /*
-    TF47_unflipping_fnc_debug
+    TF47fnc_debug
 
     File: fn_debug.sqf
     Date: 2019-04-01
@@ -77,7 +77,7 @@ if (_enable) then {
         ];
     };
 
-    TF47_unflipping_debugPFH = [_fnc_show, 0] call CBA_fnc_addPerFrameHandler;
+    TF47debugPFH = [_fnc_show, 0] call CBA_fnc_addPerFrameHandler;
 } else {
-    (missionNamespace getVariable ["TF47_unflipping_debugPFH", -1]) call CBA_fnc_removePerFrameHandler;
+    (missionNamespace getVariable ["TF47debugPFH", -1]) call CBA_fnc_removePerFrameHandler;
 };

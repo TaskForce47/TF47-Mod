@@ -2,7 +2,7 @@
 #define UNFLIP_FORCEFACTOR_STEP     0.2
 #define UNFLIP_FORCEFACTOR_MAX      5
 
-["TF47_unflipping_unflip_start", {
+["TF47unflip_start", {
     params ["_vehicle", "_player"];
 
     diag_log text format ["[TF47_Unflipping] Player '%1', started unflipping '%2'", _player, _vehicle];
@@ -11,7 +11,7 @@
     _unflippingUnits pushBackUnique _player;
     _vehicle setVariable ["TF47_unflippingUnits", _unflippingUnits, true];
 
-    private _requiredUnits = _vehicle call TF47_unflipping_fnc_unflipRequiredAmount;
+    private _requiredUnits = _vehicle call TF47fnc_unflipRequiredAmount;
     // Enough people, exit and unflip vehicle
     if (_requiredUnits <= count _unflippingUnits) exitWith {
         diag_log text format ["[TF47_Unflipping] Vehicle '%1', enough people to unflip (%2)", _vehicle, _requiredUnits];
@@ -28,11 +28,11 @@
             // args
             [_vehicle, _requiredUnits],
             // timeout
-            TF47_unflipping_time,
+            TF47time,
             // onTimeout (success)
             {
                 params ["_vehicle"];
-                private _unflipAttempted = _vehicle call TF47_unflipping_fnc_unflipVehicle;
+                private _unflipAttempted = _vehicle call TF47fnc_unflipVehicle;
 
                 // check if unflip was successful
                 if (_unflipAttempted) then {
@@ -63,15 +63,15 @@
         ] call CBA_fnc_waitUntilAndExecute;
 
         // Inform clients that unflip is ready and force them into unflip action wait time
-        ["TF47_unflipping_unflip_ready", [_vehicle, _requiredUnits, TF47_unflipping_time], _unflippingUnits] call CBA_fnc_targetEvent;
+        ["TF47unflip_ready", [_vehicle, _requiredUnits, TF47time], _unflippingUnits] call CBA_fnc_targetEvent;
     };
 
     diag_log text format ["[TF47_Unflipping] Vehicle '%1', not enough people to unflip (%2)", _vehicle, _requiredUnits];
-    ["TF47_unflipping_unflip_start_client", _vehicle, _player] call CBA_fnc_targetEvent;
+    ["TF47unflip_start_client", _vehicle, _player] call CBA_fnc_targetEvent;
 
 }] call CBA_fnc_addEventHandler;
 
-["TF47_unflipping_unflip_stop", {
+["TF47unflip_stop", {
     params ["_vehicle", "_player"];
     diag_log text format ["[TF47_Unflipping] Player '%1', stopped unflipping '%2'", _player, _vehicle];
 

@@ -1,5 +1,5 @@
 /*
-    TF47_unflipping_fnc_unflipVehicle
+    TF47fnc_unflipVehicle
 
     File: fn_unflipVehicle.sqf
     Date: 2019-03-13
@@ -38,7 +38,7 @@ if (!_upsideDown && 55 > abs _bank) exitWith {false};
 private _bbr = boundingBoxReal _vehicle;
 private _vehicleWidth = abs (_bbr#0#0 * 2);
 
-// force factor is set in TF47_unflipping_unflip_start event
+// force factor is set in TF47unflip_start event
 private _lastUnflipAttempt = _vehicle getVariable ["TF47_lastUnflipAttempt", CBA_missionTime];
 private _forceFactor = if ((CBA_missionTime - _lastUnflipAttempt) < UNFLIP_FORCEFACTOR_EXPIRATIONTIME) then {
     _vehicle getVariable ["TF47_forceFactor", 1]

@@ -1,5 +1,5 @@
 /*
-    TF47_unflipping_fnc_unflipAction
+    TF47fnc_unflipAction
 
     File: fn_unflipAction.sqf
     Date: 2019-03-14
@@ -19,10 +19,10 @@ params [
     ["_vehicle", objNull, [objNull]]
 ];
 
-if (TF47_unflipping_vehicle_mass_limit < getMass _vehicle) exitWith {
+if (TF47vehicle_mass_limit < getMass _vehicle) exitWith {
     [
         ["a3\3den\data\controlsgroups\tutorial\close_ca.paa", 1, [1,0,0]],
-        [localize "STR_TF47_unflipping_to_heavy"]
+        [localize "STR_TF47to_heavy"]
     ] call CBA_fnc_notify;
 };
 
@@ -31,23 +31,23 @@ if (TF47_unflipping_vehicle_mass_limit < getMass _vehicle) exitWith {
 
 PLAYER playActionNow "PlayerStand";
 
-private _neededUnits = _vehicle call TF47_unflipping_fnc_unflipRequiredAmount;
+private _neededUnits = _vehicle call TF47fnc_unflipRequiredAmount;
 
 // Inform server about unflipping start
 if !(PLAYER in UNFLIPPING_UNITS) exitWith {
-    ["TF47_unflipping_unflip_start", [_vehicle, PLAYER]] call CBA_fnc_serverEvent;
+    ["TF47unflip_start", [_vehicle, PLAYER]] call CBA_fnc_serverEvent;
 };
 
 // Notify
 [
     ["\a3\3den\data\attributes\loiterdirection\cw_ca.paa"],
-    [format [localize "STR_TF47_unflipping_required", _neededUnits]]
+    [format [localize "STR_TF47required", _neededUnits]]
 ] call CBA_fnc_notify;
 
 // Exec next frame, othwerwise we will crash the client
 [{
     [
-        localize "STR_TF47_unflipping_waiting",
+        localize "STR_TF47waiting",
         15,
         {
             _this#0 params ["_vehicle"];
@@ -57,11 +57,11 @@ if !(PLAYER in UNFLIPPING_UNITS) exitWith {
         // onSuccess
         {
             _this#0 params ["_vehicle"];
-            ["TF47_unflipping_unflip_stop", [_vehicle, PLAYER]] call CBA_fnc_serverEvent;
+            ["TF47unflip_stop", [_vehicle, PLAYER]] call CBA_fnc_serverEvent;
             // Notify
             [
                 ["\a3\3den\data\attributes\loiterdirection\cw_ca.paa"],
-                [localize "STR_TF47_unflipping_need_more"]
+                [localize "STR_TF47need_more"]
             ] call CBA_fnc_notify;
         },
         // onFailure
@@ -71,7 +71,7 @@ if !(PLAYER in UNFLIPPING_UNITS) exitWith {
 
             // don't stop unflipping if waiting progressBar was closed by new progressBar
             if (_failureCode != 3) then {
-                ["TF47_unflipping_unflip_stop", [_vehicle, PLAYER]] call CBA_fnc_serverEvent;
+                ["TF47unflip_stop", [_vehicle, PLAYER]] call CBA_fnc_serverEvent;
             };
         },
         _this

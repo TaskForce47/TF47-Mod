@@ -1,5 +1,5 @@
 /*
-    TF47_unflipping_fnc_canUnflipLocal
+    TF47fnc_canUnflipLocal
 
     File: fn_canUnflipLocal.sqf
     Date: 2019-06-18
@@ -24,5 +24,5 @@ params [
 !canMove _target
 && {alive _target}
 && {(vehicle _unit) isEqualTo _unit}
-&& {_unit call TF47_unflipping_fnc_hasToolKitRequired}
-&& {[_unit, _target] call TF47_unflipping_fnc_isServiceVehicleNearRequired}
+&& {_unit call TF47fnc_hasToolKitRequired}
+&& {[_unit, _target] call TF47fnc_isServiceVehicleNearRequired}

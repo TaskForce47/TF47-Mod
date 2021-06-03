@@ -1,5 +1,5 @@
 /*
-    TF47_unflipping_fnc_hasToolKitRequired
+    TF47fnc_hasToolKitRequired
 
     File: fn_hasToolKitRequired.sqf
     Date: 2019-03-18
@@ -19,6 +19,6 @@ params [
     ["_unit", objNull, [objNull]]
 ];
 
-if !(TF47_unflipping_require_toolkit) exitWith {true};
+if !(TF47require_toolkit) exitWith {true};
 
 "ToolKit" in (items _unit)
