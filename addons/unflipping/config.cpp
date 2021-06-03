@@ -1,6 +1,6 @@
 class CfgPatches
 {
-    class vet_unflipping
+    class unflipping
     {
         units[] = {};
         weapons[] = {};

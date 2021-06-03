@@ -1,11 +1,11 @@
 
 class CfgFunctions
 {
-    class vet_unflipping
+    class unflipping
     {
         class functions
         {
-            file = "vet\unflipping\functions";
+            file = "z\TF47\addons\unflipping\functions";
 
             class addUnflipActionLocal {};
             class canUnflipLocal {};
@@ -19,7 +19,7 @@ class CfgFunctions
 
         class debug
         {
-            file = "vet\unflipping\functions\debug";
+            file = "z\TF47\addons\unflipping\functions\debug";
 
             class debug {};
         };
