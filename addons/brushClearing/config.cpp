@@ -1,4 +1,4 @@
-﻿class CfgPatches {
+class CfgPatches {
     class TF47 {
         units[] = {};
         weapons[] = {};
