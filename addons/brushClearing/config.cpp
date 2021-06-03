@@ -27,7 +27,7 @@ class CfgVehicles {
                     statement = "[{[] call TF47_fnc_clearBrush},[]] call CBA_fnc_execNextFrame";
                     exceptions[] = {};
                     showDisabled = 0;
-                    //icon = QPATHTOF(UI\icon_sandbag_ca.paa);
+                    icon = "z\TF47\addons\brushClearing\ui\bushremover.paa";
                 };
             };
         };
