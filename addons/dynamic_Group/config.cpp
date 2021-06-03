@@ -2,7 +2,7 @@
 
 class CfgPatches
 {
-    class TF47_DynGrp
+    class dynamic_Group
     {
         author = "Sonic";
         name = "TF47 DynGrp";
