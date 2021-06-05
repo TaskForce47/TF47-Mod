@@ -1,5 +1,4 @@
 #include "TF47_AUR_MACROS.h"
-#include "TF47_AUR_MACROS.h"
 
 if (AUR_GET_RAPPELLING_STATUS(player)) exitWith {False;};
 _cans = (GetPosATL player) nearObjects ["Land_Can_V2_F", 2];
