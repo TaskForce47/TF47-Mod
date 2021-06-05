@@ -641,14 +641,14 @@ TF47_Pickup_Tow_Ropes_Action = {
             };
         };
         
-        if!(missionNamespace getVariable ["TF47_TOW_IN_EXILE_SAFEZONE_ENABLED",false]) then {
-            if(!isNil "ExilePlayerInSafezone") then {
-                if( ExilePlayerInSafezone ) then {
-                    ["Cannot pick up tow ropes in safe zone",false] call TF47_Hint;
-                    _canPickupTowRopes = false;
-                };
-            };
-        };
+        //if!(missionNamespace getVariable ["TF47_TOW_IN_EXILE_SAFEZONE_ENABLED",false]) then {
+        //    if(!isNil "ExilePlayerInSafezone") then {
+        //        if( ExilePlayerInSafezone ) then {
+        //            ["Cannot pick up tow ropes in safe zone",false] call TF47_Hint;
+        //            _canPickupTowRopes = false;
+        //        };
+        //    };
+        //};
     
         if(_canPickupTowRopes) then {
             [_nearbyTowVehicles select 0, player] call TF47_Pickup_Tow_Ropes;
