@@ -1,10 +1,6 @@
 class CfgWeapons
 {
         class CBA_MiscItem;
-        class CBA_MiscItem_ItemInfo;
-        class ToolKit;
-        class ace_csw_kordCarryTripod; //replace with Toolkit
-        class ACE_EntrenchingTool;
         class TF47_AUR_Grappling_Hook: CBA_MiscItem {
                 scope = 2;
                 author = "Rampage";
@@ -103,7 +99,7 @@ class CfgWeapons
                         mass = 2;
                 };
         };
-            class AUR_AscenderDevice: CBA_MiscItem {//replace with toolkit
+            class AUR_AscenderDevice: CBA_MiscItem {
                 scope = 2;
                 picture = "\z\TF47\addons\AdvancedUrbanRappelling\assets\tcx.paa";
                 model = "\A3\Weapons_F\Items\Toolkit";
