@@ -4,9 +4,11 @@ private _icon = "\a3\ui_f\data\igui\cfg\vehicletoggles\slingloadropeiconon2_ca.p
 private _statement = TF47_slingload_fnc_attachCargo;
 private _condition = TF47_slingload_fnc_canAttachCargo;
 private _cargoHookName = "TF47_slingload_cargoHookMain";
+private _cargoHookNameForward = "TF47_slingload_cargoHookForward";
+private _cargoHookNameAft = "TF47_slingload_cargoHookAft";
 private _position = "slingload0";
 
-_action = ["TF47_slingload_attachCargo", _displayName, _icon, _statement, _condition, {}, [], _position, 5.0] call ace_interact_menu_fnc_createAction;
+_action = ["TF47_slingload_attachCargo", _displayName, _icon, _statement, _condition, {}, _cargoHookName, _position, 5.0] call ace_interact_menu_fnc_createAction;
 //["Helicopter_Base_H", 0, [], _action, true] call ace_interact_menu_fnc_addActionToClass; //includes also some unwanted Helos
 
 //Load Heli Configs
