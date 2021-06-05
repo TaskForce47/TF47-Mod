@@ -788,7 +788,7 @@ TF47_Set_Owner = {
 
 }, true, [], true] call CBA_fnc_addClassEventHandler;
 
-// add self interact actions DOESNT WORK RETARD!
+// add self interact actions - If Rampage could rename properly, it would have worked....
 private _dropTowRopes  = [
     "dropRopes",
     "Drop Ropes",
