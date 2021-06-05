@@ -1,7 +1,8 @@
 
 private _displayName = localize LSTRING(AttachCargo);
 private _icon = "\a3\ui_f\data\igui\cfg\vehicletoggles\slingloadropeiconon2_ca.paa";
-private _statement = TF47_slingload_fnc_attachCargo;
+//private _statement = TF47_slingload_fnc_attachCargo;
+private _statement = {[_target, _player, []] call TF47_slingload_fnc_attachCargo};
 private _condition = TF47_slingload_fnc_canAttachCargo;
 private _cargoHookName = "TF47_slingload_cargoHookMain";
 private _cargoHookNameForward = "TF47_slingload_cargoHookForward";
