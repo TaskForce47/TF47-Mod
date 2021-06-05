@@ -609,7 +609,7 @@ TF47_Can_Put_Away_Tow_Ropes = {
 
 TF47_Drop_Tow_Ropes_Action = {
     private ["_vehicle"];
-    _vehicle = player getVariable ["SA_Tow_Ropes_Vehicle", objNull];
+    _vehicle = player getVariable ["TF47_Tow_Ropes_Vehicle", objNull];
     if([] call TF47_Can_Drop_Tow_Ropes) then {
         [_vehicle, player] call TF47_Drop_Tow_Ropes;
     };
