@@ -375,6 +375,8 @@ AR_Client_Rappel_From_Heli = {
       
       [[_player,_rappelDevice,_anchor],"AR_Play_Rappelling_Sounds_Global"] call AR_RemoteExecServer;
       
+
+      //check for ropes and delete them from inventory of helicopter
       _bottomRopeLength = 60;
       _bottomRope = ropeCreate [_rappelDevice, [-0.15,0,0], _bottomRopeLength];
       _bottomRope allowDamage false;
