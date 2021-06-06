@@ -850,11 +850,7 @@ AR_Hide_Object_Global = {
 
 AR_Add_Player_Actions = {
    params ["_player"];
-   
-   _player addAction [localize "STR_TF47_Rappel_Rappel_Self", { 
-      [player, vehicle player] call AR_Rappel_From_Heli_Action;
-   }, nil, 0, false, true, "", "[player, vehicle player] call AR_Rappel_From_Heli_Action_Check"];
-   
+
    _player addAction [localize "STR_TF47_Rappel_Rappel_AI", { 
       {
          if(!isPlayer _x) then {
@@ -864,15 +860,39 @@ AR_Add_Player_Actions = {
       } forEach (units player);
    }, nil, 0, false, true, "", "[player] call AR_Rappel_AI_Units_From_Heli_Action_Check"];
    
-   _player addAction [localize "STR_TF47_Rappel_Detach_Rappel_Device", { 
-      [player] call AR_Rappel_Detach_Action;
-   }, nil, 0, false, true, "", "[player] call AR_Rappel_Detach_Action_Check"];
-   
    _player addEventHandler ["Respawn", {
       player setVariable ["AR_Actions_Loaded",false];
    }];
    
 };
+
+// add self interact actions
+private _rappelAction  = [
+    "rappelAction",
+    localize "STR_TF47_Rappel_Rappel_Self",
+    "\z\ace\addons\fastroping\ui\icon_waypoint.paa",
+    {
+        [player, vehicle player] call AR_Rappel_From_Heli_Action;
+    }, {
+          [player, vehicle player] call AR_Rappel_From_Heli_Action_Check;
+    },{},nil,"",3,[false,false,false,false,false]
+] call ace_interact_menu_fnc_createAction;
+
+[player, 1, ["ACE_SelfActions"], _rappelAction ] call ace_interact_menu_fnc_addActionToObject;
+
+private _detachAction  = [
+    "detachAction",
+    localize "STR_TF47_Rappel_Detach_Rappel_Device",
+    "\A3\ui_f\data\igui\cfg\actions\ico_OFF_ca.paa",
+    {
+        [player] call AR_Rappel_Detach_Action;
+    }, {
+          [player] call AR_Rappel_Detach_Action_Check;
+    },{},nil,"",3,[false,false,false,false,false]
+] call ace_interact_menu_fnc_createAction;
+
+[player, 1, ["ACE_SelfActions"], _detachAction ] call ace_interact_menu_fnc_addActionToObject;
+
 
 if(!isDedicated) then {
    [] spawn {
