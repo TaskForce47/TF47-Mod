@@ -1,6 +1,7 @@
 class CfgWeapons
 {
         class CBA_MiscItem;
+        class CBA_MiscItem_ItemInfo;
         class TF47_AUR_Grappling_Hook: CBA_MiscItem {
                 scope = 2;
                 author = "Rampage";
