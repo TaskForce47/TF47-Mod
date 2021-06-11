@@ -3,35 +3,36 @@ class CfgPatches
 {
         class TF47_AdvancedUrbanRappelling
         {
-                units[] = {"TF47_AdvancedUrbanRappelling"};
-                requiredVersion = 1.0;
+                author = "duda123, TF47 Rampage";
+                name = "Advanced Urban Rappelling";
+                url = "https://github.com/sethduda/AdvancedUrbanRappelling";
+                units[] = {"AUR_AdvancedUrbanRappelling","AUR_RopeSmallWeight"};
+                requiredVersion = 1;
                 requiredAddons[] = {"A3_Modules_F","cba_main"};
+                weapons[] = {"AUR_Rappel_Gear","AUR_Rappel_Rope_10","AUR_Rappel_Rope_20","AUR_Rappel_Rope_30","AUR_Rappel_Rope_50","AUR_Rappel_Rope_70"};
         };
 };
-
 class CfgNetworkMessages
 {
-        
         class AdvancedUrbanRappellingRemoteExecClient
         {
                 module = "AdvancedUrbanRappelling";
                 parameters[] = {"ARRAY","STRING","OBJECT","BOOL"};
         };
-        
         class AdvancedUrbanRappellingRemoteExecServer
         {
                 module = "AdvancedUrbanRappelling";
                 parameters[] = {"ARRAY","STRING","BOOL"};
         };
-        
 };
-
 class CfgFunctions
 {
 
 #include "functions\functions.h"
 
 };
+#include "CfgEventHandlers.hpp"
+
 #include "cfgWeapons.hpp"
 #include "cfgAnimations.hpp"
 
@@ -66,3 +67,15 @@ class CfgSounds
                 titles[] = {};
     };
 };
+
+class CfgVehicles
+{
+        class Land_Camping_Light_F;
+        class AUR_RopeSmallWeight: Land_Camping_Light_F
+        {
+                scope = 2;
+                displayname = "Rope weight";
+                model = "\z\TF47\addons\AdvancedUrbanRappelling\assets\AUR_weightSmall";
+        };
+};
+

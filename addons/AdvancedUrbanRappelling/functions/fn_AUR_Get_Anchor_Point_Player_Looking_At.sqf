@@ -12,8 +12,8 @@ if(count _surfaces > 0) then {
         _surfaces = lineIntersectsSurfaces [_intersectStartASL, _intersectEndASL, objNull, objNull, true, 1, "FIRE", "NONE"];
         if(count _surfaces > 0) then {
                 _rappelPosition =(_surfaces select 0) select 0;
-                if!([_player,_rappelPosition,"FAST_EXISTS_CHECK"] call TF47_fnc_AUR_Find_Nearby_Rappel_Point) exitWith {_rappelPoint};
-                _rappelPoint = [_player,_rappelPosition,"POSITION"] call TF47_fnc_AUR_Find_Nearby_Rappel_Point;
+                if!([_player,"FAST_EXISTS_CHECK"] call TF47_fnc_AUR_Find_Nearby_Rappel_Point) exitWith {_rappelPoint};
+                _rappelPoint = [_player,"POSITION"] call TF47_fnc_AUR_Find_Nearby_Rappel_Point;
         };
 };
 _rappelPoint;

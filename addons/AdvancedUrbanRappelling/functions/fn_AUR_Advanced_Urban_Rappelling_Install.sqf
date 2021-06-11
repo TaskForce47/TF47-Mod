@@ -1,5 +1,6 @@
 /*
 *   Author: Patch & Tirpitz
+*   Editor: Rampage
 *   Sets up rappelling on the players machine.
 *   params: postInit
 */

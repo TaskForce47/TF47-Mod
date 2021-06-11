@@ -4,13 +4,80 @@ class CfgWeapons
         class CBA_MiscItem_ItemInfo;
         class TF47_AUR_Grappling_Hook: CBA_MiscItem {
                 scope = 2;
-                author = "Rampage";
-                displayName = "Grappling Hook";
-                descriptionShort = "Used to enable climbing";
+                author = "TF47 Rampage";
+                displayName = "$STR_AUR_Grappling_Hook";
+                descriptionShort = "$STR_AUR_Grappling_Hook_Descr";
                 //model = "\z\ace\addons\apl\ace_entrchtool.p3d";
                 picture = "\z\TF47\addons\AdvancedUrbanRappelling\assets\grappling_hook.paa";
                 class ItemInfo: CBA_MiscItem_ItemInfo {
                         mass = 10;
+                };
+        };
+        class AUR_Rappel_Gear: CBA_MiscItem
+        {
+                scope = 2;
+                displayName = "$STR_AUR_RAPPELING_GEAR";
+                descriptionShort = "$STR_AUR_RAPPELING_GEAR_DESCR";
+                author = "TF47 Rampage";
+                model = "A3\Weapons_F\Items\ToolKit";
+                picture = "\z\TF47\addons\AdvancedUrbanRappelling\assets\m_harness_ca";
+                class ItemInfo: CBA_MiscItem_ItemInfo
+                {
+                        mass = 8;
+                };
+        };
+        class AUR_Rappel_Rope_10: CBA_MiscItem
+        {
+                scope = 2;
+                displayName = "$STR_AUR_RAPPELING_ROPE_10";
+                descriptionShort = "$STR_AUR_RAPPELING_ROPE_DESCR_10";
+                author = "TF47 Rampage";
+                model = "\A3\Structures_F_Heli\Items\Tools\Rope_01_F.p3d";
+                picture = "\z\TF47\addons\AdvancedUrbanRappelling\assets\m_rope_ca";
+                class ItemInfo: CBA_MiscItem_ItemInfo
+                {
+                        mass = 5;
+                };
+        };
+        class AUR_Rappel_Rope_20: AUR_Rappel_Rope_10
+        {
+                scope = 2;
+                displayName = "$STR_AUR_RAPPELING_ROPE_20";
+                descriptionShort = "$STR_AUR_RAPPELING_ROPE_DESCR_20";
+                author = "TF47 Rampage";
+                class ItemInfo: CBA_MiscItem_ItemInfo
+                {
+                        mass = 10;
+                };
+        };
+        class AUR_Rappel_Rope_30: AUR_Rappel_Rope_20
+        {
+                scope = 2;
+                displayName = "$STR_AUR_RAPPELING_ROPE_30";
+                descriptionShort = "$STR_AUR_RAPPELING_ROPE_DESCR_30";
+                class ItemInfo: CBA_MiscItem_ItemInfo
+                {
+                        mass = 15;
+                };
+        };
+        class AUR_Rappel_Rope_50: AUR_Rappel_Rope_20
+        {
+                scope = 2;
+                displayName = "$STR_AUR_RAPPELING_ROPE_50";
+                descriptionShort = "$STR_AUR_RAPPELING_ROPE_DESCR_50";
+                class ItemInfo: CBA_MiscItem_ItemInfo
+                {
+                        mass = 25;
+                };
+        };
+        class AUR_Rappel_Rope_70: AUR_Rappel_Rope_20
+        {
+                scope = 2;
+                displayName = "$STR_AUR_RAPPELING_ROPE_70";
+                descriptionShort = "$STR_AUR_RAPPELING_ROPE_DESCR_70";
+                class ItemInfo: CBA_MiscItem_ItemInfo
+                {
+                        mass = 35;
                 };
         };
         class AUR_rope30: CBA_MiscItem {
