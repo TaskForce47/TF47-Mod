@@ -45,13 +45,16 @@ TF47_Find_Surface_ASL_Under_Position(_object, (_object modelToWorldVisual _model
 TF47_Find_Surface_ASL_Under_Model(_object,_modelOffset,_returnSurfaceAGL,_canFloat); \
 _returnSurfaceAGL = ASLtoAGL _returnSurfaceAGL;
 
+// sth in here doesnt work
 #define TF47_Get_Cargo(_vehicle,_cargo) \
 if( count (ropeAttachedObjects _vehicle) == 0 ) then { \
     _cargo = objNull; \
 } else { \
     _cargo = ((ropeAttachedObjects _vehicle) select 0) getVariable ["TF47_Cargo",objNull]; \
 };
-        
+//
+
+
 TF47_Advanced_Towing_Install = {
 
 // Prevent advanced towing from installing twice
@@ -124,6 +127,8 @@ TF47_Simulate_Towing_Speed = {
 TF47_Simulate_Towing = {
 
     params ["_vehicle","_vehicleHitchModelPos","_cargo","_cargoHitchModelPos","_ropeLength"];
+    
+    systemChat format ["Function: Simulate_Towing, Params: %1", _this];
 
     private ["_lastCargoHitchPosition","_lastCargoVectorDir","_cargoLength","_maxDistanceToCargo","_lastMovedCargoPosition","_cargoHitchPoints"];
     private ["_vehicleHitchPosition","_cargoHitchPosition","_newCargoHitchPosition","_cargoVector","_movedCargoVector","_attachedObjects","_currentCargo"];
@@ -188,8 +193,12 @@ TF47_Simulate_Towing = {
         _cargoPosition = getPos _cargo;
         _vehiclePosition = getPos _vehicle;
         
+        systemChat format ["Function: Simulate_Towing, Distance between vehicle's: %1", _vehicleHitchPosition distance _cargoHitchPosition];
+
         if(_vehicleHitchPosition distance _cargoHitchPosition > _maxDistanceToCargo) then {
-        
+        	
+            systemChat format ["Function: Simulate_Towing, Rope is at max: %1", _maxDistanceToCargo];
+
             // Calculated simulated towing position + direction
             _newCargoHitchPosition = _vehicleHitchPosition vectorAdd ((_vehicleHitchPosition vectorFromTo _cargoHitchPosition) vectorMultiply _ropeLength);
             _cargoVector = _lastCargoVectorDir vectorMultiply _cargoLength;
@@ -212,7 +221,8 @@ TF47_Simulate_Towing = {
             _surfaceNormal2 = (_cargoCorner4ASL vectorFromTo _cargoCorner2ASL) vectorCrossProduct (_cargoCorner4ASL vectorFromTo _cargoCorner3ASL);
             _surfaceNormal = _surfaceNormal1 vectorAdd _surfaceNormal2;
             
-            if(missionNamespace getVariable ["TF47_TOW_DEBUG_ENABLED", false]) then {
+            //if(missionNamespace getVariable ["TF47_TOW_DEBUG_ENABLED", false]) then {
+            if(true) then {
                 if(isNil "TF47_tow_debug_arrow_1") then {
                     TF47_tow_debug_arrow_1 = "Sign_Arrow_F" createVehicleLocal [0,0,0];
                     TF47_tow_debug_arrow_2 = "Sign_Arrow_F" createVehicleLocal [0,0,0];
@@ -263,6 +273,7 @@ TF47_Simulate_Towing = {
         
         // If vehicle isn't local to the client, switch client running towing simulation
         if(!local _vehicle) then {
+			systemChat "nicht lokal";
             [_this,"TF47_Simulate_Towing",_vehicle] call TF47_RemoteExec;
             _doExit = true;
         };
@@ -270,6 +281,7 @@ TF47_Simulate_Towing = {
         // If the vehicle isn't towing anything, stop the towing simulation
         TF47_Get_Cargo(_vehicle,_currentCargo);
         if(isNull _currentCargo) then {
+			systemChat "kein cargo fahrzeug";
             _doExit = true;
         };
         
@@ -385,6 +397,7 @@ TF47_Attach_Tow_Ropes = {
                     _helper attachTo [_cargo, _cargoHitch];
                     _helper setVariable ["TF47_Cargo",_cargo,true];                   
                     [_helper, [0,0,0], [0,0,-1]] ropeAttachTo (_towRopes select 0);
+                    ["TF47_towing_localise", [_vehicle]] call CBA_fnc_serverEvent;
                     [_vehicle,_vehicleHitch,_cargo,_cargoHitch,_ropeLength] spawn TF47_Simulate_Towing;
                 };
             };
@@ -783,6 +796,18 @@ TF47_Set_Owner = {
     [_vehicle, 0, [], _TestAction ] call ace_interact_menu_fnc_addActionToObject;
     
 }, true, [], true] call CBA_fnc_addClassEventHandler;
+
+//add Eventhandler for localising the towed vehicle //["TF47_towing_localise", [_vehicle]] call CBA_fnc_serverEvent;
+["TF47_towing_localise", {
+    params ["_vehicle"];
+    private _vehicleOwner = owner _vehicle;
+    {
+        if (_vehicleOwner != owner _x) then {
+            _x setOwner _vehicleOwner;
+        };
+    } forEach (ropes _vehicle + ropeAttachedObjects _vehicle);
+}] call CBA_fnc_addEventHandler;
+
 
 // add self interact actions
 private _dropTowRopes  = [
