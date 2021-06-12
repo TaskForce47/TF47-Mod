@@ -128,7 +128,7 @@ TF47_Simulate_Towing = {
 
     params ["_vehicle","_vehicleHitchModelPos","_cargo","_cargoHitchModelPos","_ropeLength"];
     
-    systemChat format ["Function: Simulate_Towing, Params: %1", _this];
+    //systemChat format ["Function: Simulate_Towing, Params: %1", _this];
 
     private ["_lastCargoHitchPosition","_lastCargoVectorDir","_cargoLength","_maxDistanceToCargo","_lastMovedCargoPosition","_cargoHitchPoints"];
     private ["_vehicleHitchPosition","_cargoHitchPosition","_newCargoHitchPosition","_cargoVector","_movedCargoVector","_attachedObjects","_currentCargo"];
@@ -147,8 +147,7 @@ TF47_Simulate_Towing = {
     _cargoModelCenterGroundPosition set [2, (_cargoModelCenterGroundPosition select 2) - 0.05]; // Adjust height so that it doesn't ride directly on ground
     
     // Calculate cargo model corner points
-    private ["_cargoCornerPoints"];
-    _cargoCornerPoints = [_cargo] call TF47_Get_Corner_Points;
+    private _cargoCornerPoints = [_cargo] call TF47_Get_Corner_Points;
     _corner1 = _cargoCornerPoints select 0;
     _corner2 = _cargoCornerPoints select 1;
     _corner3 = _cargoCornerPoints select 2;
@@ -182,7 +181,7 @@ TF47_Simulate_Towing = {
     
     // Start vehicle speed simulation
     [_vehicle] spawn TF47_Simulate_Towing_Speed;
-    
+    private _initial = true;
     while {!_doExit} do {
 
         _vehicleHitchPosition = _vehicle modelToWorld _vehicleHitchModelPos;
@@ -193,11 +192,11 @@ TF47_Simulate_Towing = {
         _cargoPosition = getPos _cargo;
         _vehiclePosition = getPos _vehicle;
         
-        systemChat format ["Function: Simulate_Towing, Distance between vehicle's: %1", _vehicleHitchPosition distance _cargoHitchPosition];
+        //systemChat format ["Function: Simulate_Towing, Distance between vehicle's: %1", _vehicleHitchPosition distance _cargoHitchPosition];
 
         if(_vehicleHitchPosition distance _cargoHitchPosition > _maxDistanceToCargo) then {
         	
-            systemChat format ["Function: Simulate_Towing, Rope is at max: %1", _maxDistanceToCargo];
+            //systemChat format ["Function: Simulate_Towing, Rope is at max: %1", _maxDistanceToCargo];
 
             // Calculated simulated towing position + direction
             _newCargoHitchPosition = _vehicleHitchPosition vectorAdd ((_vehicleHitchPosition vectorFromTo _cargoHitchPosition) vectorMultiply _ropeLength);
@@ -221,8 +220,7 @@ TF47_Simulate_Towing = {
             _surfaceNormal2 = (_cargoCorner4ASL vectorFromTo _cargoCorner2ASL) vectorCrossProduct (_cargoCorner4ASL vectorFromTo _cargoCorner3ASL);
             _surfaceNormal = _surfaceNormal1 vectorAdd _surfaceNormal2;
             
-            //if(missionNamespace getVariable ["TF47_TOW_DEBUG_ENABLED", false]) then {
-            if(true) then {
+            if(missionNamespace getVariable ["TF47_TOW_DEBUG_ENABLED", false]) then {
                 if(isNil "TF47_tow_debug_arrow_1") then {
                     TF47_tow_debug_arrow_1 = "Sign_Arrow_F" createVehicleLocal [0,0,0];
                     TF47_tow_debug_arrow_2 = "Sign_Arrow_F" createVehicleLocal [0,0,0];
@@ -273,15 +271,18 @@ TF47_Simulate_Towing = {
         
         // If vehicle isn't local to the client, switch client running towing simulation
         if(!local _vehicle) then {
-			systemChat "nicht lokal";
+			//systemChat "Vehicle is not local!";
             [_this,"TF47_Simulate_Towing",_vehicle] call TF47_RemoteExec;
             _doExit = true;
         };
         
+        if(_initial) then {sleep 0.1};//wait for the helper to have its variable
+        _initial = false;
+
         // If the vehicle isn't towing anything, stop the towing simulation
         TF47_Get_Cargo(_vehicle,_currentCargo);
         if(isNull _currentCargo) then {
-			systemChat "kein cargo fahrzeug";
+			//systemChat format["No towed vehicle! _currentCargo: %1",_currentCargo];
             _doExit = true;
         };
         
