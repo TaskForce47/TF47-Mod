@@ -195,7 +195,7 @@ TF47_Simulate_Towing = {
         //systemChat format ["Function: Simulate_Towing, Distance between vehicle's: %1", _vehicleHitchPosition distance _cargoHitchPosition];
 
         if(_vehicleHitchPosition distance _cargoHitchPosition > _maxDistanceToCargo) then {
-        	
+        
             //systemChat format ["Function: Simulate_Towing, Rope is at max: %1", _maxDistanceToCargo];
 
             // Calculated simulated towing position + direction
@@ -271,7 +271,7 @@ TF47_Simulate_Towing = {
         
         // If vehicle isn't local to the client, switch client running towing simulation
         if(!local _vehicle) then {
-			//systemChat "Vehicle is not local!";
+            //systemChat "Vehicle is not local!";
             [_this,"TF47_Simulate_Towing",_vehicle] call TF47_RemoteExec;
             _doExit = true;
         };
@@ -282,7 +282,7 @@ TF47_Simulate_Towing = {
         // If the vehicle isn't towing anything, stop the towing simulation
         TF47_Get_Cargo(_vehicle,_currentCargo);
         if(isNull _currentCargo) then {
-			//systemChat format["No towed vehicle! _currentCargo: %1",_currentCargo];
+            //systemChat format["No towed vehicle! _currentCargo: %1",_currentCargo];
             _doExit = true;
         };
         
@@ -383,8 +383,7 @@ TF47_Attach_Tow_Ropes = {
                 if( _objDistance > _ropeLength ) then {
                     [["The tow ropes are too short. Move vehicle closer.", false],"TF47_Hint",_player] call TF47_RemoteExec;
                 } else {   
-                    private ["_oldHelper"];
-                    _oldHelper = (_player getVariable ["TF47_Tow_Ropes_Pick_Up_Helper", objNull]);
+                    private _oldHelper = (_player getVariable ["TF47_Tow_Ropes_Pick_Up_Helper", objNull]);
                     _oldHelper ropeDetach _vehicle;
                     detach _oldHelper;
                     deleteVehicle _oldHelper;
@@ -471,8 +470,7 @@ TF47_Put_Away_Tow_Ropes = {
         _existingTowRopes = _vehicle getVariable ["TF47_Tow_Ropes",[]];
         if(count _existingTowRopes > 0) then {
             _this call TF47_Pickup_Tow_Ropes;
-            private ["_oldHelper"];
-            _oldHelper = (_player getVariable ["TF47_Tow_Ropes_Pick_Up_Helper", objNull]);
+            private _oldHelper = (_player getVariable ["TF47_Tow_Ropes_Pick_Up_Helper", objNull]);
             _oldHelper ropeDetach _vehicle;
             detach _oldHelper;
             deleteVehicle _oldHelper;
