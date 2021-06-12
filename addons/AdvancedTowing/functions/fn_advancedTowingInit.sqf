@@ -783,7 +783,7 @@ TF47_Set_Owner = {
 
     private _TestAction  = [
         "pickupRopes",
-        "Pickup Tow Ropes /loc",
+        "Pickup Tow Ropes",
         "\A3\ui_f\data\igui\cfg\actions\ico_OFF_ca.paa",//needs sth else
         {
                 [] call TF47_Pickup_Tow_Ropes_Action;
