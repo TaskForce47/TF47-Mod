@@ -16,26 +16,26 @@ class CfgFunctions
     class TF47
     {
         class COMPONENT
-		{
+        {
             file = "z\TF47\addons\EnhancedNVGs\functions";
             class getVisionMode{};
             class getNvgEffect{};
             class setNvgEffect{};
-		};
+        };
     };
 };       
 
 class Extended_PostInit_EventHandlers
 {
-	class COMPONENT
-	{
-		init="call compile preprocessFileLineNumbers 'z\TF47\addons\EnhancedNVGs\XEH_postInit.sqf'";
-	};
+    class COMPONENT
+    {
+        init="call compile preprocessFileLineNumbers 'z\TF47\addons\EnhancedNVGs\XEH_postInit.sqf'";
+    };
 };
 class Extended_PreInit_EventHandlers
 {
-	class COMPONENT
-	{
-		init="call compile preprocessFileLineNumbers 'z\TF47\addons\EnhancedNVGs\XEH_preInit.sqf'";
-	};
+    class COMPONENT
+    {
+        init="call compile preprocessFileLineNumbers 'z\TF47\addons\EnhancedNVGs\XEH_preInit.sqf'";
+    };
 };
