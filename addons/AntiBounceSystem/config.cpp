@@ -12,16 +12,13 @@ class CfgPatches
 };
 
 class CfgFunctions {
-	class ABS {
-		class functions
+	class TF47 {
+		class ABS
 		{
-			file = "AntiBounceSystem\functions";
+			file = "\z\TF47\addons\AntiBounceSystem\functions";
 			class contact_end {};
-			class contact {};
 			class addEHs {};
 			class removeEHs {};
-			class manualUnflip {};
-			class manualUnflip_Hold {};
 		};
 	};
 };
@@ -30,7 +27,7 @@ class Extended_PreInit_EventHandlers
 {
 	class AIO_AIMENU 
 	{
-		init = "call compile preProcessFileLineNumbers 'AntiBounceSystem\XEH_preInit.sqf'";
+		init = "call compile preProcessFileLineNumbers '\z\TF47\addons\AntiBounceSystem\XEH_preInit.sqf'";
 	};
 };
 
