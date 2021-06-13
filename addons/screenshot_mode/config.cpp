@@ -2,7 +2,7 @@
 
 class CfgPatches {
     class ADDON {
-        name = ADDON_NAME;
+        name = COMPONENT;
         author = "Gruppe Adler";
         url = "https://gruppe-adler.de";
         requiredVersion = 1.0;
