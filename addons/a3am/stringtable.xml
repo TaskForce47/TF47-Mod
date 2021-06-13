@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project name="TF47">
     <Package name="A3AM">
+        <Key ID="STR_TF47_a3am_Description">
+            <English>TF47 Additional Measurement</English>
+            <German>TF47 Erweiterte Maßeinheiten</German>
+        </Key>
         <Key ID="STR_TF47_a3am_Speed_DisplayName">
             <English>Speed</English>
             <German>Geschwindigkeit</German>
@@ -20,6 +24,10 @@
         <Key ID="STR_TF47_a3am_Land_DisplayName">
             <English>Land Vehicles</English>
             <German>Bodenfahrzeuge</German>
+        </Key>
+        <Key ID="STR_TF47_a3am_Sea_DisplayName">
+            <English>Boats and Ships</English>
+            <German>Boote und Schiffe</German>
         </Key>
         <Key ID="STR_TF47_a3am_Speed_KMH">
             <English>km/h</English>
