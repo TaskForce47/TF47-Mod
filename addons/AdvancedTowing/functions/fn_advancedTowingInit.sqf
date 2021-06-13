@@ -45,13 +45,16 @@ TF47_Find_Surface_ASL_Under_Position(_object, (_object modelToWorldVisual _model
 TF47_Find_Surface_ASL_Under_Model(_object,_modelOffset,_returnSurfaceAGL,_canFloat); \
 _returnSurfaceAGL = ASLtoAGL _returnSurfaceAGL;
 
+// sth in here doesnt work
 #define TF47_Get_Cargo(_vehicle,_cargo) \
 if( count (ropeAttachedObjects _vehicle) == 0 ) then { \
     _cargo = objNull; \
 } else { \
     _cargo = ((ropeAttachedObjects _vehicle) select 0) getVariable ["TF47_Cargo",objNull]; \
 };
-        
+//
+
+
 TF47_Advanced_Towing_Install = {
 
 // Prevent advanced towing from installing twice
@@ -124,6 +127,8 @@ TF47_Simulate_Towing_Speed = {
 TF47_Simulate_Towing = {
 
     params ["_vehicle","_vehicleHitchModelPos","_cargo","_cargoHitchModelPos","_ropeLength"];
+    
+    //systemChat format ["Function: Simulate_Towing, Params: %1", _this];
 
     private ["_lastCargoHitchPosition","_lastCargoVectorDir","_cargoLength","_maxDistanceToCargo","_lastMovedCargoPosition","_cargoHitchPoints"];
     private ["_vehicleHitchPosition","_cargoHitchPosition","_newCargoHitchPosition","_cargoVector","_movedCargoVector","_attachedObjects","_currentCargo"];
@@ -142,8 +147,7 @@ TF47_Simulate_Towing = {
     _cargoModelCenterGroundPosition set [2, (_cargoModelCenterGroundPosition select 2) - 0.05]; // Adjust height so that it doesn't ride directly on ground
     
     // Calculate cargo model corner points
-    private ["_cargoCornerPoints"];
-    _cargoCornerPoints = [_cargo] call TF47_Get_Corner_Points;
+    private _cargoCornerPoints = [_cargo] call TF47_Get_Corner_Points;
     _corner1 = _cargoCornerPoints select 0;
     _corner2 = _cargoCornerPoints select 1;
     _corner3 = _cargoCornerPoints select 2;
@@ -177,7 +181,7 @@ TF47_Simulate_Towing = {
     
     // Start vehicle speed simulation
     [_vehicle] spawn TF47_Simulate_Towing_Speed;
-    
+    private _initial = true;
     while {!_doExit} do {
 
         _vehicleHitchPosition = _vehicle modelToWorld _vehicleHitchModelPos;
@@ -188,8 +192,12 @@ TF47_Simulate_Towing = {
         _cargoPosition = getPos _cargo;
         _vehiclePosition = getPos _vehicle;
         
+        //systemChat format ["Function: Simulate_Towing, Distance between vehicle's: %1", _vehicleHitchPosition distance _cargoHitchPosition];
+
         if(_vehicleHitchPosition distance _cargoHitchPosition > _maxDistanceToCargo) then {
         
+            //systemChat format ["Function: Simulate_Towing, Rope is at max: %1", _maxDistanceToCargo];
+
             // Calculated simulated towing position + direction
             _newCargoHitchPosition = _vehicleHitchPosition vectorAdd ((_vehicleHitchPosition vectorFromTo _cargoHitchPosition) vectorMultiply _ropeLength);
             _cargoVector = _lastCargoVectorDir vectorMultiply _cargoLength;
@@ -263,13 +271,18 @@ TF47_Simulate_Towing = {
         
         // If vehicle isn't local to the client, switch client running towing simulation
         if(!local _vehicle) then {
+            //systemChat "Vehicle is not local!";
             [_this,"TF47_Simulate_Towing",_vehicle] call TF47_RemoteExec;
             _doExit = true;
         };
         
+        if(_initial) then {sleep 0.1};//wait for the helper to have its variable
+        _initial = false;
+
         // If the vehicle isn't towing anything, stop the towing simulation
         TF47_Get_Cargo(_vehicle,_currentCargo);
         if(isNull _currentCargo) then {
+            //systemChat format["No towed vehicle! _currentCargo: %1",_currentCargo];
             _doExit = true;
         };
         
@@ -369,14 +382,22 @@ TF47_Attach_Tow_Ropes = {
                 _objDistance = ((_vehicle modelToWorld _vehicleHitch) distance (_cargo modelToWorld _cargoHitch));
                 if( _objDistance > _ropeLength ) then {
                     [["The tow ropes are too short. Move vehicle closer.", false],"TF47_Hint",_player] call TF47_RemoteExec;
-                } else {        
-                    [_vehicle,_player] call TF47_Drop_Tow_Ropes;
+                } else {   
+                    private _oldHelper = (_player getVariable ["TF47_Tow_Ropes_Pick_Up_Helper", objNull]);
+                    _oldHelper ropeDetach _vehicle;
+                    detach _oldHelper;
+                    deleteVehicle _oldHelper;
+
+                    _player setVariable ["TF47_Tow_Ropes_Pick_Up_Helper", objNull,true];//verliere den Helper
+                    _player setVariable ["TF47_Tow_Ropes_Vehicle", objNull,true];//verliere das Fahrzeug
+
+                    //[_vehicle,_player] call TF47_Drop_Tow_Ropes;
                     _helper = "Land_Can_V2_F" createVehicle position _cargo;
+                    //_helper = "TF47_towing_hook" createVehicle position _cargo;
                     _helper attachTo [_cargo, _cargoHitch];
-                    _helper setVariable ["TF47_Cargo",_cargo,true];
-                    hideObject _helper;
-                    [[_helper],"TF47_Hide_Object_Global"] call TF47_RemoteExecServer;
+                    _helper setVariable ["TF47_Cargo",_cargo,true];                   
                     [_helper, [0,0,0], [0,0,-1]] ropeAttachTo (_towRopes select 0);
+                    ["TF47_towing_localise", [_vehicle]] call CBA_fnc_serverEvent;
                     [_vehicle,_vehicleHitch,_cargo,_cargoHitch,_ropeLength] spawn TF47_Simulate_Towing;
                 };
             };
@@ -389,12 +410,11 @@ TF47_Attach_Tow_Ropes = {
 TF47_Take_Tow_Ropes = {
     params ["_vehicle","_player"];
     if(local _vehicle) then {
-        diag_log format ["Take Tow Ropes Called %1", _this];
         private ["_existingTowRopes","_hitchPoint","_rope"];
         _existingTowRopes = _vehicle getVariable ["TF47_Tow_Ropes",[]];
         if(count _existingTowRopes == 0) then {
             _hitchPoint = [_vehicle] call TF47_Get_Hitch_Points select 1;
-            _rope = ropeCreate [_vehicle, _hitchPoint, 10];
+            _rope = ropeCreate [_vehicle, _hitchPoint, 10];  //hier könnten andere Seillängen stehen
             _vehicle setVariable ["TF47_Tow_Ropes",[_rope],true];
             _this call TF47_Pickup_Tow_Ropes;
         };
@@ -406,7 +426,7 @@ TF47_Take_Tow_Ropes = {
 TF47_Pickup_Tow_Ropes = {
     params ["_vehicle","_player"];
     if(local _vehicle) then {
-        private ["_attachedObj","_helper"];
+        private ["_attachedObj","_helper"];//trennt alle Seile und löscht alle Helper, nicht sicher wieso
         {
             _attachedObj = _x;
             {
@@ -414,13 +434,13 @@ TF47_Pickup_Tow_Ropes = {
             } forEach (_vehicle getVariable ["TF47_Tow_Ropes",[]]);
             deleteVehicle _attachedObj;
         } forEach ropeAttachedObjects _vehicle;
+
         _helper = "Land_Can_V2_F" createVehicle position _player;
+        //_helper = "TF47_towing_hook" createVehicle position _player;
         {
             [_helper, [0, 0, 0], [0,0,-1]] ropeAttachTo _x;
             _helper attachTo [_player, [-0.1, 0.1, 0.15], "Pelvis"];
         } forEach (_vehicle getVariable ["TF47_Tow_Ropes",[]]);
-        hideObject _helper;
-        [[_helper],"TF47_Hide_Object_Global"] call TF47_RemoteExecServer;
         _player setVariable ["TF47_Tow_Ropes_Vehicle", _vehicle,true];
         _player setVariable ["TF47_Tow_Ropes_Pick_Up_Helper", _helper,true];
     } else {
@@ -430,23 +450,15 @@ TF47_Pickup_Tow_Ropes = {
 
 TF47_Drop_Tow_Ropes = {
     params ["_vehicle","_player"];
-    //systemChat "Dropping Ropes!";
     if(local _vehicle) then {
-        //systemChat  format["ist lokal! %1", _vehicle];
         private ["_helper"];
         _helper = (_player getVariable ["TF47_Tow_Ropes_Pick_Up_Helper", objNull]);
-        if(!isNull _helper) then {
-            //systemChat format["Hat einen Helfer! %1", _helper];
-            {
-                _helper ropeDetach _x;
-            } forEach (_vehicle getVariable ["TF47_Tow_Ropes",[]]);
+        if(!isNull _helper) then {//lass den Helper fallen
             detach _helper;
-            deleteVehicle _helper;
         };
-        _player setVariable ["TF47_Tow_Ropes_Vehicle", nil,true];
-        _player setVariable ["TF47_Tow_Ropes_Pick_Up_Helper", nil,true];
+        _player setVariable ["TF47_Tow_Ropes_Pick_Up_Helper", objNull,true];//verliere den Helper
+        _player setVariable ["TF47_Tow_Ropes_Vehicle", objNull,true];//verliere das Fahrzeug
     } else {
-        //systemChat "nicht lokal!";
         [_this,"TF47_Drop_Tow_Ropes",_vehicle,true] call TF47_RemoteExec;
     };
 };
@@ -458,7 +470,12 @@ TF47_Put_Away_Tow_Ropes = {
         _existingTowRopes = _vehicle getVariable ["TF47_Tow_Ropes",[]];
         if(count _existingTowRopes > 0) then {
             _this call TF47_Pickup_Tow_Ropes;
-            _this call TF47_Drop_Tow_Ropes;
+            private _oldHelper = (_player getVariable ["TF47_Tow_Ropes_Pick_Up_Helper", objNull]);
+            _oldHelper ropeDetach _vehicle;
+            detach _oldHelper;
+            deleteVehicle _oldHelper;
+            _player setVariable ["TF47_Tow_Ropes_Vehicle", nil,true];
+            _player setVariable ["TF47_Tow_Ropes_Pick_Up_Helper", objNull,true];
             {
                 ropeDestroy _x;
             } forEach _existingTowRopes;
@@ -484,15 +501,6 @@ TF47_Attach_Tow_Ropes_Action = {
             };
         };
         
-        if!(missionNamespace getVariable ["TF47_TOW_IN_EXILE_SAFEZONE_ENABLED",false]) then {
-            if(!isNil "ExilePlayerInSafezone") then {
-                if( ExilePlayerInSafezone ) then {
-                    ["Cannot attach tow ropes in safe zone",false] call TF47_Hint;
-                    _canBeTowed = false;
-                };
-            };
-        };
-    
         if(_canBeTowed) then {
             [_cargo,player] call TF47_Attach_Tow_Ropes;
         };
@@ -528,15 +536,6 @@ TF47_Take_Tow_Ropes_Action = {
             if( locked _vehicle > 1 ) then {
                 ["Cannot take tow ropes from locked vehicle",false] call TF47_Hint;
                 _canTakeTowRopes = false;
-            };
-        };
-        
-        if!(missionNamespace getVariable ["TF47_TOW_IN_EXILE_SAFEZONE_ENABLED",false]) then {
-            if(!isNil "ExilePlayerInSafezone") then {
-                if( ExilePlayerInSafezone ) then {
-                    ["Cannot take tow ropes in safe zone",false] call TF47_Hint;
-                    _canTakeTowRopes = false;
-                };
             };
         };
     
@@ -620,7 +619,6 @@ TF47_Drop_Tow_Ropes_Action_Check = {
 };
 
 TF47_Can_Drop_Tow_Ropes = {
-    //systemChat "Kann ich Droppen?";
     !isNull (player getVariable ["TF47_Tow_Ropes_Vehicle", objNull]) && vehicle player == player;
 };
 
@@ -640,16 +638,7 @@ TF47_Pickup_Tow_Ropes_Action = {
                 _canPickupTowRopes = false;
             };
         };
-        
-        //if!(missionNamespace getVariable ["TF47_TOW_IN_EXILE_SAFEZONE_ENABLED",false]) then {
-        //    if(!isNil "ExilePlayerInSafezone") then {
-        //        if( ExilePlayerInSafezone ) then {
-        //            ["Cannot pick up tow ropes in safe zone",false] call TF47_Hint;
-        //            _canPickupTowRopes = false;
-        //        };
-        //    };
-        //};
-    
+
         if(_canPickupTowRopes) then {
             [_nearbyTowVehicles select 0, player] call TF47_Pickup_Tow_Ropes;
         };
@@ -729,7 +718,7 @@ TF47_Hint = {
 
 TF47_Hide_Object_Global = {
     params ["_obj"];
-    if( _obj isKindOf "Land_Can_V2_F" ) then {
+    if( _obj isKindOf "Land_Can_V2_F" || _obj isKindOf "TF47_towing_hook") then {
         hideObjectGlobal _obj;
     };
 };
@@ -788,7 +777,38 @@ TF47_Set_Owner = {
 
 }, true, [], true] call CBA_fnc_addClassEventHandler;
 
-// add self interact actions - If Rampage could rename properly, it would have worked....
+["Land_Can_V2_F", "init", { //Can Pickup
+//["TF47_towing_hook", "init", { //Hook Pickup
+    params ["_vehicle"];
+
+    private _TestAction  = [
+        "pickupRopes",
+        "Pickup Tow Ropes",
+        "\A3\ui_f\data\igui\cfg\actions\ico_OFF_ca.paa",//needs sth else
+        {
+                [] call TF47_Pickup_Tow_Ropes_Action;
+        }, {
+                call TF47_Pickup_Tow_Ropes_Action_Check
+        },{},nil,"",3,[false,false,false,false,false]
+    ] call ace_interact_menu_fnc_createAction;
+
+    [_vehicle, 0, [], _TestAction ] call ace_interact_menu_fnc_addActionToObject;
+    
+}, true, [], true] call CBA_fnc_addClassEventHandler;
+
+//add Eventhandler for localising the towed vehicle //["TF47_towing_localise", [_vehicle]] call CBA_fnc_serverEvent;
+["TF47_towing_localise", {
+    params ["_vehicle"];
+    private _vehicleOwner = owner _vehicle;
+    {
+        if (_vehicleOwner != owner _x) then {
+            _x setOwner _vehicleOwner;
+        };
+    } forEach (ropes _vehicle + ropeAttachedObjects _vehicle);
+}] call CBA_fnc_addEventHandler;
+
+
+// add self interact actions
 private _dropTowRopes  = [
     "dropRopes",
     "Drop Ropes",
@@ -802,11 +822,22 @@ private _dropTowRopes  = [
 
 [player, 1, ["ACE_SelfActions"], _dropTowRopes ] call ace_interact_menu_fnc_addActionToObject;
 
-TF47_Add_Player_Tow_Actions = {
-
-    player addAction ["Pickup Tow Ropes", { 
+/* Self Interaction Pickup
+private _pickUpTowRopes  = [
+    "pickupRopes",
+    "Pickup Tow Ropes",
+    "\A3\ui_f\data\igui\cfg\actions\ico_OFF_ca.paa",//needs sth else
+    {
         [] call TF47_Pickup_Tow_Ropes_Action;
-    }, nil, 0, false, true, "", "call TF47_Pickup_Tow_Ropes_Action_Check"];
+    }, {
+          call TF47_Pickup_Tow_Ropes_Action_Check
+    },{},nil,"",3,[false,false,false,false,false]
+] call ace_interact_menu_fnc_createAction;
+
+[player, 1, ["ACE_SelfActions"], _pickUpTowRopes ] call ace_interact_menu_fnc_addActionToObject;
+*/
+
+TF47_Add_Player_Tow_Actions = {
 
     player addEventHandler ["Respawn", {
         player setVariable ["TF47_Tow_Actions_Loaded",false];

@@ -1,6 +1,4 @@
-_items = items player;
-_ret = false;
-if (("ToolKit" in _items )and ("AUR_AnchorKit" in _items)) then {
-_ret = true;
-};
-_ret;
+if(vehicle player != player) exitWith {false;}; //u cant climb with a vehicle
+if(_player getVariable ["AUR_Is_Rappelling",false]) exitWith {false};
+if(_player getVariable ["AR_Is_Rappelling",false]) exitWith {false};
+"AUR_AnchorKit" in (items player) 
