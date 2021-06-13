@@ -16,12 +16,12 @@
  */
 
 // player is not using NVGs, exit
-if !(call TF47_EnhancedNVGs_fnc_getVisionMode) exitWith {
+if !(call TF47_fnc_getVisionMode) exitWith {
   _return = ["", false];
   _return
 };
 
-private _nvgEffect = call TF47_EnhancedNVGs_fnc_getNvgEffect;  // nvg VFX
+private _nvgEffect = call TF47_fnc_getNvgEffect;  // nvg VFX
 private _effect = ppEffectCreate ["ColorCorrections", 1500]; // effect
 
 // change effect based on player's selection in CBA settings
@@ -49,6 +49,6 @@ _effect ppEffectCommit 0.01;       // commit the effect
 _effect ppEffectEnable true;
 
 // wait until player isn't using NVGs
-waitUntil {!(call TF47_EnhancedNVGs_fnc_getVisionMode)};
+waitUntil {!(call TF47_fnc_getVisionMode)};
 _effect ppEffectEnable false; // hide the effect
 ppEffectDestroy _effect;      // get rid of the effect

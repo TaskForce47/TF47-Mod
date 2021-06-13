@@ -12,5 +12,5 @@
 
 ["visionMode", {
   params ["_unit", "_visionMode"];
-  [] spawn PDT_EnhancedNVG_fnc_setNvgEffect;
+  [] spawn TF47_fnc_setNvgEffect;
 }, true] call CBA_fnc_addPlayerEventHandler;

@@ -12,19 +12,19 @@
 
 // ACE check
 [
-  "PDT_EnhancedNVG_Using_ACE",
+  "TF47_EnhancedNVGs_Using_ACE",
   "CHECKBOX",
   [
     "Use ACE color preset",
     "Enable if using ACE"
   ],
-  "Fawks's Enhanced NVGs",
+  "TF47 Enhanced NVGs",
   false
 ] call cba_settings_fnc_init;
 
 // NVG effect select
 [
-  "PDT_EnhancedNVG_NVG_Effect",
+  "TF47_EnhancedNVGs_NVG_Effect",
   "LIST",
   [
     "NVG Effect",
@@ -34,7 +34,7 @@
     White Phosphor (White Phosphor)
     "
   ],
-  "Fawks's Enhanced NVGs",
+  "TF47 Enhanced NVGs",
   [
     [
       "",
@@ -52,11 +52,11 @@
 
 // NVG blacklist
 [
-  "PDT_EnhancedNVG_NVG_Blacklist",
+  "TF47_EnhancedNVGs_NVG_Blacklist",
   "EDITBOX",
   [
     "Blacklisted NVG classnames", "Seperrate classnames by commas \nEg. className1, className2, className3, etc"
   ],
-  "Fawks's Enhanced NVGs",
+  "TF47 Enhanced NVGs",
   ""
 ] call cba_settings_fnc_init;
