@@ -38,13 +38,17 @@
   [
     [
       "",
+      "GreenPhosphor",
       "WhitePhosphor",
-      "MWPhosphor"
+      "MWPhosphor",
+      "AmberPhosphor"
     ],
     [
+      "None",
       "Green Phosphor",
       "White Phosphor",
-      "Modern Warfare"
+      "Modern Warfare",
+      "Amber Filter"
     ],
     0
   ]
