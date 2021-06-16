@@ -18,10 +18,7 @@ private _visionMode = currentVisionMode player;
 // check if the player is in Zeus
 //private _inZeus = if !(isNull findDisplay 312) then {true} else {false};
 
-if (_visionMode != 1) exitWith {
-  _return = false;
-  _return
-};
+if (_visionMode != 1) exitWith { false };
 
-_return = true;
-_return
+true
+

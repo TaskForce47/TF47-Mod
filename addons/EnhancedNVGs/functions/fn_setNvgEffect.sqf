@@ -13,10 +13,7 @@
  */
 
 // player is not using NVGs, exit
-if !(call TF47_fnc_getVisionMode) exitWith {
-  _return = ["", false];
-  _return
-};
+if !(call TF47_fnc_getVisionMode) exitWith {["", false]};
 
 private _nvgEffect = call TF47_fnc_getNvgEffect;  // nvg VFX
 private _effect = ppEffectCreate ["ColorCorrections", 1500]; // effect
@@ -45,10 +42,7 @@ switch (_nvgEffect select 0) do {
 };
 
 // player doesn't want NVG effects, exit
-if (_nvgEffect isEqualTo []) exitWith {
-  _return = ["", false];
-  _return
-};
+if (_nvgEffect isEqualTo []) exitWith { ["", false] };
 
 _effect ppEffectAdjust _nvgEffect; // set the effect
 _effect ppEffectForceInNVG true;   // force it in NVGs
