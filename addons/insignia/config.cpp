@@ -146,4 +146,11 @@ class CfgUnitInsignia
         texture = "z\TF47\addons\insignia\data\tacp_rgr.paa"; // Image path
         textureVehicle = ""; // Does nothing currently, reserved for future use
     };
+    class TF47_Chairborne
+    {
+        displayName = "TF47 Chairborne"; // Name displayed in Arsenal
+        author = "TF47"; // Author displayed in Arsenal
+        texture = "z\TF47\addons\insignia\data\chairborne.paa"; // Image path
+        textureVehicle = ""; // Does nothing currently, reserved for future use
+    };
 };
