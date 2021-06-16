@@ -21,5 +21,4 @@ if ((hmd player) in _nvgBlacklist) then {
   _effectSelection = "";
 };
 
-_return = [_effectSelection, _aceCheck];
-_return
+[_effectSelection, _aceCheck]
