@@ -10,13 +10,13 @@
  * If bleeding or not <BOOLEAN>
  *
  * Example:
- * 	
+ *     
  *
  * Public: Yes
  */
 
 params[
-	"_patient"
+    "_patient"
 ];
 
 IS_BLEEDING(_patient)

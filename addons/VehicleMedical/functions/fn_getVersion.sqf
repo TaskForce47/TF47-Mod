@@ -11,7 +11,7 @@
  * Version Number <ARRAY>
  *
  * Example:
- * 	([] call TF47_vehicle_medical_fnc_getVersion) params ["_major", "_minor", "_patch"];
+ *     ([] call TF47_vehicle_medical_fnc_getVersion) params ["_major", "_minor", "_patch"];
  *
  * Public: Yes
  */

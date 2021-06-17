@@ -11,11 +11,11 @@ LOGF_2("%1 at version %2", QUOTE(ADDON), _version);
 // ace_common_getVersion is broken for some patches, we look manually to ensure data is good, probably wont work everywhere.
 getArray(configFile >> "CfgPatches" >> "ace_main" >> "versionAR") params ["_aceMajor", "_aceMinor"];
 if(_aceMajor >= 3 && _aceMinor >= 13) then {
-	LOG(format["ACE Version is >= 3.13"]);
-	GVAR(legacyAce) = false;
+    LOG(format["ACE Version is >= 3.13"]);
+    GVAR(legacyAce) = false;
 }else{
-	LOG(format["ACE Version is < 3.13"]);
-	GVAR(legacyAce) = true;
+    LOG(format["ACE Version is < 3.13"]);
+    GVAR(legacyAce) = true;
 };
 
 // Integrations Search
@@ -87,13 +87,13 @@ private _vehicleCategory = [LOC(Settings,Addon_Name), LOC(Settings_Vehicles,Cate
 
 // KAT Integration
 if(GVAR(KATInstalled)) then {
-	[QUOTE(GVAR(EnableSupportKAT)), "CHECKBOX", [LOC(Settings_Integrations,Enable_KAT), LOC(Settings_Integrations,Enable_KAT_Tooltip)], [LOC(Settings,Addon_Name), LOC(Settings_Integrations,Category)], true, 0, {}] call CBA_fnc_addSetting;
-	[QUOTE(GVAR(Unstable_TrackSpO2)), "CHECKBOX", [LOC(Settings_Unstable_KAT,Track_SpO2), LOC(Settings_Unstable_KAT,Track_SpO2_Tooltip)], _unstableCategory, true, 0, {}] call CBA_fnc_addSetting;
-	[QUOTE(GVAR(Unstable_TrackAllPneumothorax)), "CHECKBOX", [LOC(Settings_Unstable_KAT,Track_Pneumothorax), LOC(Settings_Unstable_KAT,Track_Pneumothorax_Tooltip)], _unstableCategory, true, 0, {}] call CBA_fnc_addSetting;
-	[QUOTE(GVAR(Unstable_TrackAirwayBlocked)), "CHECKBOX", [LOC(Settings_Unstable_KAT,Track_Blocked_Airways), LOC(Settings_Unstable_KAT,Track_Blocked_Airways_Tooltip)], _unstableCategory, true, 0, {}] call CBA_fnc_addSetting;
+    [QUOTE(GVAR(EnableSupportKAT)), "CHECKBOX", [LOC(Settings_Integrations,Enable_KAT), LOC(Settings_Integrations,Enable_KAT_Tooltip)], [LOC(Settings,Addon_Name), LOC(Settings_Integrations,Category)], true, 0, {}] call CBA_fnc_addSetting;
+    [QUOTE(GVAR(Unstable_TrackSpO2)), "CHECKBOX", [LOC(Settings_Unstable_KAT,Track_SpO2), LOC(Settings_Unstable_KAT,Track_SpO2_Tooltip)], _unstableCategory, true, 0, {}] call CBA_fnc_addSetting;
+    [QUOTE(GVAR(Unstable_TrackAllPneumothorax)), "CHECKBOX", [LOC(Settings_Unstable_KAT,Track_Pneumothorax), LOC(Settings_Unstable_KAT,Track_Pneumothorax_Tooltip)], _unstableCategory, true, 0, {}] call CBA_fnc_addSetting;
+    [QUOTE(GVAR(Unstable_TrackAirwayBlocked)), "CHECKBOX", [LOC(Settings_Unstable_KAT,Track_Blocked_Airways), LOC(Settings_Unstable_KAT,Track_Blocked_Airways_Tooltip)], _unstableCategory, true, 0, {}] call CBA_fnc_addSetting;
 } else
 {
-	GVAR(EnableSupportKAT) = false;
+    GVAR(EnableSupportKAT) = false;
 };
 
 LOGF_1("[%1] CBA Options Complete", QUOTE(ADDON));

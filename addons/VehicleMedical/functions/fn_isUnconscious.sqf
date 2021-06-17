@@ -15,7 +15,7 @@
  * Public: Yes
  */
 params[
-	"_patient"
+    "_patient"
 ];
 
 IS_UNCONSCIOUS(_patient)
