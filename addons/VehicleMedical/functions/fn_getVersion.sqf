@@ -16,4 +16,4 @@
  * Public: Yes
  */
 
-getArray(configFile >> "CfgPatches" >> QUOTE(ADDON) >> "version")
+getArray(configFile >> "CfgPatches" >> QUOTE(COMPONENT) >> "version")

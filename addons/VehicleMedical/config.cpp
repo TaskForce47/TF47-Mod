@@ -1,7 +1,7 @@
 #include "script_component.hpp"
 
 class CfgPatches {
-    class ADDON {
+    class COMPONENT {
         name = COMPONENT;
         author = "TF47 Desty";
         version[] = { 2, 3, 0, -1 }; //Negative last digit indicates alpha/beta
@@ -12,13 +12,13 @@ class CfgPatches {
 };
 
 class Extended_PreInit_EventHandlers {
-    class ADDON {
+    class COMPONENT {
         init = QUOTE(call COMPILE_FILE(XEH_preInit));
     };
 };
 
 class Extended_PostInit_EventHandlers {
-    class ADDON {
+    class COMPONENT {
         init = QUOTE(call COMPILE_FILE(XEH_postInit));
     };
 };

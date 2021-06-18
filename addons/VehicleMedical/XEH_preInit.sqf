@@ -1,12 +1,12 @@
 #include "functions\function_macros.hpp"
-LOGF_1("[%1] PreInit Begin", QUOTE(ADDON));
+LOGF_1("[%1] PreInit Begin", QUOTE(COMPONENT));
 
-LOGF_1("[%1] PREP Begin", QUOTE(ADDON));
+LOGF_1("[%1] PREP Begin", QUOTE(COMPONENT));
 #include "XEH_PREP.sqf"
-LOGF_1("[%1] PREP Complete", QUOTE(ADDON));
+LOGF_1("[%1] PREP Complete", QUOTE(COMPONENT));
 
 private _version = [] call FUNC(getVersion);
-LOGF_2("%1 at version %2", QUOTE(ADDON), _version);
+LOGF_2("%1 at version %2", QUOTE(COMPONENT), _version);
 
 // ace_common_getVersion is broken for some patches, we look manually to ensure data is good, probably wont work everywhere.
 getArray(configFile >> "CfgPatches" >> "ace_main" >> "versionAR") params ["_aceMajor", "_aceMinor"];
@@ -27,7 +27,7 @@ LOGF_1("Found KAT: %1", _hasKAT);
 
 LOG("Integration Search Complete");
 
-LOGF_1("[%1] CBA Options Begin", QUOTE(ADDON));
+LOGF_1("[%1] CBA Options Begin", QUOTE(COMPONENT));
 
 #define LOC(module,name) localize LSTRING(module,name)
 // General
@@ -96,6 +96,6 @@ if(GVAR(KATInstalled)) then {
     GVAR(EnableSupportKAT) = false;
 };
 
-LOGF_1("[%1] CBA Options Complete", QUOTE(ADDON));
+LOGF_1("[%1] CBA Options Complete", QUOTE(COMPONENT));
 
-LOGF_1("[%1] PreInit Complete", QUOTE(ADDON));
+LOGF_1("[%1] PreInit Complete", QUOTE(COMPONENT));

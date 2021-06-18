@@ -160,7 +160,7 @@
     </Package>
     <Package name="Settings">
         <Key ID="STR_TF47_AVM_Settings_Addon_Name">
-            <English>ACE Vehicle Medical</English>
+            <English>TF47 Vehicle Medical</English>
         </Key>
         <Container name="General">
             <Key ID="STR_TF47_AVM_Settings_General_Category">
