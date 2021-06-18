@@ -1,0 +1,4 @@
+class CfgMagazines {
+    //base class
+
+};
