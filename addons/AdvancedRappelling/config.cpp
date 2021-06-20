@@ -56,4 +56,4 @@ class CfgSounds
    };
 };
 
-#include "cfgAnimations.hpp"
+#include "CfgAnimations.hpp"
