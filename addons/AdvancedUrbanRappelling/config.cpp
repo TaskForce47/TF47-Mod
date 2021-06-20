@@ -32,8 +32,8 @@ class CfgFunctions
 #include "functions\functions.h"
 
 };
-#include "cfgWeapons.hpp"
-#include "cfgAnimations.hpp"
+#include "CfgWeapons.hpp"
+#include "CfgAnimations.hpp"
 
 class CfgSounds
 {
