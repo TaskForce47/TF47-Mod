@@ -1,7 +1,7 @@
 #include "script_component.hpp"
 /*
  * Authors: johnb43
-	* Creates a new profile.
+    * Creates a new profile.
  *
  * Arguments:
  * None

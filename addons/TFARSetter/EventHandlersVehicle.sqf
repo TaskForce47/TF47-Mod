@@ -3,7 +3,7 @@ player addEventHandler ["GetInMan", {
     // If CBA settings for this are disabled, break
     if (!GVAR(enableMountingAutoSettings)) exitWith {};
 
-	   params ["_unit", "", "_vehicle"];
+       params ["_unit", "", "_vehicle"];
 
     // If not correct type of vehicle
     if !(_vehicle isKindOf "Air" || _vehicle isKindOf "Land") exitWith {};
@@ -43,7 +43,7 @@ player addEventHandler ["GetInMan", {
 
     // Set the headset up or down
     if (!isNil {_data select 3}) then {
-    				(_data select 3) call TFAR_fnc_setHeadsetLowered;
+                    (_data select 3) call TFAR_fnc_setHeadsetLowered;
     };
 }];
 
@@ -52,7 +52,7 @@ player addEventHandler ["SeatSwitchedMan", {
     // If CBA settings for this are disabled, break
     if (!GVAR(enableMountingAutoSettings)) exitWith {};
 
-	   params ["_unit1", "", "_vehicle"];
+       params ["_unit1", "", "_vehicle"];
 
     // If not correct type of vehicle
     if !(_vehicle isKindOf "Air" || _vehicle isKindOf "Land") exitWith {};
@@ -77,7 +77,7 @@ player addEventHandler ["SeatSwitchedMan", {
 
     // Set the headset up or down
     if (!isNil {_data select 3}) then {
-    				(_data select 3) call TFAR_fnc_setHeadsetLowered;
+                    (_data select 3) call TFAR_fnc_setHeadsetLowered;
     };
 }];
 
@@ -86,7 +86,7 @@ player addEventHandler ["GetOutMan", {
     // If CBA settings for this are disabled, break
     if (!GVAR(enableMountingAutoSettings)) exitWith {};
 
-	   params ["_unit", "_role"];
+       params ["_unit", "_role"];
 
     GVAR(radioLoadout) params ["_SR", "_LR", "_headsetStatus"];
 

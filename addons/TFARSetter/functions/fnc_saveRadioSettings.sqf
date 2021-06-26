@@ -1,13 +1,13 @@
 #include "script_component.hpp"
 /*
  * Authors: johnb43
-	* Saves select radio configurations to a chosen profile.
+    * Saves select radio configurations to a chosen profile.
  *
  * Arguments:
  * 0: Which radios should be saved <ARRAY>
-	* 1: Load other type of radio (only works for LR and VLR) <BOOLEAN>
-	* 2: Which profile is selected <STRING>
-	* 3: SR Radio <STRING>
+    * 1: Load other type of radio (only works for LR and VLR) <BOOLEAN>
+    * 2: Which profile is selected <STRING>
+    * 3: SR Radio <STRING>
  *
  * Return Value:
  * None
@@ -25,47 +25,47 @@ private _text = "SR";
 
 // If the SR settings should be saved
 if (_doSR) then {
-				_dataRadio = ([_radio, call TFAR_fnc_activeSwRadio] select (_radio isEqualTo "")) call TFAR_fnc_getSwSettings;
+                _dataRadio = ([_radio, call TFAR_fnc_activeSwRadio] select (_radio isEqualTo "")) call TFAR_fnc_getSwSettings;
 
     // If player has no SW radio, it will reset the settings to nothing
-				if (isNil "_dataRadio") then {
-								_dataRadio = [];
-				};
+                if (isNil "_dataRadio") then {
+                                _dataRadio = [];
+                };
 
     // Set the data in the first element
-				_data set [0, _dataRadio];
+                _data set [0, _dataRadio];
 };
 
 // If the LR settings should be saved
 if (_doLR) then {
-				_dataRadio = (player call TFAR_fnc_backpackLR) call TFAR_fnc_getLrSettings;
+                _dataRadio = (player call TFAR_fnc_backpackLR) call TFAR_fnc_getLrSettings;
 
     // If player has no LR radio, it will reset the settings to nothing
-				if (isNil "_dataRadio") then {
-								_dataRadio = [];
-				};
+                if (isNil "_dataRadio") then {
+                                _dataRadio = [];
+                };
 
     // If saving from a LR to a LR, saveSameType == true, if saving from VLR to LR, then not
-				_data set [[2, 1] select _saveSameType, _dataRadio];
+                _data set [[2, 1] select _saveSameType, _dataRadio];
 
     // Change text accordingly
-				_text = ["LR", "SR and LR"] select _doSR;
+                _text = ["LR", "SR and LR"] select _doSR;
 };
 
 // If the VLR settings should be saved
 if (_doVLR) then {
-				_dataRadio = (player call TFAR_fnc_vehicleLR) call TFAR_fnc_getLrSettings;
+                _dataRadio = (player call TFAR_fnc_vehicleLR) call TFAR_fnc_getLrSettings;
 
     // If player has no VLR radio, it will reset the settings to nothing
-				if (isNil "_dataRadio") then {
-								_dataRadio = [];
-				};
+                if (isNil "_dataRadio") then {
+                                _dataRadio = [];
+                };
 
     // If saving from a VLR to a VLR, saveSameType == true, if saving from LR to VLR, then not
-				_data set [[1, 2] select _saveSameType, _dataRadio];
+                _data set [[1, 2] select _saveSameType, _dataRadio];
 
     // Change text accordingly
-				_text = [[["VLR", "SR and VLR"] select _doSR, "LR and VLR"] select _doLR, "SR, LR and VLR"] select (_doSR && _doLR);
+                _text = [[["VLR", "SR and VLR"] select _doSR, "LR and VLR"] select _doLR, "SR, LR and VLR"] select (_doSR && _doLR);
 };
 
 // Save whether headset is down or up

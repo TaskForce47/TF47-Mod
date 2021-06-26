@@ -1,7 +1,7 @@
 #include "script_component.hpp"
 /*
  * Authors: johnb43
-	* Deletes a chosen profile.
+    * Deletes a chosen profile.
  *
  * Arguments:
  * None
