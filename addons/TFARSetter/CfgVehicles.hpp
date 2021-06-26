@@ -2,7 +2,7 @@ class CfgVehicles {
     class Man;
     class CAManBase: Man {
         class ACE_SelfActions {
-            class TFAR_Radio {
+            class TF47_Menu {
                 class ADDON {
                     condition = QUOTE(true);
                     displayName = "TFAR Setter";

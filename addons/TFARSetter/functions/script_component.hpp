@@ -1,1 +1,1 @@
-#include "z\TF47\addons\main\script_component.hpp"
+#include "\z\TF47\addons\main\script_component.hpp"
