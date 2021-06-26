@@ -4,8 +4,7 @@ class CfgPatches {
     class ADDON {
         name = COMPONENT;
         author = "johnb43";
-        authors[] = {"johnb43", "Chatter", "M3ales", "Tirpitz93"};
-        url = "https://github.com/johnb432/ACE-TFAR-Setter-Extended";
+        authors[] = {"johnb43", "Chatter", "M3ales", "Tirpitz93", "TF47 Desty"};
         requiredAddons[] = {
             "cba_main",
             "ace_interact_menu",
