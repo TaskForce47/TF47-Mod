@@ -6,16 +6,16 @@
 
 #define EXCEPTIONS exceptions[] = {"isNotInside","isNotSitting","isNotSwimming"}
 
-#define ICON_ROOT "\z\TF47\addons\main\ui\interact_root.paa"
+#define ICON_ROOT "\z\TF47\addons\TFARSetter\ui\interact_root.paa"
 
-#define ICON_SAVE "\z\TF47\addons\main\ui\save.paa"
-#define ICON_LOAD "\z\TF47\addons\main\ui\load.paa"
+#define ICON_SAVE "\z\TF47\addons\TFARSetter\ui\save.paa"
+#define ICON_LOAD "\z\TF47\addons\TFARSetter\ui\load.paa"
 #define ICON_ADD "\A3\ui_f\data\gui\cfg\cursors\add_gs.paa"
 #define ICON_DELETE "\A3\ui_f\data\igui\cfg\commandbar\unitcombatmode_ca.paa"
 
-#define ICON_SR "\z\TF47\addons\main\ui\sr.paa"
-#define ICON_LR "\z\TF47\addons\main\ui\lr.paa"
-#define ICON_VLR "\z\TF47\addons\main\ui\vlr_plane.paa"
+#define ICON_SR "\z\TF47\addons\TFARSetter\ui\sr.paa"
+#define ICON_LR "\z\TF47\addons\TFARSetter\ui\lr.paa"
+#define ICON_VLR "\z\TF47\addons\TFARSetter\ui\vlr_plane.paa"
 
 #define DFUNC(var1) TRIPLES(ADDON,fnc,var1)
 

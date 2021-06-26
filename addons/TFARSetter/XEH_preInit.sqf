@@ -10,7 +10,7 @@ PREP_RECOMPILE_END;
     QGVAR(airProfile),
     "EDITBOX",
     ["Air profile", "Applies the specified profile when you get in air vehicles."],
-    [COMPONENT_NAME, "Vehicles"],
+    ["TF47 TFAR Setter", "Vehicles"],
     "",
     false
 ] call CBA_fnc_addSetting;
@@ -19,7 +19,7 @@ PREP_RECOMPILE_END;
     QGVAR(landProfile),
     "EDITBOX",
     ["Land profile", "Applies the specified profile when you get in land vehicles."],
-    [COMPONENT_NAME, "Vehicles"],
+    ["TF47 TFAR Setter", "Vehicles"],
     "",
     false
 ] call CBA_fnc_addSetting;
@@ -28,7 +28,7 @@ PREP_RECOMPILE_END;
     QGVAR(askSaveConfirmation),
     "CHECKBOX",
     ["Ask save confirmation", "Asks the player for confirmation before saving a profile."],
-    [COMPONENT_NAME, "Profiles"],
+    ["TF47 TFAR Setter", "Profiles"],
     true,
     false
 ] call CBA_fnc_addSetting;
@@ -37,7 +37,7 @@ PREP_RECOMPILE_END;
     QGVAR(askLoadConfirmation),
     "CHECKBOX",
     ["Ask load confirmation", "Asks the player for confirmation before loading a profile."],
-    [COMPONENT_NAME, "Profiles"],
+    ["TF47 TFAR Setter", "Profiles"],
     true,
     false
 ] call CBA_fnc_addSetting;
@@ -46,7 +46,7 @@ PREP_RECOMPILE_END;
     QGVAR(askDeleteConfirmation),
     "CHECKBOX",
     ["Ask delete confirmation", "Asks the player for confirmation before deleting a profile."],
-    [COMPONENT_NAME, "Profiles"],
+    ["TF47 TFAR Setter", "Profiles"],
     true,
     false
 ] call CBA_fnc_addSetting;
@@ -55,7 +55,7 @@ PREP_RECOMPILE_END;
     QGVAR(enableArsenalAutoSettings),
     "CHECKBOX",
     ["Enable arsenal radio settings saving", "Saves the current radio settings before entering the arsenal and applies them when you exit the arsenal (both ACE and BI Arsenals)."],
-    [COMPONENT_NAME, "Funtionality"],
+    ["TF47 TFAR Setter", "Funtionality"],
     true,
     false
 ] call CBA_fnc_addSetting;
@@ -64,7 +64,7 @@ PREP_RECOMPILE_END;
     QGVAR(enableMountingAutoSettings),
     "CHECKBOX",
     ["Enable mounting radio settings saving", "Saves the current radio settings before entering a vehicle and applies them when you dismount."],
-    [COMPONENT_NAME, "Vehicles"],
+    ["TF47 TFAR Setter", "Vehicles"],
     true,
     false
 ] call CBA_fnc_addSetting;
@@ -73,7 +73,7 @@ PREP_RECOMPILE_END;
     QGVAR(enableCompatFK),
     "CHECKBOX",
     ["Enable FK Server detection", "When loading SR settings on an FK server, it will automatically change the channel to which squad you are in."],
-    [COMPONENT_NAME, "Funtionality"],
+    ["TF47 TFAR Setter", "Funtionality"],
     true,
     false
 ] call CBA_fnc_addSetting;
@@ -82,7 +82,7 @@ PREP_RECOMPILE_END;
     QGVAR(enableSRInteractions),
     "CHECKBOX",
     ["Enable 'SR' interactions", "Enables both saving and loading actions for SR."],
-    [COMPONENT_NAME, "Funtionality"],
+    ["TF47 TFAR Setter", "Funtionality"],
     true,
     false
 ] call CBA_fnc_addSetting;
@@ -91,7 +91,7 @@ PREP_RECOMPILE_END;
     QGVAR(enableLRInteractions),
     "CHECKBOX",
     ["Enable 'LR' interactions", "Enables both saving and loading actions for LR."],
-    [COMPONENT_NAME, "Funtionality"],
+    ["TF47 TFAR Setter", "Funtionality"],
     true,
     false
 ] call CBA_fnc_addSetting;
@@ -100,7 +100,7 @@ PREP_RECOMPILE_END;
     QGVAR(enableVLRInteractions),
     "CHECKBOX",
     ["Enable 'VLR' interactions", "Enables both saving and loading actions for VLR."],
-    [COMPONENT_NAME, "Funtionality"],
+    ["TF47 TFAR Setter", "Funtionality"],
     true,
     false
 ] call CBA_fnc_addSetting;
@@ -109,7 +109,7 @@ PREP_RECOMPILE_END;
     QGVAR(enableSRAndLRInteractions),
     "CHECKBOX",
     ["Enable 'SR & LR' interactions", "Enables both saving and loading actions for 'SR & LR'."],
-    [COMPONENT_NAME, "Funtionality"],
+    ["TF47 TFAR Setter", "Funtionality"],
     true,
     false
 ] call CBA_fnc_addSetting;
@@ -118,7 +118,7 @@ PREP_RECOMPILE_END;
     QGVAR(enableAllInteractions),
     "CHECKBOX",
     ["Enable 'All' interactions", "Enables both saving and loading actions for 'All'."],
-    [COMPONENT_NAME, "Funtionality"],
+    ["TF47 TFAR Setter", "Funtionality"],
     true,
     false
 ] call CBA_fnc_addSetting;
