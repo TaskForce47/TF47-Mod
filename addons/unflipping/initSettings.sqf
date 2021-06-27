@@ -2,7 +2,7 @@
 #define SETTINGS_CAT "TF47 Unflipping"
 
 [
-    "TF47unit_mass_limit",
+    "TF47_unit_mass_limit",
     "SLIDER",
     [localize "STR_TF47_unit_mass_limit", localize "STR_TF47_unit_mass_limit_desc"],
     SETTINGS_CAT,
@@ -12,7 +12,7 @@
 ] call CBA_fnc_addSetting;
 
 [
-    "TF47unit_man_limit",
+    "TF47_unit_man_limit",
     "SLIDER",
     [localize "STR_TF47_unit_man_limit", localize "STR_TF47_unit_man_limit_desc"],
     SETTINGS_CAT,
@@ -22,7 +22,7 @@
 ] call CBA_fnc_addSetting;
 
 [
-    "TF47time",
+    "TF47_time",
     "SLIDER",
     [localize "STR_TF47_time", localize "STR_TF47_time_desc"],
     SETTINGS_CAT,
@@ -32,7 +32,7 @@
 ] call CBA_fnc_addSetting;
 
 [
-    "TF47vehicle_mass_limit",
+    "TF47_vehicle_mass_limit",
     "SLIDER",
     [localize "STR_TF47_vehicle_mass_limit", localize "STR_TF47_vehicle_mass_limit"],
     SETTINGS_CAT,
@@ -42,7 +42,7 @@
 ] call CBA_fnc_addSetting;
 
 [
-    "TF47require_toolkit",
+    "TF47_require_toolkit",
     "CHECKBOX",
     [localize "STR_TF47_require_toolkit", localize "STR_TF47_require_toolkit"],
     SETTINGS_CAT,
@@ -52,7 +52,7 @@
 ] call CBA_fnc_addSetting;
 
 [
-    "TF47require_serviceVehicle",
+    "TF47_require_serviceVehicle",
     "CHECKBOX",
     [localize "STR_TF47_require_serviceVehicle", localize "STR_TF47_require_serviceVehicle"],
     SETTINGS_CAT,
