@@ -14,4 +14,5 @@ class CfgPatches {
     };
 };
 
-#include "CfgMods.hpp"
+#include "CfgEventHandlers.hpp"
+#include "overlay.hpp"
