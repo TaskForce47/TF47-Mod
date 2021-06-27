@@ -2,8 +2,8 @@
 <Project name="TF47">
     <Package name="SlingLoad">
         <Key ID="STR_TF47_Sling_Load_Rigging">
-            <English>TF47 - Sling Load Rigging</English>
-            <German>TF47 - Außenlast</German>
+            <English>TF47 Sling Load Rigging</English>
+            <German>TF47 Außenlast</German>
         </Key>
         <Key ID="STR_TF47_SlingLoad_AttachCargo">
             <English>Attach Cargo</English>

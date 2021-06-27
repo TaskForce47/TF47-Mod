@@ -1,5 +1,5 @@
 
-#define SETTINGS_CAT "TF47_Unflipping"
+#define SETTINGS_CAT "TF47 Unflipping"
 
 [
     "TF47unit_mass_limit",
