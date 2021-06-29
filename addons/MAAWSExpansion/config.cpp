@@ -5,11 +5,13 @@ class CfgPatches {
         units[] = {};
         weapons[] = {};
         requiredVersion = REQUIRED_VERSION;
-        requiredAddons[] = {"A3_Weapons_F","rhsusf_c_weapons","rhsusf_main"};
-        author = "TF47 -Sonic-, Desty, ra.Y";
+        requiredAddons[] = {"A3_Weapons_F","rhsusf_c_weapons","rhsusf_main","ace_interaction"};
+        author = "TF47 Desty";
         VERSION_CONFIG;
     };
 };
 
+#include "CfgWeapons.hpp"
 #include "CfgAmmo.hpp"
 #include "CfgMagazines.hpp"
+#include "ACE_Arsenal_Stats.hpp"
