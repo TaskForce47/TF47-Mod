@@ -7,7 +7,7 @@ class CfgWeapons
         displayName = "M3 MAAWS";
         magazines[] = { 
                         "tf47_mag_maaws_ffv401_adm",
-                        "tf47_mag_maaws_ffv441d_hedp",
+                        "tf47_mag_maaws_ffv441d_he",
                         "tf47_mag_maaws_ffv469c_smoke",
                         "tf47_mag_maaws_ffv502_hedp",
                         "tf47_mag_maaws_ffv509_asm",
@@ -27,7 +27,7 @@ class CfgWeapons
         displayName = "M3E1 RAWS";
         magazines[] = { 
                         "tf47_mag_raws_ffv401_adm",
-                        "tf47_mag_raws_ffv441d_hedp",
+                        "tf47_mag_raws_ffv441d_he",
                         "tf47_mag_raws_ffv469c_smoke",
                         "tf47_mag_raws_ffv502_hedp",
                         "tf47_mag_raws_ffv509_asm",
