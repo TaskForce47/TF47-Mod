@@ -1,6 +1,7 @@
 class CfgMagazines {
     class CA_LauncherMagazine;
     
+    // MAAWS
     class tf47_mag_maaws_ffv756_mt : CA_LauncherMagazine
 	{
         scope = 2;
