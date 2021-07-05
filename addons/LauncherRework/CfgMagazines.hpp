@@ -71,7 +71,7 @@ class CfgMagazines {
         type = 2*256;
         mass = 70.05; //3,2 kg
     };
-    // ------------Fuckup Line-----------------------------------------------------------------
+
     class tf47_mag_maaws_ffv545c_illum : CA_LauncherMagazine
 	{
         scope = 2;
