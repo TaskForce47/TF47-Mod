@@ -12,7 +12,7 @@ class CfgAmmo {
         submunitionDirectionType = "SubmunitionModelDirection";
         submunitionInitialOffset[] = {0,0,-0.2};
         submunitionParentSpeedCoef = 0;
-        submunitionInitSpeed = 1000;
+        submunitionInitSpeed = 290;
         
 		explosive = 0.8;
 
@@ -66,7 +66,7 @@ class CfgAmmo {
         submunitionDirectionType = "SubmunitionModelDirection";
         submunitionInitialOffset[] = {0,0,-0.2};
         submunitionParentSpeedCoef = 0;
-        submunitionInitSpeed = 1000;
+        submunitionInitSpeed = 290;
         
 		explosive = 0.8;
 
@@ -106,7 +106,7 @@ class CfgAmmo {
 		hit = 400; //Penetrator
 		caliber = 137.931; // caliber = (mm penetration @speedX)*1000 / (bulletPenetrability * speedX)
 		cost = 800;
-		maxSpeed = 350;
+		maxSpeed = 290;
 
 
 		warheadName	= "TandemHEAT";
@@ -188,7 +188,7 @@ class CfgAmmo {
 		indirectHitRange = 2;
 		caliber = 34.48;
 		cost = 800;
-		maxSpeed = 290;
+		maxSpeed = 350;
 
 		allowAgainstInfantry = 1;
 
@@ -221,6 +221,126 @@ class CfgAmmo {
 
 
 		warheadName	= "HE";
+	};
+    
+    ///// ---------- 655 ---------- /////
+    
+    // FFV 655 MAAWS
+    class tf47_ammo_maaws_ffv655_heat: rhs_ammo_maaws_HEAT
+	{
+
+        submunitionAmmo = "tf47_ammo_maaws_ffv655_heat_penetrator";
+        submunitionDirectionType = "SubmunitionModelDirection";
+        submunitionInitialOffset[] = {0,0,-0.2};
+        submunitionParentSpeedCoef = 0;
+        submunitionInitSpeed = 290;
+        
+        ace_overpressure_range = 3;
+        ace_overpressure_priority = 10;
+        ace_overpressure_damage = 0.3;
+        ace_overpressure_angle = 30;
+        
+		explosive = 0.8;
+
+		hit = 100; //Tandem
+		indirectHit = 15;
+		indirectHitRange = 3.1;
+		caliber = 0.8;
+		cost = 800;
+		airFriction = 0.010;
+		sideAirFriction = 0.00;
+		maxSpeed = 145; //Zeroing wont work, but that thing has 300 m range IRL so CQC only
+		initTime = 0;
+		thrustTime = 0.1;
+		thrust = 0.1;
+
+		timeToLive = 25;
+		maneuvrability = 0;
+		allowAgainstInfantry = 0;
+
+		visibleFire = 15;
+		audibleFire = 20;
+		warheadName	= "TandemHEAT";
+	};
+    
+    class tf47_ammo_maaws_ffv655_heat_penetrator: rhs_ammo_maaws_HEAT_penetrator
+	{
+
+        submunitionAmmo = "rhs_ammo_spall";
+        submunitionDirectionType = "SubmunitionModelDirection";
+        submunitionConeType[] = {"randomcenter",30};
+        submunitionInitialOffset[] = {0,0,-0.4};
+        submunitionParentSpeedCoef = 0;
+        submunitionInitSpeed = 200;
+        
+		explosive = 0;
+
+		hit = 350; //Penetrator
+		caliber = 137.931; // caliber = (mm penetration @speedX)*1000 / (bulletPenetrability * speedX)
+		cost = 800;
+		maxSpeed = 290;
+
+
+		warheadName	= "TandemHEAT";
+	};
+    
+    // FFV 655 RAWS
+    class tf47_ammo_raws_ffv655_heat: rhs_ammo_maaws_HEAT
+	{
+
+        submunitionAmmo = "tf47_ammo_raws_ffv655_heat_penetrator";
+        submunitionDirectionType = "SubmunitionModelDirection";
+        submunitionInitialOffset[] = {0,0,-0.2};
+        submunitionParentSpeedCoef = 0;
+        submunitionInitSpeed = 290;
+        
+        ace_overpressure_range = 3;
+        ace_overpressure_priority = 10;
+        ace_overpressure_damage = 0.3;
+        ace_overpressure_angle = 30;
+        
+		explosive = 0.8;
+
+		hit = 100; //Tandem
+		indirectHit = 15;
+		indirectHitRange = 3.1;
+		caliber = 0.8;
+		cost = 800;
+		airFriction = 0.010;
+		sideAirFriction = 0.00;
+		maxSpeed = 175;
+		initTime = 0;
+		thrustTime = 0.1;
+		thrust = 0.1;
+
+		timeToLive = 25;
+		maneuvrability = 0;
+		allowAgainstInfantry = 0;
+
+		visibleFire = 15;
+		audibleFire = 20;
+		warheadName	= "TandemHEAT";
+	};
+    
+    class tf47_ammo_raws_ffv655_heat_penetrator: rhs_ammo_maaws_HEAT_penetrator
+	{
+
+        submunitionAmmo = "rhs_ammo_spall";
+        submunitionDirectionType = "SubmunitionModelDirection";
+        submunitionConeType[] = {"randomcenter",30};
+        submunitionInitialOffset[] = {0,0,-0.4};
+        submunitionParentSpeedCoef = 0;
+        submunitionInitSpeed = 200;
+        
+		explosive = 0;
+
+		hit = 400; //Penetrator
+		caliber = 137.931; // caliber = (mm penetration @speedX)*1000 / (bulletPenetrability * speedX)
+		cost = 800;
+		maxSpeed = 350;
+
+
+		warheadName	= "TandemHEAT";
 	};
 
 };
