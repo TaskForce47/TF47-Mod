@@ -128,7 +128,7 @@ class CfgMagazines {
         mass = 68.34; //3,1 kg
     };
     
-    class tf47_mag_maaws_ffv441d_he : CA_LauncherMagazine //<<< Classname war vorher x_ffv441d_hedp - Typo? Im CfgWeapons isses nur HE.
+    class tf47_mag_maaws_ffv441d_he : CA_LauncherMagazine
 	{
         scope = 2;
         displayName = "FFV441D HE";
