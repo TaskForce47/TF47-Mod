@@ -8,6 +8,15 @@ class CfgWeapons
     class tf47_weap_maaws: rhs_weap_maaws
     {
         displayName = "M3 MAAWS";
+        
+        ace_reloadlaunchers_enabled = 1;
+        ace_overpressure_range = 25;
+        ace_overpressure_priority = 1;
+        ace_overpressure_damage = 0.6;
+        ace_overpressure_angle = 45;
+        
+        mass = 209.439;
+        
         magazines[] = { 
                         "tf47_mag_maaws_ffv401_adm",
                         "tf47_mag_maaws_ffv441d_he",
@@ -28,6 +37,15 @@ class CfgWeapons
     class tf47_weap_raws_green: launch_MRAWS_green_F
     {
         displayName = "M3E1 RAWS (Green)";
+        
+        ace_reloadlaunchers_enabled = 1;
+        ace_overpressure_range = 25;
+        ace_overpressure_priority = 1;
+        ace_overpressure_damage = 0.6;
+        ace_overpressure_angle = 45;
+        
+        mass = 154.324;
+        
         magazines[] = { 
                         "tf47_mag_raws_ffv401_adm",
                         "tf47_mag_raws_ffv441d_he",
@@ -48,6 +66,15 @@ class CfgWeapons
     class tf47_weap_raws_olive: launch_MRAWS_olive_F
     {
         displayName = "M3E1 RAWS (Olive)";
+        
+        ace_reloadlaunchers_enabled = 1;
+        ace_overpressure_range = 25;
+        ace_overpressure_priority = 1;
+        ace_overpressure_damage = 0.6;
+        ace_overpressure_angle = 45;
+        
+        mass = 154.324;
+        
         magazines[] = { 
                         "tf47_mag_raws_ffv401_adm",
                         "tf47_mag_raws_ffv441d_he",
@@ -68,6 +95,15 @@ class CfgWeapons
     class tf47_weap_raws_sand: launch_MRAWS_sand_F
     {
         displayName = "M3E1 RAWS (Sand)";
+        
+        ace_reloadlaunchers_enabled = 1;
+        ace_overpressure_range = 25;
+        ace_overpressure_priority = 1;
+        ace_overpressure_damage = 0.6;
+        ace_overpressure_angle = 45;
+        
+        mass = 154.324;
+        
         magazines[] = { 
                         "tf47_mag_raws_ffv401_adm",
                         "tf47_mag_raws_ffv441d_he",
