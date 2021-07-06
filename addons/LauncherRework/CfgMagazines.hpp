@@ -47,7 +47,7 @@ class CfgMagazines {
     class tf47_mag_maaws_ffv551c_heat : CA_LauncherMagazine
 	{
         scope = 2;
-        displayName = "FFV551C HEAT RS";
+        displayName = "FFV551C HEAT (RS)";
         model = "rhsusf\addons\rhsusf_weapons2\m3maaws\mag_m3maaws.p3d";
         picture = "z\TF47\addons\LauncherRework\ui\M3_HEAT_RS.paa";
         initSpeed = 290;
@@ -145,7 +145,7 @@ class CfgMagazines {
     class tf47_mag_maaws_ffv401_adm : CA_LauncherMagazine
 	{
         scope = 2;
-        displayName = "FFV401 ADM (FLECHETTE)";
+        displayName = "FFV401 ADM";
         model = "rhsusf\addons\rhsusf_weapons2\m3maaws\mag_m3maaws.p3d";
         picture = "z\TF47\addons\LauncherRework\ui\M3_ADM.paa";
         initSpeed = 290;
@@ -203,7 +203,7 @@ class tf47_mag_raws_ffv756_mt : CA_LauncherMagazine
     class tf47_mag_raws_ffv551c_heat : CA_LauncherMagazine
 	{
         scope = 2;
-        displayName = "FFV551C HEAT RS";
+        displayName = "FFV551C HEAT (RS)";
         model = "rhsusf\addons\rhsusf_weapons2\m3maaws\mag_m3maaws.p3d";
         picture = "z\TF47\addons\LauncherRework\ui\M3_HEAT_RS.paa";
         initSpeed = 350;
@@ -301,7 +301,7 @@ class tf47_mag_raws_ffv756_mt : CA_LauncherMagazine
     class tf47_mag_raws_ffv401_adm : CA_LauncherMagazine
 	{
         scope = 2;
-        displayName = "FFV401 ADM (FLECHETTE)";
+        displayName = "FFV401 ADM";
         model = "rhsusf\addons\rhsusf_weapons2\m3maaws\mag_m3maaws.p3d";
         picture = "z\TF47\addons\LauncherRework\ui\M3_ADM.paa";
         initSpeed = 350;
