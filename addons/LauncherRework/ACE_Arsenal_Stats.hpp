@@ -10,3 +10,4 @@ class ace_arsenal_stats {
         condition = "(configName (_this select 1)) == 'tf47_mag_maaws_ffv401_adm' || (configName (_this select 1)) == 'tf47_mag_raws_ffv401_adm')"; // Condition for the stats to be displayed, default is true if not defined, needs to return a BOOL.
         tabs[] = {{}, {7}};
     };
+};

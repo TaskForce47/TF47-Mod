@@ -158,7 +158,7 @@ class CfgMagazines {
 	
 	//RAWS
 	
-class tf47_mag_raws_ffv756_mt : CA_LauncherMagazine
+	class tf47_mag_raws_ffv756_mt : CA_LauncherMagazine
 	{
         scope = 2;
         displayName = "FFV756 MT (Multi Target)";

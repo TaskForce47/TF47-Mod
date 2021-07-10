@@ -32,7 +32,7 @@ class CfgWeapons
                         "tf47_mag_maaws_gmm"
                       };
         magazineWell[] = {};
-    }
+    };
     
     class tf47_weap_raws_green: launch_MRAWS_green_F
     {
@@ -61,7 +61,7 @@ class CfgWeapons
                         "tf47_mag_raws_gmm"
                       };
         magazineWell[] = {};
-    }
+    };
     
     class tf47_weap_raws_olive: launch_MRAWS_olive_F
     {
@@ -90,7 +90,7 @@ class CfgWeapons
                         "tf47_mag_raws_gmm"
                       };
         magazineWell[] = {};
-    }
+    };
     
     class tf47_weap_raws_sand: launch_MRAWS_sand_F
     {
@@ -119,7 +119,7 @@ class CfgWeapons
                         "tf47_mag_raws_gmm"
                       };
         magazineWell[] = {};
-    }
+    };
     
     ///// M47 Dragon /////
     

@@ -570,6 +570,7 @@ class CfgAmmo {
 	///// ---------- 441d ---------- /////
     
     // FFV 441d MAAWS
+	class rhs_ammo_maaws_HE;
     class tf47_ammo_maaws_ffv441d_he: rhs_ammo_maaws_HE
 	{
         ace_overpressure_range = 3;
@@ -784,8 +785,8 @@ class CfgAmmo {
 		cost = 800;
 		maxSpeed = 350;
 
-
 		warheadName	= "HE";
+		
 	};
 	
 	///// ---------- 401 ---------- /////
@@ -820,6 +821,9 @@ class CfgAmmo {
 		maneuvrability = 0;
 		allowAgainstInfantry = 1;
 
+	};
+	
+		class B_127x99_Ball;
 		class tf47_ammo_maaws_ffv401_adm_penetrator: B_127x99_Ball
     {
         hit = 10;
@@ -866,6 +870,8 @@ class CfgAmmo {
 		timeToLive = 25;
 		maneuvrability = 0;
 		allowAgainstInfantry = 1;
+
+	};
 
 		class tf47_ammo_raws_ffv401_adm_penetrator: B_127x99_Ball
     {
