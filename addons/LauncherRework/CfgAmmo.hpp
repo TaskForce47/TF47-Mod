@@ -788,4 +788,100 @@ class CfgAmmo {
 		warheadName	= "HE";
 	};
 	
+	///// ---------- 401 ---------- /////
+    
+    // FFV 401 MAAWS
+    class tf47_ammo_maaws_ffv401_adm: rhs_ammo_maaws_HE
+	{
+       	submunitionAmmo[] = "tf47_ammo_maaws_ffv401_adm_penetrator";
+		submunitionConeType[] = {"poissondisccenter", 1000};
+        submunitionConeAngle = 0.50;
+		simulation = shotSubmunitions;
+		
+        ace_overpressure_range = 3;
+        ace_overpressure_priority = 10;
+        ace_overpressure_damage = 0.3;
+        ace_overpressure_angle = 30;
+
+		hit = 1;
+		indirectHit = 1;
+		indirectHitRange = 0.1;
+		caliber = 0.8;
+		cost = 800;
+		airFriction = 0.010;
+		sideAirFriction = 0.00;
+		maxSpeed = 290;
+		initTime = 0;
+		thrustTime = 0.1;
+		thrust = 0.1;
+		triggerTime = 0.0001;
+
+		timeToLive = 25;
+		maneuvrability = 0;
+		allowAgainstInfantry = 1;
+
+		class tf47_ammo_maaws_ffv401_adm_penetrator: B_127x99_Ball
+    {
+        hit = 10;
+        indirectHit = 0;
+        indirectHitRange = 0;
+        caliber = 5;
+
+		submunitionInitSpeed = 300;
+        typicalSpeed = 200;
+        airFriction = -0.000617;
+        tracerScale = 0.2;
+        tracerStartTime = 0.01;
+        tracerEndTime = 3;
+		model = "\A3\Weapons_f\Data\bullettracer\tracer_yellow";
+		
+	};
+    
+    // FFV 401 RAWS
+    class tf47_mag_raws_ffv401_adm: rhs_ammo_maaws_HE
+	{
+       	submunitionAmmo[] = "tf47_ammo_raws_ffv401_adm_penetrator";
+		submunitionConeType[] = {"poissondisccenter", 1000};
+        submunitionConeAngle = 0.50;
+		simulation = shotSubmunitions;
+		
+        ace_overpressure_range = 3;
+        ace_overpressure_priority = 10;
+        ace_overpressure_damage = 0.3;
+        ace_overpressure_angle = 30;
+
+		hit = 1;
+		indirectHit = 1;
+		indirectHitRange = 0.1;
+		caliber = 0.8;
+		cost = 800;
+		airFriction = 0.010;
+		sideAirFriction = 0.00;
+		maxSpeed = 350;
+		initTime = 0;
+		thrustTime = 0.1;
+		thrust = 0.1;
+		triggerTime = 0.0001;
+
+		timeToLive = 25;
+		maneuvrability = 0;
+		allowAgainstInfantry = 1;
+
+		class tf47_ammo_raws_ffv401_adm_penetrator: B_127x99_Ball
+    {
+        hit = 10;
+        indirectHit = 0;
+        indirectHitRange = 0;
+        caliber = 5;
+
+		submunitionInitSpeed = 300;
+        typicalSpeed = 200;
+        airFriction = -0.000617;
+        tracerScale = 0.2;
+        tracerStartTime = 0.01;
+        tracerEndTime = 3;
+		model = "\A3\Weapons_f\Data\bullettracer\tracer_yellow";
+		
+	};
+	
 };
