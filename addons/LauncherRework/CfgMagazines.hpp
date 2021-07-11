@@ -19,38 +19,6 @@ class CfgMagazines {
 	class tf47_mag_maaws_ffv751_heat : CA_LauncherMagazine
 	{
         scope = 2;
-        displayName = "FFV751 HEAT (Tandem)";
-        model = "rhsusf\addons\rhsusf_weapons2\m3maaws\mag_m3maaws.p3d";
-        picture = "z\TF47\addons\LauncherRework\ui\M3_HEAT_TD.paa";
-        initSpeed = 290;
-        descriptionShort = "High Explosive Anti tank";
-        displaynameshort = "751 HEAT";
-        ammo = tf47_ammo_maaws_ffv751_heat;
-        type = 2*256;
-        mass = 88.20; //4 kg
-    };
-    
-    class tf47_mag_maaws_ffv655_heat_cs : CA_LauncherMagazine
-	{
-        scope = 2;
-        displayName = "FFV655 HEAT (CS)";
-        model = "rhsusf\addons\rhsusf_weapons2\m3maaws\mag_m3maaws.p3d";
-        picture = "z\TF47\addons\LauncherRework\ui\M3_HEAT_CS.paa";
-        initSpeed = 290;
-        descriptionShort = "High Explosive Anti tank CS";
-        displaynameshort = "655 HEAT CS";
-        ammo = tf47_ammo_maaws_ffv655_heat_cs;
-        type = 2*256;
-        mass = 105.82; //4,8 kg
-    };
-    
-    class tf47_mag_maaws_ffv551c_heat : CA_LauncherMagazine
-	{
-        scope = 2;
-        displayName = "FFV551C HEAT (RS)";
-        model = "rhsusf\addons\rhsusf_weapons2\m3maaws\mag_m3maaws.p3d";
-        picture = "z\TF47\addons\LauncherRework\ui\M3_HEAT_RS.paa";
-        initSpeed = 290;
         descriptionShort = "High Explosive Anti tank RS";
         displaynameshort = "551C HEAT";
         ammo = tf47_ammo_maaws_ffv551c_heat;
