@@ -711,8 +711,8 @@ class CfgAmmo {
 		explosive = 0.8;
 
 		hit = 100;
-		indirectHit = 15;
-		indirectHitRange = 3.1;
+		indirectHit = 50;
+		indirectHitRange = 6;
 		caliber = 0.8;
 		cost = 800;
 		airFriction = 0.010;
@@ -731,7 +731,7 @@ class CfgAmmo {
 		ace_frag_enabled = 1;
         ACE_damageType = "explosive";
         
-        ace_frag_metal = 1000;  // Amount of metal being fragmented (grams) - information below
+        ace_frag_metal = 1500;  // Amount of metal being fragmented (grams) - information below
         ace_frag_charge = 590;  // Amount of explosive filler (grams) - information below
         ace_frag_gurney_c = 2800;  // Gurney velocity constant for explosive type - information below
         ace_frag_gurney_k = 3/5;  // Gurney shape factor - information below
@@ -776,8 +776,8 @@ class CfgAmmo {
 		explosive = 0.8;
 
 		hit = 100; 
-		indirectHit = 15;
-		indirectHitRange = 3.1;
+		indirectHit = 50;
+		indirectHitRange = 6;
 		caliber = 0.8;
 		cost = 800;
 		airFriction = 0.010;
@@ -796,7 +796,7 @@ class CfgAmmo {
 		ace_frag_enabled = 1;
         ACE_damageType = "explosive";
         
-        ace_frag_metal = 1000;  // Amount of metal being fragmented (grams) - information below
+        ace_frag_metal = 1500;  // Amount of metal being fragmented (grams) - information below
         ace_frag_charge = 590;  // Amount of explosive filler (grams) - information below
         ace_frag_gurney_c = 2800;  // Gurney velocity constant for explosive type - information below
         ace_frag_gurney_k = 3/5;  // Gurney shape factor - information below
@@ -831,16 +831,18 @@ class CfgAmmo {
 	///// ---------- 401 ---------- /////
     
     // FFV 401 MAAWS
-    class tf47_ammo_maaws_ffv401_adm: rhs_ammo_maaws_HE
+	class rhs_ammo_M1028;
+    class tf47_ammo_maaws_ffv401_adm: rhs_ammo_M1028
 	{
-       	submunitionAmmo = "tf47_ammo_maaws_ffv401_adm_penetrator";
+       	/*submunitionAmmo = "tf47_ammo_maaws_ffv401_adm_penetrator";
 		submunitionDirectionType = "SubmunitionModelDirection";
-		submunitionConeType[] = {"randomcenter", 200};
+		submunitionConeType[] = {"poissondisccenter", 200};
 		ubmunitionInitialOffset[] = {0,0,-0.2};
         submunitionConeAngle = "0.009 * 120";
 		submunitionInitSpeed = 800;
-		triggerOnImpact = false;
+		triggerOnImpact = false;*/
 		deleteParentWhenTriggered = true;
+		simulation = "shotShell";
 		
 		explosionTime = 0;
 		explosionType = "explosive";
@@ -860,10 +862,10 @@ class CfgAmmo {
 		caliber = 0.8;
 		cost = 800;
 		maxSpeed = 290;
-		initTime = 0;
+		//initTime = 0;
 		thrustTime = 0.1;
 		thrust = 0.1;
-		triggerTime = 0.01;
+		//triggerTime = 0.01;
 
 		timeToLive = 25;
 		maneuvrability = 0;
@@ -892,16 +894,17 @@ class CfgAmmo {
 	};
     
     // FFV 401 RAWS
-    class tf47_ammo_raws_ffv401_adm: rhs_ammo_maaws_HE
+    class tf47_ammo_raws_ffv401_adm: rhs_ammo_M1028
 	{
-		submunitionAmmo = "tf47_ammo_raws_ffv401_adm_penetrator";
+		/*submunitionAmmo = "tf47_ammo_raws_ffv401_adm_penetrator";
 		submunitionDirectionType = "SubmunitionModelDirection";
-		submunitionConeType[] = {"randomcenter", 200};
+		submunitionConeType[] = {"poissondisccenter", 200};
 		ubmunitionInitialOffset[] = {0,0,-0.2};
         submunitionConeAngle = "0.009 * 120";
 		submunitionInitSpeed = 800;
-		triggerOnImpact = false;
+		triggerOnImpact = false;*/
 		deleteParentWhenTriggered = true;
+		simulation = "shotShell";
 		
 		explosionTime = 0;
 		explosionType = "explosive";
@@ -919,10 +922,10 @@ class CfgAmmo {
 		caliber = 0.8;
 		cost = 800;
 		maxSpeed = 350;
-		initTime = 0;
+		//initTime = 0;
 		thrustTime = 0.1;
 		thrust = 0.1;
-		triggerTime = 0.01;
+		//triggerTime = 0.01;
 
 		timeToLive = 25;
 		maneuvrability = 0;
