@@ -794,7 +794,7 @@ class CfgAmmo {
     // FFV 401 MAAWS
     class tf47_ammo_maaws_ffv401_adm: rhs_ammo_maaws_HE
 	{
-       	submunitionAmmo[] = "tf47_ammo_maaws_ffv401_adm_penetrator";
+       	submunitionAmmo[] = {"tf47_ammo_maaws_ffv401_adm_penetrator"};
 		submunitionConeType[] = {"poissondisccenter", 1000};
         submunitionConeAngle = 0.50;
 		simulation = shotSubmunitions;
@@ -844,7 +844,7 @@ class CfgAmmo {
     // FFV 401 RAWS
     class tf47_mag_raws_ffv401_adm: rhs_ammo_maaws_HE
 	{
-       	submunitionAmmo[] = "tf47_ammo_raws_ffv401_adm_penetrator";
+		submunitionAmmo[] = {"tf47_ammo_raws_ffv401_adm_penetrator"};
 		submunitionConeType[] = {"poissondisccenter", 1000};
         submunitionConeAngle = 0.50;
 		simulation = shotSubmunitions;
