@@ -49,7 +49,7 @@ class CfgMagazines {
         initSpeed = 290;
         descriptionShort = "Illum";
         displaynameshort = "545 ILLUM";
-        ammo = tf47_ammo_raws_ffv545_illum;
+        ammo = tf47_ammo_maaws_ffv545_illum;
         type = 2*256;
         mass = 68.34; //3,1 kg
     };
@@ -63,7 +63,7 @@ class CfgMagazines {
         initSpeed = 290;
         descriptionShort = "Anti Structure Munition";
         displaynameshort = "509 ASM";
-        ammo = tf47_ammo_raws_ffv509_asm;
+        ammo = tf47_ammo_maaws_ffv509_asm;
         type = 2*256;
         mass = 92.59; //4,2 kg
     };
@@ -77,7 +77,7 @@ class CfgMagazines {
         initSpeed = 290;
         descriptionShort = "High Explosive Dual Purpose";
         displaynameshort = "502 HEDP";
-        ammo = tf47_ammo_raws_ffv502_hedp;
+        ammo = tf47_ammo_maaws_ffv502_hedp;
         type = 2*256;
         mass = 72.75; //3,3 kg
     };
@@ -91,7 +91,7 @@ class CfgMagazines {
         initSpeed = 290;
         descriptionShort = "Smoke";
         displaynameshort = "469C SMOKE";
-        ammo = tf47_ammo_raws_ffv469c_smoke;
+        ammo = tf47_ammo_maaws_ffv469c_smoke;
         type = 2*256;
         mass = 68.34; //3,1 kg
     };
@@ -105,7 +105,7 @@ class CfgMagazines {
         initSpeed = 290;
         descriptionShort = "High Explosive";
         displaynameshort = "441D HE";
-        ammo = tf47_ammo_raws_ffv441d_he;
+        ammo = tf47_ammo_maaws_ffv441d_he;
         type = 2*256;
         mass = 70.54; //3,2 kg
     };
@@ -119,7 +119,7 @@ class CfgMagazines {
         initSpeed = 290;
         descriptionShort = "Area Defence Munition";
         displaynameshort = "401 ADM";
-        ammo = tf47_ammo_raws_ffv401_adm;
+        ammo = tf47_ammo_maaws_ffv401_adm;
         type = 2*256;
         mass = 59.52; //2,7 kg
     };

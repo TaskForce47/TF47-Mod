@@ -755,7 +755,7 @@ class CfgAmmo {
 		explosive = 0;
 
 		hit = 350; //Penetrator
-		caliber = 45,977; // caliber = (mm penetration @speedX)*1000 / (bulletPenetrability * speedX)
+		caliber = 45.977; // caliber = (mm penetration @speedX)*1000 / (bulletPenetrability * speedX)
 		cost = 800;
 		maxSpeed = 290;
 
@@ -820,7 +820,7 @@ class CfgAmmo {
 		explosive = 0;
 
 		hit = 400; //Penetrator
-		caliber = 45,977; // caliber = (mm penetration @speedX)*1000 / (bulletPenetrability * speedX)
+		caliber = 45.977; // caliber = (mm penetration @speedX)*1000 / (bulletPenetrability * speedX)
 		cost = 800;
 		maxSpeed = 350;
 
@@ -868,7 +868,7 @@ class CfgAmmo {
 	};
 	
 	class B_127x99_SLAP;
-	class tf47_ammo_raws_ffv401_adm_penetrator: B_127x99_SLAP
+	class tf47_ammo_maaws_ffv401_adm_penetrator: B_127x99_SLAP
     {
         hit = 10;
         indirectHit = 0;
