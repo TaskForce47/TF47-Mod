@@ -832,17 +832,18 @@ class CfgAmmo {
     
     // FFV 401 MAAWS
 	class rhs_ammo_M1028;
-    class tf47_ammo_maaws_ffv401_adm: rhs_ammo_M1028
+    class tf47_ammo_maaws_ffv401_adm: rhs_ammo_maaws_HE
 	{
-       	/*submunitionAmmo = "tf47_ammo_maaws_ffv401_adm_penetrator";
+       	submunitionAmmo = "tf47_ammo_maaws_ffv401_adm_penetrator";
 		submunitionDirectionType = "SubmunitionModelDirection";
-		submunitionConeType[] = {"poissondisccenter", 200};
-		ubmunitionInitialOffset[] = {0,0,-0.2};
-        submunitionConeAngle = "0.009 * 120";
+		submunitionConeType[] = {"randomcenter", 200};
+		ubmunitionInitialOffset[] = {0,0,0};
+        submunitionConeAngleHorizontal = 0.9;
+		submunitionParentSpeedCoef = 0;
 		submunitionInitSpeed = 800;
-		triggerOnImpact = false;*/
+		triggerOnImpact = false;
 		deleteParentWhenTriggered = true;
-		simulation = "shotShell";
+		simulation = "shotRocket";
 		
 		explosionTime = 0;
 		explosionType = "explosive";
@@ -863,9 +864,9 @@ class CfgAmmo {
 		cost = 800;
 		maxSpeed = 290;
 		//initTime = 0;
-		thrustTime = 0.1;
-		thrust = 0.1;
-		//triggerTime = 0.01;
+		thrustTime = 0.05;
+		thrust = 210;
+		triggerTime = 0.05;
 
 		timeToLive = 25;
 		maneuvrability = 0;
@@ -894,17 +895,18 @@ class CfgAmmo {
 	};
     
     // FFV 401 RAWS
-    class tf47_ammo_raws_ffv401_adm: rhs_ammo_M1028
+    class tf47_ammo_raws_ffv401_adm: rhs_ammo_maaws_HE
 	{
-		/*submunitionAmmo = "tf47_ammo_raws_ffv401_adm_penetrator";
+		submunitionAmmo = "tf47_ammo_raws_ffv401_adm_penetrator";
 		submunitionDirectionType = "SubmunitionModelDirection";
-		submunitionConeType[] = {"poissondisccenter", 200};
-		ubmunitionInitialOffset[] = {0,0,-0.2};
-        submunitionConeAngle = "0.009 * 120";
+		submunitionConeType[] = {"randomcenter", 200};
+		ubmunitionInitialOffset[] = {0,0,0};
+        submunitionConeAngleHorizontal = 0.9;
+		submunitionParentSpeedCoef = 0;
 		submunitionInitSpeed = 800;
-		triggerOnImpact = false;*/
+		triggerOnImpact = false;
 		deleteParentWhenTriggered = true;
-		simulation = "shotShell";
+		simulation = "shotRocket";
 		
 		explosionTime = 0;
 		explosionType = "explosive";
@@ -923,9 +925,9 @@ class CfgAmmo {
 		cost = 800;
 		maxSpeed = 350;
 		//initTime = 0;
-		thrustTime = 0.1;
-		thrust = 0.1;
-		//triggerTime = 0.01;
+		thrustTime = 0.05;
+		thrust = 210;
+		triggerTime = 0.05;
 
 		timeToLive = 25;
 		maneuvrability = 0;
@@ -950,6 +952,98 @@ class CfgAmmo {
         tracerEndTime = 3;
 		model = "\A3\Weapons_f\Data\bullettracer\tracer_red";
 		
+	};
+	
+	 ///// ---------- 509 ---------- /////
+    
+    // FFV 509 MAAWS
+    class tf47_ammo_maaws_ffv509_asm: rhs_ammo_maaws_HEDP
+	{
+		submunitionAmmo = "tf47_ammo_maaws_ffv509_asm_penetrator";
+		submunitionConeType = "poissondisccenter";
+        submunitionDirectionType = "SubmunitionModelDirection";
+        submunitionInitialOffset[] = {0,0,0.8};
+        submunitionParentSpeedCoef = 0;
+        submunitionInitSpeed = 100;
+        triggerOnImpact = true;
+        
+		explosive = 1;
+		
+		ace_overpressure_range = 3;
+        ace_overpressure_priority = 10;
+        ace_overpressure_damage = 0.3;
+        ace_overpressure_angle = 30;
+
+		hit = 100; //Tandem
+		indirectHit = 15;
+		indirectHitRange = 2;
+		caliber = 5;
+		cost = 800;
+		maxSpeed = 290;
+
+		allowAgainstInfantry = 1;
+
+		visibleFire = 15;
+		audibleFire = 20;
+		warheadName	= "HEAT";
+	};
+    
+    class tf47_ammo_maaws_ffv509_asm_penetrator: rhs_ammo_maaws_HEDP_penetrator
+	{
+        ace_frag_enabled = 1;
+        ACE_damageType = "explosive";
+        
+        ace_frag_metal = 600;  // Amount of metal being fragmented (grams) - information below
+        ace_frag_charge = 470;  // Amount of explosive filler (grams) - information below
+        ace_frag_gurney_c = 2800;  // Gurney velocity constant for explosive type - information below
+        ace_frag_gurney_k = 3/5;  // Gurney shape factor - information below
+        ace_frag_classes[] = {"ACE_frag_small"};  // Type of fragments - information below
+        ace_frag_skip = 0;  // (Optional) Skip fragmentation for this ammo type (0-disabled, 1-enabled) - information below
+        ace_frag_force = 1;  // (Optional) Force fragmentation system (0-disabled, 1-enabled) - information below
+        
+		explosive = 1;
+
+		hit = 50; //Penetrator
+        indirectHit = 30;
+		indirectHitRange = 4;
+		caliber = 1; // caliber = (mm penetration @speedX)*1000 / (bulletPenetrability * speedX)
+		cost = 800;
+		maxSpeed = 290;
+		explosionTime = 0.001;
+		
+		warheadName	= "HE";
+	};
+	
+    // FFV 509 RAWS
+    class tf47_ammo_raws_ffv509_asm: rhs_ammo_maaws_HEDP
+	{
+		submunitionAmmo = "tf47_ammo_maaws_ffv509_asm_penetrator";
+		submunitionConeType = "poissondisccenter";
+        submunitionDirectionType = "SubmunitionModelDirection";
+        submunitionInitialOffset[] = {0,0,0.8};
+        submunitionParentSpeedCoef = 0;
+        submunitionInitSpeed = 100;
+        triggerOnImpact = true;
+        
+		explosive = 1;
+		
+		ace_overpressure_range = 3;
+        ace_overpressure_priority = 10;
+        ace_overpressure_damage = 0.3;
+        ace_overpressure_angle = 30;
+
+		hit = 100; //Tandem
+		indirectHit = 15;
+		indirectHitRange = 2;
+		caliber = 5;
+		cost = 800;
+		maxSpeed = 350;
+
+		allowAgainstInfantry = 1;
+
+		visibleFire = 15;
+		audibleFire = 20;
+		warheadName	= "HEAT";
 	};
 	
 };
