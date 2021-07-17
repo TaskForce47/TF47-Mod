@@ -40,6 +40,7 @@ class CfgWeapons
     class tf47_weap_raws_green: launch_MRAWS_green_F
     {
         displayName = "M3E1 RAWS (Green)";
+        baseWeapon = "tf47_weap_raws_green";
         
         ace_reloadlaunchers_enabled = 1;
         ace_overpressure_range = 25;
@@ -69,6 +70,7 @@ class CfgWeapons
     class tf47_weap_raws_olive: launch_MRAWS_olive_F
     {
         displayName = "M3E1 RAWS (Olive)";
+        baseWeapon = "tf47_weap_raws_olive";
         
         ace_reloadlaunchers_enabled = 1;
         ace_overpressure_range = 25;
@@ -98,6 +100,7 @@ class CfgWeapons
     class tf47_weap_raws_sand: launch_MRAWS_sand_F
     {
         displayName = "M3E1 RAWS (Sand)";
+        baseWeapon = "tf47_weap_raws_sand";
         
         ace_reloadlaunchers_enabled = 1;
         ace_overpressure_range = 25;

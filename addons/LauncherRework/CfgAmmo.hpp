@@ -34,7 +34,8 @@ class CfgAmmo {
 
         visibleFire = 15;
         audibleFire = 20;
-        warheadName    = "TandemHEAT";
+        warheadName = "TandemHEAT";
+        simulationStep = 0.02;
     };
     
     class tf47_ammo_maaws_ffv751_heat_penetrator: rhs_ammo_maaws_HEAT_penetrator
@@ -55,7 +56,8 @@ class CfgAmmo {
         maxSpeed = 290;
 
 
-        warheadName    = "TandemHEAT";
+        warheadName = "TandemHEAT";
+        simulationStep = 0.02;
     };
     
     // FFV 751 RAWS
@@ -88,7 +90,8 @@ class CfgAmmo {
 
         visibleFire = 15;
         audibleFire = 20;
-        warheadName    = "TandemHEAT";
+        warheadName = "TandemHEAT";
+        simulationStep = 0.02;
     };
     
     class tf47_ammo_raws_ffv751_heat_penetrator: rhs_ammo_maaws_HEAT_penetrator
@@ -109,7 +112,8 @@ class CfgAmmo {
         maxSpeed = 290;
 
 
-        warheadName    = "TandemHEAT";
+        warheadName = "TandemHEAT";
+        simulationStep = 0.02;
     };
     
     ///// ---------- 756 ---------- /////
@@ -141,7 +145,8 @@ class CfgAmmo {
 
         visibleFire = 15;
         audibleFire = 20;
-        warheadName    = "HEAT";
+        warheadName = "HEAT";
+        simulationStep = 0.02;
     };
     
     class tf47_ammo_maaws_ffv756_mt_penetrator: rhs_ammo_maaws_HEDP_penetrator
@@ -168,7 +173,8 @@ class CfgAmmo {
         //explosionTime = 0.001;
         triggerTime = 0.02;
         
-        warheadName    = "HE";
+        warheadName = "HE";
+        simulationStep = 0.02;
     };
     
     class tf47_ammo_maaws_ffv756_mt_heat_penetrator: rhs_ammo_maaws_HEAT_penetrator
@@ -189,7 +195,8 @@ class CfgAmmo {
         maxSpeed = 290;
 
 
-        warheadName    = "HEAT";
+        warheadName = "HEAT";
+        simulationStep = 0.02;
     };
     
     // FFV 756 RAWS
@@ -217,7 +224,8 @@ class CfgAmmo {
 
         visibleFire = 15;
         audibleFire = 20;
-        warheadName    = "HEAT";
+        warheadName = "HEAT";
+        simulationStep = 0.02;
     };
     
     class tf47_ammo_raws_ffv756_mt_penetrator: rhs_ammo_maaws_HEDP_penetrator
@@ -245,7 +253,8 @@ class CfgAmmo {
         triggerTime = 0.02;
 
 
-        warheadName    = "HE";
+        warheadName = "HE";
+        simulationStep = 0.02;
     };
     
     class tf47_ammo_raws_ffv756_mt_heat_penetrator: rhs_ammo_maaws_HEAT_penetrator
@@ -266,7 +275,8 @@ class CfgAmmo {
         maxSpeed = 290;
 
 
-        warheadName    = "HEAT";
+        warheadName = "HEAT";
+        simulationStep = 0.02;
     };
     
     ///// ---------- 655 ---------- /////
@@ -306,7 +316,8 @@ class CfgAmmo {
 
         visibleFire = 15;
         audibleFire = 20;
-        warheadName    = "TandemHEAT";
+        warheadName = "TandemHEAT";
+        simulationStep = 0.02;
     };
     
     class tf47_ammo_maaws_ffv655_heat_penetrator: rhs_ammo_maaws_HEAT_penetrator
@@ -327,7 +338,8 @@ class CfgAmmo {
         maxSpeed = 290;
 
 
-        warheadName    = "TandemHEAT";
+        warheadName = "TandemHEAT";
+        simulationStep = 0.02;
     };
     
     
@@ -366,7 +378,8 @@ class CfgAmmo {
 
         visibleFire = 15;
         audibleFire = 20;
-        warheadName    = "TandemHEAT";
+        warheadName = "TandemHEAT";
+        simulationStep = 0.02;
     };
     
     class tf47_ammo_raws_ffv655_heat_penetrator: rhs_ammo_maaws_HEAT_penetrator
@@ -386,8 +399,8 @@ class CfgAmmo {
         cost = 800;
         maxSpeed = 350;
 
-
-        warheadName    = "TandemHEAT";
+        warheadName = "TandemHEAT";
+        simulationStep = 0.02;
     };
 
     ///// ---------- 551 ---------- /////
@@ -420,7 +433,8 @@ class CfgAmmo {
         maneuvrability = 0;
         allowAgainstInfantry = 0;
 
-        warheadName    = "HEAT";
+        warheadName = "HEAT";
+        simulationStep = 0.02;
     };
     
     class tf47_ammo_maaws_ffv551_heat_penetrator: rhs_ammo_maaws_HEAT_penetrator
@@ -441,7 +455,8 @@ class CfgAmmo {
         maxSpeed = 290;
 
 
-        warheadName    = "HEAT";
+        warheadName = "HEAT";
+        simulationStep = 0.02;
     };
     
     // FFV 551 RAWS
@@ -472,7 +487,8 @@ class CfgAmmo {
         maneuvrability = 0;
         allowAgainstInfantry = 0;
 
-        warheadName    = "HEAT";
+        warheadName = "HEAT";
+        simulationStep = 0.02;
     };
     
     class tf47_ammo_raws_ffv551_heat_penetrator: rhs_ammo_maaws_HEAT_penetrator
@@ -493,7 +509,8 @@ class CfgAmmo {
         maxSpeed = 350;
 
 
-        warheadName    = "HEAT";
+        warheadName = "HEAT";
+        simulationStep = 0.02;
     };
     
     ///// ---------- 551c ---------- /////
@@ -526,7 +543,8 @@ class CfgAmmo {
         maneuvrability = 0;
         allowAgainstInfantry = 0;
 
-        warheadName    = "HEAT";
+        warheadName = "HEAT";
+        simulationStep = 0.02;
     };
     
     class tf47_ammo_maaws_ffv551c_heat_penetrator: rhs_ammo_maaws_HEAT_penetrator
@@ -547,7 +565,8 @@ class CfgAmmo {
         maxSpeed = 290;
 
 
-        warheadName    = "HEAT";
+        warheadName = "HEAT";
+        simulationStep = 0.02;
     };
     
     // FFV 551c RAWS
@@ -578,7 +597,8 @@ class CfgAmmo {
         maneuvrability = 0;
         allowAgainstInfantry = 0;
         
-        warheadName    = "HEAT";
+        warheadName = "HEAT";
+        simulationStep = 0.02;
     };
     
     class tf47_ammo_raws_ffv551c_heat_penetrator: rhs_ammo_maaws_HEAT_penetrator
@@ -599,7 +619,8 @@ class CfgAmmo {
         maxSpeed = 350;
 
 
-        warheadName    = "HEAT";
+        warheadName = "HEAT";
+        simulationStep = 0.02;
     };
     
     ///// ---------- 441d ---------- /////
@@ -612,7 +633,7 @@ class CfgAmmo {
         hit = 100;
         indirectHit = 50;
         indirectHitRange = 6;
-        caliber = 15;
+        caliber = 1;
         cost = 800;
         airFriction = 0.010;
         sideAirFriction = 0.00;
@@ -624,7 +645,8 @@ class CfgAmmo {
         maneuvrability = 0;
         allowAgainstInfantry = 0;
 
-        warheadName    = "HE";
+        warheadName = "HE";
+        simulationStep = 0.02;
         
         ace_frag_enabled = 1;
         ACE_damageType = "explosive";
@@ -650,7 +672,7 @@ class CfgAmmo {
         hit = 100; 
         indirectHit = 50;
         indirectHitRange = 6;
-        caliber = 15;
+        caliber = 1;
         cost = 800;
         airFriction = 0.010;
         sideAirFriction = 0.00;
@@ -662,15 +684,16 @@ class CfgAmmo {
         maneuvrability = 0;
         allowAgainstInfantry = 0;
 
-        warheadName    = "HE";
+        warheadName = "HE";
+        simulationStep = 0.02;
         
         ace_frag_enabled = 1;
         ACE_damageType = "explosive";
         
-        ace_frag_metal = 2300;  // Amount of metal being fragmented (grams) - information below
+        ace_frag_metal = 3000;  // Amount of metal being fragmented (grams) - information below
         ace_frag_charge = 800;  // Amount of explosive filler (grams) - information below
         ace_frag_gurney_c = 2800;  // Gurney velocity constant for explosive type - information below
-        ace_frag_gurney_k = 1/2;  // Gurney shape factor - information below
+        ace_frag_gurney_k = 3/5;  // Gurney shape factor - information below
         ace_frag_classes[] = {"ACE_frag_small"};  // Type of fragments - information below
         //ace_frag_skip = 0;  // (Optional) Skip fragmentation for this ammo type (0-disabled, 1-enabled) - information below
         ace_frag_force = 1;  // (Optional) Force fragmentation system (0-disabled, 1-enabled) - information below
@@ -708,7 +731,8 @@ class CfgAmmo {
         maneuvrability = 0;
         allowAgainstInfantry = 0;
 
-        warheadName    = "HEAT";
+        warheadName = "HEAT";
+        simulationStep = 0.02;
         
         ace_frag_enabled = 1;
         ACE_damageType = "explosive";
@@ -735,7 +759,8 @@ class CfgAmmo {
         maxSpeed = 290;
 
 
-        warheadName    = "HEAT";
+        warheadName = "HEAT";
+        simulationStep = 0.02;
     };
     
     // FFV 502 RAWS
@@ -766,7 +791,8 @@ class CfgAmmo {
         maneuvrability = 0;
         allowAgainstInfantry = 0;
 
-        warheadName    = "HEAT";
+        warheadName = "AP";
+        simulationStep=0.02;
         
         ace_frag_enabled = 1;
         ACE_damageType = "explosive";
@@ -792,8 +818,8 @@ class CfgAmmo {
         cost = 800;
         maxSpeed = 290;
 
-
-        warheadName    = "HEAT";
+        warheadName = "AP";
+        simulationStep = 0.02;
         
     };
     
@@ -817,8 +843,6 @@ class CfgAmmo {
         explosionType = "explosive";
         explosionPos = "explosionPos";
         explosionAngle = 60;
-
-        
         
         ace_overpressure_range = 3;
         ace_overpressure_priority = 10;
@@ -835,7 +859,7 @@ class CfgAmmo {
         //thrustTime = 0.05;
         //thrust = 210;
         //triggerSpeedCoef[] = {0.85,1};
-        triggerTime = 0.1;
+        triggerTime = 0.15;
 
         timeToLive = 25;
         maneuvrability = 0;
@@ -844,10 +868,13 @@ class CfgAmmo {
         CraterEffects = "";
         explosionEffects = "";
 
+        warheadName = "AP";
+        simulationStep = 0.0001;
+
     };
     
-    class B_127x99_SLAP;
-    class tf47_ammo_maaws_ffv401_adm_penetrator: B_127x99_SLAP
+    class _12Gauge_Pellets_Submunition_Deploy;
+    class tf47_ammo_maaws_ffv401_adm_penetrator: _12Gauge_Pellets_Submunition_Deploy
     {
         hit = 10;
         indirectHit = 0;
@@ -868,9 +895,9 @@ class CfgAmmo {
     {
         submunitionAmmo = "tf47_ammo_raws_ffv401_adm_penetrator";
         submunitionDirectionType = "SubmunitionModelDirection";
-        submunitionConeType[] = {"poissondisccenter", 300};
+        submunitionConeType[] = {"randomupcone", 300};
         //submunitionInitialOffset[] = {0,0,0};
-        submunitionConeAngle = 7;
+        submunitionConeAngle = 15;
         submunitionParentSpeedCoef = 0;
         submunitionInitSpeed = 800;
         triggerOnImpact = false;
@@ -899,7 +926,7 @@ class CfgAmmo {
         //thrustTime = 0.05;
         //thrust = 210;
         //triggerSpeedCoef[] = {0.85,1};
-        triggerTime = 0.1;
+        triggerTime = 0.15;
 
         timeToLive = 25;
         maneuvrability = 0;
@@ -907,9 +934,11 @@ class CfgAmmo {
         
         CraterEffects = "";
         explosionEffects = "";
+        warheadName = "AP";
+        simulationStep = 0.0001;
     };
 
-        class tf47_ammo_raws_ffv401_adm_penetrator: B_127x99_SLAP
+    class tf47_ammo_raws_ffv401_adm_penetrator: _12Gauge_Pellets_Submunition_Deploy
     {
         hit = 10;
         indirectHit = 0;
@@ -956,7 +985,7 @@ class CfgAmmo {
 
         visibleFire = 15;
         audibleFire = 20;
-        warheadName    = "HEAT";
+        warheadName = "HEAT";
     };
     
     class tf47_ammo_maaws_ffv509_asm_penetrator: rhs_ammo_maaws_HEDP_penetrator
@@ -983,7 +1012,7 @@ class CfgAmmo {
         explosionTime = 0.001;
         triggerTime = 0.02;
         
-        warheadName    = "HE";
+        warheadName = "HE";
     };
     
     // FFV 509 RAWS
@@ -1015,7 +1044,7 @@ class CfgAmmo {
 
         visibleFire = 15;
         audibleFire = 20;
-        warheadName    = "HEAT";
+        warheadName = "HEAT";
     };
     
     class tf47_ammo_raws_ffv509_asm_penetrator: rhs_ammo_maaws_HEDP_penetrator
@@ -1042,7 +1071,7 @@ class CfgAmmo {
         explosionTime = 0.001;
         triggerTime = 0.02;
         
-        warheadName    = "HE";
+        warheadName = "HE";
     };
     
 };
