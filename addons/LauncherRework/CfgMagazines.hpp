@@ -2,8 +2,8 @@ class CfgMagazines {
     class CA_LauncherMagazine;
     
     // MAAWS
-	class tf47_mag_maaws_ffv751_heat : CA_LauncherMagazine
-	{
+    class tf47_mag_maaws_ffv751_heat : CA_LauncherMagazine
+    {
         scope = 2;
         displayName = "FFV751 HEAT (Tandem)";
         model = "rhsusf\addons\rhsusf_weapons2\m3maaws\mag_m3maaws.p3d";
@@ -16,8 +16,8 @@ class CfgMagazines {
         mass = 88.20; //4 kg
     };  
 
-	class tf47_mag_maaws_ffv655_heat_cs : CA_LauncherMagazine
-	{
+    class tf47_mag_maaws_ffv655_heat_cs : CA_LauncherMagazine
+    {
         scope = 2;
         displayName = "FFV655 HEAT (CS)";
         model = "rhsusf\addons\rhsusf_weapons2\m3maaws\mag_m3maaws.p3d";
@@ -29,9 +29,9 @@ class CfgMagazines {
         type = 2*256;
         mass = 105.82; //4,8 kg
     };
-	
+    
   class tf47_mag_maaws_ffv756_mt : CA_LauncherMagazine
-	{
+    {
         scope = 2;
         displayName = "FFV756 MT (Multi Target)";
         model = "rhsusf\addons\rhsusf_weapons2\m3maaws\mag_m3maaws.p3d";
@@ -44,8 +44,8 @@ class CfgMagazines {
         mass = 97.02; //4,4 kg
     };
     
-	class tf47_mag_maaws_ffv551c_heat : CA_LauncherMagazine
-	{
+    class tf47_mag_maaws_ffv551c_heat : CA_LauncherMagazine
+    {
         scope = 2;
         descriptionShort = "High Explosive Anti tank RS";
         displaynameshort = "551C HEAT";
@@ -55,7 +55,7 @@ class CfgMagazines {
     };
     
     class tf47_mag_maaws_ffv551_heat : CA_LauncherMagazine
-	{
+    {
         scope = 2;
         displayName = "FFV551 HEAT";
         model = "rhsusf\addons\rhsusf_weapons2\m3maaws\mag_m3maaws.p3d";
@@ -69,7 +69,7 @@ class CfgMagazines {
     };
 
     class tf47_mag_maaws_ffv545c_illum : CA_LauncherMagazine
-	{
+    {
         scope = 2;
         displayName = "FFV545 ILLUM";
         model = "rhsusf\addons\rhsusf_weapons2\m3maaws\mag_m3maaws.p3d";
@@ -83,7 +83,7 @@ class CfgMagazines {
     };
     
     class tf47_mag_maaws_ffv509_asm : CA_LauncherMagazine
-	{
+    {
         scope = 2;
         displayName = "FFV509 ASM";
         model = "rhsusf\addons\rhsusf_weapons2\m3maaws\mag_m3maaws.p3d";
@@ -97,7 +97,7 @@ class CfgMagazines {
     };
     
     class tf47_mag_maaws_ffv502_hedp : CA_LauncherMagazine
-	{
+    {
         scope = 2;
         displayName = "FFV502 HEDP";
         model = "rhsusf\addons\rhsusf_weapons2\m3maaws\mag_m3maaws.p3d";
@@ -111,7 +111,7 @@ class CfgMagazines {
     };
     
     class tf47_mag_maaws_ffv469c_smoke : CA_LauncherMagazine
-	{
+    {
         scope = 2;
         displayName = "FFV469C SMOKE";
         model = "rhsusf\addons\rhsusf_weapons2\m3maaws\mag_m3maaws.p3d";
@@ -125,7 +125,7 @@ class CfgMagazines {
     };
     
     class tf47_mag_maaws_ffv441d_he : CA_LauncherMagazine
-	{
+    {
         scope = 2;
         displayName = "FFV441D HE";
         model = "rhsusf\addons\rhsusf_weapons2\m3maaws\mag_m3maaws.p3d";
@@ -139,7 +139,7 @@ class CfgMagazines {
     };
     
     class tf47_mag_maaws_ffv401_adm : CA_LauncherMagazine
-	{
+    {
         scope = 2;
         displayName = "FFV401 ADM";
         model = "rhsusf\addons\rhsusf_weapons2\m3maaws\mag_m3maaws.p3d";
@@ -151,11 +151,11 @@ class CfgMagazines {
         type = 2*256;
         mass = 59.52; //2,7 kg
     };
-	
-	//RAWS
-	
-	class tf47_mag_raws_ffv756_mt : CA_LauncherMagazine
-	{
+    
+    //RAWS
+    
+    class tf47_mag_raws_ffv756_mt : CA_LauncherMagazine
+    {
         scope = 2;
         displayName = "FFV756 MT (Multi Target)";
         model = "rhsusf\addons\rhsusf_weapons2\m3maaws\mag_m3maaws.p3d";
@@ -168,8 +168,8 @@ class CfgMagazines {
         mass = 97.02; //4,4 kg
     };
     
-	class tf47_mag_raws_ffv751_heat : CA_LauncherMagazine
-	{
+    class tf47_mag_raws_ffv751_heat : CA_LauncherMagazine
+    {
         scope = 2;
         displayName = "FFV751 HEAT (Tandem)";
         model = "rhsusf\addons\rhsusf_weapons2\m3maaws\mag_m3maaws.p3d";
@@ -183,7 +183,7 @@ class CfgMagazines {
     };
     
     class tf47_mag_raws_ffv655_heat_cs : CA_LauncherMagazine
-	{
+    {
         scope = 2;
         displayName = "FFV655 HEAT (CS)";
         model = "rhsusf\addons\rhsusf_weapons2\m3maaws\mag_m3maaws.p3d";
@@ -197,7 +197,7 @@ class CfgMagazines {
     };
     
     class tf47_mag_raws_ffv551c_heat : CA_LauncherMagazine
-	{
+    {
         scope = 2;
         displayName = "FFV551C HEAT (RS)";
         model = "rhsusf\addons\rhsusf_weapons2\m3maaws\mag_m3maaws.p3d";
@@ -211,7 +211,7 @@ class CfgMagazines {
     };
     
     class tf47_mag_raws_ffv551_heat : CA_LauncherMagazine
-	{
+    {
         scope = 2;
         displayName = "FFV551 HEAT";
         model = "rhsusf\addons\rhsusf_weapons2\m3maaws\mag_m3maaws.p3d";
@@ -225,7 +225,7 @@ class CfgMagazines {
     };
 
     class tf47_mag_raws_ffv545c_illum : CA_LauncherMagazine
-	{
+    {
         scope = 2;
         displayName = "FFV545 ILLUM";
         model = "rhsusf\addons\rhsusf_weapons2\m3maaws\mag_m3maaws.p3d";
@@ -239,7 +239,7 @@ class CfgMagazines {
     };
     
     class tf47_mag_raws_ffv509_asm : CA_LauncherMagazine
-	{
+    {
         scope = 2;
         displayName = "FFV509 ASM";
         model = "rhsusf\addons\rhsusf_weapons2\m3maaws\mag_m3maaws.p3d";
@@ -253,7 +253,7 @@ class CfgMagazines {
     };
     
     class tf47_mag_raws_ffv502_hedp : CA_LauncherMagazine
-	{
+    {
         scope = 2;
         displayName = "FFV502 HEDP";
         model = "rhsusf\addons\rhsusf_weapons2\m3maaws\mag_m3maaws.p3d";
@@ -267,7 +267,7 @@ class CfgMagazines {
     };
     
     class tf47_mag_raws_ffv469c_smoke : CA_LauncherMagazine
-	{
+    {
         scope = 2;
         displayName = "FFV469C SMOKE";
         model = "rhsusf\addons\rhsusf_weapons2\m3maaws\mag_m3maaws.p3d";
@@ -281,7 +281,7 @@ class CfgMagazines {
     };
     
     class tf47_mag_raws_ffv441d_he : CA_LauncherMagazine
-	{
+    {
         scope = 2;
         displayName = "FFV441D HE";
         model = "rhsusf\addons\rhsusf_weapons2\m3maaws\mag_m3maaws.p3d";
@@ -295,7 +295,7 @@ class CfgMagazines {
     };
     
     class tf47_mag_raws_ffv401_adm : CA_LauncherMagazine
-	{
+    {
         scope = 2;
         displayName = "FFV401 ADM";
         model = "rhsusf\addons\rhsusf_weapons2\m3maaws\mag_m3maaws.p3d";

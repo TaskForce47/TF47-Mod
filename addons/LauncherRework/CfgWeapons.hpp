@@ -7,7 +7,7 @@ class CfgWeapons
     class launch_MRAWS_green_F;
     class launch_MRAWS_olive_F;
     class launch_MRAWS_sand_F;
-	
+    
     class tf47_weap_maaws: rhs_weap_maaws
     {
         displayName = "M3 MAAWS";
