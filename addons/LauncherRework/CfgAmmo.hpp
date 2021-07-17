@@ -167,7 +167,7 @@ class CfgAmmo {
         hit = 50; //Penetrator
         indirectHit = 30;
         indirectHitRange = 6;
-        caliber = 1; // caliber = (mm penetration @speedX)*1000 / (bulletPenetrability * speedX)
+        caliber = 10; // caliber = (mm penetration @speedX)*1000 / (bulletPenetrability * speedX)
         cost = 800;
         maxSpeed = 290;
         explosionTime = 0.001;
@@ -246,7 +246,7 @@ class CfgAmmo {
         hit = 50; //Penetrator
         indirectHit = 30;
         indirectHitRange = 4;
-        caliber = 1; // caliber = (mm penetration @speedX)*1000 / (bulletPenetrability * speedX)
+        caliber = 10; // caliber = (mm penetration @speedX)*1000 / (bulletPenetrability * speedX)
         cost = 800;
         maxSpeed = 290;
         explosionTime = 0.001;
