@@ -133,7 +133,7 @@ class CfgAmmo {
         hit = 100; //Tandem
         indirectHit = 15;
         indirectHitRange = 2;
-        caliber = 5;
+        caliber = 1;
         cost = 800;
         maxSpeed = 290;
 
@@ -149,8 +149,8 @@ class CfgAmmo {
         ace_frag_enabled = 1;
         ACE_damageType = "explosive";
         
-        ace_frag_metal = 600;  // Amount of metal being fragmented (grams) - information below
-        ace_frag_charge = 470;  // Amount of explosive filler (grams) - information below
+        ace_frag_metal = 1500;  // Amount of metal being fragmented (grams) - information below
+        ace_frag_charge = 750;  // Amount of explosive filler (grams) - information below
         ace_frag_gurney_c = 2800;  // Gurney velocity constant for explosive type - information below
         ace_frag_gurney_k = 3/5;  // Gurney shape factor - information below
         ace_frag_classes[] = {"ACE_frag_small"};  // Type of fragments - information below
@@ -165,7 +165,8 @@ class CfgAmmo {
         caliber = 1; // caliber = (mm penetration @speedX)*1000 / (bulletPenetrability * speedX)
         cost = 800;
         maxSpeed = 290;
-        explosionTime = 0.001;
+        //explosionTime = 0.001;
+        triggerTime = 0.02;
         
         warheadName    = "HE";
     };
@@ -208,7 +209,7 @@ class CfgAmmo {
         hit = 100; //Tandem
         indirectHit = 15;
         indirectHitRange = 2;
-        caliber = 5;
+        caliber = 1;
         cost = 800;
         maxSpeed = 350;
 
@@ -224,8 +225,8 @@ class CfgAmmo {
         ace_frag_enabled = 1;
         ACE_damageType = "explosive";
         
-        ace_frag_metal = 600;  // Amount of metal being fragmented (grams) - information below
-        ace_frag_charge = 470;  // Amount of explosive filler (grams) - information below
+        ace_frag_metal = 1500;  // Amount of metal being fragmented (grams) - information below
+        ace_frag_charge = 750;  // Amount of explosive filler (grams) - information below
         ace_frag_gurney_c = 2800;  // Gurney velocity constant for explosive type - information below
         ace_frag_gurney_k = 3/5;  // Gurney shape factor - information below
         ace_frag_classes[] = {"ACE_frag_small"};  // Type of fragments - information below
@@ -240,7 +241,8 @@ class CfgAmmo {
         caliber = 1; // caliber = (mm penetration @speedX)*1000 / (bulletPenetrability * speedX)
         cost = 800;
         maxSpeed = 290;
-        explosionTime = 0.001;
+        //explosionTime = 0.001;
+        triggerTime = 0.02;
 
 
         warheadName    = "HE";
@@ -400,11 +402,6 @@ class CfgAmmo {
         submunitionParentSpeedCoef = 0;
         submunitionInitSpeed = 290;
         
-        ace_overpressure_range = 3;
-        ace_overpressure_priority = 10;
-        ace_overpressure_damage = 0.3;
-        ace_overpressure_angle = 30;
-        
         explosive = 0.8;
 
         hit = 100;
@@ -511,11 +508,6 @@ class CfgAmmo {
         submunitionParentSpeedCoef = 0;
         submunitionInitSpeed = 290;
         
-        ace_overpressure_range = 3;
-        ace_overpressure_priority = 10;
-        ace_overpressure_damage = 0.3;
-        ace_overpressure_angle = 30;
-        
         explosive = 0.8;
 
         hit = 100;
@@ -616,11 +608,6 @@ class CfgAmmo {
     class rhs_ammo_maaws_HE;
     class tf47_ammo_maaws_ffv441d_he: rhs_ammo_maaws_HE
     {
-        ace_overpressure_range = 3;
-        ace_overpressure_priority = 10;
-        ace_overpressure_damage = 0.3;
-        ace_overpressure_angle = 30;
-        
 
         hit = 100;
         indirectHit = 50;
@@ -642,13 +629,13 @@ class CfgAmmo {
         ace_frag_enabled = 1;
         ACE_damageType = "explosive";
         
-        ace_frag_metal = 2300;  // Amount of metal being fragmented (grams) - information below
+        ace_frag_metal = 3000;  // Amount of metal being fragmented (grams) - information below
         ace_frag_charge = 800;  // Amount of explosive filler (grams) - information below
         ace_frag_gurney_c = 2800;  // Gurney velocity constant for explosive type - information below
-        ace_frag_gurney_k = 1/2;  // Gurney shape factor - information below
+        ace_frag_gurney_k = 3/5;  // Gurney shape factor - information below
         ace_frag_classes[] = {"ACE_frag_small"};  // Type of fragments - information below
         //ace_frag_skip = 0;  // (Optional) Skip fragmentation for this ammo type (0-disabled, 1-enabled) - information below
-        //ace_frag_force = 1;  // (Optional) Force fragmentation system (0-disabled, 1-enabled) - information below
+        ace_frag_force = 1;  // (Optional) Force fragmentation system (0-disabled, 1-enabled) - information below
         
         explosive = 1;
         
@@ -686,7 +673,7 @@ class CfgAmmo {
         ace_frag_gurney_k = 1/2;  // Gurney shape factor - information below
         ace_frag_classes[] = {"ACE_frag_small"};  // Type of fragments - information below
         //ace_frag_skip = 0;  // (Optional) Skip fragmentation for this ammo type (0-disabled, 1-enabled) - information below
-        //ace_frag_force = 1;  // (Optional) Force fragmentation system (0-disabled, 1-enabled) - information below
+        ace_frag_force = 1;  // (Optional) Force fragmentation system (0-disabled, 1-enabled) - information below
         
         explosive = 1;
     };
@@ -702,12 +689,7 @@ class CfgAmmo {
         submunitionInitialOffset[] = {0,0,-0.2};
         submunitionParentSpeedCoef = 0;
         submunitionInitSpeed = 290;
-        
-        ace_overpressure_range = 3;
-        ace_overpressure_priority = 10;
-        ace_overpressure_damage = 0.3;
-        ace_overpressure_angle = 30;
-        
+             
         explosive = 0.8;
 
         hit = 100;
@@ -735,7 +717,7 @@ class CfgAmmo {
         ace_frag_charge = 590;  // Amount of explosive filler (grams) - information below
         ace_frag_gurney_c = 2800;  // Gurney velocity constant for explosive type - information below
         ace_frag_gurney_k = 3/5;  // Gurney shape factor - information below
-        ace_frag_classes[] = {"ACE_frag_medium","ACE_frag_small"};  // Type of fragments - information below
+        ace_frag_classes[] = {"ace_frag_small_HD","ACE_frag_small"};  // Type of fragments - information below
         ace_frag_skip = 0;  // (Optional) Skip fragmentation for this ammo type (0-disabled, 1-enabled) - information below
         ace_frag_force = 1;  // (Optional) Force fragmentation system (0-disabled, 1-enabled) - information below
         
@@ -745,13 +727,6 @@ class CfgAmmo {
     
     class tf47_ammo_maaws_ffv502_hedp_penetrator: rhs_ammo_maaws_HEAT_penetrator
     {
-
-        submunitionDirectionType = "SubmunitionModelDirection";
-        submunitionConeType[] = {"randomcenter",30};
-        submunitionInitialOffset[] = {0,0,-0.4};
-        submunitionParentSpeedCoef = 0;
-        submunitionInitSpeed = 200;
-        
         explosive = 0;
 
         hit = 350; //Penetrator
@@ -810,35 +785,28 @@ class CfgAmmo {
     
     class tf47_ammo_raws_ffv502_hedp_penetrator: rhs_ammo_maaws_HEAT_penetrator
     {
-
-        submunitionDirectionType = "SubmunitionModelDirection";
-        submunitionConeType[] = {"randomcenter",30};
-        submunitionInitialOffset[] = {0,0,-0.4};
-        submunitionParentSpeedCoef = 0;
-        submunitionInitSpeed = 200;
-        
         explosive = 0;
 
-        hit = 400; //Penetrator
+        hit = 350; //Penetrator
         caliber = 45.977; // caliber = (mm penetration @speedX)*1000 / (bulletPenetrability * speedX)
         cost = 800;
-        maxSpeed = 350;
+        maxSpeed = 290;
 
-        warheadName    = "HE";
+
+        warheadName    = "HEAT";
         
     };
     
     ///// ---------- 401 ---------- /////
     
     // FFV 401 MAAWS
-    class rhs_ammo_M1028;
     class tf47_ammo_maaws_ffv401_adm: rhs_ammo_maaws_HE
     {
-           submunitionAmmo = "tf47_ammo_maaws_ffv401_adm_penetrator";
+        submunitionAmmo = "tf47_ammo_maaws_ffv401_adm_penetrator";
         submunitionDirectionType = "SubmunitionModelDirection";
-        submunitionConeType[] = {"randomcenter", 200};
-        ubmunitionInitialOffset[] = {0,0,0};
-        submunitionConeAngleHorizontal = 0.9;
+        submunitionConeType[] = {"poissondisccenter", 300};
+        //submunitionInitialOffset[] = {0,0,0};
+        submunitionConeAngle = 7;
         submunitionParentSpeedCoef = 0;
         submunitionInitSpeed = 800;
         triggerOnImpact = false;
@@ -862,11 +830,12 @@ class CfgAmmo {
         indirectHitRange = 0.1;
         caliber = 0.8;
         cost = 800;
-        maxSpeed = 290;
+        maxSpeed = 200;
         //initTime = 0;
-        thrustTime = 0.05;
-        thrust = 210;
-        triggerTime = 0.05;
+        //thrustTime = 0.05;
+        //thrust = 210;
+        //triggerSpeedCoef[] = {0.85,1};
+        triggerTime = 0.1;
 
         timeToLive = 25;
         maneuvrability = 0;
@@ -899,9 +868,9 @@ class CfgAmmo {
     {
         submunitionAmmo = "tf47_ammo_raws_ffv401_adm_penetrator";
         submunitionDirectionType = "SubmunitionModelDirection";
-        submunitionConeType[] = {"randomcenter", 200};
-        ubmunitionInitialOffset[] = {0,0,0};
-        submunitionConeAngleHorizontal = 0.9;
+        submunitionConeType[] = {"poissondisccenter", 300};
+        //submunitionInitialOffset[] = {0,0,0};
+        submunitionConeAngle = 7;
         submunitionParentSpeedCoef = 0;
         submunitionInitSpeed = 800;
         triggerOnImpact = false;
@@ -912,6 +881,8 @@ class CfgAmmo {
         explosionType = "explosive";
         explosionPos = "explosionPos";
         explosionAngle = 60;
+
+        
         
         ace_overpressure_range = 3;
         ace_overpressure_priority = 10;
@@ -923,11 +894,12 @@ class CfgAmmo {
         indirectHitRange = 0.1;
         caliber = 0.8;
         cost = 800;
-        maxSpeed = 350;
+        maxSpeed = 200;
         //initTime = 0;
-        thrustTime = 0.05;
-        thrust = 210;
-        triggerTime = 0.05;
+        //thrustTime = 0.05;
+        //thrust = 210;
+        //triggerSpeedCoef[] = {0.85,1};
+        triggerTime = 0.1;
 
         timeToLive = 25;
         maneuvrability = 0;
@@ -935,7 +907,6 @@ class CfgAmmo {
         
         CraterEffects = "";
         explosionEffects = "";
-
     };
 
         class tf47_ammo_raws_ffv401_adm_penetrator: B_127x99_SLAP
@@ -945,7 +916,7 @@ class CfgAmmo {
         indirectHitRange = 0;
         caliber = 5;
         simulation = "shotBullet";
-        typicalSpeed = 500;
+        //typicalSpeed = 500;
         
         tracerScale = 0.2;
         tracerStartTime = 0.01;
@@ -993,11 +964,11 @@ class CfgAmmo {
         ace_frag_enabled = 1;
         ACE_damageType = "explosive";
         
-        ace_frag_metal = 600;  // Amount of metal being fragmented (grams) - information below
+        ace_frag_metal = 1000;  // Amount of metal being fragmented (grams) - information below
         ace_frag_charge = 470;  // Amount of explosive filler (grams) - information below
         ace_frag_gurney_c = 2800;  // Gurney velocity constant for explosive type - information below
         ace_frag_gurney_k = 3/5;  // Gurney shape factor - information below
-        ace_frag_classes[] = {"ACE_frag_small"};  // Type of fragments - information below
+        ace_frag_classes[] = {"ace_frag_small_HD","ACE_frag_small"};  // Type of fragments - information below
         ace_frag_skip = 0;  // (Optional) Skip fragmentation for this ammo type (0-disabled, 1-enabled) - information below
         ace_frag_force = 1;  // (Optional) Force fragmentation system (0-disabled, 1-enabled) - information below
         
@@ -1010,6 +981,7 @@ class CfgAmmo {
         cost = 800;
         maxSpeed = 290;
         explosionTime = 0.001;
+        triggerTime = 0.02;
         
         warheadName    = "HE";
     };
@@ -1051,11 +1023,11 @@ class CfgAmmo {
         ace_frag_enabled = 1;
         ACE_damageType = "explosive";
         
-        ace_frag_metal = 600;  // Amount of metal being fragmented (grams) - information below
+        ace_frag_metal = 1000;  // Amount of metal being fragmented (grams) - information below
         ace_frag_charge = 470;  // Amount of explosive filler (grams) - information below
         ace_frag_gurney_c = 2800;  // Gurney velocity constant for explosive type - information below
         ace_frag_gurney_k = 3/5;  // Gurney shape factor - information below
-        ace_frag_classes[] = {"ACE_frag_small"};  // Type of fragments - information below
+        ace_frag_classes[] = {"ace_frag_small_HD","ACE_frag_small"};  // Type of fragments - information below
         ace_frag_skip = 0;  // (Optional) Skip fragmentation for this ammo type (0-disabled, 1-enabled) - information below
         ace_frag_force = 1;  // (Optional) Force fragmentation system (0-disabled, 1-enabled) - information below
         
@@ -1068,6 +1040,7 @@ class CfgAmmo {
         cost = 800;
         maxSpeed = 290;
         explosionTime = 0.001;
+        triggerTime = 0.02;
         
         warheadName    = "HE";
     };

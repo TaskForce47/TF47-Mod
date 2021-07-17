@@ -47,6 +47,10 @@ class CfgMagazines {
     class tf47_mag_maaws_ffv551c_heat : CA_LauncherMagazine
     {
         scope = 2;
+        displayName = "FFV551C HEAT (RS)";
+        model = "rhsusf\addons\rhsusf_weapons2\m3maaws\mag_m3maaws.p3d";
+        picture = "z\TF47\addons\LauncherRework\ui\M3_HEAT_RS.paa";
+        initSpeed = 290;
         descriptionShort = "High Explosive Anti tank RS";
         displaynameshort = "551C HEAT";
         ammo = tf47_ammo_maaws_ffv551c_heat;
