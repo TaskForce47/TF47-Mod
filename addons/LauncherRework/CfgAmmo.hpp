@@ -890,27 +890,27 @@ class CfgAmmo {
     class B_12Gauge_Pellets_Submunition;
     class tf47_ammo_maaws_ffv401_adm: B_12Gauge_Pellets_Submunition
     {
-		hit = 6;
-		caliber = 1;
-		timeToLive = 3;
+        hit = 6;
+        caliber = 1;
+        timeToLive = 3;
 
-		visibleFire = 100;
-		visibleFireTime = 9;
-		audibleFire = 850;
-		audibleFireTime = 12;
+        visibleFire = 100;
+        visibleFireTime = 9;
+        audibleFire = 850;
+        audibleFireTime = 12;
         
-		submunitionAmmo = "tf47_ammo_maaws_ffv401_adm_penetrator";
-		submunitionConeAngle = 7;
-		submunitionConeType[] = {"random",300};
-		submunitionDirectionType = "SubmunitionModelDirection";
-		explosive = 1;
-		explosionTime = 0.2;
-		
-		simulation = "shotRocket";
-		simulationStep = 0.05;
-		sideAirFriction = 0.05;
-		initSpeed = 270;
-		airFriction = 0.1;
+        submunitionAmmo = "tf47_ammo_maaws_ffv401_adm_penetrator";
+        submunitionConeAngle = 7;
+        submunitionConeType[] = {"random",300};
+        submunitionDirectionType = "SubmunitionModelDirection";
+        explosive = 1;
+        explosionTime = 0.2;
+        
+        simulation = "shotRocket";
+        simulationStep = 0.05;
+        sideAirFriction = 0.05;
+        initSpeed = 270;
+        airFriction = 0.1;
         
         ace_overpressure_range = 3;
         ace_overpressure_priority = 10;
@@ -921,51 +921,51 @@ class CfgAmmo {
     class B_12Gauge_Pellets_Submunition_Deploy;
     class tf47_ammo_maaws_ffv401_adm_penetrator: B_12Gauge_Pellets_Submunition_Deploy
     {
-		triggerTime = 0;
+        triggerTime = 0;
 
-		visibleFire = 100;
-		visibleFireTime = 9;
-		audibleFire = 850;
-		audibleFireTime = 12;
+        visibleFire = 100;
+        visibleFireTime = 9;
+        audibleFire = 850;
+        audibleFireTime = 12;
         
-		hit = 10;
-		coefGravity = 0.3;
-		indirectHit = 13;
-		indirectHitRange = 2.66;
-		caliber = 5;
-		airFriction = -0.0008;
-		simulationStep = 0.5;
-		timeToLive = 1.4;
-		deleteParentWhenTriggered = 1;
-		triggerOnImpact = 1;
-		deflecting = 20;
+        hit = 10;
+        coefGravity = 0.3;
+        indirectHit = 13;
+        indirectHitRange = 2.66;
+        caliber = 5;
+        airFriction = -0.0008;
+        simulationStep = 0.5;
+        timeToLive = 1.4;
+        deleteParentWhenTriggered = 1;
+        triggerOnImpact = 1;
+        deflecting = 20;
         
     };
     
     // FFV 401 RAWS
     class tf47_ammo_raws_ffv401_adm: B_12Gauge_Pellets_Submunition
     {
-		hit = 6;
-		caliber = 1;
-		timeToLive = 3;
+        hit = 6;
+        caliber = 1;
+        timeToLive = 3;
 
-		visibleFire = 100;
-		visibleFireTime = 9;
-		audibleFire = 850;
-		audibleFireTime = 12;
+        visibleFire = 100;
+        visibleFireTime = 9;
+        audibleFire = 850;
+        audibleFireTime = 12;
         
-		submunitionAmmo = "tf47_ammo_maaws_ffv401_adm_penetrator";
-		submunitionConeAngle = 4.5;
-		submunitionConeType[] = {"random",210};
-		submunitionDirectionType = "SubmunitionModelDirection";
-		explosive = 1;
-		explosionTime = 0.2;
-		
-		simulation = "shotRocket";
-		simulationStep = 0.05;
-		sideAirFriction = 0.05;
-		initSpeed = 270;
-		airFriction = 0.1;
+        submunitionAmmo = "tf47_ammo_maaws_ffv401_adm_penetrator";
+        submunitionConeAngle = 4.5;
+        submunitionConeType[] = {"random",210};
+        submunitionDirectionType = "SubmunitionModelDirection";
+        explosive = 1;
+        explosionTime = 0.2;
+        
+        simulation = "shotRocket";
+        simulationStep = 0.05;
+        sideAirFriction = 0.05;
+        initSpeed = 270;
+        airFriction = 0.1;
         
         ace_overpressure_range = 3;
         ace_overpressure_priority = 10;
@@ -975,24 +975,24 @@ class CfgAmmo {
 
     class tf47_ammo_raws_ffv401_adm_penetrator: B_12Gauge_Pellets_Submunition_Deploy
     {
-		triggerTime = 0;
+        triggerTime = 0;
 
-		visibleFire = 100;
-		visibleFireTime = 9;
-		audibleFire = 850;
-		audibleFireTime = 12;
+        visibleFire = 100;
+        visibleFireTime = 9;
+        audibleFire = 850;
+        audibleFireTime = 12;
         
-		hit = 10;
-		coefGravity = 0.3;
-		indirectHit = 13;
-		indirectHitRange = 2.66;
-		caliber = 5;
-		airFriction = -0.0008;
-		simulationStep = 0.5;
-		timeToLive = 1.4;
-		deleteParentWhenTriggered = 1;
-		triggerOnImpact = 1;
-		deflecting = 20;
+        hit = 10;
+        coefGravity = 0.3;
+        indirectHit = 13;
+        indirectHitRange = 2.66;
+        caliber = 5;
+        airFriction = -0.0008;
+        simulationStep = 0.5;
+        timeToLive = 1.4;
+        deleteParentWhenTriggered = 1;
+        triggerOnImpact = 1;
+        deflecting = 20;
     };
     
      ///// ---------- 509 ---------- /////
@@ -1120,27 +1120,27 @@ class CfgAmmo {
     // FFV 545 MAAWS
     class tf47_ammo_maaws_ffv545c_illum: B_12Gauge_Pellets_Submunition
     {
-		hit = 6;
-		caliber = 1;
-		timeToLive = 3;
+        hit = 6;
+        caliber = 1;
+        timeToLive = 3;
 
-		visibleFire = 100;
-		visibleFireTime = 9;
-		audibleFire = 850;
-		audibleFireTime = 12;
+        visibleFire = 100;
+        visibleFireTime = 9;
+        audibleFire = 850;
+        audibleFireTime = 12;
         
         submunitionAmmo = "tf47_ammo_maaws_ffv545c_illum_deploy";
-		submunitionConeAngle = 1;
-		submunitionConeType[] = {"random",1};
-		submunitionDirectionType = "SubmunitionModelDirection";
-		
-		simulation = "shotRocket";
-		simulationStep = 0.05;
-		sideAirFriction = 0.05;
-		initSpeed = 240;
+        submunitionConeAngle = 1;
+        submunitionConeType[] = {"random",1};
+        submunitionDirectionType = "SubmunitionModelDirection";
+        
+        simulation = "shotRocket";
+        simulationStep = 0.05;
+        sideAirFriction = 0.05;
+        initSpeed = 240;
         maxSpeed = 290;
-		airFriction = 0.1;
-		allowAgainstInfantry = 1;
+        airFriction = 0.1;
+        allowAgainstInfantry = 1;
         
         ace_overpressure_range = 1;
         ace_overpressure_priority = 10;
@@ -1151,16 +1151,16 @@ class CfgAmmo {
     class FlareBase;
     class tf47_ammo_maaws_ffv545c_illum_deploy: FlareBase
     {
-		intensity = 2000350;
-		coefGravity = 0.01;
-		lightColor[] = {0.91, 0.91, 1, 0};
-		triggerTime = 1;
-		timeToLive = 45;
-		flareSize = 15;
-		smokeColor[] = {0.91, 0.91, 1, 0};
-		dayLight = 1;
-		MaxDistance = 550;
-		
+        intensity = 2000350;
+        coefGravity = 0.01;
+        lightColor[] = {0.91, 0.91, 1, 0};
+        triggerTime = 1;
+        timeToLive = 45;
+        flareSize = 15;
+        smokeColor[] = {0.91, 0.91, 1, 0};
+        dayLight = 1;
+        MaxDistance = 550;
+        
         class Attenuation {
                 start = 475;
                 constant = 100;
@@ -1174,27 +1174,27 @@ class CfgAmmo {
     // FFV 545 RAWS
     class tf47_ammo_raws_ffv545c_illum: B_12Gauge_Pellets_Submunition
     {
-		hit = 6;
-		caliber = 1;
-		timeToLive = 3;
+        hit = 6;
+        caliber = 1;
+        timeToLive = 3;
 
-		visibleFire = 100;
-		visibleFireTime = 9;
-		audibleFire = 850;
-		audibleFireTime = 12;
+        visibleFire = 100;
+        visibleFireTime = 9;
+        audibleFire = 850;
+        audibleFireTime = 12;
         
         submunitionAmmo = "tf47_ammo_raws_ffv545c_illum_deploy";
-		submunitionConeAngle = 1;
-		submunitionConeType[] = {"random",1};
-		submunitionDirectionType = "SubmunitionModelDirection";
-		
-		simulation = "shotRocket";
-		simulationStep = 0.05;
-		sideAirFriction = 0.05;
-		initSpeed = 240;
+        submunitionConeAngle = 1;
+        submunitionConeType[] = {"random",1};
+        submunitionDirectionType = "SubmunitionModelDirection";
+        
+        simulation = "shotRocket";
+        simulationStep = 0.05;
+        sideAirFriction = 0.05;
+        initSpeed = 240;
         maxSpeed = 350;
-		airFriction = 0.1;
-		allowAgainstInfantry = 1;
+        airFriction = 0.1;
+        allowAgainstInfantry = 1;
         
         ace_overpressure_range = 1;
         ace_overpressure_priority = 10;
@@ -1204,16 +1204,16 @@ class CfgAmmo {
     
     class tf47_ammo_raws_ffv545c_illum_deploy: FlareBase
     {
-		intensity = 2000350;
-		coefGravity = 0.01;
-		lightColor[] = {0.91, 0.91, 1, 0};
-		triggerTime = 1;
-		timeToLive = 45;
-		flareSize = 15;
-		smokeColor[] = {0.91, 0.91, 1, 0};
-		dayLight = 1;
-		MaxDistance = 550;
-		
+        intensity = 2000350;
+        coefGravity = 0.01;
+        lightColor[] = {0.91, 0.91, 1, 0};
+        triggerTime = 1;
+        timeToLive = 45;
+        flareSize = 15;
+        smokeColor[] = {0.91, 0.91, 1, 0};
+        dayLight = 1;
+        MaxDistance = 550;
+        
         class Attenuation {
                 start = 475;
                 constant = 100;
@@ -1229,8 +1229,8 @@ class CfgAmmo {
     // FFV 469 MAAWS
     class tf47_ammo_maaws_ffv469c_smoke: tf47_ammo_maaws_ffv502_hedp
     {
-		hit = 6;
-		caliber = 1;
+        hit = 6;
+        caliber = 1;
         
         airFriction = 0.010;
         sideAirFriction = 0.05;
@@ -1254,9 +1254,9 @@ class CfgAmmo {
         //simulation = "shotSmokeX";
         
         submunitionAmmo = "tf47_ammo_maaws_ffv469c_smoke_submun";
-		//submunitionConeAngle = 1;
-		//submunitionConeType[] = {"random",1};
-		submunitionDirectionType = "SubmunitionModelDirection";
+        //submunitionConeAngle = 1;
+        //submunitionConeType[] = {"random",1};
+        submunitionDirectionType = "SubmunitionModelDirection";
     };
     
     class UK3CB_BAF_Smoke_81mm_AMOS;
@@ -1269,8 +1269,8 @@ class CfgAmmo {
     // FFV 469 RAWS
     class tf47_ammo_raws_ffv469c_smoke: tf47_ammo_raws_ffv502_hedp
     {
-		hit = 6;
-		caliber = 1;
+        hit = 6;
+        caliber = 1;
         
         airFriction = 0.010;
         sideAirFriction = 0.05;
@@ -1294,9 +1294,9 @@ class CfgAmmo {
         //simulation = "shotSmokeX";
         
         submunitionAmmo = "tf47_ammo_raws_ffv469c_smoke_submun";
-		//submunitionConeAngle = 1;
-		//submunitionConeType[] = {"random",1};
-		submunitionDirectionType = "SubmunitionModelDirection";
+        //submunitionConeAngle = 1;
+        //submunitionConeType[] = {"random",1};
+        submunitionDirectionType = "SubmunitionModelDirection";
     };
     
     class tf47_ammo_raws_ffv469c_smoke_submun: UK3CB_BAF_Smoke_81mm_AMOS
@@ -1337,9 +1337,9 @@ class CfgAmmo {
         manualControl = 0;
 
 
-		trackOversteer = 1;
-		sideAirFriction = 0.14;
-		airFriction = 0.1;
+        trackOversteer = 1;
+        sideAirFriction = 0.14;
+        airFriction = 0.1;
         
         flightProfiles[] = {};
 
@@ -1358,8 +1358,8 @@ class CfgAmmo {
         ace_frag_force = 1;  // (Optional) Force fragmentation system (0-disabled, 1-enabled) - information below
         
         explosive = 1;
-		
-		class ace_missileguidance {
+        
+        class ace_missileguidance {
             enabled = 1;
 
             minDeflection = 0.0005;     // Minium flap deflection for guidance
@@ -1385,7 +1385,7 @@ class CfgAmmo {
             // Attack profile type selection
             defaultAttackProfile = "LIN";
             attackProfiles[] = {"LIN"};
-		};
+        };
         
         class Components
         {
@@ -1459,20 +1459,20 @@ class CfgAmmo {
         manualControl = 0;
 
 
-		trackOversteer = 1;
-		sideAirFriction = 0.14;
-		airFriction = 0.1;
+        trackOversteer = 1;
+        sideAirFriction = 0.14;
+        airFriction = 0.1;
         
         flightProfiles[] = {};
 
-		ace_frag_skip = 0;
+        ace_frag_skip = 0;
 
         warheadName = "TandemHEAT";
         simulationStep = 0.02;
 
         explosive = 1;
-		
-		class ace_missileguidance {
+        
+        class ace_missileguidance {
             enabled = 1;
 
             minDeflection = 0.0005;     // Minium flap deflection for guidance
@@ -1498,7 +1498,7 @@ class CfgAmmo {
             // Attack profile type selection
             defaultAttackProfile = "LIN";
             attackProfiles[] = {"LIN"};
-		};
+        };
         
         class Components
         {
