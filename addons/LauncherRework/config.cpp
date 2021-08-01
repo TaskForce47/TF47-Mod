@@ -5,7 +5,7 @@ class CfgPatches {
         units[] = {};
         weapons[] = {};
         requiredVersion = REQUIRED_VERSION;
-        requiredAddons[] = {"A3_Weapons_F","rhsusf_c_weapons","rhsusf_main","ace_interaction","A3_Weapons_F_Tank_Launchers_MRAWS"};
+        requiredAddons[] = {"A3_Weapons_F","rhsusf_c_weapons","rhsusf_main","ace_interaction","A3_Weapons_F_Tank_Launchers_MRAWS","UK3CB_BAF_Weapons_Ammo"};
         author = "TF47 Desty";
         VERSION_CONFIG;
     };

@@ -75,13 +75,13 @@ class CfgMagazines {
     class tf47_mag_maaws_ffv545c_illum : CA_LauncherMagazine
     {
         scope = 2;
-        displayName = "FFV545 ILLUM";
+        displayName = "FFV545C ILLUM";
         model = "rhsusf\addons\rhsusf_weapons2\m3maaws\mag_m3maaws.p3d";
         picture = "z\TF47\addons\LauncherRework\ui\M3_ILLUM.paa";
         initSpeed = 290;
         descriptionShort = "Illum";
-        displaynameshort = "545 ILLUM";
-        ammo = tf47_ammo_maaws_ffv545_illum;
+        displaynameshort = "545C ILLUM";
+        ammo = tf47_ammo_maaws_ffv545c_illum;
         type = 2*256;
         mass = 68.34; //3,1 kg
     };
@@ -231,13 +231,13 @@ class CfgMagazines {
     class tf47_mag_raws_ffv545c_illum : CA_LauncherMagazine
     {
         scope = 2;
-        displayName = "FFV545 ILLUM";
+        displayName = "FFV545C ILLUM";
         model = "rhsusf\addons\rhsusf_weapons2\m3maaws\mag_m3maaws.p3d";
         picture = "z\TF47\addons\LauncherRework\ui\M3_ILLUM.paa";
         initSpeed = 350;
         descriptionShort = "Illum";
-        displaynameshort = "545 ILLUM";
-        ammo = tf47_ammo_raws_ffv545_illum;
+        displaynameshort = "545C ILLUM";
+        ammo = tf47_ammo_raws_ffv545c_illum;
         type = 2*256;
         mass = 68.34; //3,1 kg
     };
@@ -311,4 +311,33 @@ class CfgMagazines {
         type = 2*256;
         mass = 59.52; //2,7 kg
     };
+    
+    class tf47_mag_raws_gmm_hedp : CA_LauncherMagazine
+    {
+        scope = 2;
+        displayName = "GMM LGP HEDP";
+        model = "rhsusf\addons\rhsusf_weapons2\m3maaws\mag_m3maaws.p3d";
+        picture = "z\TF47\addons\LauncherRework\ui\M3_ADM.paa"; //needs pic
+        descriptionShort = "Laser Guided Projectile HEDP";
+        displaynameshort = "GMM HEDP";
+        ammo = tf47_ammo_raws_gmm_hedp;
+        type = 2*256;
+        mass = 132.77; //6 kg
+        initSpeed = 10;
+    };
+    
+    class tf47_mag_raws_gmm_at : CA_LauncherMagazine
+    {
+        scope = 2;
+        displayName = "GMM LGP AT";
+        model = "rhsusf\addons\rhsusf_weapons2\m3maaws\mag_m3maaws.p3d";
+        picture = "z\TF47\addons\LauncherRework\ui\M3_ADM.paa"; //needs pic
+        descriptionShort = "Laser Guided Projectile AT";
+        displaynameshort = "GMM AT";
+        ammo = tf47_ammo_raws_gmm_at;
+        type = 2*256;
+        mass = 132.77; //6 kg
+        initSpeed = 10;
+    };
+    
 };

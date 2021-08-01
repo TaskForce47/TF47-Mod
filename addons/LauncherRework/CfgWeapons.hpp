@@ -31,8 +31,7 @@ class CfgWeapons
                         "tf47_mag_maaws_ffv551c_heat",
                         "tf47_mag_maaws_ffv655_heat_cs",
                         "tf47_mag_maaws_ffv751_heat",
-                        "tf47_mag_maaws_ffv756_mt",
-                        "tf47_mag_maaws_gmm"
+                        "tf47_mag_maaws_ffv756_mt"
                       };
         magazineWell[] = {};
     };
@@ -62,7 +61,8 @@ class CfgWeapons
                         "tf47_mag_raws_ffv655_heat_cs",
                         "tf47_mag_raws_ffv751_heat",
                         "tf47_mag_raws_ffv756_mt",
-                        "tf47_mag_raws_gmm"
+                        "tf47_mag_raws_gmm_hedp",
+                        "tf47_mag_raws_gmm_at"
                       };
         magazineWell[] = {};
     };
@@ -92,7 +92,8 @@ class CfgWeapons
                         "tf47_mag_raws_ffv655_heat_cs",
                         "tf47_mag_raws_ffv751_heat",
                         "tf47_mag_raws_ffv756_mt",
-                        "tf47_mag_raws_gmm"
+                        "tf47_mag_raws_gmm_hedp",
+                        "tf47_mag_raws_gmm_at"
                       };
         magazineWell[] = {};
     };
@@ -122,7 +123,8 @@ class CfgWeapons
                         "tf47_mag_raws_ffv655_heat_cs",
                         "tf47_mag_raws_ffv751_heat",
                         "tf47_mag_raws_ffv756_mt",
-                        "tf47_mag_raws_gmm"
+                        "tf47_mag_raws_gmm_hedp",
+                        "tf47_mag_raws_gmm_at"
                       };
         magazineWell[] = {};
     };
