@@ -1,12 +1,12 @@
 class CfgAmmo {
-  //Base Classes - Howitzer
-  class FlareCore;
-  class Sh_155mm_AMOS;
-	class Smoke_120mm_AMOS_White;
-  class Mine_155mm_AMOS_range;
-  class AT_Mine_155mm_AMOS_range;
-  class Cluster_155mm_AMOS;
-  //Base Classes - Missile
+    //Base Classes - Howitzer
+    class FlareCore;
+    class Sh_155mm_AMOS;
+    class Smoke_120mm_AMOS_White;
+    class Mine_155mm_AMOS_range;
+    class AT_Mine_155mm_AMOS_range;
+    class Cluster_155mm_AMOS;
+    //Base Classes - Missile
 
 
 

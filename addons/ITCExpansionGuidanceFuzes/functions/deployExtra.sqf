@@ -20,10 +20,10 @@ _extra setVelocity _randomizedVelocity;
   };
 
   if(time > _firedTime + 8 && typeOf _projectile == "ITC_155Extra") then { //SEARCH FOR A TARGET
-    _tanks = nearestObjects [[getPos _projectile # 0, getPos _projectile # 1, 0], ["Wheeled_APC_F","Tank_F"], 50];
+    _tanks = nearestObjects [[getPos _projectile # 0, getPos _projectile # 1, 0], ["Wheeled_APC_F","Tank_F"], 200];
     //systemChat str _tanks;
 
-    _selectTankIndex = _tanks findIf {(alive _x && _x distance _projectile < 75)};
+    _selectTankIndex = _tanks findIf {(alive _x && _x distance _projectile < 120)};
     //systemChat str _selectTankIndex;
 
     if(_selectTankIndex != -1) then {

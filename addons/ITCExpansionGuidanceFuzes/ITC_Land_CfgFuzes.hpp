@@ -27,6 +27,11 @@ class ITC_Land_CfgFuzes {
 		modeDesc[] = {"Time"};
 		firedEvent = "itc_land_veh_weapons_fnc_firedMof35Mod3";
 	};
+    class mof35_mod4: mof35_mod0 { //FOR CARGO SHELLS LIKE EXTRA
+		modes[] = {"pd"};
+		modeDesc[] = {"pd"};
+		firedEvent = "itc_land_veh_weapons_fnc_firedMof35";
+	};
 	class sam35_mod0 { //FOR SAMS WITH PROX FUZING
 		modes[] = {"prox"};
 		modeDesc[] = {"Proximity"};

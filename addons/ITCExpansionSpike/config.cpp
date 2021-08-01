@@ -1,12 +1,12 @@
 class CfgPatches {
 	class itc_land_spike {
 		author = "ITC Addons Team";
-		authors[] = {"ToadBall","Yax","VKing"};
+		authors[] = {"TF47 Desty"};
 		requiredaddons[] = {"A3_Weapons_F"};
 		requiredversion = 1.9;
 		units[] = {};
-		weapons[] = {"itc_land_spikeLR"};
-		magazines[] = {"itc_land_spikeLR_1rnd"};
+		weapons[] = {"tf47_itc_land_spikeLR"};
+		magazines[] = {"tf47_itc_land_spikeLR_1rnd"};
 	};
 };
 class NewTurret;

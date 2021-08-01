@@ -34,8 +34,8 @@ class CfgVehicles {
     hiddenSelectionsTextures[] = {"\a3\weapons_f_exp\launchers\titan\data\launch_b_titan_tna_f_01_co.paa","\a3\weapons_f_exp\launchers\titan\data\launch_b_titan_tna_f_02_co.paa"};
     class Turrets: Turrets {
       class MainTurret: MainTurret {
-        weapons[] = {"itc_land_spikeLR_atgm"};
-        magazines[] = {"itc_land_spikeLR_1rnd","itc_land_spikeLR_1rnd","itc_land_spikeLR_1rnd","itc_land_spikeLR_1rnd"};
+        weapons[] = {"tf47_itc_land_spikeLR_atgm"};
+        magazines[] = {"tf47_itc_land_spikeLR_1rnd","tf47_itc_land_spikeLR_1rnd","tf47_itc_land_spikeLR_1rnd","tf47_itc_land_spikeLR_1rnd"};
       };
     };
     class Armory {
@@ -43,19 +43,19 @@ class CfgVehicles {
     };
     class AnimationSources: AnimationSources {
       class muzzle_source: muzzle_source {
-        weapon = "itc_land_spikeLR_atgm";
+        weapon = "tf47_itc_land_spikeLR_atgm";
       };
       class muzzle_source_rot: muzzle_source_rot {
-        weapon = "itc_land_spikeLR_atgm";
+        weapon = "tf47_itc_land_spikeLR_atgm";
       };
       class ReloadAnim: ReloadAnim {
-        weapon = "itc_land_spikeLR_atgm";
+        weapon = "tf47_itc_land_spikeLR_atgm";
       };
       class ReloadMagazine: ReloadMagazine {
-        weapon = "itc_land_spikeLR_atgm";
+        weapon = "tf47_itc_land_spikeLR_atgm";
       };
       class Revolving: Revolving {
-        weapon = "itc_land_spikeLR_atgm";
+        weapon = "tf47_itc_land_spikeLR_atgm";
       };
     };
   };

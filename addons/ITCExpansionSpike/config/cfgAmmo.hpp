@@ -1,14 +1,15 @@
 class CfgAmmo {
 	class M_Titan_AT;
-	class itc_land_spikeLR: M_Titan_AT {
+	class tf47_itc_land_spikeLR: M_Titan_AT {
     irLock = 1;
     laserLock = 0;
     airLock = 0;
-    timeToLive = 40;
+    timeToLive = 50;
     // Turn off arma crosshair-guidance
     manualControl = 0;
-
-    hit = 1400;         // default: 800
+    
+    caliber = 230;
+    hit = 1000;         // default: 800
     indirectHit = 20;
     indirectHitRange = 2;
     // ACE uses these values
@@ -29,7 +30,7 @@ class CfgAmmo {
       seekerAccuracy = 1;
       seekerAngle = 180;
       seekerLockModes[] = {"LOBL"};
-      seekerMaxRange = 2500;
+      seekerMaxRange = 4000;
       seekerMinRange = 0;
       seekerTypes[] = {"Optic"};
       seekLastTargetPos = 1;

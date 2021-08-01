@@ -1,5 +1,4 @@
 class CfgAmmo {
-
     class itc_land_155mm;
     class itc_land_155mm_m109: itc_land_155mm {
         model = "\A3\Weapons_F\Ammo\shell.p3d";
@@ -32,7 +31,7 @@ class CfgAmmo {
             "rhs_ammo_sub_blu97",0.3,
             "rhs_ammo_m85_submunition",0.6,
             "rhs_ammo_uxo_ao1_2_deploy",0.1
-            };
+        };
     };
     
     class itc_land_155mm_dpicm_pgm_helper_m109: itc_land_155mm_dpicm_helper {
@@ -41,7 +40,7 @@ class CfgAmmo {
             "rhs_ammo_sub_blu97",0.3,
             "rhs_ammo_m85_submunition",0.6,
             "rhs_ammo_uxo_ao1_2_deploy",0.1
-            };
+        };
     };
     
     class Mine_155mm_AMOS_range;
@@ -58,5 +57,4 @@ class CfgAmmo {
         model = "\rhsusf\addons\rhsusf_weapons\FGM148\fgm148_missile";
         hit = 2000;
     };
-
 };
