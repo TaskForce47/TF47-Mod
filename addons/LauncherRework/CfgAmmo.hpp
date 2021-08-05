@@ -1443,7 +1443,7 @@ class CfgAmmo {
         proxyShape = "";
 
         hit = 100; 
-        indirectHit = 50;
+        indirectHit = 30;
         indirectHitRange = 6;
         caliber = 0.8;
         cost = 800;
