@@ -6,8 +6,8 @@ class CfgMagazines {
     {
         scope = 2;
         displayName = "FFV751 HEAT (Tandem)";
-        model = "rhsusf\addons\rhsusf_weapons2\m3maaws\mag_m3maaws.p3d";
-        picture = "z\TF47\addons\LauncherRework\ui\M3_HEAT_TD.paa";
+        model = "\rhsusf\addons\rhsusf_weapons2\m3maaws\mag_m3maaws.p3d";
+        picture = "\z\TF47\addons\LauncherRework\ui\M3_HEAT_TD.paa";
         initSpeed = 290;
         descriptionShort = "High Explosive Anti tank";
         displaynameshort = "751 HEAT";
@@ -20,8 +20,8 @@ class CfgMagazines {
     {
         scope = 2;
         displayName = "FFV655 HEAT (CS)";
-        model = "rhsusf\addons\rhsusf_weapons2\m3maaws\mag_m3maaws.p3d";
-        picture = "z\TF47\addons\LauncherRework\ui\M3_HEAT_CS.paa";
+        model = "\rhsusf\addons\rhsusf_weapons2\m3maaws\mag_m3maaws.p3d";
+        picture = "\z\TF47\addons\LauncherRework\ui\M3_HEAT_CS.paa";
         initSpeed = 290;
         descriptionShort = "High Explosive Anti tank CS";
         displaynameshort = "655 HEAT CS";
@@ -34,8 +34,8 @@ class CfgMagazines {
     {
         scope = 2;
         displayName = "FFV756 MT (Multi Target)";
-        model = "rhsusf\addons\rhsusf_weapons2\m3maaws\mag_m3maaws.p3d";
-        picture = "z\TF47\addons\LauncherRework\ui\M3_MT.paa";
+        model = "\rhsusf\addons\rhsusf_weapons2\m3maaws\mag_m3maaws.p3d";
+        picture = "\z\TF47\addons\LauncherRework\ui\M3_MT.paa";
         initSpeed = 290;
         descriptionShort = "Anti Building";
         displaynameshort = "756 MT";
@@ -48,8 +48,8 @@ class CfgMagazines {
     {
         scope = 2;
         displayName = "FFV551C HEAT (RS)";
-        model = "rhsusf\addons\rhsusf_weapons2\m3maaws\mag_m3maaws.p3d";
-        picture = "z\TF47\addons\LauncherRework\ui\M3_HEAT_RS.paa";
+        model = "\rhsusf\addons\rhsusf_weapons2\m3maaws\mag_m3maaws.p3d";
+        picture = "\z\TF47\addons\LauncherRework\ui\M3_HEAT_RS.paa";
         initSpeed = 290;
         descriptionShort = "High Explosive Anti tank RS";
         displaynameshort = "551C HEAT";
@@ -62,8 +62,8 @@ class CfgMagazines {
     {
         scope = 2;
         displayName = "FFV551 HEAT";
-        model = "rhsusf\addons\rhsusf_weapons2\m3maaws\mag_m3maaws.p3d";
-        picture = "z\TF47\addons\LauncherRework\ui\M3_HEAT.paa";
+        model = "\rhsusf\addons\rhsusf_weapons2\m3maaws\mag_m3maaws.p3d";
+        picture = "\z\TF47\addons\LauncherRework\ui\M3_HEAT.paa";
         initSpeed = 290;
         descriptionShort = "High Explosive Anti tank";
         displaynameshort = "551 HEAT";
@@ -76,8 +76,8 @@ class CfgMagazines {
     {
         scope = 2;
         displayName = "FFV545C ILLUM";
-        model = "rhsusf\addons\rhsusf_weapons2\m3maaws\mag_m3maaws.p3d";
-        picture = "z\TF47\addons\LauncherRework\ui\M3_ILLUM.paa";
+        model = "\rhsusf\addons\rhsusf_weapons2\m3maaws\mag_m3maaws.p3d";
+        picture = "\z\TF47\addons\LauncherRework\ui\M3_ILLUM.paa";
         initSpeed = 290;
         descriptionShort = "Illum";
         displaynameshort = "545C ILLUM";
@@ -90,8 +90,8 @@ class CfgMagazines {
     {
         scope = 2;
         displayName = "FFV509 ASM";
-        model = "rhsusf\addons\rhsusf_weapons2\m3maaws\mag_m3maaws.p3d";
-        picture = "z\TF47\addons\LauncherRework\ui\M3_ASM.paa";
+        model = "\rhsusf\addons\rhsusf_weapons2\m3maaws\mag_m3maaws.p3d";
+        picture = "\z\TF47\addons\LauncherRework\ui\M3_ASM.paa";
         initSpeed = 290;
         descriptionShort = "Anti Structure Munition";
         displaynameshort = "509 ASM";
@@ -104,8 +104,8 @@ class CfgMagazines {
     {
         scope = 2;
         displayName = "FFV502 HEDP";
-        model = "rhsusf\addons\rhsusf_weapons2\m3maaws\mag_m3maaws.p3d";
-        picture = "z\TF47\addons\LauncherRework\ui\M3_HEDP.paa";
+        model = "\rhsusf\addons\rhsusf_weapons2\m3maaws\mag_m3maaws.p3d";
+        picture = "\z\TF47\addons\LauncherRework\ui\M3_HEDP.paa";
         initSpeed = 290;
         descriptionShort = "High Explosive Dual Purpose";
         displaynameshort = "502 HEDP";
@@ -118,8 +118,8 @@ class CfgMagazines {
     {
         scope = 2;
         displayName = "FFV469C SMOKE";
-        model = "rhsusf\addons\rhsusf_weapons2\m3maaws\mag_m3maaws.p3d";
-        picture = "z\TF47\addons\LauncherRework\ui\M3_WEED.paa";
+        model = "\rhsusf\addons\rhsusf_weapons2\m3maaws\mag_m3maaws.p3d";
+        picture = "\z\TF47\addons\LauncherRework\ui\M3_WEED.paa";
         initSpeed = 290;
         descriptionShort = "Smoke";
         displaynameshort = "469C SMOKE";
@@ -132,8 +132,8 @@ class CfgMagazines {
     {
         scope = 2;
         displayName = "FFV441D HE";
-        model = "rhsusf\addons\rhsusf_weapons2\m3maaws\mag_m3maaws.p3d";
-        picture = "z\TF47\addons\LauncherRework\ui\M3_HE.paa";
+        model = "\rhsusf\addons\rhsusf_weapons2\m3maaws\mag_m3maaws.p3d";
+        picture = "\z\TF47\addons\LauncherRework\ui\M3_HE.paa";
         initSpeed = 290;
         descriptionShort = "High Explosive";
         displaynameshort = "441D HE";
@@ -146,8 +146,8 @@ class CfgMagazines {
     {
         scope = 2;
         displayName = "FFV401 ADM";
-        model = "rhsusf\addons\rhsusf_weapons2\m3maaws\mag_m3maaws.p3d";
-        picture = "z\TF47\addons\LauncherRework\ui\M3_ADM.paa";
+        model = "\rhsusf\addons\rhsusf_weapons2\m3maaws\mag_m3maaws.p3d";
+        picture = "\z\TF47\addons\LauncherRework\ui\M3_ADM.paa";
         initSpeed = 290;
         descriptionShort = "Area Defence Munition";
         displaynameshort = "401 ADM";
@@ -162,8 +162,8 @@ class CfgMagazines {
     {
         scope = 2;
         displayName = "FFV756 MT (Multi Target)";
-        model = "rhsusf\addons\rhsusf_weapons2\m3maaws\mag_m3maaws.p3d";
-        picture = "z\TF47\addons\LauncherRework\ui\M3_MT.paa";
+        model = "\rhsusf\addons\rhsusf_weapons2\m3maaws\mag_m3maaws.p3d";
+        picture = "\z\TF47\addons\LauncherRework\ui\M3_MT.paa";
         initSpeed = 350;
         descriptionShort = "Anti Building";
         displaynameshort = "756 MT";
@@ -176,8 +176,8 @@ class CfgMagazines {
     {
         scope = 2;
         displayName = "FFV751 HEAT (Tandem)";
-        model = "rhsusf\addons\rhsusf_weapons2\m3maaws\mag_m3maaws.p3d";
-        picture = "z\TF47\addons\LauncherRework\ui\M3_HEAT_TD.paa";
+        model = "\rhsusf\addons\rhsusf_weapons2\m3maaws\mag_m3maaws.p3d";
+        picture = "\z\TF47\addons\LauncherRework\ui\M3_HEAT_TD.paa";
         initSpeed = 350;
         descriptionShort = "High Explosive Anti tank";
         displaynameshort = "751 HEAT";
@@ -190,8 +190,8 @@ class CfgMagazines {
     {
         scope = 2;
         displayName = "FFV655 HEAT (CS)";
-        model = "rhsusf\addons\rhsusf_weapons2\m3maaws\mag_m3maaws.p3d";
-        picture = "z\TF47\addons\LauncherRework\ui\M3_HEAT_CS.paa";
+        model = "\rhsusf\addons\rhsusf_weapons2\m3maaws\mag_m3maaws.p3d";
+        picture = "\z\TF47\addons\LauncherRework\ui\M3_HEAT_CS.paa";
         initSpeed = 350;
         descriptionShort = "High Explosive Anti tank CS";
         displaynameshort = "655 HEAT CS";
@@ -204,8 +204,8 @@ class CfgMagazines {
     {
         scope = 2;
         displayName = "FFV551C HEAT (RS)";
-        model = "rhsusf\addons\rhsusf_weapons2\m3maaws\mag_m3maaws.p3d";
-        picture = "z\TF47\addons\LauncherRework\ui\M3_HEAT_RS.paa";
+        model = "\rhsusf\addons\rhsusf_weapons2\m3maaws\mag_m3maaws.p3d";
+        picture = "\z\TF47\addons\LauncherRework\ui\M3_HEAT_RS.paa";
         initSpeed = 350;
         descriptionShort = "High Explosive Anti tank RS";
         displaynameshort = "551C HEAT";
@@ -218,8 +218,8 @@ class CfgMagazines {
     {
         scope = 2;
         displayName = "FFV551 HEAT";
-        model = "rhsusf\addons\rhsusf_weapons2\m3maaws\mag_m3maaws.p3d";
-        picture = "z\TF47\addons\LauncherRework\ui\M3_HEAT.paa";
+        model = "\rhsusf\addons\rhsusf_weapons2\m3maaws\mag_m3maaws.p3d";
+        picture = "\z\TF47\addons\LauncherRework\ui\M3_HEAT.paa";
         initSpeed = 350;
         descriptionShort = "High Explosive Anti tank";
         displaynameshort = "551 HEAT";
@@ -232,8 +232,8 @@ class CfgMagazines {
     {
         scope = 2;
         displayName = "FFV545C ILLUM";
-        model = "rhsusf\addons\rhsusf_weapons2\m3maaws\mag_m3maaws.p3d";
-        picture = "z\TF47\addons\LauncherRework\ui\M3_ILLUM.paa";
+        model = "\rhsusf\addons\rhsusf_weapons2\m3maaws\mag_m3maaws.p3d";
+        picture = "\z\TF47\addons\LauncherRework\ui\M3_ILLUM.paa";
         initSpeed = 350;
         descriptionShort = "Illum";
         displaynameshort = "545C ILLUM";
@@ -246,8 +246,8 @@ class CfgMagazines {
     {
         scope = 2;
         displayName = "FFV509 ASM";
-        model = "rhsusf\addons\rhsusf_weapons2\m3maaws\mag_m3maaws.p3d";
-        picture = "z\TF47\addons\LauncherRework\ui\M3_ASM.paa";
+        model = "\rhsusf\addons\rhsusf_weapons2\m3maaws\mag_m3maaws.p3d";
+        picture = "\z\TF47\addons\LauncherRework\ui\M3_ASM.paa";
         initSpeed = 350;
         descriptionShort = "Anti Structure Munition";
         displaynameshort = "509 ASM";
@@ -260,8 +260,8 @@ class CfgMagazines {
     {
         scope = 2;
         displayName = "FFV502 HEDP";
-        model = "rhsusf\addons\rhsusf_weapons2\m3maaws\mag_m3maaws.p3d";
-        picture = "z\TF47\addons\LauncherRework\ui\M3_HEDP.paa";
+        model = "\rhsusf\addons\rhsusf_weapons2\m3maaws\mag_m3maaws.p3d";
+        picture = "\z\TF47\addons\LauncherRework\ui\M3_HEDP.paa";
         initSpeed = 350;
         descriptionShort = "High Explosive Dual Purpose";
         displaynameshort = "502 HEDP";
@@ -274,8 +274,8 @@ class CfgMagazines {
     {
         scope = 2;
         displayName = "FFV469C SMOKE";
-        model = "rhsusf\addons\rhsusf_weapons2\m3maaws\mag_m3maaws.p3d";
-        picture = "z\TF47\addons\LauncherRework\ui\M3_WEED.paa";
+        model = "\rhsusf\addons\rhsusf_weapons2\m3maaws\mag_m3maaws.p3d";
+        picture = "\z\TF47\addons\LauncherRework\ui\M3_WEED.paa";
         initSpeed = 350;
         descriptionShort = "Smoke";
         displaynameshort = "469C SMOKE";
@@ -288,8 +288,8 @@ class CfgMagazines {
     {
         scope = 2;
         displayName = "FFV441D HE";
-        model = "rhsusf\addons\rhsusf_weapons2\m3maaws\mag_m3maaws.p3d";
-        picture = "z\TF47\addons\LauncherRework\ui\M3_HE.paa";
+        model = "\rhsusf\addons\rhsusf_weapons2\m3maaws\mag_m3maaws.p3d";
+        picture = "\z\TF47\addons\LauncherRework\ui\M3_HE.paa";
         initSpeed = 350;
         descriptionShort = "High Explosive";
         displaynameshort = "441D HE";
@@ -302,8 +302,8 @@ class CfgMagazines {
     {
         scope = 2;
         displayName = "FFV401 ADM";
-        model = "rhsusf\addons\rhsusf_weapons2\m3maaws\mag_m3maaws.p3d";
-        picture = "z\TF47\addons\LauncherRework\ui\M3_ADM.paa";
+        model = "\rhsusf\addons\rhsusf_weapons2\m3maaws\mag_m3maaws.p3d";
+        picture = "\z\TF47\addons\LauncherRework\ui\M3_ADM.paa";
         initSpeed = 350;
         descriptionShort = "Area Defence Munition";
         displaynameshort = "401 ADM";
@@ -316,8 +316,8 @@ class CfgMagazines {
     {
         scope = 2;
         displayName = "GMM LGP HEDP";
-        model = "rhsusf\addons\rhsusf_weapons2\m3maaws\mag_m3maaws.p3d";
-        picture = "z\TF47\addons\LauncherRework\ui\M3_ADM.paa"; //needs pic
+        model = "\rhsusf\addons\rhsusf_weapons2\m3maaws\mag_m3maaws.p3d";
+        picture = "\z\TF47\addons\LauncherRework\ui\M3_ADM.paa"; //needs pic
         descriptionShort = "Laser Guided Projectile HEDP";
         displaynameshort = "GMM HEDP";
         ammo = tf47_ammo_raws_gmm_hedp;
@@ -330,8 +330,8 @@ class CfgMagazines {
     {
         scope = 2;
         displayName = "GMM LGP AT";
-        model = "rhsusf\addons\rhsusf_weapons2\m3maaws\mag_m3maaws.p3d";
-        picture = "z\TF47\addons\LauncherRework\ui\M3_ADM.paa"; //needs pic
+        model = "\rhsusf\addons\rhsusf_weapons2\m3maaws\mag_m3maaws.p3d";
+        picture = "\z\TF47\addons\LauncherRework\ui\M3_ADM.paa"; //needs pic
         descriptionShort = "Laser Guided Projectile AT";
         displaynameshort = "GMM AT";
         ammo = tf47_ammo_raws_gmm_at;
