@@ -282,10 +282,10 @@ class CfgAmmo {
     ///// ---------- 655 ---------- /////
     
     // FFV 655 MAAWS
-    class tf47_ammo_maaws_ffv655_heat: rhs_ammo_maaws_HEAT
+    class tf47_ammo_maaws_ffv655_heat_cs: rhs_ammo_maaws_HEAT
     {
 
-        submunitionAmmo = "tf47_ammo_maaws_ffv655_heat_penetrator";
+        submunitionAmmo = "tf47_ammo_maaws_ffv655_heat_cs_penetrator";
         submunitionDirectionType = "SubmunitionModelDirection";
         submunitionInitialOffset[] = {0,0,-0.2};
         submunitionParentSpeedCoef = 0;
@@ -320,7 +320,7 @@ class CfgAmmo {
         simulationStep = 0.02;
     };
     
-    class tf47_ammo_maaws_ffv655_heat_penetrator: rhs_ammo_maaws_HEAT_penetrator
+    class tf47_ammo_maaws_ffv655_heat_cs_penetrator: rhs_ammo_maaws_HEAT_penetrator
     {
 
         submunitionAmmo = "rhs_ammo_spall";
@@ -344,10 +344,10 @@ class CfgAmmo {
     
     
     // FFV 655 RAWS
-    class tf47_ammo_raws_ffv655_heat: rhs_ammo_maaws_HEAT
+    class tf47_ammo_raws_ffv655_heat_cs: rhs_ammo_maaws_HEAT
     {
 
-        submunitionAmmo = "tf47_ammo_raws_ffv655_heat_penetrator";
+        submunitionAmmo = "tf47_ammo_raws_ffv655_heat_cs_penetrator";
         submunitionDirectionType = "SubmunitionModelDirection";
         submunitionInitialOffset[] = {0,0,-0.2};
         submunitionParentSpeedCoef = 0;
@@ -382,7 +382,7 @@ class CfgAmmo {
         simulationStep = 0.02;
     };
     
-    class tf47_ammo_raws_ffv655_heat_penetrator: rhs_ammo_maaws_HEAT_penetrator
+    class tf47_ammo_raws_ffv655_heat_cs_penetrator: rhs_ammo_maaws_HEAT_penetrator
     {
 
         submunitionAmmo = "rhs_ammo_spall";
@@ -1200,6 +1200,7 @@ class CfgAmmo {
     {
         fuseDistance = 0;
         smokeColor[] = {1,1,1,1};
+        triggerOnImpact = 1;
     };
     
     // FFV 469 RAWS
@@ -1229,16 +1230,18 @@ class CfgAmmo {
         //ExplosionEffects = "UK3CB_WPExplosion";
         //simulation = "shotSmokeX";
         
-        submunitionAmmo = "tf47_ammo_raws_ffv469c_smoke_submun";
-        //submunitionConeAngle = 1;
-        //submunitionConeType[] = {"random",1};
+        submunitionAmmo = "tf47_ammo_maaws_ffv469c_smoke_submun";
+        submunitionConeAngle = 1;
+        submunitionConeType[] = {"random",1};
         submunitionDirectionType = "SubmunitionModelDirection";
+        triggerOnImpact = 1;
     };
     
     class tf47_ammo_raws_ffv469c_smoke_submun: UK3CB_BAF_Smoke_81mm_AMOS
     {
         fuseDistance = 0;
         smokeColor[] = {1,1,1,1};
+        triggerOnImpact = 1;
     };
 
      ///// ---------- GMM ---------- /////
