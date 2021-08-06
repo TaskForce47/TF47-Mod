@@ -13,13 +13,11 @@ class CfgAmmo {
         submunitionInitialOffset[] = {0,0,-0.2};
         submunitionParentSpeedCoef = 0;
         submunitionInitSpeed = 290;
-        
-        explosive = 0.8;
 
         hit = 100; //Tandem
         indirectHit = 15;
         indirectHitRange = 3.1;
-        caliber = 0.8;
+        caliber = 1;
         cost = 800;
         airFriction = 0.010;
         sideAirFriction = 0.00;
@@ -47,8 +45,6 @@ class CfgAmmo {
         submunitionInitialOffset[] = {0,0,-0.4};
         submunitionParentSpeedCoef = 0;
         submunitionInitSpeed = 200;
-        
-        explosive = 0;
 
         hit = 400; //Penetrator
         caliber = 137.931; // caliber = (mm penetration @speedX)*1000 / (bulletPenetrability * speedX)
@@ -69,14 +65,11 @@ class CfgAmmo {
         submunitionInitialOffset[] = {0,0,-0.2};
         submunitionParentSpeedCoef = 0;
         submunitionInitSpeed = 290;
-        
-        explosive = 0.8;
 
         hit = 200; //Tandem
         indirectHit = 15;
         indirectHitRange = 3.1;
         caliber = 0.8;
-        cost = 800;
         airFriction = 0.010;
         sideAirFriction = 0.00;
         maxSpeed = 350;
@@ -103,8 +96,6 @@ class CfgAmmo {
         submunitionInitialOffset[] = {0,0,-0.4};
         submunitionParentSpeedCoef = 0;
         submunitionInitSpeed = 200;
-        
-        explosive = 0;
 
         hit = 400; //Penetrator
         caliber = 137.931; // caliber = (mm penetration @speedX)*1000 / (bulletPenetrability * speedX)
@@ -124,7 +115,6 @@ class CfgAmmo {
     class tf47_ammo_maaws_ffv756_mt: rhs_ammo_maaws_HEDP
     {
         submunitionAmmo[] = {"tf47_ammo_maaws_ffv756_mt_penetrator",1,"tf47_ammo_maaws_ffv756_mt_heat_penetrator",1};
-        //submunitionAmmo = "tf47_ammo_maaws_ffv756_mt_penetrator";
         submunitionConeType[] = {"poissondisccenter", 2};
         submunitionDirectionType = "SubmunitionModelDirection";
         submunitionInitialOffset[] = {0,0,-0.2};
@@ -132,7 +122,7 @@ class CfgAmmo {
         submunitionInitSpeed = 100;
         triggerOnImpact = 1;
         
-        explosive = 1;
+        explosive = 0.65;
 
         hit = 200; //Tandem
         indirectHit = 15;
@@ -162,7 +152,7 @@ class CfgAmmo {
         ace_frag_skip = 0;  // (Optional) Skip fragmentation for this ammo type (0-disabled, 1-enabled) - information below
         ace_frag_force = 1;  // (Optional) Force fragmentation system (0-disabled, 1-enabled) - information below
         
-        explosive = 1;
+        explosive = 0.65;
 
         hit = 100; //Penetrator
         indirectHit = 30;
@@ -182,7 +172,7 @@ class CfgAmmo {
         
         submunitionAmmo = "rhs_ammo_spall";
         submunitionDirectionType = "SubmunitionModelDirection";
-        submunitionConeType = {"randomcenter",30};
+        submunitionConeType[] = {"randomcenter",30};
         submunitionInitialOffset[] = {0,0,-0.4};
         submunitionParentSpeedCoef = 0;
         submunitionInitSpeed = 200;
@@ -202,8 +192,7 @@ class CfgAmmo {
     // FFV 756 RAWS
     class tf47_ammo_raws_ffv756_mt: rhs_ammo_maaws_HEDP
     {
-        submunitionAmmo[] = {"tf47_ammo_maaws_ffv756_mt_penetrator",1,"tf47_ammo_maaws_ffv756_mt_heat_penetrator",1};
-        //submunitionAmmo = "tf47_ammo_raws_ffv756_mt_penetrator";
+        submunitionAmmo[] = {"tf47_ammo_raws_ffv756_mt_penetrator",1,"tf47_ammo_raws_ffv756_mt_heat_penetrator",1};
         submunitionConeType[] = {"poissondisccenter", 2};
         submunitionDirectionType = "SubmunitionModelDirection";
         submunitionInitialOffset[] = {0,0,-0.2};
@@ -211,7 +200,7 @@ class CfgAmmo {
         submunitionInitSpeed = 100;
         triggerOnImpact = 1;
         
-        explosive = 1;
+        explosive = 0.65;
 
         hit = 200; //Tandem
         indirectHit = 15;
@@ -241,7 +230,7 @@ class CfgAmmo {
         ace_frag_skip = 0;  // (Optional) Skip fragmentation for this ammo type (0-disabled, 1-enabled) - information below
         ace_frag_force = 1;  // (Optional) Force fragmentation system (0-disabled, 1-enabled) - information below
         
-        explosive = 1;
+        explosive = 0.65;
 
         hit = 100; //Penetrator
         indirectHit = 30;
@@ -262,7 +251,7 @@ class CfgAmmo {
         
         submunitionAmmo = "rhs_ammo_spall";
         submunitionDirectionType = "SubmunitionModelDirection";
-        submunitionConeType = {"randomcenter",30};
+        submunitionConeType[] = {"randomcenter",30};
         submunitionInitialOffset[] = {0,0,-0.4};
         submunitionParentSpeedCoef = 0;
         submunitionInitSpeed = 200;
@@ -271,7 +260,6 @@ class CfgAmmo {
 
         hit = 400; //Penetrator
         caliber = 45.977; // caliber = (mm penetration @speedX)*1000 / (bulletPenetrability * speedX)
-        cost = 800;
         maxSpeed = 290;
 
 
@@ -295,8 +283,6 @@ class CfgAmmo {
         ace_overpressure_priority = 10;
         ace_overpressure_damage = 0.3;
         ace_overpressure_angle = 30;
-        
-        explosive = 0.8;
 
         hit = 150; //Tandem
         indirectHit = 15;
@@ -329,8 +315,6 @@ class CfgAmmo {
         submunitionInitialOffset[] = {0,0,-0.4};
         submunitionParentSpeedCoef = 0;
         submunitionInitSpeed = 200;
-        
-        explosive = 0;
 
         hit = 400; //Penetrator
         caliber = 137.931; // caliber = (mm penetration @speedX)*1000 / (bulletPenetrability * speedX)
@@ -357,8 +341,6 @@ class CfgAmmo {
         ace_overpressure_priority = 10;
         ace_overpressure_damage = 0.3;
         ace_overpressure_angle = 30;
-        
-        explosive = 0.8;
 
         hit = 150; //Tandem
         indirectHit = 15;
@@ -391,8 +373,6 @@ class CfgAmmo {
         submunitionInitialOffset[] = {0,0,-0.4};
         submunitionParentSpeedCoef = 0;
         submunitionInitSpeed = 200;
-        
-        explosive = 0;
 
         hit = 400; //Penetrator
         caliber = 137.931; // caliber = (mm penetration @speedX)*1000 / (bulletPenetrability * speedX)
@@ -415,13 +395,12 @@ class CfgAmmo {
         submunitionParentSpeedCoef = 0;
         submunitionInitSpeed = 290;
         
-        explosive = 0.8;
+        explosive = 0.65;
 
         hit = 150;
         indirectHit = 15;
         indirectHitRange = 3.1;
         caliber = 0.8;
-        cost = 800;
         airFriction = 0.010;
         sideAirFriction = 0.00;
         maxSpeed = 290;
@@ -469,7 +448,7 @@ class CfgAmmo {
         submunitionParentSpeedCoef = 0;
         submunitionInitSpeed = 290;
       
-        explosive = 0.8;
+        explosive = 0.65;
 
         hit = 150; 
         indirectHit = 15;
@@ -525,13 +504,12 @@ class CfgAmmo {
         submunitionParentSpeedCoef = 0;
         submunitionInitSpeed = 290;
         
-        explosive = 0.8;
+        explosive = 0.65;
 
         hit = 200;
         indirectHit = 15;
         indirectHitRange = 3.1;
         caliber = 30;
-        cost = 800;
         airFriction = 0.010;
         sideAirFriction = 0.00;
         maxSpeed = 290;
@@ -572,14 +550,11 @@ class CfgAmmo {
     // FFV 551c RAWS
     class tf47_ammo_raws_ffv551c_heat: rhs_ammo_maaws_HEAT
     {
-
         submunitionAmmo = "tf47_ammo_raws_ffv551c_heat_penetrator";
         submunitionDirectionType = "SubmunitionModelDirection";
         submunitionInitialOffset[] = {0,0,-0.2};
         submunitionParentSpeedCoef = 0;
         submunitionInitSpeed = 290;
-      
-        explosive = 0.8;
 
         hit = 200; 
         indirectHit = 15;
@@ -603,21 +578,17 @@ class CfgAmmo {
     
     class tf47_ammo_raws_ffv551c_heat_penetrator: rhs_ammo_maaws_HEAT_penetrator
     {
-
         submunitionAmmo = "rhs_ammo_spall";
         submunitionDirectionType = "SubmunitionModelDirection";
         submunitionConeType[] = {"randomcenter",30};
         submunitionInitialOffset[] = {0,0,-0.4};
         submunitionParentSpeedCoef = 0;
         submunitionInitSpeed = 200;
-        
-        explosive = 0;
 
         hit = 450; //Penetrator
         caliber = 91.954; // caliber = (mm penetration @speedX)*1000 / (bulletPenetrability * speedX)
         cost = 800;
         maxSpeed = 350;
-
 
         warheadName = "HEAT";
         simulationStep = 0.02;
@@ -698,7 +669,7 @@ class CfgAmmo {
         //ace_frag_skip = 0;  // (Optional) Skip fragmentation for this ammo type (0-disabled, 1-enabled) - information below
         ace_frag_force = 1;  // (Optional) Force fragmentation system (0-disabled, 1-enabled) - information below
         
-        explosive = 1;
+        explosive = 0.65;
     };
     
     ///// ---------- 502 ---------- /////
@@ -743,7 +714,7 @@ class CfgAmmo {
         ace_frag_skip = 0;  // (Optional) Skip fragmentation for this ammo type (0-disabled, 1-enabled) - information below
         ace_frag_force = 1;  // (Optional) Force fragmentation system (0-disabled, 1-enabled) - information below
         
-        explosive = 1;
+        explosive = 0.65;
         
     };
     
@@ -801,7 +772,7 @@ class CfgAmmo {
         ace_frag_skip = 0;  // (Optional) Skip fragmentation for this ammo type (0-disabled, 1-enabled) - information below
         ace_frag_force = 1;  // (Optional) Force fragmentation system (0-disabled, 1-enabled) - information below
         
-        explosive = 1;
+        explosive = 0.65;
         
     };
     
@@ -943,7 +914,7 @@ class CfgAmmo {
         submunitionInitSpeed = 100;
         triggerOnImpact = 1;
         
-        explosive = 1;
+        explosive = 0.65;
         
         ace_overpressure_range = 3;
         ace_overpressure_priority = 10;
@@ -977,7 +948,7 @@ class CfgAmmo {
         ace_frag_skip = 0;  // (Optional) Skip fragmentation for this ammo type (0-disabled, 1-enabled) - information below
         ace_frag_force = 1;  // (Optional) Force fragmentation system (0-disabled, 1-enabled) - information below
         
-        explosive = 1;
+        explosive = 0.65;
 
         hit = 50; //Penetrator
         indirectHit = 30;
@@ -1002,7 +973,7 @@ class CfgAmmo {
         submunitionInitSpeed = 100;
         triggerOnImpact = 1;
         
-        explosive = 1;
+        explosive = 0.65;
         
         ace_overpressure_range = 3;
         ace_overpressure_priority = 10;
@@ -1036,7 +1007,7 @@ class CfgAmmo {
         ace_frag_skip = 0;  // (Optional) Skip fragmentation for this ammo type (0-disabled, 1-enabled) - information below
         ace_frag_force = 1;  // (Optional) Force fragmentation system (0-disabled, 1-enabled) - information below
         
-        explosive = 1;
+        explosive = 0.65;
 
         hit = 50; //Penetrator
         indirectHit = 30;
@@ -1296,7 +1267,7 @@ class CfgAmmo {
         ace_frag_skip = 0;  // (Optional) Skip fragmentation for this ammo type (0-disabled, 1-enabled) - information below
         ace_frag_force = 1;  // (Optional) Force fragmentation system (0-disabled, 1-enabled) - information below
         
-        explosive = 1;
+        explosive = 0.65;
         
         class ace_missileguidance {
             enabled = 1;
@@ -1391,6 +1362,8 @@ class CfgAmmo {
         initTime = 0.2;
         thrustTime = 6;
         thrust = 150;
+        
+        explosive = 0.65;
 
         airLock = 0;
         irLock = 0;
@@ -1408,8 +1381,6 @@ class CfgAmmo {
 
         warheadName = "TandemHEAT";
         simulationStep = 0.02;
-
-        explosive = 1;
         
         class ace_missileguidance {
             enabled = 1;
