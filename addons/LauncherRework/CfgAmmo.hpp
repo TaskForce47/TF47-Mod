@@ -5,7 +5,6 @@ class CfgAmmo {
     class rhs_ammo_maaws_HEAT_penetrator;
     class tf47_ammo_base_penetrator: rhs_ammo_maaws_HEAT_penetrator
     {
-
         submunitionAmmo = "rhs_ammo_spall";
         submunitionDirectionType = "SubmunitionModelDirection";
         submunitionConeType[] = {"randomcenter",50};
@@ -28,6 +27,7 @@ class CfgAmmo {
         submunitionInitialOffset[] = {0,0,-0.2};
         submunitionParentSpeedCoef = 0;
         submunitionInitSpeed = 1050;
+        triggerOnImpact = 1;
 
         hit = 100;
         indirectHit = 15;
@@ -54,6 +54,7 @@ class CfgAmmo {
         submunitionInitialOffset[] = {0,0,-0.2};
         submunitionParentSpeedCoef = 0;
         submunitionInitSpeed = 1050;
+        triggerOnImpact = 1;
 
         hit = 100; //Tandem
         indirectHit = 15;
@@ -79,6 +80,7 @@ class CfgAmmo {
     class tf47_ammo_maaws_ffv751_heat: tf47_ammo_base_maaws
     {
         submunitionAmmo = "tf47_ammo_maaws_ffv751_heat_penetrator";
+        hit = 200;
         warheadName = "TandemHEAT";
     };
     
@@ -90,89 +92,31 @@ class CfgAmmo {
     };
     
     // FFV 751 RAWS
-    class tf47_ammo_raws_ffv751_heat: rhs_ammo_maaws_HEAT
+    class tf47_ammo_raws_ffv751_heat: tf47_ammo_base_raws
     {
-
         submunitionAmmo = "tf47_ammo_raws_ffv751_heat_penetrator";
-        submunitionDirectionType = "SubmunitionModelDirection";
-        submunitionInitialOffset[] = {0,0,-0.2};
-        submunitionParentSpeedCoef = 0;
-        submunitionInitSpeed = 290;
-
-        hit = 200; //Tandem
-        indirectHit = 15;
-        indirectHitRange = 3.1;
-        caliber = 0.8;
-        airFriction = 0.010;
-        sideAirFriction = 0.00;
-        maxSpeed = 350;
-        initTime = 0;
-        thrustTime = 0.1;
-        thrust = 0.1;
-
-        timeToLive = 25;
-        maneuvrability = 0;
-        allowAgainstInfantry = 0;
-
-        visibleFire = 15;
-        audibleFire = 20;
         warheadName = "TandemHEAT";
-        simulationStep = 0.02;
     };
     
-    class tf47_ammo_raws_ffv751_heat_penetrator: rhs_ammo_maaws_HEAT_penetrator
+    class tf47_ammo_raws_ffv751_heat_penetrator: tf47_ammo_base_penetrator
     {
-
-        submunitionAmmo = "rhs_ammo_spall";
-        submunitionDirectionType = "SubmunitionModelDirection";
-        submunitionConeType[] = {"randomcenter",30};
-        submunitionInitialOffset[] = {0,0,-0.4};
-        submunitionParentSpeedCoef = 0;
-        submunitionInitSpeed = 200;
-
         hit = 400; //Penetrator
-        caliber = 137.931; // caliber = (mm penetration @speedX)*1000 / (bulletPenetrability * speedX)
-        cost = 800;
-        maxSpeed = 290;
-
-
+        caliber = 40; // 600 mm
         warheadName = "TandemHEAT";
-        simulationStep = 0.02;
     };
     
     ///// ---------- 756 ---------- /////
     
     // FFV 756 MAAWS
-    class rhs_ammo_maaws_HEDP;
-    class rhs_ammo_maaws_HEDP_penetrator;
-    class tf47_ammo_maaws_ffv756_mt: rhs_ammo_maaws_HEDP
+    class tf47_ammo_maaws_ffv756_mt: tf47_ammo_base_maaws
     {
         submunitionAmmo[] = {"tf47_ammo_maaws_ffv756_mt_penetrator",1,"tf47_ammo_maaws_ffv756_mt_heat_penetrator",1};
         submunitionConeType[] = {"poissondisccenter", 2};
-        submunitionDirectionType = "SubmunitionModelDirection";
-        submunitionInitialOffset[] = {0,0,-0.2};
-        submunitionParentSpeedCoef = 0;
-        submunitionInitSpeed = 100;
         triggerOnImpact = 1;
-        
-        explosive = 0.65;
-
-        hit = 200; //Tandem
-        indirectHit = 15;
-        indirectHitRange = 2;
-        caliber = 1;
-        cost = 800;
-        maxSpeed = 290;
-
-        allowAgainstInfantry = 1;
-
-        visibleFire = 15;
-        audibleFire = 20;
         warheadName = "HEAT";
-        simulationStep = 0.02;
     };
     
-    class tf47_ammo_maaws_ffv756_mt_penetrator: rhs_ammo_maaws_HEDP_penetrator
+    class tf47_ammo_maaws_ffv756_mt_penetrator: tf47_ammo_base_penetrator
     {
         ace_frag_enabled = 1;
         ACE_damageType = "explosive";
@@ -191,67 +135,33 @@ class CfgAmmo {
         indirectHit = 30;
         indirectHitRange = 6;
         caliber = 10; // caliber = (mm penetration @speedX)*1000 / (bulletPenetrability * speedX)
-        cost = 800;
-        maxSpeed = 290;
-        explosionTime = 0.001;
-        triggerTime = 0.001;
         
+        explosionTime = 0.0025;
         warheadName = "HE";
-        simulationStep = 0.02;
     };
     
-    class tf47_ammo_maaws_ffv756_mt_heat_penetrator: rhs_ammo_maaws_HEAT_penetrator
+    class tf47_ammo_maaws_ffv756_mt_heat_penetrator: tf47_ammo_base_penetrator
     {
-        
-        submunitionAmmo = "rhs_ammo_spall";
-        submunitionDirectionType = "SubmunitionModelDirection";
-        submunitionConeType[] = {"randomcenter",30};
-        submunitionInitialOffset[] = {0,0,-0.4};
-        submunitionParentSpeedCoef = 0;
-        submunitionInitSpeed = 200;
-        
         explosive = 0;
 
-        hit = 400; //Penetrator
-        caliber = 45.977; // caliber = (mm penetration @speedX)*1000 / (bulletPenetrability * speedX)
-        cost = 800;
-        maxSpeed = 290;
-
-
+        hit = 250; //Penetrator
+        caliber = 14.33; // caliber = (mm penetration @speedX)*1000 / (bulletPenetrability * speedX)
+        
         warheadName = "HEAT";
-        simulationStep = 0.02;
     };
     
     // FFV 756 RAWS
-    class tf47_ammo_raws_ffv756_mt: rhs_ammo_maaws_HEDP
+    class tf47_ammo_raws_ffv756_mt: tf47_ammo_base_raws
     {
-        submunitionAmmo[] = {"tf47_ammo_raws_ffv756_mt_penetrator",1,"tf47_ammo_raws_ffv756_mt_heat_penetrator",1};
+        submunitionAmmo[] = {"tf47_ammo_maaws_ffv756_mt_penetrator",1,"tf47_ammo_maaws_ffv756_mt_heat_penetrator",1};
         submunitionConeType[] = {"poissondisccenter", 2};
-        submunitionDirectionType = "SubmunitionModelDirection";
-        submunitionInitialOffset[] = {0,0,-0.2};
-        submunitionParentSpeedCoef = 0;
-        submunitionInitSpeed = 100;
         triggerOnImpact = 1;
-        
-        explosive = 0.65;
-
-        hit = 200; //Tandem
-        indirectHit = 15;
-        indirectHitRange = 2;
-        caliber = 1;
-        cost = 800;
-        maxSpeed = 350;
-
-        allowAgainstInfantry = 1;
-
-        visibleFire = 15;
-        audibleFire = 20;
         warheadName = "HEAT";
-        simulationStep = 0.02;
     };
-    
-    class tf47_ammo_raws_ffv756_mt_penetrator: rhs_ammo_maaws_HEDP_penetrator
+
+    class tf47_ammo_raws_ffv756_mt_penetrator: tf47_ammo_base_penetrator
     {
+        triggerOnImpact = 0;
         ace_frag_enabled = 1;
         ACE_damageType = "explosive";
         
@@ -267,50 +177,29 @@ class CfgAmmo {
 
         hit = 100; //Penetrator
         indirectHit = 30;
-        indirectHitRange = 4;
+        indirectHitRange = 6;
         caliber = 10; // caliber = (mm penetration @speedX)*1000 / (bulletPenetrability * speedX)
-        cost = 800;
-        maxSpeed = 290;
-        explosionTime = 0.001;
-        triggerTime = 0.001;
-
-
+        
+        explosionTime = 0.0025;
         warheadName = "HE";
-        simulationStep = 0.02;
     };
     
-    class tf47_ammo_raws_ffv756_mt_heat_penetrator: rhs_ammo_maaws_HEAT_penetrator
+    class tf47_ammo_raws_ffv756_mt_heat_penetrator: tf47_ammo_base_penetrator
     {
-        
-        submunitionAmmo = "rhs_ammo_spall";
-        submunitionDirectionType = "SubmunitionModelDirection";
-        submunitionConeType[] = {"randomcenter",30};
-        submunitionInitialOffset[] = {0,0,-0.4};
-        submunitionParentSpeedCoef = 0;
-        submunitionInitSpeed = 200;
-        
         explosive = 0;
 
-        hit = 400; //Penetrator
-        caliber = 45.977; // caliber = (mm penetration @speedX)*1000 / (bulletPenetrability * speedX)
-        maxSpeed = 290;
-
-
+        hit = 250; //Penetrator
+        caliber = 14.33; // caliber = (mm penetration @speedX)*1000 / (bulletPenetrability * speedX)
+        
         warheadName = "HEAT";
-        simulationStep = 0.02;
     };
     
     ///// ---------- 655 ---------- /////
     
     // FFV 655 MAAWS
-    class tf47_ammo_maaws_ffv655_heat_cs: rhs_ammo_maaws_HEAT
+    class tf47_ammo_maaws_ffv655_heat_cs: tf47_ammo_base_maaws
     {
-
         submunitionAmmo = "tf47_ammo_maaws_ffv655_heat_cs_penetrator";
-        submunitionDirectionType = "SubmunitionModelDirection";
-        submunitionInitialOffset[] = {0,0,-0.2};
-        submunitionParentSpeedCoef = 0;
-        submunitionInitSpeed = 290;
         
         ace_overpressure_range = 3;
         ace_overpressure_priority = 10;
@@ -318,57 +207,25 @@ class CfgAmmo {
         ace_overpressure_angle = 30;
 
         hit = 150; //Tandem
-        indirectHit = 15;
-        indirectHitRange = 3.1;
-        caliber = 45.977;
-        cost = 800;
-        airFriction = 0.010;
-        sideAirFriction = 0.00;
+
         maxSpeed = 145; //Zeroing wont work, but that thing has 300 m range IRL so CQC only
-        initTime = 0;
-        thrustTime = 0.1;
-        thrust = 0.1;
 
-        timeToLive = 25;
-        maneuvrability = 0;
-        allowAgainstInfantry = 0;
-
-        visibleFire = 15;
-        audibleFire = 20;
         warheadName = "TandemHEAT";
-        simulationStep = 0.02;
     };
     
-    class tf47_ammo_maaws_ffv655_heat_cs_penetrator: rhs_ammo_maaws_HEAT_penetrator
+    class tf47_ammo_maaws_ffv655_heat_cs_penetrator: tf47_ammo_base_penetrator
     {
-
-        submunitionAmmo = "rhs_ammo_spall";
-        submunitionDirectionType = "SubmunitionModelDirection";
-        submunitionConeType[] = {"randomcenter",30};
-        submunitionInitialOffset[] = {0,0,-0.4};
-        submunitionParentSpeedCoef = 0;
-        submunitionInitSpeed = 200;
-
-        hit = 400; //Penetrator
-        caliber = 137.931; // caliber = (mm penetration @speedX)*1000 / (bulletPenetrability * speedX)
-        cost = 800;
-        maxSpeed = 290;
-
+        hit = 350; //Penetrator
+        caliber = 35; // caliber = (mm penetration @speedX)*1000 / (bulletPenetrability * speedX)
 
         warheadName = "TandemHEAT";
-        simulationStep = 0.02;
     };
     
     
     // FFV 655 RAWS
-    class tf47_ammo_raws_ffv655_heat_cs: rhs_ammo_maaws_HEAT
+    class tf47_ammo_raws_ffv655_heat_cs: tf47_ammo_base_raws
     {
-
-        submunitionAmmo = "tf47_ammo_raws_ffv655_heat_cs_penetrator";
-        submunitionDirectionType = "SubmunitionModelDirection";
-        submunitionInitialOffset[] = {0,0,-0.2};
-        submunitionParentSpeedCoef = 0;
-        submunitionInitSpeed = 290;
+        submunitionAmmo = "tf47_ammo_maaws_ffv655_heat_cs_penetrator";
         
         ace_overpressure_range = 3;
         ace_overpressure_priority = 10;
@@ -376,88 +233,40 @@ class CfgAmmo {
         ace_overpressure_angle = 30;
 
         hit = 150; //Tandem
-        indirectHit = 15;
-        indirectHitRange = 3.1;
-        caliber = 45.977;
-        cost = 800;
-        airFriction = 0.010;
-        sideAirFriction = 0.00;
-        maxSpeed = 175;
-        initTime = 0;
-        thrustTime = 0.1;
-        thrust = 0.1;
 
-        timeToLive = 25;
-        maneuvrability = 0;
-        allowAgainstInfantry = 0;
+        maxSpeed = 145; //Zeroing wont work, but that thing has 300 m range IRL so CQC only
 
-        visibleFire = 15;
-        audibleFire = 20;
         warheadName = "TandemHEAT";
-        simulationStep = 0.02;
     };
     
-    class tf47_ammo_raws_ffv655_heat_cs_penetrator: rhs_ammo_maaws_HEAT_penetrator
+    class tf47_ammo_raws_ffv655_heat_cs_penetrator: tf47_ammo_base_penetrator
     {
-
-        submunitionAmmo = "rhs_ammo_spall";
-        submunitionDirectionType = "SubmunitionModelDirection";
-        submunitionConeType[] = {"randomcenter",30};
-        submunitionInitialOffset[] = {0,0,-0.4};
-        submunitionParentSpeedCoef = 0;
-        submunitionInitSpeed = 200;
-
-        hit = 400; //Penetrator
-        caliber = 137.931; // caliber = (mm penetration @speedX)*1000 / (bulletPenetrability * speedX)
-        cost = 800;
-        maxSpeed = 350;
+        hit = 350; //Penetrator
+        caliber = 35; // caliber = (mm penetration @speedX)*1000 / (bulletPenetrability * speedX)
 
         warheadName = "TandemHEAT";
-        simulationStep = 0.02;
     };
 
     ///// ---------- 551 ---------- /////
     
     // FFV 551 MAAWS
-    class tf47_ammo_maaws_ffv551_heat: rhs_ammo_maaws_HEAT
+    class tf47_ammo_maaws_ffv551_heat: tf47_ammo_base_maaws
     {
-
-        submunitionAmmo = "tf47_ammo_maaws_ffv551_heat_penetrator";
-        submunitionDirectionType = "SubmunitionModelDirection";
-        submunitionInitialOffset[] = {0,0,-0.2};
-        submunitionParentSpeedCoef = 0;
-        submunitionInitSpeed = 290;
+        submunitionAmmo = "tf47_ammo_maaws_ffv655_heat_cs_penetrator";
         
-        explosive = 0.65;
+        ace_overpressure_range = 3;
+        ace_overpressure_priority = 10;
+        ace_overpressure_damage = 0.3;
+        ace_overpressure_angle = 30;
 
-        hit = 150;
-        indirectHit = 15;
-        indirectHitRange = 3.1;
-        caliber = 0.8;
-        airFriction = 0.010;
-        sideAirFriction = 0.00;
-        maxSpeed = 290;
-        initTime = 0;
-        thrustTime = 0.1;
-        thrust = 0.1;
-
-        timeToLive = 25;
-        maneuvrability = 0;
-        allowAgainstInfantry = 0;
+        hit = 100; //Tandem
 
         warheadName = "HEAT";
-        simulationStep = 0.02;
     };
     
-    class tf47_ammo_maaws_ffv551_heat_penetrator: rhs_ammo_maaws_HEAT_penetrator
+    class tf47_ammo_maaws_ffv551_heat_penetrator: tf47_ammo_base_penetrator
     {
 
-        submunitionAmmo = "rhs_ammo_spall";
-        submunitionDirectionType = "SubmunitionModelDirection";
-        submunitionConeType[] = {"randomcenter",30};
-        submunitionInitialOffset[] = {0,0,-0.4};
-        submunitionParentSpeedCoef = 0;
-        submunitionInitSpeed = 200;
         
         explosive = 0;
 
@@ -472,7 +281,7 @@ class CfgAmmo {
     };
     
     // FFV 551 RAWS
-    class tf47_ammo_raws_ffv551_heat: rhs_ammo_maaws_HEAT
+    class tf47_ammo_raws_ffv551_heat: tf47_ammo_base_raws
     {
 
         submunitionAmmo = "tf47_ammo_raws_ffv551_heat_penetrator";
@@ -503,7 +312,7 @@ class CfgAmmo {
         simulationStep = 0.02;
     };
     
-    class tf47_ammo_raws_ffv551_heat_penetrator: rhs_ammo_maaws_HEAT_penetrator
+    class tf47_ammo_raws_ffv551_heat_penetrator: tf47_ammo_base_penetrator
     {
 
         submunitionAmmo = "rhs_ammo_spall";
