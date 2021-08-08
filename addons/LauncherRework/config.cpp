@@ -141,6 +141,18 @@ class TF47_SmokeExplosion {
     };
 };
 
+class CfgFunctions 
+{
+   class TF47
+   {
+      class Airburst
+      {
+         file = "z\TF47\addons\LauncherRework\airburst";
+         class initAirburst{postInit=1};
+      };
+   };
+};
+
 #include "CfgAmmo.hpp"
 #include "CfgMagazines.hpp"
 #include "CfgWeapons.hpp"
