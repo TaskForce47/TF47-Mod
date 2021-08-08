@@ -18,8 +18,8 @@ class CfgPatches {
 };
 
 class CfgCloudlets {
-	class WPCloud;
-	class WPTrails;
+    class WPCloud;
+    class WPTrails;
     
     class TF47_WP_Cloud : WPCloud {
         angle = 0;
@@ -62,7 +62,7 @@ class CfgCloudlets {
         timerPeriod = 1;
         volume = 7.9;
         weight = 10;
-	};
+    };
     
     class TF47_WP_Trails : WPTrails {
         angle = 0;
