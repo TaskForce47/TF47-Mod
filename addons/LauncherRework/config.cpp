@@ -24,6 +24,7 @@ class CfgCloudlets {
     class TF47_WP_Cloud : WPCloud {
         angle = 0;
         angleVar = 1;
+        blockAIVisibility = true;
         animationName = "";
         animationSpeed[] = {1000};
         animationSpeedCoef = 1;
@@ -34,7 +35,7 @@ class CfgCloudlets {
         colorCoef[] = {1,1,1,1};
         colorVar[] = {0,0,0,0};
         interval = 0.06;
-        lifeTime = 12;
+        lifeTime = 60;
         lifeTimeVar = 4;
         moveVelocity[] = {0,0.25,0};
         MoveVelocityVar[] = {0.25,0.25,0.25};
@@ -67,6 +68,7 @@ class CfgCloudlets {
     class TF47_WP_Trails : WPTrails {
         angle = 0;
         angleVar = 1;
+        blockAIVisibility = true;
         animationName = "";
         animationSpeed[] = {1000};
         animationSpeedCoef = 1;
@@ -113,7 +115,7 @@ class TF47_SmokeExplosion {
     class Explosion {
         intensity = 1;
         interval = 1;
-        lifeTime = 76;
+        lifeTime = 120;
         position[] = {0, 0, 0};
         qualityLevel = -1;
         simulation = "particles";
@@ -139,18 +141,6 @@ class TF47_SmokeExplosion {
         simulation = "particles";
         type = "TF47_WP_Trails";
     };
-};
-
-class CfgFunctions 
-{
-   class TF47
-   {
-      class Airburst
-      {
-         file = "z\TF47\addons\LauncherRework\airburst";
-         class initAirburst{postInit=1};
-      };
-   };
 };
 
 #include "CfgAmmo.hpp"
