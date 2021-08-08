@@ -15,10 +15,13 @@ class CfgAmmo {
 
         hit = 400; //Penetrator
         caliber = 36.333; // 500mm - caliber = (mm penetration @speedX)*1000 / (bulletPenetrability * speedX)
-        maxSpeed = 1050;
+        maxSpeed = 0;
+        timeToLive = 25;
 
         warheadName = "TandemHEAT";
         simulationStep = 0.02;
+        
+        typicalSpeed = 1000;
     };
     
     class tf47_ammo_base_maaws: rhs_ammo_maaws_HEAT
@@ -43,6 +46,7 @@ class CfgAmmo {
         timeToLive = 25;
         maneuvrability = 0;
         allowAgainstInfantry = 0;
+        typicalSpeed = 900;
 
         warheadName = "TandemHEAT"; // TandemHEAT, HEAT, HE, AP
         simulationStep = 0.02;
@@ -72,6 +76,7 @@ class CfgAmmo {
         timeToLive = 25;
         maneuvrability = 0;
         allowAgainstInfantry = 0;
+        typicalSpeed = 900;
 
         warheadName = "TandemHEAT"; // TandemHEAT, HEAT, HE, AP
         simulationStep = 0.02;
@@ -778,8 +783,8 @@ class CfgAmmo {
         
         ace_frag_enabled = 0;
         
-        //CraterEffects = "80mm_Smoke";
-        //effectsSmoke = "SmokeShellWhite";
+        CraterEffects = "80mm_Smoke";
+        effectsSmoke = "SmokeShellWhite";
         //ExplosionEffects = "UK3CB_WPExplosion";
         //simulation = "shotSmokeX";
         
@@ -802,8 +807,8 @@ class CfgAmmo {
         
         ace_frag_enabled = 0;
         
-        //CraterEffects = "80mm_Smoke";
-        //effectsSmoke = "SmokeShellWhite";
+        CraterEffects = "80mm_Smoke";
+        effectsSmoke = "SmokeShellWhite";
         //ExplosionEffects = "UK3CB_WPExplosion";
         //simulation = "shotSmokeX";
         
