@@ -90,7 +90,18 @@ class TF47_SmokeExplosion {
 	};
 };
 
-#include "CfgAmmo.hpp"
-#include "CfgMagazines.hpp"
-#include "CfgWeapons.hpp"
-#include "ACE_Arsenal_Stats.hpp"
+class CfgAmmo {
+    #include "\z\TF47\addons\LauncherRework\M3\CfgAmmo.hpp"
+};
+
+class CfgMagazines {
+    #include "\z\TF47\addons\LauncherRework\M3\CfgMagazines.hpp"
+};
+
+class CfgWeapons {
+    #include "\z\TF47\addons\LauncherRework\M3\CfgWeapons.hpp"
+};
+
+class ace_arsenal_stats {
+    #include "\z\TF47\addons\LauncherRework\M3\ACE_Arsenal_Stats.hpp"
+};
