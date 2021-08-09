@@ -22,19 +22,19 @@ class CfgCloudlets {
     class WPTrails;
     
     class TF47_WP_Cloud : WPCloud {
-		lifeTime = 160;
-		lifeTimeVar = 1;
-		coreDistance = 11;
-		damageTime = 0.1;
-		coreIntensity = 15;
-		constantDistance = 1;
-		damageType = "Fire";
-		blockAIVisibility = 1;
-		rubbing = 0.02;
-		weight = 1.2777;
-		volume = 1;
-		color[] = {{1,1,1,1},{1,1,1,1},{1,1,1,1},{1,1,1,1}};
-		size[] = {17,17,18,19,20,24,25,27};
+        lifeTime = 160;
+        lifeTimeVar = 1;
+        coreDistance = 11;
+        damageTime = 0.1;
+        coreIntensity = 15;
+        constantDistance = 1;
+        damageType = "Fire";
+        blockAIVisibility = 1;
+        rubbing = 0.02;
+        weight = 1.2777;
+        volume = 1;
+        color[] = {{1,1,1,1},{1,1,1,1},{1,1,1,1},{1,1,1,1}};
+        size[] = {17,17,18,19,20,24,25,27};
     };
     
     class TF47_WP_Trails : WPTrails {
@@ -43,51 +43,51 @@ class CfgCloudlets {
 };
 
 class TF47_SmokeExplosion {
-	class Explosion1 {
-		intensity = 1;
-		interval = 1;
-		lifeTime = 80;
-		position[] = {0, 0, 0};
-		qualityLevel = -1;
-		simulation = "particles";
-		type = "TF47_WP_Cloud";
-	};
-	
-	class LightExp {
-		intensity = 0.001;
-		interval = 1;
-		lifeTime = 1;
-		position[] = {0, 0, 0};
-		simulation = "light";
-		type = "ExploLight";
-	};
-	
-	class Trails {
-		intensity = 1;
-		interval = 1;
-		lifeTime = 1;
-		position[] = {0, 0, 0};
-		simulation = "particles";
-		type = "TF47_WP_Trails";
-	};
-	
-	class flame_Light {
-		simulation = "light";
-		type = "FiredLightMed";
-		position = "destructionEffect1";
-		intensity = 1;
-		interval = 1;
-		lifeTime = 340;
-	};
-	
-	class flame_sound {
-		simulation = "sound";
-		type = "Fire";
-		position[] = {0, 0, 0};
-		intensity = 1;
-		interval = 1;
-		lifeTime = 340;
-	};
+    class Explosion1 {
+        intensity = 1;
+        interval = 1;
+        lifeTime = 80;
+        position[] = {0, 0, 0};
+        qualityLevel = -1;
+        simulation = "particles";
+        type = "TF47_WP_Cloud";
+    };
+    
+    class LightExp {
+        intensity = 0.001;
+        interval = 1;
+        lifeTime = 1;
+        position[] = {0, 0, 0};
+        simulation = "light";
+        type = "ExploLight";
+    };
+    
+    class Trails {
+        intensity = 1;
+        interval = 1;
+        lifeTime = 1;
+        position[] = {0, 0, 0};
+        simulation = "particles";
+        type = "TF47_WP_Trails";
+    };
+    
+    class flame_Light {
+        simulation = "light";
+        type = "FiredLightMed";
+        position = "destructionEffect1";
+        intensity = 1;
+        interval = 1;
+        lifeTime = 340;
+    };
+    
+    class flame_sound {
+        simulation = "sound";
+        type = "Fire";
+        position[] = {0, 0, 0};
+        intensity = 1;
+        interval = 1;
+        lifeTime = 340;
+    };
 };
 
 class CfgAmmo {
