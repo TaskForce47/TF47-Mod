@@ -33,7 +33,7 @@ class CfgAmmo {
         submunitionInitSpeed = 1050;
         triggerOnImpact = 1;
 
-        hit = 100;
+        hit = 200;
         indirectHit = 15;
         indirectHitRange = 3;
         caliber = 1;
@@ -63,7 +63,7 @@ class CfgAmmo {
         submunitionInitSpeed = 1050;
         triggerOnImpact = 1;
 
-        hit = 100; //Tandem
+        hit = 200; //Tandem
         indirectHit = 15;
         indirectHitRange = 3;
         caliber = 1;
@@ -98,7 +98,7 @@ class CfgAmmo {
     class tf47_ammo_maaws_ffv751_heat: tf47_ammo_base_maaws
     {
         submunitionAmmo = "tf47_ammo_maaws_ffv751_heat_penetrator";
-        hit = 200;
+        hit = 250;
         warheadName = "TandemHEAT";
     };
     
@@ -206,7 +206,7 @@ class CfgAmmo {
     {
         explosive = 0;
 
-        hit = 250; //Penetrator
+        hit = 300; //Penetrator
         caliber = 14.33; // 150 mm
         
         warheadName = "HEAT";
