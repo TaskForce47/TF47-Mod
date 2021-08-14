@@ -5,6 +5,7 @@ class CfgAmmo {
         warheadName = "TandemHEAT";
         maxSpeed = 1000;
         caliber = 75;
+        hit = 500;
         
     };
     
@@ -12,8 +13,8 @@ class CfgAmmo {
     class UK3CB_M_Javelin_AT: ACE_Javelin_FGM148 {
         submunitionAmmo = "tf47_ammo_Penetrator_Javelin";
         submunitionDirectionType = "SubmunitionModelDirection";
-        submunitionInitialOffset[] = {0,0,-0.1};
-        submunitionInitSpeed = 1000;
+        submunitionInitialOffset[] = {0,0,-0.2};
+        submunitionInitSpeed = 1050;
         submunitionParentSpeedCoef = 0;
         warheadName = "TandemHEAT";
     };

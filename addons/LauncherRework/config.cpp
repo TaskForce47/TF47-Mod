@@ -92,6 +92,7 @@ class TF47_SmokeExplosion {
 
 class CfgAmmo {
     #include "\z\TF47\addons\LauncherRework\M3\CfgAmmo.hpp"
+    #include "\z\TF47\addons\LauncherRework\FGM148\CfgAmmo.hpp"
 };
 
 class CfgMagazines {

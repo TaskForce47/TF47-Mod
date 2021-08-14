@@ -1,4 +1,4 @@
-#define COMPONENT Launchers
+#define COMPONENT LauncherRework
 #include "\z\TF47\addons\main\script_mod.hpp"
 
 #define DEBUG_MODE_FULL
