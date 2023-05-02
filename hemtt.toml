@@ -1,7 +1,7 @@
-name = "taskforce47_client_mod"
-modname = "taskforce47_client_mod"
-prefix = "TF47"
-author = "TF47 Development Team"
+name = "baxopf_enhancement_mod"
+modname = "baxopf_enhancement_mod"
+prefix = "BAxOPF"
+author = "Rampage"
 mainprefix = "z"
 sig_version = 3
 
