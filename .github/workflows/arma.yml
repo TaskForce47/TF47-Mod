@@ -58,7 +58,7 @@ jobs:
       # zip it
       - uses: papeloto/action-zip@v1
         with:
-          files: \@taskforce47_client_mod/
+          files: \@baxopf_enhancement/
           dest: \@baxopf_enhancement.zip
 
       # release it
