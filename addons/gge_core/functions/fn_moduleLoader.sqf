@@ -3,16 +3,16 @@
 
 
 _modules = [
-	["gge_core", "gge_core\functions\gge_core_fnc_initReloadChecker.sqf"],
-	["gge_core", "gge_core\functions\gge_core_fnc_initWeaponChangedChecker.sqf"],
-	["gge_core", "gge_core\functions\gge_core_fnc_initSprintChangedChecker.sqf"],
-	["gge_core", "gge_core\functions\gge_core_fnc_initStanceChangedChecker.sqf"],
-	["gge_core", "gge_core\functions\gge_core_fnc_initADSChangedChecker.sqf"],
-	["gge_core", "gge_core\functions\gge_core_fnc_initNVGChangedChecker.sqf"],
-	["gge_nvganim", "\gge_nvganim\functions\gge_nvganim_fnc_init.sqf"],
-	["gge_captives", "\gge_captives\functions\gge_captives_fnc_init.sqf"],
-	["gge_canting", "\gge_canting\functions\gge_canting_fnc_initCantedAiming.sqf"],
-	["gge_swap", "\gge_swap\functions\gge_swap_fnc_init.sqf", true]
+	["gge_core", "z\TF47\addons\gge_core\functions\fn_initReloadChecker.sqf"],
+	["gge_core", "z\TF47\addons\gge_core\functions\fn_initWeaponChangedChecker.sqf"],
+	["gge_core", "z\TF47\addons\gge_core\functions\fn_initSprintChangedChecker.sqf"],
+	["gge_core", "z\TF47\addons\gge_core\functions\fn_initStanceChangedChecker.sqf"],
+	["gge_core", "z\TF47\addons\gge_core\functions\fn_initADSChangedChecker.sqf"],
+	["gge_core", "z\TF47\addons\gge_core\functions\fn_initNVGChangedChecker.sqf"],
+	["gge_nvganim", "z\TF47\addons\gge_nvganim\functions\gge_nvganim_fnc_init.sqf"],
+	["gge_captives", "z\TF47\addons\gge_captives\functions\gge_captives_fnc_init.sqf"],
+	["gge_canting", "z\TF47\addons\gge_canting\functions\gge_canting_fnc_initCantedAiming.sqf"],
+	["gge_swap", "z\TF47\addons\gge_swap\functions\gge_swap_fnc_init.sqf", true]
 ];
 
 

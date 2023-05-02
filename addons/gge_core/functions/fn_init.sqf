@@ -1,7 +1,7 @@
 if (isDedicated) exitWith {};
 
 
-gge_core_var_debugMode = false;
+gge_core_var_debugMode = true;
 
 
 gge_core_fnc_debugLog = {
@@ -12,16 +12,13 @@ gge_core_fnc_debugLog = {
 
 
 // Initialise global variables
-[] call compile preprocessFileLineNumbers "gge_core\functions\gge_core_fnc_initState.sqf";
-
-// Initilaise Settings menu
-[] call compile preprocessFileLineNumbers "gge_core\functions\gge_core_fnc_initCBASettings.sqf";
+[] call compile preprocessFileLineNumbers "z\TF47\addons\gge_core\functions\fn_initState.sqf";
 
 // Initialise common functions
-[] call compile preprocessFileLineNumbers "gge_core\functions\gge_core_fnc_coreFunctions.sqf";
+[] call compile preprocessFileLineNumbers "z\TF47\addons\gge_core\functions\fn_coreFunctions.sqf";
 
 // Initialise GSAS
-[] call compile preprocessFileLineNumbers "gge_core\functions\gsas\gsas_fnc_initStagedAnimationSystem.sqf";
+[] call compile preprocessFileLineNumbers "z\TF47\addons\gge_core\functions\fn_initStagedAnimationSystem.sqf";
 
 // Initialise State Change Handler System
 //_gschsInitFunctions = ([true] call compile preprocessFileLineNumbers "gge_core\functions\gschs\gschs_fnc_init.sqf");
@@ -32,7 +29,7 @@ gge_core_fnc_debugLog = {
 
 
 // Initialise modules and store main loop functions in global variable to be accessed by main loop function
-gge_core_var_mainLoopFunctions = call compile preprocessFileLineNumbers "gge_core\functions\gge_core_fnc_moduleLoader.sqf";
+gge_core_var_mainLoopFunctions = call compile preprocessFileLineNumbers "z\TF47\addons\gge_core\functions\fn_moduleLoader.sqf";
 
 // Append gschs perFrame functions to main loop execution order
 //gge_core_var_mainLoopFunctions append [_gschsInitFunctions select 0];

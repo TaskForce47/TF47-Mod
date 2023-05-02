@@ -15,7 +15,6 @@ class CfgFunctions
 {
     class TF47
     {
-		tag = "TF47";
 		class COMPONENT
         {
 			file="z\TF47\addons\gge_core\functions";
@@ -27,6 +26,17 @@ class CfgFunctions
 			{
 				postInit=1;
 			};
+			class coreFunctions{};
+			class initADSChangedChecker{};
+			class initGschs{};
+			class initNVGChangedChecker{};
+			class initReloadChecker{};
+			class initSprintChangedChecker{};
+			class initStagedAnimationSystem{};
+			class initStanceChangedChecker{};
+			class initState{};
+			class initWeaponChangedChecker{};
+			class moduleLoader{};
 		};
 	};
 };
@@ -75,8 +85,5 @@ class CfgGesturesMale
 		};
 	};
 };
-class cfgMods
-{
-	author="goobin";
-	timepacked="1581836348123";
-};
+
+#include "CfgEventHandlers.hpp"
