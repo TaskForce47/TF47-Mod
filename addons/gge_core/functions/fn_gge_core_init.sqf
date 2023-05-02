@@ -1,12 +1,12 @@
 if (isDedicated) exitWith {};
 
 
-gge_core_var_debugMode = true;
+gge_core_var_debugMode = false;
 
 
 gge_core_fnc_debugLog = {
-	params ["_message"];
-	if (gge_core_var_debugMode) then {systemChat _message;};
+    params ["_message"];
+    if (gge_core_var_debugMode) then {systemChat _message;};
 };
 
 
@@ -44,24 +44,24 @@ gge_core_var_mainLoopFunctions = call compile preprocessFileLineNumbers "z\TF47\
 // Initialise main logic loop
 gge_core_fnc_mainLoop = {
 
-	// Call each of the functions provided to the main loop by modules
-	{
-		call _x;
-	} foreach (gge_core_var_mainLoopFunctions select 0);
+    // Call each of the functions provided to the main loop by modules
+    {
+        call _x;
+    } foreach (gge_core_var_mainLoopFunctions select 0);
 
 };
 
 gge_core_fnc_mainLoop_UISpace = {
-	{
-		call _x;
-	} foreach (gge_core_var_mainLoopFunctions select 1);
+    {
+        call _x;
+    } foreach (gge_core_var_mainLoopFunctions select 1);
 };
 
 
 
 // call UI main loop each frame
 addMissionEventHandler ["Draw3D", {
-	[] call gge_core_fnc_mainLoop_UISpace;
+    [] call gge_core_fnc_mainLoop_UISpace;
 }];
 
 // call main loop on each frame

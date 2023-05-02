@@ -21,8 +21,8 @@ gge_core_var_lastFrameCameraView = cameraView;
 
 
 gge_core_fnc_perFrameResetVars = {
-	gge_core_var_gestureJustPlayed = false;
-	gge_core_var_finishedReload = false;
+    gge_core_var_gestureJustPlayed = false;
+    gge_core_var_finishedReload = false;
 };
 
 
