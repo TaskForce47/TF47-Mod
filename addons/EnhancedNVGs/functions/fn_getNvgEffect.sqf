@@ -1,12 +1,12 @@
 /*
- *	Author: PDT
- *	gets the player's select NVG effect and checks if ACE is running
+ *    Author: PDT
+ *    gets the player's select NVG effect and checks if ACE is running
  *
- *	Arguments:
+ *    Arguments:
  *  None
  *
- *	Return Value:
- *	<ARRAY> - [<NUMBER>, <BOOL>], ["NVG Effect", true if using ACE; false is not]
+ *    Return Value:
+ *    <ARRAY> - [<NUMBER>, <BOOL>], ["NVG Effect", true if using ACE; false is not]
  *
  * example:
  * call PDT_EnhancedNVG_fnc_getNvgEffect;

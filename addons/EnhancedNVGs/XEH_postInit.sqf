@@ -1,12 +1,12 @@
 /*
- *	Author: PDT
- *	creates CBA event handler
+ *    Author: PDT
+ *    creates CBA event handler
  *
- *	Arguments:
+ *    Arguments:
  *  None
  *
- *	Return Value:
- *	None
+ *    Return Value:
+ *    None
  *
  */
 

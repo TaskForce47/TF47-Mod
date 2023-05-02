@@ -1,12 +1,12 @@
 /*
- *	Author: PDT
- *	checks the player's vision mode
+ *    Author: PDT
+ *    checks the player's vision mode
  *
- *	Arguments:
+ *    Arguments:
  *  None
  *
- *	Return Value:
- *	<BOOL> - true if player is using NVGs; false if not
+ *    Return Value:
+ *    <BOOL> - true if player is using NVGs; false if not
  *
  * example:
  * call PDT_EnhancedNVG_fnc_getVisionMode;

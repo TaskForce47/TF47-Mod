@@ -1,12 +1,12 @@
 /*
- *	Author: PDT
- *	sets the player's NVG effect; effects are defined in macros.hpp
+ *    Author: PDT
+ *    sets the player's NVG effect; effects are defined in macros.hpp
  *
- *	Arguments:
+ *    Arguments:
  *  None
  *
- *	Return Value:
- *	<ARRAY> - [<STRING>, <BOOL>], ["NVG Effect", true if effect was set; false if not]
+ *    Return Value:
+ *    <ARRAY> - [<STRING>, <BOOL>], ["NVG Effect", true if effect was set; false if not]
  *
  * example:
  * [] spawn PDT_EnhancedNVG_fnc_setNvgEffect;

@@ -1,12 +1,12 @@
 /*
- *	Author: PDT
- *	creates CBA settings
+ *    Author: PDT
+ *    creates CBA settings
  *
- *	Arguments:
+ *    Arguments:
  *  None
  *
- *	Return Value:
- *	None
+ *    Return Value:
+ *    None
  *
  */
 
