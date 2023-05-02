@@ -28,7 +28,7 @@ class CfgFunctions
 		tag="gge_core";
 		class functions
 		{
-			file="\gge_core\functions";
+			file="z\TF47\addons\\gge_core\functions";
 			class fixSplashScreen
 			{
 				postInit=1;

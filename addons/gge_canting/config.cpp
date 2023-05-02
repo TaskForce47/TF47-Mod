@@ -31,7 +31,7 @@ class CfgGesturesMale
 	{
 		class gge_canting_anim_cantedaim: default
 		{
-			file = "gge_canting\anim\gge_canting_anim_cantedaim.rtm";
+			file = "z\TF47\addons\gge_canting\anim\gge_canting_anim_cantedaim.rtm";
 			looped = 1;
 			speed = 1e-05;
 			mask = "handsWeapon";

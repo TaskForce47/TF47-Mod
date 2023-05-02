@@ -33,7 +33,7 @@ class CfgGesturesMale
 	{
 		class gge_captives_anim_hvtdefault: default
 		{
-			file = "gge_captives\anim\gge_captives_anim_hvtdefault.rtm";
+			file = "z\TF47\addons\gge_captives\anim\gge_captives_anim_hvtdefault.rtm";
 			looped = 1;
 			speed = 1e-05;
 			mask = "handsWeapon";
@@ -55,7 +55,7 @@ class CfgGesturesMale
 		};
 		class gge_captives_anim_holdhvt: default
 		{
-			file = "gge_captives\anim\gge_captives_anim_holdhvt.rtm";
+			file = "z\TF47\addons\gge_captives\anim\gge_captives_anim_holdhvt.rtm";
 			looped = 1;
 			speed = 1e-05;
 			mask = "handsWeapon";
@@ -78,7 +78,7 @@ class CfgGesturesMale
 		};
 		class gge_captives_anim_holdhvtpistol: default
 		{
-			file = "gge_captives\anim\gge_captives_anim_holdhvtpistol.rtm";
+			file = "z\TF47\addons\gge_captives\anim\gge_captives_anim_holdhvtpistol.rtm";
 			looped = 1;
 			speed = 1e-05;
 			mask = "handsWeapon";
