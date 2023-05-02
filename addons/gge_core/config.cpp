@@ -1,44 +1,33 @@
-#include "BIS_AddonInfo.hpp"
-class CfgPatches
-{
-	class gge_core
-	{
-		name="Goobin's Gameplay Enhancements: Core";
-		author="goobin";
-		authors[]=
-		{
-			"goobin"
-		};
-		url="https://www.youtube.com/channel/UC8DQqithuqvp8ny4B8pAy1A";
-		version="1.0.0";
-		requiredAddons[]=
-		{
-			"A3_Functions_F",
-			"A3_Anims_F"
-		};
-		units[]={};
-		weapons[]={};
-		worlds[]={};
-	};
+#include "script_component.hpp"
+class CfgPatches {
+    class ADDON {
+        name = COMPONENT;
+        units[] = {};
+        weapons[] = {};
+        requiredVersion = REQUIRED_VERSION;
+        requiredAddons[] = {"cba_main"};
+        author = "TF47 Desty";
+        VERSION_CONFIG;
+    };
 };
 class CfgFunctions
 {
-	class gge_core
-	{
-		tag="gge_core";
-		class functions
-		{
-			file="z\TF47\addons\\gge_core\functions";
-			class fixSplashScreen
-			{
-				postInit=1;
-			};
-			class init
-			{
-				postInit=1;
-			};
+    class TF47
+    {
+		class COMPONENT
+        {
+			file="z\TF47\addons\gge_core\functions";
+			class fixSplashScreen{};
+			class init{};
 		};
 	};
+};
+class Extended_PostInit_EventHandlers
+{
+    class COMPONENT
+    {
+        init="call compile preprocessFileLineNumbers 'z\TF47\addons\gge_core\XEH_postInit.sqf'";
+    };
 };
 class CfgMovesBasic
 {
