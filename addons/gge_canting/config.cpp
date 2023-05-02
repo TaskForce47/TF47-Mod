@@ -1,19 +1,32 @@
-#define _ARMA_
+#include "script_component.hpp"
 
-class CfgPatches
-{
-	class gge_canting
-	{
-		name = "Goobin's Gameplay Enhancements: Canted Aiming System";
-		author = "goobin";
-		authors[] = {"goobin"};
-		url = "https://www.youtube.com/channel/UC8DQqithuqvp8ny4B8pAy1A";
-		version = "1.0.0";
-		requiredAddons[] = {"A3_Functions_F","A3_Anims_F"};
-		units[] = {};
-		weapons[] = {};
-		worlds[] = {};
-	};
+class CfgPatches {
+    class ADDON {
+        name = COMPONENT;
+        units[] = {};
+        weapons[] = {};
+        requiredVersion = REQUIRED_VERSION;
+        requiredAddons[] = {"A3_Functions_F","A3_Anims_F","cba_main"};
+        author = "Goobin, edit by Rampage";
+        VERSION_CONFIG;
+    };
+};
+class CfgFunctions{
+
+    class TF47
+    {
+		class COMPONENT
+        {
+			file = "z\TF47\addons\gge_canting\functions";
+			class gge_canting_animationHandler{};
+			class gge_canting_cantAim{};
+			class gge_canting_decantAim{};
+			class gge_canting_initCantedAiming{};
+			class gge_canting_inputInitialiser{};
+			class gge_canting_mouseDown{};
+			class gge_canting_mouseUp{};
+		};
+    };
 };
 class CfgMovesBasic
 {
@@ -53,9 +66,4 @@ class CfgGesturesMale
 			leftHandIKCurve[] = {1};
 		};
 	};
-};
-class cfgMods
-{
-	author = "goobin";
-	timepacked = "1581836348123";
 };

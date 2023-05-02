@@ -12,13 +12,13 @@ gge_core_fnc_debugLog = {
 
 
 // Initialise global variables
-[] call compile preprocessFileLineNumbers "z\TF47\addons\gge_core\functions\fn_initState.sqf";
+[] call compile preprocessFileLineNumbers "z\TF47\addons\gge_core\functions\fn_gge_core_initState.sqf";
 
 // Initialise common functions
-[] call compile preprocessFileLineNumbers "z\TF47\addons\gge_core\functions\fn_coreFunctions.sqf";
+[] call compile preprocessFileLineNumbers "z\TF47\addons\gge_core\functions\fn_gge_core_coreFunctions.sqf";
 
 // Initialise GSAS
-[] call compile preprocessFileLineNumbers "z\TF47\addons\gge_core\functions\fn_initStagedAnimationSystem.sqf";
+[] call compile preprocessFileLineNumbers "z\TF47\addons\gge_core\functions\fn_gge_core_initStagedAnimationSystem.sqf";
 
 // Initialise State Change Handler System
 //_gschsInitFunctions = ([true] call compile preprocessFileLineNumbers "gge_core\functions\gschs\gschs_fnc_init.sqf");
@@ -29,7 +29,7 @@ gge_core_fnc_debugLog = {
 
 
 // Initialise modules and store main loop functions in global variable to be accessed by main loop function
-gge_core_var_mainLoopFunctions = call compile preprocessFileLineNumbers "z\TF47\addons\gge_core\functions\fn_moduleLoader.sqf";
+gge_core_var_mainLoopFunctions = call compile preprocessFileLineNumbers "z\TF47\addons\gge_core\functions\fn_gge_core_moduleLoader.sqf";
 
 // Append gschs perFrame functions to main loop execution order
 //gge_core_var_mainLoopFunctions append [_gschsInitFunctions select 0];

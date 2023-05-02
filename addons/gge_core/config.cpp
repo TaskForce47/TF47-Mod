@@ -6,8 +6,8 @@ class CfgPatches {
         units[] = {};
         weapons[] = {};
         requiredVersion = REQUIRED_VERSION;
-        requiredAddons[] = {"cba_main"};
-        author = "TF47 Desty";
+        requiredAddons[] = {"A3_Functions_F","A3_Anims_F","cba_main"};
+        author = "Goobin, edit by Rampage";
         VERSION_CONFIG;
     };
 };
@@ -18,25 +18,25 @@ class CfgFunctions
 		class COMPONENT
         {
 			file="z\TF47\addons\gge_core\functions";
-			class fixSplashScreen
+			class gge_core_fixSplashScreen
 			{
 				postInit=1;
 			};
-			class init
+			class gge_core_init
 			{
 				postInit=1;
 			};
-			class coreFunctions{};
-			class initADSChangedChecker{};
-			class initGschs{};
-			class initNVGChangedChecker{};
-			class initReloadChecker{};
-			class initSprintChangedChecker{};
-			class initStagedAnimationSystem{};
-			class initStanceChangedChecker{};
-			class initState{};
-			class initWeaponChangedChecker{};
-			class moduleLoader{};
+			class gge_core_coreFunctions{};
+			class gge_core_initADSChangedChecker{};
+			class gge_core_initGschs{};
+			class gge_core_initNVGChangedChecker{};
+			class gge_core_initReloadChecker{};
+			class gge_core_initSprintChangedChecker{};
+			class gge_core_initStagedAnimationSystem{};
+			class gge_core_initStanceChangedChecker{};
+			class gge_core_initState{};
+			class gge_core_initWeaponChangedChecker{};
+			class gge_core_moduleLoader{};
 		};
 	};
 };

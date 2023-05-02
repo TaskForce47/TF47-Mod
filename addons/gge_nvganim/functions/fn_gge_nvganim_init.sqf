@@ -1,7 +1,5 @@
 if (isDedicated) exitWith {};
 
-
-
 gge_nvganim_fnc_NVGAnimHandler = {
 	if (gge_core_var_NVGChanged) then { // Previously included check for () - look into reusing this
 		_toggleNVG = (currentVisionMode player) > 0;

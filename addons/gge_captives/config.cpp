@@ -1,19 +1,26 @@
-#define _ARMA_
+#include "script_component.hpp"
 
-class CfgPatches
-{
-	class gge_captives
-	{
-		name = "Goobin's Gameplay Enhancements: Captives";
-		author = "goobin";
-		authors[] = {"goobin"};
-		url = "https://www.youtube.com/channel/UC8DQqithuqvp8ny4B8pAy1A";
-		version = "1.0.0";
-		requiredAddons[] = {"A3_Functions_F","A3_Anims_F","ace_captives"};
-		units[] = {};
-		weapons[] = {};
-		worlds[] = {};
-	};
+class CfgPatches {
+    class ADDON {
+        name = COMPONENT;
+        units[] = {};
+        weapons[] = {};
+        requiredVersion = REQUIRED_VERSION;
+        requiredAddons[] = {"A3_Functions_F","A3_Anims_F","cba_main","ace_captives"};
+        author = "Goobin, edit by Rampage";
+        VERSION_CONFIG;
+    };
+};
+class CfgFunctions{
+
+    class TF47
+    {
+		class COMPONENT
+        {
+			file = "z\TF47\addons\gge_captives\functions";
+			class gge_captives_init {};
+		};
+    };
 };
 class CfgMovesBasic
 {
@@ -101,8 +108,5 @@ class CfgGesturesMale
 		};
 	};
 };
-class cfgMods
-{
-	author = "goobin";
-	timepacked = "1581836348123";
-};
+
+#include "CfgEventHandlers.hpp"

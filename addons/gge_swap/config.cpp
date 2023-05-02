@@ -1,36 +1,27 @@
-#include "BIS_AddonInfo.hpp"
+#include "script_component.hpp"
 
 class CfgPatches {
-	class gge_swap {
-		name= "Goobin's Gameplay Enhancements: Weapon Swap";
-		author= "goobin";
-		authors[] = {"goobin"};
-		url = "https://www.youtube.com/channel/UC8DQqithuqvp8ny4B8pAy1A";
-		version = "1.0.0";
-		requiredAddons[]= {
-			"A3_Functions_F",
-			"A3_Anims_F"
-		};
-		units[] = {};
+    class ADDON {
+        name = COMPONENT;
+        units[] = {};
         weapons[] = {};
-        worlds[] = {};
-	};
+        requiredVersion = REQUIRED_VERSION;
+        requiredAddons[] = {"A3_Functions_F","A3_Anims_F","cba_main"};
+        author = "Goobin, edit by Rampage";
+        VERSION_CONFIG;
+    };
 };
-
-/*
 class CfgFunctions{
 
-	class gge_core {
-		tag = "gge_core";
-		class functions {
-			file = "\gge_core\functions";
-			class init {
-				postInit = 1;
-			};
+    class TF47
+    {
+		class COMPONENT
+        {
+			file = "z\TF47\addons\gge_swap\functions";
+			class gge_swap_init {};
 		};
     };
 };
-*/
 class CfgMovesBasic {
 	class default;
 	class DefaultDie;
@@ -452,8 +443,4 @@ class CfgGesturesMale {
 	};
 };
 
-class cfgMods
-{
-	author="goobin";
-	timepacked="1581836348123";
-};
+#include "CfgEventHandlers.hpp"
