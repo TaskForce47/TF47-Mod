@@ -1,5 +1,5 @@
 /// Name of your mod
-name = "PMC";
+name = "BAxOPF Enhancement";
 /// Picture displayed from the expansions menu/ Optimal size is 2048x1024, other sizes work too
 picture = "tf47forecon.paa";
 /// Display next to the item added by the mod
@@ -18,7 +18,7 @@ tooltipOwned = "BAxOPF on!";
 dlcColor[] =
 {
 	0.23,
-	0.39,s
+	0.39,
 	0.30,
 	1
 };
@@ -28,5 +28,5 @@ overview = "This is the mod for standardized BAxOPF-Gameplay. HF GL. Dont compla
 hideName = 0;
 /// Hide the extension menu
 hidePicture = 0;
-// author?
-author = "Rampage"";
+// author
+author = "Rampage";
