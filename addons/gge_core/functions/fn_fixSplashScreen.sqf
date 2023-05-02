@@ -5,4 +5,4 @@ _EndSplashScreen = {
     };
 };
 
-[] spawn _EndSplashScreen;
+//[] spawn _EndSplashScreen;

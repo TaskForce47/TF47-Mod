@@ -1,4 +1,5 @@
 #include "script_component.hpp"
+
 class CfgPatches {
     class ADDON {
         name = COMPONENT;
@@ -14,21 +15,22 @@ class CfgFunctions
 {
     class TF47
     {
+		tag = "TF47";
 		class COMPONENT
         {
 			file="z\TF47\addons\gge_core\functions";
-			class fixSplashScreen{};
-			class init{};
+			class fixSplashScreen
+			{
+				postInit=1;
+			};
+			class init
+			{
+				postInit=1;
+			};
 		};
 	};
 };
-class Extended_PostInit_EventHandlers
-{
-    class COMPONENT
-    {
-        init="call compile preprocessFileLineNumbers 'z\TF47\addons\gge_core\XEH_postInit.sqf'";
-    };
-};
+
 class CfgMovesBasic
 {
 	class default;
