@@ -35,7 +35,7 @@ jobs:
       uses: actions/checkout@master
     - name: Checkout submodules
       run: git submodule update --init --recursive
-    - uses: gruppe-adler/action-release-with-hemtt@V3
+    - uses: gruppe-adler/action-release-with-hemtt@v3
       name: 'Build Mod with HEMTT'
       id: build
     - name: Upload Artifact
